@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.uma.usex
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.uma.usex
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.uma.usex; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.uma.usex,
+ org.xtext.uma.usex.serializer,
+ org.xtext.uma.usex.parser.antlr.internal,
+ org.xtext.uma.usex.parser.antlr,
+ org.xtext.uma.usex.generator,
+ org.xtext.uma.usex.usex.impl,
+ org.xtext.uma.usex.scoping,
+ org.xtext.uma.usex.services,
+ org.xtext.uma.usex.usex.util,
+ org.xtext.uma.usex.usex,
+ org.xtext.uma.usex.validation
+Import-Package: org.apache.log4j
