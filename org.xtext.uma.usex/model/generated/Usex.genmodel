@@ -14,6 +14,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//AbstractElement/name"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//UseClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//UseClass/abstract"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/operations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/constraints"/>
@@ -22,7 +23,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Attribute/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Attribute/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Attribute/initialization"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Attribute/derivedFrom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Attribute/derivedFrom"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//AttributeType"/>
     <genClasses ecoreClass="Usex.ecore#//PrimitiveType">
@@ -31,24 +32,11 @@
     <genClasses ecoreClass="Usex.ecore#//ClassType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Usex.ecore#//ClassType/type"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//AttributeInitialization"/>
-    <genClasses ecoreClass="Usex.ecore#//DoubleInitialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//DoubleInitialization/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//BooleanInitialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//BooleanInitialization/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//IntegerInitialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//IntegerInitialization/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//StringInitialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//StringInitialization/value"/>
-    </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Operation/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/inputParameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/returnParameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Operation/operationBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/operationBody"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Method">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Method/conditions"/>
@@ -59,22 +47,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Condition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Condition/conditionBody"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Precondition"/>
     <genClasses ecoreClass="Usex.ecore#//Postcondition"/>
-    <genClasses ecoreClass="Usex.ecore#//ConditionBody">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//ConditionBody/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//ConditionBody/condition"/>
-    </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Constraint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Constraint/conditionBody"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Constraint/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Constraint/constraintBody"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Relation/relationType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Relation/relationBody"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//Association"/>
-    <genClasses ecoreClass="Usex.ecore#//Composition"/>
     <genClasses ecoreClass="Usex.ecore#//RelationBody">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//RelationBody/originClass"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//RelationBody/destinyClass"/>
@@ -84,20 +69,167 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//RelationMember/cardinality"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//RelationMember/roleName"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//CardinalityType"/>
-    <genClasses ecoreClass="Usex.ecore#//SimpleCardinality">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//SimpleCardinality/cardinality"/>
+    <genClasses ecoreClass="Usex.ecore#//PrimitiveTypeRefCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//PrimitiveTypeRefCS/name"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//DoubleCardinality">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//DoubleCardinality/originCardinality"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//DoubleCardinality/destinyCardinality"/>
+    <genClasses ecoreClass="Usex.ecore#//CollectionTypeCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//CollectionTypeCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionTypeCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionTypeCS/ownedCollectionMultiplicity"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//CardinalityValue"/>
-    <genClasses ecoreClass="Usex.ecore#//IntCardinality">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//IntCardinality/value"/>
+    <genClasses ecoreClass="Usex.ecore#//MapTypeCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MapTypeCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapTypeCS/ownedKeyType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapTypeCS/ownedValueType"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//AsteriskCardinality">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//AsteriskCardinality/value"/>
+    <genClasses ecoreClass="Usex.ecore#//TupleTypeCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//TupleTypeCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TupleTypeCS/ownedParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TuplePartCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//TuplePartCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TuplePartCS/ownedType"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//CollectionPatternCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionPatternCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionPatternCS/ownedParts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//CollectionPatternCS/restVariableName"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//PatternExpCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//PatternExpCS/patternVariableName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//PatternExpCS/ownedPatternType"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TypedRefCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TypedRefCS/ownedMultiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TypeLiteralExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TypeLiteralExpCS/ownedType"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TypeNameExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TypeNameExpCS/ownedPathName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TypeNameExpCS/ownedCurlyBracketedClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TypeNameExpCS/ownedPatternGuard"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//CurlyBracketedClauseCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CurlyBracketedClauseCS/ownedParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//ShadowPartCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//ShadowPartCS/referredProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//ShadowPartCS/ownedInitExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//StringLiteralExpCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//StringLiteralExpCS/segments"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//MultiplicityBoundsCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MultiplicityBoundsCS/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MultiplicityBoundsCS/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//MultiplicityCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MultiplicityCS/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//MultiplicityStringCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MultiplicityStringCS/stringBounds"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//PathNameCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//PathNameCS/ownedPathElements"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//ExpCS"/>
+    <genClasses ecoreClass="Usex.ecore#//PrimitiveLiteralExpCS"/>
+    <genClasses ecoreClass="Usex.ecore#//NameExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NameExpCS/ownedPathName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NameExpCS/ownedSquareBracketedClauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NameExpCS/ownedRoundBracketedClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NameExpCS/ownedCurlyBracketedClause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NameExpCS/isPre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NameExpCS/pre"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//SquareBracketedClauseCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//SquareBracketedClauseCS/ownedTerms"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//CollectionLiteralExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionLiteralExpCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionLiteralExpCS/ownedParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//CollectionLiteralPartCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionLiteralPartCS/ownedExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionLiteralPartCS/ownedLastExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//LambdaLiteralExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LambdaLiteralExpCS/ownedExpressionCS"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//MapLiteralExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapLiteralExpCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapLiteralExpCS/ownedParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//MapLiteralPartCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapLiteralPartCS/ownedKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MapLiteralPartCS/ownedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TupleLiteralExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TupleLiteralExpCS/ownedParts"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//TupleLiteralPartCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//TupleLiteralPartCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TupleLiteralPartCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//TupleLiteralPartCS/ownedInitExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//NumberLiteralExpCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NumberLiteralExpCS/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//BooleanLiteralExpCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//BooleanLiteralExpCS/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//UnlimitedNaturalLiteralExpCS"/>
+    <genClasses ecoreClass="Usex.ecore#//InvalidLiteralExpCS"/>
+    <genClasses ecoreClass="Usex.ecore#//NullLiteralExpCS"/>
+    <genClasses ecoreClass="Usex.ecore#//NestedExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NestedExpCS/ownedExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//IfExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfExpCS/ownedCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfExpCS/ownedThenExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfExpCS/ownedIfThenExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfExpCS/ownedElseExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//IfThenExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfThenExpCS/ownedCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//IfThenExpCS/ownedThenExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//LetExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LetExpCS/ownedVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LetExpCS/ownedInExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//LetVariableCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//LetVariableCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LetVariableCS/ownedRoundBracketedClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LetVariableCS/ownedType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//LetVariableCS/ownedInitExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//RoundBracketedClauseCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//RoundBracketedClauseCS/ownedArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//NavigatingArgCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NavigatingArgCS/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NavigatingArgCS/ownedNameExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NavigatingArgCS/symbolT"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NavigatingArgCS/ownedType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NavigatingArgCS/symbolIE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NavigatingArgCS/ownedInitExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//NavigatingArgCS/symbolCI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//NavigatingArgCS/ownedCoIterator"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//VariableCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//VariableCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//VariableCS/ownedType"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//InfixExpCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//InfixExpCS/ownedLeft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//InfixExpCS/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//InfixExpCS/ownedRight"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//PrefixExpCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//PrefixExpCS/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//PrefixExpCS/ownedRight"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.Condition#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Condition#getConditionBody <em>Condition Body</em>}</li>
  * </ul>
  *
@@ -24,16 +25,38 @@ import org.eclipse.emf.ecore.EObject;
 public interface Condition extends EObject
 {
   /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getCondition_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Condition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
    * Returns the value of the '<em><b>Condition Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition Body</em>' containment reference.
-   * @see #setConditionBody(ConditionBody)
+   * @see #setConditionBody(ExpCS)
    * @see org.xtext.uma.usex.usex.UsexPackage#getCondition_ConditionBody()
    * @model containment="true"
    * @generated
    */
-  ConditionBody getConditionBody();
+  ExpCS getConditionBody();
 
   /**
    * Sets the value of the '{@link org.xtext.uma.usex.usex.Condition#getConditionBody <em>Condition Body</em>}' containment reference.
@@ -43,6 +66,6 @@ public interface Condition extends EObject
    * @see #getConditionBody()
    * @generated
    */
-  void setConditionBody(ConditionBody value);
+  void setConditionBody(ExpCS value);
 
 } // Condition

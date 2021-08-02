@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,17 +22,19 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected UsexGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Parameter_CommaKeyword_3_q;
-	protected AbstractElementAlias match_UseClass_AttributesKeyword_2_0_q;
-	protected AbstractElementAlias match_UseClass_ConstraintsKeyword_4_0_q;
-	protected AbstractElementAlias match_UseClass_OperationsKeyword_3_0_q;
+	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
+	protected AbstractElementAlias match_UseClass_AttributesKeyword_3_0_q;
+	protected AbstractElementAlias match_UseClass_ConstraintsKeyword_5_0_q;
+	protected AbstractElementAlias match_UseClass_OperationsKeyword_4_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (UsexGrammarAccess) access;
 		match_Parameter_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_3());
-		match_UseClass_AttributesKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getAttributesKeyword_2_0());
-		match_UseClass_ConstraintsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getConstraintsKeyword_4_0());
-		match_UseClass_OperationsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getOperationsKeyword_3_0());
+		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
+		match_UseClass_AttributesKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getAttributesKeyword_3_0());
+		match_UseClass_ConstraintsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getConstraintsKeyword_5_0());
+		match_UseClass_OperationsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getOperationsKeyword_4_0());
 	}
 	
 	@Override
@@ -48,12 +51,14 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Parameter_CommaKeyword_3_q.equals(syntax))
 				emit_Parameter_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_AttributesKeyword_2_0_q.equals(syntax))
-				emit_UseClass_AttributesKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_ConstraintsKeyword_4_0_q.equals(syntax))
-				emit_UseClass_ConstraintsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_OperationsKeyword_3_0_q.equals(syntax))
-				emit_UseClass_OperationsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
+				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_AttributesKeyword_3_0_q.equals(syntax))
+				emit_UseClass_AttributesKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_ConstraintsKeyword_5_0_q.equals(syntax))
+				emit_UseClass_ConstraintsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_OperationsKeyword_4_0_q.equals(syntax))
+				emit_UseClass_OperationsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -71,6 +76,18 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name='Tuple' (ambiguity) (rule end)
+	 *     name='Tuple' (ambiguity) ownedMultiplicity=MultiplicityCS
+	 */
+	protected void emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     'attributes'?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -78,7 +95,7 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=ID (ambiguity) 'operations'? 'constraints' constraints+=Constraint
 	 *     name=ID (ambiguity) 'operations'? 'constraints'? 'end' (rule end)
 	 */
-	protected void emit_UseClass_AttributesKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_AttributesKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -91,7 +108,7 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=ID 'attributes'? 'operations'? (ambiguity) 'end' (rule end)
 	 *     operations+=Operation (ambiguity) 'end' (rule end)
 	 */
-	protected void emit_UseClass_ConstraintsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_ConstraintsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -105,7 +122,7 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=ID 'attributes'? (ambiguity) 'constraints' constraints+=Constraint
 	 *     name=ID 'attributes'? (ambiguity) 'constraints'? 'end' (rule end)
 	 */
-	protected void emit_UseClass_OperationsKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_OperationsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

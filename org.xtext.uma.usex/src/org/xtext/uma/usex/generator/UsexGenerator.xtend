@@ -8,6 +8,28 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.uma.usex.usex.Model
+import org.xtext.uma.usex.usex.UsexFactory
+import org.xtext.uma.usex.usex.UseClass
+import java.util.Map
+import org.xtext.uma.usex.generator.outputGenerator.OutputGenerator
+import java.util.List
+import java.util.ArrayList
+import org.xtext.uma.usex.generator.model.UserVariable
+import org.xtext.uma.usex.util.UseClassUtil
+import org.eclipse.emf.common.util.URI
+import java.io.File
+import org.xtext.uma.usex.generator.general.TestClassGenerator
+import com.google.inject.Injector
+import org.eclipse.xtext.resource.XtextResourceSet
+import org.xtext.uma.usex.UsexStandaloneSetup
+import org.eclipse.xtext.resource.XtextResource
+import java.io.PrintWriter
+import org.xtext.uma.usex.generator.general.ConditionQueriesGenerator
+import org.xtext.uma.usex.util.UseToUsex
+import org.xtext.uma.usex.generator.model.QueriesFromPre
+import org.xtext.uma.usex.generator.general.InvariantQueriesGenerator
+import org.xtext.uma.usex.generator.model.QueriesFromConstraints
+import org.xtext.uma.usex.generator.model.ConfigurationParameters
 
 /**
  * Generates code from your model files on save.
@@ -16,12 +38,103 @@ import org.xtext.uma.usex.usex.Model
  */
  
 class UsexGenerator extends AbstractGenerator {
-
+	var UseClassUtil useClassUtil;
+	
+	// Method used for testing inside eclipse
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		val model = resource.allContents.toIterable.filter(Model).get(0);
-		// Additions to the model
+		// Not needed anymore
+	}
+	
+	// Returns the final model given a resource
+	static def generateModel(Resource r, String testClass, int intMin, int intMax) {
+		val model = r.allContents.toIterable.filter(Model).get(0);
+		var usexFactory = UsexFactory.eINSTANCE;
+		var useClassUtil = new UseClassUtil(r);
 		
-		// Generate processed model
-		fsa.generateFile(model.name+".use", OutputGenerator.compile(model)); 
+		// Create UserVariables
+		var List<UserVariable> userVariables = new ArrayList();
+		var targetUseClass = useClassUtil.getClassFromName(testClass);
+		var targetVar = new UserVariable(targetUseClass, "target");
+		userVariables.add(targetVar);
+		
+		// Get queries from preconditions and invariants
+		var Map<UseClass, List<QueriesFromPre>> generatedQueriesFromMethods = ConditionQueriesGenerator.generateNewQueriesFromPre(useClassUtil);
+		var List<QueriesFromConstraints> generatedQueriesFromConstraints = InvariantQueriesGenerator.getQueriesFromInv(useClassUtil);
+		
+		// Add generated queries from inv as postConditions for methods
+		InvariantQueriesGenerator.addInvQueriesToModelAsPostcond(model, generatedQueriesFromConstraints);
+		
+		// Test class creation
+		var TestClassGenerator = new TestClassGenerator(useClassUtil, 
+														usexFactory, 
+														generatedQueriesFromMethods, 
+														generatedQueriesFromConstraints, 
+														userVariables,
+														intMin, intMax);
+
+		var _test = TestClassGenerator.generateTestClass();
+		model.elements.add(_test);
+		
+		return model;
+	}
+	
+	// Creates the resource from the pathFile
+	static def Resource getResource(String fName) {
+		var path = new StringBuilder(System.getProperty("user.dir"));
+		path.append('/' + fName);
+		var File f = new File(path.toString());
+		
+		var uri = URI.createFileURI(f.absolutePath);
+		
+		//new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
+		var Injector injector = new UsexStandaloneSetup().createInjectorAndDoEMFRegistration();
+		
+		var XtextResourceSet resourceSet = injector.getInstance(typeof (XtextResourceSet));
+		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		
+		var Resource resource = resourceSet.getResource(uri, true);
+		
+		return resource;
+	}
+	
+	
+	static def generateModelFile(IFileSystemAccess2 fsa, String fileName, Model model) {
+		fsa.generateFile(fileName, OutputGenerator.compile(model));
+	}
+	
+	// Delete the tmp file
+	static def deleteTmpFile(String fName) {
+		var middleFile = fName.substring(0, fName.length-3) + "usex";
+		
+		UseToUsex.deleteTmp(middleFile);
+	}
+	
+	// Generates the final model
+	static def generateFromFile(ConfigurationParameters confParam) {
+		// Create usex file
+		var middleFile = UseToUsex.useToUsex(confParam.modelFile);
+		
+		// Generate Resource
+		var Resource r = getResource(middleFile);
+		var Model model = r.generateModel(confParam.testClass, 
+										  confParam.intMin, 
+										  confParam.intMax
+		);
+		
+		// Delete tmp file
+		UseToUsex.deleteTmp(middleFile);
+		
+		// Get final name
+		var decomposedFName = confParam.modelFile.split(".use");
+		var defName = decomposedFName.get(0)+"_generated.use";
+		
+		// Print model
+		try (var PrintWriter out = new PrintWriter(defName)) {
+    		out.println(OutputGenerator.compile(model));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		println("File generated");
 	}
 }

@@ -1,9 +1,0 @@
-grammar org.xtext.uma.usex.Usex with org.eclipse.xtext.common.Terminals
-
-generate usex "http://www.xtext.org/uma/usex/Usex"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';

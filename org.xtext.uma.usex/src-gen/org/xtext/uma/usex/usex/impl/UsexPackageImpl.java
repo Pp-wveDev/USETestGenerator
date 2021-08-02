@@ -11,39 +11,68 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.uma.usex.usex.AbstractElement;
-import org.xtext.uma.usex.usex.Association;
-import org.xtext.uma.usex.usex.AsteriskCardinality;
 import org.xtext.uma.usex.usex.Attribute;
-import org.xtext.uma.usex.usex.AttributeInitialization;
 import org.xtext.uma.usex.usex.AttributeType;
-import org.xtext.uma.usex.usex.BooleanInitialization;
-import org.xtext.uma.usex.usex.CardinalityType;
-import org.xtext.uma.usex.usex.CardinalityValue;
+import org.xtext.uma.usex.usex.BooleanLiteralExpCS;
 import org.xtext.uma.usex.usex.ClassType;
-import org.xtext.uma.usex.usex.Composition;
+import org.xtext.uma.usex.usex.CollectionLiteralExpCS;
+import org.xtext.uma.usex.usex.CollectionLiteralPartCS;
+import org.xtext.uma.usex.usex.CollectionPatternCS;
+import org.xtext.uma.usex.usex.CollectionTypeCS;
 import org.xtext.uma.usex.usex.Condition;
-import org.xtext.uma.usex.usex.ConditionBody;
 import org.xtext.uma.usex.usex.Constraint;
-import org.xtext.uma.usex.usex.DoubleCardinality;
-import org.xtext.uma.usex.usex.DoubleInitialization;
-import org.xtext.uma.usex.usex.IntCardinality;
-import org.xtext.uma.usex.usex.IntegerInitialization;
+import org.xtext.uma.usex.usex.CurlyBracketedClauseCS;
+import org.xtext.uma.usex.usex.ExpCS;
+import org.xtext.uma.usex.usex.IfExpCS;
+import org.xtext.uma.usex.usex.IfThenExpCS;
+import org.xtext.uma.usex.usex.InfixExpCS;
+import org.xtext.uma.usex.usex.InvalidLiteralExpCS;
+import org.xtext.uma.usex.usex.LambdaLiteralExpCS;
+import org.xtext.uma.usex.usex.LetExpCS;
+import org.xtext.uma.usex.usex.LetVariableCS;
+import org.xtext.uma.usex.usex.MapLiteralExpCS;
+import org.xtext.uma.usex.usex.MapLiteralPartCS;
+import org.xtext.uma.usex.usex.MapTypeCS;
 import org.xtext.uma.usex.usex.Method;
 import org.xtext.uma.usex.usex.Model;
+import org.xtext.uma.usex.usex.MultiplicityBoundsCS;
+import org.xtext.uma.usex.usex.MultiplicityCS;
+import org.xtext.uma.usex.usex.MultiplicityStringCS;
+import org.xtext.uma.usex.usex.NameExpCS;
+import org.xtext.uma.usex.usex.NavigatingArgCS;
+import org.xtext.uma.usex.usex.NestedExpCS;
+import org.xtext.uma.usex.usex.NullLiteralExpCS;
+import org.xtext.uma.usex.usex.NumberLiteralExpCS;
 import org.xtext.uma.usex.usex.Operation;
 import org.xtext.uma.usex.usex.Parameter;
+import org.xtext.uma.usex.usex.PathNameCS;
+import org.xtext.uma.usex.usex.PatternExpCS;
 import org.xtext.uma.usex.usex.Postcondition;
 import org.xtext.uma.usex.usex.Precondition;
+import org.xtext.uma.usex.usex.PrefixExpCS;
+import org.xtext.uma.usex.usex.PrimitiveLiteralExpCS;
 import org.xtext.uma.usex.usex.PrimitiveType;
+import org.xtext.uma.usex.usex.PrimitiveTypeRefCS;
 import org.xtext.uma.usex.usex.Query;
 import org.xtext.uma.usex.usex.Relation;
 import org.xtext.uma.usex.usex.RelationBody;
 import org.xtext.uma.usex.usex.RelationMember;
-import org.xtext.uma.usex.usex.SimpleCardinality;
-import org.xtext.uma.usex.usex.StringInitialization;
+import org.xtext.uma.usex.usex.RoundBracketedClauseCS;
+import org.xtext.uma.usex.usex.ShadowPartCS;
+import org.xtext.uma.usex.usex.SquareBracketedClauseCS;
+import org.xtext.uma.usex.usex.StringLiteralExpCS;
+import org.xtext.uma.usex.usex.TupleLiteralExpCS;
+import org.xtext.uma.usex.usex.TupleLiteralPartCS;
+import org.xtext.uma.usex.usex.TuplePartCS;
+import org.xtext.uma.usex.usex.TupleTypeCS;
+import org.xtext.uma.usex.usex.TypeLiteralExpCS;
+import org.xtext.uma.usex.usex.TypeNameExpCS;
+import org.xtext.uma.usex.usex.TypedRefCS;
+import org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexFactory;
 import org.xtext.uma.usex.usex.UsexPackage;
+import org.xtext.uma.usex.usex.VariableCS;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,41 +136,6 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass doubleInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass booleanInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass integerInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass stringInitializationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass operationEClass = null;
 
   /**
@@ -191,13 +185,6 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass conditionBodyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass constraintEClass = null;
 
   /**
@@ -206,20 +193,6 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   private EClass relationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass associationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass compositionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -240,42 +213,301 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass cardinalityTypeEClass = null;
+  private EClass primitiveTypeRefCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass simpleCardinalityEClass = null;
+  private EClass collectionTypeCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass doubleCardinalityEClass = null;
+  private EClass mapTypeCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass cardinalityValueEClass = null;
+  private EClass tupleTypeCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass intCardinalityEClass = null;
+  private EClass tuplePartCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass asteriskCardinalityEClass = null;
+  private EClass collectionPatternCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass patternExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typedRefCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeNameExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass curlyBracketedClauseCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass shadowPartCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityBoundsCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityStringCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pathNameCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primitiveLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass squareBracketedClauseCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass collectionLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass collectionLiteralPartCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lambdaLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mapLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mapLiteralPartCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tupleLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tupleLiteralPartCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unlimitedNaturalLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invalidLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nullLiteralExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nestedExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifThenExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass letExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass letVariableCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass roundBracketedClauseCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass navigatingArgCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass infixExpCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass prefixExpCSEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -412,9 +644,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Attributes()
+  public EAttribute getUseClass_Abstract()
   {
-    return (EReference)useClassEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)useClassEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -423,7 +655,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Operations()
+  public EReference getUseClass_Attributes()
   {
     return (EReference)useClassEClass.getEStructuralFeatures().get(1);
   }
@@ -434,9 +666,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Constraints()
+  public EReference getUseClass_Operations()
   {
     return (EReference)useClassEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUseClass_Constraints()
+  {
+    return (EReference)useClassEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -489,9 +732,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EAttribute getAttribute_DerivedFrom()
+  public EReference getAttribute_DerivedFrom()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -555,105 +798,6 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getAttributeInitialization()
-  {
-    return attributeInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDoubleInitialization()
-  {
-    return doubleInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDoubleInitialization_Value()
-  {
-    return (EAttribute)doubleInitializationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getBooleanInitialization()
-  {
-    return booleanInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getBooleanInitialization_Value()
-  {
-    return (EAttribute)booleanInitializationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getIntegerInitialization()
-  {
-    return integerInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getIntegerInitialization_Value()
-  {
-    return (EAttribute)integerInitializationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getStringInitialization()
-  {
-    return stringInitializationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getStringInitialization_Value()
-  {
-    return (EAttribute)stringInitializationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getOperation()
   {
     return operationEClass;
@@ -698,9 +842,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EAttribute getOperation_OperationBody()
+  public EReference getOperation_OperationBody()
   {
-    return (EAttribute)operationEClass.getEStructuralFeatures().get(3);
+    return (EReference)operationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -786,9 +930,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
+  public EAttribute getCondition_Name()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getCondition_ConditionBody()
   {
-    return (EReference)conditionEClass.getEStructuralFeatures().get(0);
+    return (EReference)conditionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -819,39 +974,6 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getConditionBody()
-  {
-    return conditionBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getConditionBody_Name()
-  {
-    return (EAttribute)conditionBodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getConditionBody_Condition()
-  {
-    return (EAttribute)conditionBodyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getConstraint()
   {
     return constraintEClass;
@@ -863,9 +985,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getConstraint_ConditionBody()
+  public EAttribute getConstraint_Name()
   {
-    return (EReference)constraintEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConstraint_ConstraintBody()
+  {
+    return (EReference)constraintEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -885,31 +1018,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
+  public EAttribute getRelation_RelationType()
+  {
+    return (EAttribute)relationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getRelation_RelationBody()
   {
-    return (EReference)relationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAssociation()
-  {
-    return associationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getComposition()
-  {
-    return compositionEClass;
+    return (EReference)relationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -995,9 +1117,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getCardinalityType()
+  public EClass getPrimitiveTypeRefCS()
   {
-    return cardinalityTypeEClass;
+    return primitiveTypeRefCSEClass;
   }
 
   /**
@@ -1006,9 +1128,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getSimpleCardinality()
+  public EAttribute getPrimitiveTypeRefCS_Name()
   {
-    return simpleCardinalityEClass;
+    return (EAttribute)primitiveTypeRefCSEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1017,9 +1139,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getSimpleCardinality_Cardinality()
+  public EClass getCollectionTypeCS()
   {
-    return (EReference)simpleCardinalityEClass.getEStructuralFeatures().get(0);
+    return collectionTypeCSEClass;
   }
 
   /**
@@ -1028,9 +1150,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getDoubleCardinality()
+  public EAttribute getCollectionTypeCS_Name()
   {
-    return doubleCardinalityEClass;
+    return (EAttribute)collectionTypeCSEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1039,9 +1161,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getDoubleCardinality_OriginCardinality()
+  public EReference getCollectionTypeCS_OwnedType()
   {
-    return (EReference)doubleCardinalityEClass.getEStructuralFeatures().get(0);
+    return (EReference)collectionTypeCSEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1050,9 +1172,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getDoubleCardinality_DestinyCardinality()
+  public EReference getCollectionTypeCS_OwnedCollectionMultiplicity()
   {
-    return (EReference)doubleCardinalityEClass.getEStructuralFeatures().get(1);
+    return (EReference)collectionTypeCSEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1061,9 +1183,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getCardinalityValue()
+  public EClass getMapTypeCS()
   {
-    return cardinalityValueEClass;
+    return mapTypeCSEClass;
   }
 
   /**
@@ -1072,9 +1194,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getIntCardinality()
+  public EAttribute getMapTypeCS_Name()
   {
-    return intCardinalityEClass;
+    return (EAttribute)mapTypeCSEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1083,9 +1205,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EAttribute getIntCardinality_Value()
+  public EReference getMapTypeCS_OwnedKeyType()
   {
-    return (EAttribute)intCardinalityEClass.getEStructuralFeatures().get(0);
+    return (EReference)mapTypeCSEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1094,9 +1216,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getAsteriskCardinality()
+  public EReference getMapTypeCS_OwnedValueType()
   {
-    return asteriskCardinalityEClass;
+    return (EReference)mapTypeCSEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1105,9 +1227,1252 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EAttribute getAsteriskCardinality_Value()
+  public EClass getTupleTypeCS()
   {
-    return (EAttribute)asteriskCardinalityEClass.getEStructuralFeatures().get(0);
+    return tupleTypeCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTupleTypeCS_Name()
+  {
+    return (EAttribute)tupleTypeCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTupleTypeCS_OwnedParts()
+  {
+    return (EReference)tupleTypeCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTuplePartCS()
+  {
+    return tuplePartCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTuplePartCS_Name()
+  {
+    return (EAttribute)tuplePartCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTuplePartCS_OwnedType()
+  {
+    return (EReference)tuplePartCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCollectionPatternCS()
+  {
+    return collectionPatternCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionPatternCS_OwnedType()
+  {
+    return (EReference)collectionPatternCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionPatternCS_OwnedParts()
+  {
+    return (EReference)collectionPatternCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCollectionPatternCS_RestVariableName()
+  {
+    return (EAttribute)collectionPatternCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPatternExpCS()
+  {
+    return patternExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPatternExpCS_PatternVariableName()
+  {
+    return (EAttribute)patternExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPatternExpCS_OwnedPatternType()
+  {
+    return (EReference)patternExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypedRefCS()
+  {
+    return typedRefCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypedRefCS_OwnedMultiplicity()
+  {
+    return (EReference)typedRefCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeLiteralExpCS()
+  {
+    return typeLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeLiteralExpCS_OwnedType()
+  {
+    return (EReference)typeLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeNameExpCS()
+  {
+    return typeNameExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeNameExpCS_OwnedPathName()
+  {
+    return (EReference)typeNameExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeNameExpCS_OwnedCurlyBracketedClause()
+  {
+    return (EReference)typeNameExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeNameExpCS_OwnedPatternGuard()
+  {
+    return (EReference)typeNameExpCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCurlyBracketedClauseCS()
+  {
+    return curlyBracketedClauseCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCurlyBracketedClauseCS_OwnedParts()
+  {
+    return (EReference)curlyBracketedClauseCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getShadowPartCS()
+  {
+    return shadowPartCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getShadowPartCS_ReferredProperty()
+  {
+    return (EAttribute)shadowPartCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getShadowPartCS_OwnedInitExpression()
+  {
+    return (EReference)shadowPartCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStringLiteralExpCS()
+  {
+    return stringLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStringLiteralExpCS_Segments()
+  {
+    return (EAttribute)stringLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityBoundsCS()
+  {
+    return multiplicityBoundsCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityBoundsCS_LowerBound()
+  {
+    return (EAttribute)multiplicityBoundsCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityBoundsCS_UpperBound()
+  {
+    return (EAttribute)multiplicityBoundsCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityCS()
+  {
+    return multiplicityCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityCS_Symbol()
+  {
+    return (EAttribute)multiplicityCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityStringCS()
+  {
+    return multiplicityStringCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityStringCS_StringBounds()
+  {
+    return (EAttribute)multiplicityStringCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPathNameCS()
+  {
+    return pathNameCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPathNameCS_OwnedPathElements()
+  {
+    return (EAttribute)pathNameCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getExpCS()
+  {
+    return expCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrimitiveLiteralExpCS()
+  {
+    return primitiveLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNameExpCS()
+  {
+    return nameExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExpCS_OwnedPathName()
+  {
+    return (EReference)nameExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExpCS_OwnedSquareBracketedClauses()
+  {
+    return (EReference)nameExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExpCS_OwnedRoundBracketedClause()
+  {
+    return (EReference)nameExpCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExpCS_OwnedCurlyBracketedClause()
+  {
+    return (EReference)nameExpCSEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNameExpCS_IsPre()
+  {
+    return (EAttribute)nameExpCSEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNameExpCS_Pre()
+  {
+    return (EAttribute)nameExpCSEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSquareBracketedClauseCS()
+  {
+    return squareBracketedClauseCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSquareBracketedClauseCS_OwnedTerms()
+  {
+    return (EReference)squareBracketedClauseCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCollectionLiteralExpCS()
+  {
+    return collectionLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionLiteralExpCS_OwnedType()
+  {
+    return (EReference)collectionLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionLiteralExpCS_OwnedParts()
+  {
+    return (EReference)collectionLiteralExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCollectionLiteralPartCS()
+  {
+    return collectionLiteralPartCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionLiteralPartCS_OwnedExpression()
+  {
+    return (EReference)collectionLiteralPartCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionLiteralPartCS_OwnedLastExpression()
+  {
+    return (EReference)collectionLiteralPartCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLambdaLiteralExpCS()
+  {
+    return lambdaLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLambdaLiteralExpCS_OwnedExpressionCS()
+  {
+    return (EReference)lambdaLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMapLiteralExpCS()
+  {
+    return mapLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMapLiteralExpCS_OwnedType()
+  {
+    return (EReference)mapLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMapLiteralExpCS_OwnedParts()
+  {
+    return (EReference)mapLiteralExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMapLiteralPartCS()
+  {
+    return mapLiteralPartCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMapLiteralPartCS_OwnedKey()
+  {
+    return (EReference)mapLiteralPartCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMapLiteralPartCS_OwnedValue()
+  {
+    return (EReference)mapLiteralPartCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTupleLiteralExpCS()
+  {
+    return tupleLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTupleLiteralExpCS_OwnedParts()
+  {
+    return (EReference)tupleLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTupleLiteralPartCS()
+  {
+    return tupleLiteralPartCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTupleLiteralPartCS_Name()
+  {
+    return (EAttribute)tupleLiteralPartCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTupleLiteralPartCS_OwnedType()
+  {
+    return (EReference)tupleLiteralPartCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTupleLiteralPartCS_OwnedInitExpression()
+  {
+    return (EReference)tupleLiteralPartCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNumberLiteralExpCS()
+  {
+    return numberLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNumberLiteralExpCS_Value()
+  {
+    return (EAttribute)numberLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBooleanLiteralExpCS()
+  {
+    return booleanLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBooleanLiteralExpCS_Symbol()
+  {
+    return (EAttribute)booleanLiteralExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUnlimitedNaturalLiteralExpCS()
+  {
+    return unlimitedNaturalLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInvalidLiteralExpCS()
+  {
+    return invalidLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNullLiteralExpCS()
+  {
+    return nullLiteralExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNestedExpCS()
+  {
+    return nestedExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNestedExpCS_OwnedExpression()
+  {
+    return (EReference)nestedExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIfExpCS()
+  {
+    return ifExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfExpCS_OwnedCondition()
+  {
+    return (EReference)ifExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfExpCS_OwnedThenExpression()
+  {
+    return (EReference)ifExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfExpCS_OwnedIfThenExpressions()
+  {
+    return (EReference)ifExpCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfExpCS_OwnedElseExpression()
+  {
+    return (EReference)ifExpCSEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIfThenExpCS()
+  {
+    return ifThenExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfThenExpCS_OwnedCondition()
+  {
+    return (EReference)ifThenExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfThenExpCS_OwnedThenExpression()
+  {
+    return (EReference)ifThenExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLetExpCS()
+  {
+    return letExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLetExpCS_OwnedVariables()
+  {
+    return (EReference)letExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLetExpCS_OwnedInExpression()
+  {
+    return (EReference)letExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLetVariableCS()
+  {
+    return letVariableCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLetVariableCS_Name()
+  {
+    return (EAttribute)letVariableCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLetVariableCS_OwnedRoundBracketedClause()
+  {
+    return (EReference)letVariableCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLetVariableCS_OwnedType()
+  {
+    return (EReference)letVariableCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLetVariableCS_OwnedInitExpression()
+  {
+    return (EReference)letVariableCSEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRoundBracketedClauseCS()
+  {
+    return roundBracketedClauseCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoundBracketedClauseCS_OwnedArguments()
+  {
+    return (EReference)roundBracketedClauseCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNavigatingArgCS()
+  {
+    return navigatingArgCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNavigatingArgCS_Prefix()
+  {
+    return (EAttribute)navigatingArgCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNavigatingArgCS_OwnedNameExpression()
+  {
+    return (EReference)navigatingArgCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNavigatingArgCS_SymbolT()
+  {
+    return (EAttribute)navigatingArgCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNavigatingArgCS_OwnedType()
+  {
+    return (EReference)navigatingArgCSEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNavigatingArgCS_SymbolIE()
+  {
+    return (EAttribute)navigatingArgCSEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNavigatingArgCS_OwnedInitExpression()
+  {
+    return (EReference)navigatingArgCSEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNavigatingArgCS_SymbolCI()
+  {
+    return (EAttribute)navigatingArgCSEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNavigatingArgCS_OwnedCoIterator()
+  {
+    return (EReference)navigatingArgCSEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVariableCS()
+  {
+    return variableCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVariableCS_Name()
+  {
+    return (EAttribute)variableCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVariableCS_OwnedType()
+  {
+    return (EReference)variableCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInfixExpCS()
+  {
+    return infixExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInfixExpCS_OwnedLeft()
+  {
+    return (EReference)infixExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInfixExpCS_Operator()
+  {
+    return (EAttribute)infixExpCSEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInfixExpCS_OwnedRight()
+  {
+    return (EReference)infixExpCSEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrefixExpCS()
+  {
+    return prefixExpCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPrefixExpCS_Name()
+  {
+    return (EAttribute)prefixExpCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrefixExpCS_OwnedRight()
+  {
+    return (EReference)prefixExpCSEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1149,6 +2514,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
 
     useClassEClass = createEClass(USE_CLASS);
+    createEAttribute(useClassEClass, USE_CLASS__ABSTRACT);
     createEReference(useClassEClass, USE_CLASS__ATTRIBUTES);
     createEReference(useClassEClass, USE_CLASS__OPERATIONS);
     createEReference(useClassEClass, USE_CLASS__CONSTRAINTS);
@@ -1157,7 +2523,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
     createEReference(attributeEClass, ATTRIBUTE__TYPE);
     createEReference(attributeEClass, ATTRIBUTE__INITIALIZATION);
-    createEAttribute(attributeEClass, ATTRIBUTE__DERIVED_FROM);
+    createEReference(attributeEClass, ATTRIBUTE__DERIVED_FROM);
 
     attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
 
@@ -1167,25 +2533,11 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     classTypeEClass = createEClass(CLASS_TYPE);
     createEReference(classTypeEClass, CLASS_TYPE__TYPE);
 
-    attributeInitializationEClass = createEClass(ATTRIBUTE_INITIALIZATION);
-
-    doubleInitializationEClass = createEClass(DOUBLE_INITIALIZATION);
-    createEAttribute(doubleInitializationEClass, DOUBLE_INITIALIZATION__VALUE);
-
-    booleanInitializationEClass = createEClass(BOOLEAN_INITIALIZATION);
-    createEAttribute(booleanInitializationEClass, BOOLEAN_INITIALIZATION__VALUE);
-
-    integerInitializationEClass = createEClass(INTEGER_INITIALIZATION);
-    createEAttribute(integerInitializationEClass, INTEGER_INITIALIZATION__VALUE);
-
-    stringInitializationEClass = createEClass(STRING_INITIALIZATION);
-    createEAttribute(stringInitializationEClass, STRING_INITIALIZATION__VALUE);
-
     operationEClass = createEClass(OPERATION);
     createEAttribute(operationEClass, OPERATION__NAME);
     createEReference(operationEClass, OPERATION__INPUT_PARAMETERS);
     createEReference(operationEClass, OPERATION__RETURN_PARAMETER);
-    createEAttribute(operationEClass, OPERATION__OPERATION_BODY);
+    createEReference(operationEClass, OPERATION__OPERATION_BODY);
 
     methodEClass = createEClass(METHOD);
     createEReference(methodEClass, METHOD__CONDITIONS);
@@ -1197,25 +2549,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEReference(parameterEClass, PARAMETER__TYPE);
 
     conditionEClass = createEClass(CONDITION);
+    createEAttribute(conditionEClass, CONDITION__NAME);
     createEReference(conditionEClass, CONDITION__CONDITION_BODY);
 
     preconditionEClass = createEClass(PRECONDITION);
 
     postconditionEClass = createEClass(POSTCONDITION);
 
-    conditionBodyEClass = createEClass(CONDITION_BODY);
-    createEAttribute(conditionBodyEClass, CONDITION_BODY__NAME);
-    createEAttribute(conditionBodyEClass, CONDITION_BODY__CONDITION);
-
     constraintEClass = createEClass(CONSTRAINT);
-    createEReference(constraintEClass, CONSTRAINT__CONDITION_BODY);
+    createEAttribute(constraintEClass, CONSTRAINT__NAME);
+    createEReference(constraintEClass, CONSTRAINT__CONSTRAINT_BODY);
 
     relationEClass = createEClass(RELATION);
+    createEAttribute(relationEClass, RELATION__RELATION_TYPE);
     createEReference(relationEClass, RELATION__RELATION_BODY);
-
-    associationEClass = createEClass(ASSOCIATION);
-
-    compositionEClass = createEClass(COMPOSITION);
 
     relationBodyEClass = createEClass(RELATION_BODY);
     createEReference(relationBodyEClass, RELATION_BODY__ORIGIN_CLASS);
@@ -1226,22 +2573,172 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEReference(relationMemberEClass, RELATION_MEMBER__CARDINALITY);
     createEAttribute(relationMemberEClass, RELATION_MEMBER__ROLE_NAME);
 
-    cardinalityTypeEClass = createEClass(CARDINALITY_TYPE);
+    primitiveTypeRefCSEClass = createEClass(PRIMITIVE_TYPE_REF_CS);
+    createEAttribute(primitiveTypeRefCSEClass, PRIMITIVE_TYPE_REF_CS__NAME);
 
-    simpleCardinalityEClass = createEClass(SIMPLE_CARDINALITY);
-    createEReference(simpleCardinalityEClass, SIMPLE_CARDINALITY__CARDINALITY);
+    collectionTypeCSEClass = createEClass(COLLECTION_TYPE_CS);
+    createEAttribute(collectionTypeCSEClass, COLLECTION_TYPE_CS__NAME);
+    createEReference(collectionTypeCSEClass, COLLECTION_TYPE_CS__OWNED_TYPE);
+    createEReference(collectionTypeCSEClass, COLLECTION_TYPE_CS__OWNED_COLLECTION_MULTIPLICITY);
 
-    doubleCardinalityEClass = createEClass(DOUBLE_CARDINALITY);
-    createEReference(doubleCardinalityEClass, DOUBLE_CARDINALITY__ORIGIN_CARDINALITY);
-    createEReference(doubleCardinalityEClass, DOUBLE_CARDINALITY__DESTINY_CARDINALITY);
+    mapTypeCSEClass = createEClass(MAP_TYPE_CS);
+    createEAttribute(mapTypeCSEClass, MAP_TYPE_CS__NAME);
+    createEReference(mapTypeCSEClass, MAP_TYPE_CS__OWNED_KEY_TYPE);
+    createEReference(mapTypeCSEClass, MAP_TYPE_CS__OWNED_VALUE_TYPE);
 
-    cardinalityValueEClass = createEClass(CARDINALITY_VALUE);
+    tupleTypeCSEClass = createEClass(TUPLE_TYPE_CS);
+    createEAttribute(tupleTypeCSEClass, TUPLE_TYPE_CS__NAME);
+    createEReference(tupleTypeCSEClass, TUPLE_TYPE_CS__OWNED_PARTS);
 
-    intCardinalityEClass = createEClass(INT_CARDINALITY);
-    createEAttribute(intCardinalityEClass, INT_CARDINALITY__VALUE);
+    tuplePartCSEClass = createEClass(TUPLE_PART_CS);
+    createEAttribute(tuplePartCSEClass, TUPLE_PART_CS__NAME);
+    createEReference(tuplePartCSEClass, TUPLE_PART_CS__OWNED_TYPE);
 
-    asteriskCardinalityEClass = createEClass(ASTERISK_CARDINALITY);
-    createEAttribute(asteriskCardinalityEClass, ASTERISK_CARDINALITY__VALUE);
+    collectionPatternCSEClass = createEClass(COLLECTION_PATTERN_CS);
+    createEReference(collectionPatternCSEClass, COLLECTION_PATTERN_CS__OWNED_TYPE);
+    createEReference(collectionPatternCSEClass, COLLECTION_PATTERN_CS__OWNED_PARTS);
+    createEAttribute(collectionPatternCSEClass, COLLECTION_PATTERN_CS__REST_VARIABLE_NAME);
+
+    patternExpCSEClass = createEClass(PATTERN_EXP_CS);
+    createEAttribute(patternExpCSEClass, PATTERN_EXP_CS__PATTERN_VARIABLE_NAME);
+    createEReference(patternExpCSEClass, PATTERN_EXP_CS__OWNED_PATTERN_TYPE);
+
+    typedRefCSEClass = createEClass(TYPED_REF_CS);
+    createEReference(typedRefCSEClass, TYPED_REF_CS__OWNED_MULTIPLICITY);
+
+    typeLiteralExpCSEClass = createEClass(TYPE_LITERAL_EXP_CS);
+    createEReference(typeLiteralExpCSEClass, TYPE_LITERAL_EXP_CS__OWNED_TYPE);
+
+    typeNameExpCSEClass = createEClass(TYPE_NAME_EXP_CS);
+    createEReference(typeNameExpCSEClass, TYPE_NAME_EXP_CS__OWNED_PATH_NAME);
+    createEReference(typeNameExpCSEClass, TYPE_NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE);
+    createEReference(typeNameExpCSEClass, TYPE_NAME_EXP_CS__OWNED_PATTERN_GUARD);
+
+    curlyBracketedClauseCSEClass = createEClass(CURLY_BRACKETED_CLAUSE_CS);
+    createEReference(curlyBracketedClauseCSEClass, CURLY_BRACKETED_CLAUSE_CS__OWNED_PARTS);
+
+    shadowPartCSEClass = createEClass(SHADOW_PART_CS);
+    createEAttribute(shadowPartCSEClass, SHADOW_PART_CS__REFERRED_PROPERTY);
+    createEReference(shadowPartCSEClass, SHADOW_PART_CS__OWNED_INIT_EXPRESSION);
+
+    stringLiteralExpCSEClass = createEClass(STRING_LITERAL_EXP_CS);
+    createEAttribute(stringLiteralExpCSEClass, STRING_LITERAL_EXP_CS__SEGMENTS);
+
+    multiplicityBoundsCSEClass = createEClass(MULTIPLICITY_BOUNDS_CS);
+    createEAttribute(multiplicityBoundsCSEClass, MULTIPLICITY_BOUNDS_CS__LOWER_BOUND);
+    createEAttribute(multiplicityBoundsCSEClass, MULTIPLICITY_BOUNDS_CS__UPPER_BOUND);
+
+    multiplicityCSEClass = createEClass(MULTIPLICITY_CS);
+    createEAttribute(multiplicityCSEClass, MULTIPLICITY_CS__SYMBOL);
+
+    multiplicityStringCSEClass = createEClass(MULTIPLICITY_STRING_CS);
+    createEAttribute(multiplicityStringCSEClass, MULTIPLICITY_STRING_CS__STRING_BOUNDS);
+
+    pathNameCSEClass = createEClass(PATH_NAME_CS);
+    createEAttribute(pathNameCSEClass, PATH_NAME_CS__OWNED_PATH_ELEMENTS);
+
+    expCSEClass = createEClass(EXP_CS);
+
+    primitiveLiteralExpCSEClass = createEClass(PRIMITIVE_LITERAL_EXP_CS);
+
+    nameExpCSEClass = createEClass(NAME_EXP_CS);
+    createEReference(nameExpCSEClass, NAME_EXP_CS__OWNED_PATH_NAME);
+    createEReference(nameExpCSEClass, NAME_EXP_CS__OWNED_SQUARE_BRACKETED_CLAUSES);
+    createEReference(nameExpCSEClass, NAME_EXP_CS__OWNED_ROUND_BRACKETED_CLAUSE);
+    createEReference(nameExpCSEClass, NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE);
+    createEAttribute(nameExpCSEClass, NAME_EXP_CS__IS_PRE);
+    createEAttribute(nameExpCSEClass, NAME_EXP_CS__PRE);
+
+    squareBracketedClauseCSEClass = createEClass(SQUARE_BRACKETED_CLAUSE_CS);
+    createEReference(squareBracketedClauseCSEClass, SQUARE_BRACKETED_CLAUSE_CS__OWNED_TERMS);
+
+    collectionLiteralExpCSEClass = createEClass(COLLECTION_LITERAL_EXP_CS);
+    createEReference(collectionLiteralExpCSEClass, COLLECTION_LITERAL_EXP_CS__OWNED_TYPE);
+    createEReference(collectionLiteralExpCSEClass, COLLECTION_LITERAL_EXP_CS__OWNED_PARTS);
+
+    collectionLiteralPartCSEClass = createEClass(COLLECTION_LITERAL_PART_CS);
+    createEReference(collectionLiteralPartCSEClass, COLLECTION_LITERAL_PART_CS__OWNED_EXPRESSION);
+    createEReference(collectionLiteralPartCSEClass, COLLECTION_LITERAL_PART_CS__OWNED_LAST_EXPRESSION);
+
+    lambdaLiteralExpCSEClass = createEClass(LAMBDA_LITERAL_EXP_CS);
+    createEReference(lambdaLiteralExpCSEClass, LAMBDA_LITERAL_EXP_CS__OWNED_EXPRESSION_CS);
+
+    mapLiteralExpCSEClass = createEClass(MAP_LITERAL_EXP_CS);
+    createEReference(mapLiteralExpCSEClass, MAP_LITERAL_EXP_CS__OWNED_TYPE);
+    createEReference(mapLiteralExpCSEClass, MAP_LITERAL_EXP_CS__OWNED_PARTS);
+
+    mapLiteralPartCSEClass = createEClass(MAP_LITERAL_PART_CS);
+    createEReference(mapLiteralPartCSEClass, MAP_LITERAL_PART_CS__OWNED_KEY);
+    createEReference(mapLiteralPartCSEClass, MAP_LITERAL_PART_CS__OWNED_VALUE);
+
+    tupleLiteralExpCSEClass = createEClass(TUPLE_LITERAL_EXP_CS);
+    createEReference(tupleLiteralExpCSEClass, TUPLE_LITERAL_EXP_CS__OWNED_PARTS);
+
+    tupleLiteralPartCSEClass = createEClass(TUPLE_LITERAL_PART_CS);
+    createEAttribute(tupleLiteralPartCSEClass, TUPLE_LITERAL_PART_CS__NAME);
+    createEReference(tupleLiteralPartCSEClass, TUPLE_LITERAL_PART_CS__OWNED_TYPE);
+    createEReference(tupleLiteralPartCSEClass, TUPLE_LITERAL_PART_CS__OWNED_INIT_EXPRESSION);
+
+    numberLiteralExpCSEClass = createEClass(NUMBER_LITERAL_EXP_CS);
+    createEAttribute(numberLiteralExpCSEClass, NUMBER_LITERAL_EXP_CS__VALUE);
+
+    booleanLiteralExpCSEClass = createEClass(BOOLEAN_LITERAL_EXP_CS);
+    createEAttribute(booleanLiteralExpCSEClass, BOOLEAN_LITERAL_EXP_CS__SYMBOL);
+
+    unlimitedNaturalLiteralExpCSEClass = createEClass(UNLIMITED_NATURAL_LITERAL_EXP_CS);
+
+    invalidLiteralExpCSEClass = createEClass(INVALID_LITERAL_EXP_CS);
+
+    nullLiteralExpCSEClass = createEClass(NULL_LITERAL_EXP_CS);
+
+    nestedExpCSEClass = createEClass(NESTED_EXP_CS);
+    createEReference(nestedExpCSEClass, NESTED_EXP_CS__OWNED_EXPRESSION);
+
+    ifExpCSEClass = createEClass(IF_EXP_CS);
+    createEReference(ifExpCSEClass, IF_EXP_CS__OWNED_CONDITION);
+    createEReference(ifExpCSEClass, IF_EXP_CS__OWNED_THEN_EXPRESSION);
+    createEReference(ifExpCSEClass, IF_EXP_CS__OWNED_IF_THEN_EXPRESSIONS);
+    createEReference(ifExpCSEClass, IF_EXP_CS__OWNED_ELSE_EXPRESSION);
+
+    ifThenExpCSEClass = createEClass(IF_THEN_EXP_CS);
+    createEReference(ifThenExpCSEClass, IF_THEN_EXP_CS__OWNED_CONDITION);
+    createEReference(ifThenExpCSEClass, IF_THEN_EXP_CS__OWNED_THEN_EXPRESSION);
+
+    letExpCSEClass = createEClass(LET_EXP_CS);
+    createEReference(letExpCSEClass, LET_EXP_CS__OWNED_VARIABLES);
+    createEReference(letExpCSEClass, LET_EXP_CS__OWNED_IN_EXPRESSION);
+
+    letVariableCSEClass = createEClass(LET_VARIABLE_CS);
+    createEAttribute(letVariableCSEClass, LET_VARIABLE_CS__NAME);
+    createEReference(letVariableCSEClass, LET_VARIABLE_CS__OWNED_ROUND_BRACKETED_CLAUSE);
+    createEReference(letVariableCSEClass, LET_VARIABLE_CS__OWNED_TYPE);
+    createEReference(letVariableCSEClass, LET_VARIABLE_CS__OWNED_INIT_EXPRESSION);
+
+    roundBracketedClauseCSEClass = createEClass(ROUND_BRACKETED_CLAUSE_CS);
+    createEReference(roundBracketedClauseCSEClass, ROUND_BRACKETED_CLAUSE_CS__OWNED_ARGUMENTS);
+
+    navigatingArgCSEClass = createEClass(NAVIGATING_ARG_CS);
+    createEAttribute(navigatingArgCSEClass, NAVIGATING_ARG_CS__PREFIX);
+    createEReference(navigatingArgCSEClass, NAVIGATING_ARG_CS__OWNED_NAME_EXPRESSION);
+    createEAttribute(navigatingArgCSEClass, NAVIGATING_ARG_CS__SYMBOL_T);
+    createEReference(navigatingArgCSEClass, NAVIGATING_ARG_CS__OWNED_TYPE);
+    createEAttribute(navigatingArgCSEClass, NAVIGATING_ARG_CS__SYMBOL_IE);
+    createEReference(navigatingArgCSEClass, NAVIGATING_ARG_CS__OWNED_INIT_EXPRESSION);
+    createEAttribute(navigatingArgCSEClass, NAVIGATING_ARG_CS__SYMBOL_CI);
+    createEReference(navigatingArgCSEClass, NAVIGATING_ARG_CS__OWNED_CO_ITERATOR);
+
+    variableCSEClass = createEClass(VARIABLE_CS);
+    createEAttribute(variableCSEClass, VARIABLE_CS__NAME);
+    createEReference(variableCSEClass, VARIABLE_CS__OWNED_TYPE);
+
+    infixExpCSEClass = createEClass(INFIX_EXP_CS);
+    createEReference(infixExpCSEClass, INFIX_EXP_CS__OWNED_LEFT);
+    createEAttribute(infixExpCSEClass, INFIX_EXP_CS__OPERATOR);
+    createEReference(infixExpCSEClass, INFIX_EXP_CS__OWNED_RIGHT);
+
+    prefixExpCSEClass = createEClass(PREFIX_EXP_CS);
+    createEAttribute(prefixExpCSEClass, PREFIX_EXP_CS__NAME);
+    createEReference(prefixExpCSEClass, PREFIX_EXP_CS__OWNED_RIGHT);
   }
 
   /**
@@ -1276,21 +2773,37 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     useClassEClass.getESuperTypes().add(this.getAbstractElement());
     primitiveTypeEClass.getESuperTypes().add(this.getAttributeType());
     classTypeEClass.getESuperTypes().add(this.getAttributeType());
-    doubleInitializationEClass.getESuperTypes().add(this.getAttributeInitialization());
-    booleanInitializationEClass.getESuperTypes().add(this.getAttributeInitialization());
-    integerInitializationEClass.getESuperTypes().add(this.getAttributeInitialization());
-    stringInitializationEClass.getESuperTypes().add(this.getAttributeInitialization());
     methodEClass.getESuperTypes().add(this.getOperation());
     queryEClass.getESuperTypes().add(this.getOperation());
     preconditionEClass.getESuperTypes().add(this.getCondition());
     postconditionEClass.getESuperTypes().add(this.getCondition());
     relationEClass.getESuperTypes().add(this.getAbstractElement());
-    associationEClass.getESuperTypes().add(this.getRelation());
-    compositionEClass.getESuperTypes().add(this.getRelation());
-    simpleCardinalityEClass.getESuperTypes().add(this.getCardinalityType());
-    doubleCardinalityEClass.getESuperTypes().add(this.getCardinalityType());
-    intCardinalityEClass.getESuperTypes().add(this.getCardinalityValue());
-    asteriskCardinalityEClass.getESuperTypes().add(this.getCardinalityValue());
+    primitiveTypeRefCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    collectionTypeCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    mapTypeCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    tupleTypeCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    collectionPatternCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    typeLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    typeNameExpCSEClass.getESuperTypes().add(this.getTypedRefCS());
+    stringLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    multiplicityBoundsCSEClass.getESuperTypes().add(this.getMultiplicityCS());
+    multiplicityStringCSEClass.getESuperTypes().add(this.getMultiplicityCS());
+    primitiveLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    nameExpCSEClass.getESuperTypes().add(this.getExpCS());
+    collectionLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    lambdaLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    mapLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    tupleLiteralExpCSEClass.getESuperTypes().add(this.getExpCS());
+    numberLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    booleanLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    unlimitedNaturalLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    invalidLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    nullLiteralExpCSEClass.getESuperTypes().add(this.getPrimitiveLiteralExpCS());
+    nestedExpCSEClass.getESuperTypes().add(this.getExpCS());
+    ifExpCSEClass.getESuperTypes().add(this.getExpCS());
+    letExpCSEClass.getESuperTypes().add(this.getExpCS());
+    infixExpCSEClass.getESuperTypes().add(this.getExpCS());
+    prefixExpCSEClass.getESuperTypes().add(this.getExpCS());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1301,6 +2814,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(useClassEClass, UseClass.class, "UseClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUseClass_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Operations(), this.getOperation(), null, "operations", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1308,8 +2822,8 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_Type(), this.getAttributeType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_Initialization(), this.getAttributeInitialization(), null, "initialization", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_DerivedFrom(), ecorePackage.getEString(), "derivedFrom", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_Initialization(), this.getExpCS(), null, "initialization", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_DerivedFrom(), this.getExpCS(), null, "derivedFrom", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1319,25 +2833,11 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEClass(classTypeEClass, ClassType.class, "ClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getClassType_Type(), this.getUseClass(), null, "type", null, 0, 1, ClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeInitializationEClass, AttributeInitialization.class, "AttributeInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(doubleInitializationEClass, DoubleInitialization.class, "DoubleInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDoubleInitialization_Value(), ecorePackage.getEString(), "value", null, 0, 1, DoubleInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(booleanInitializationEClass, BooleanInitialization.class, "BooleanInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBooleanInitialization_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(integerInitializationEClass, IntegerInitialization.class, "IntegerInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntegerInitialization_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringInitializationEClass, StringInitialization.class, "StringInitialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringInitialization_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringInitialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_InputParameters(), this.getParameter(), null, "inputParameters", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_ReturnParameter(), this.getAttributeType(), null, "returnParameter", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOperation_OperationBody(), ecorePackage.getEString(), "operationBody", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperation_OperationBody(), this.getExpCS(), null, "operationBody", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMethod_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1349,25 +2849,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEReference(getParameter_Type(), this.getAttributeType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCondition_ConditionBody(), this.getConditionBody(), null, "conditionBody", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_ConditionBody(), this.getExpCS(), null, "conditionBody", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preconditionEClass, Precondition.class, "Precondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(postconditionEClass, Postcondition.class, "Postcondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(conditionBodyEClass, ConditionBody.class, "ConditionBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConditionBody_Name(), ecorePackage.getEString(), "name", null, 0, 1, ConditionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConditionBody_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, ConditionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConstraint_ConditionBody(), this.getConditionBody(), null, "conditionBody", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraint_ConstraintBody(), this.getExpCS(), null, "constraintBody", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRelation_RelationType(), ecorePackage.getEString(), "relationType", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRelation_RelationBody(), this.getRelationBody(), null, "relationBody", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(compositionEClass, Composition.class, "Composition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(relationBodyEClass, RelationBody.class, "RelationBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelationBody_OriginClass(), this.getRelationMember(), null, "originClass", null, 0, 1, RelationBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1375,25 +2870,175 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
 
     initEClass(relationMemberEClass, RelationMember.class, "RelationMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelationMember_Class(), this.getUseClass(), null, "class", null, 0, 1, RelationMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelationMember_Cardinality(), this.getCardinalityType(), null, "cardinality", null, 0, 1, RelationMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationMember_Cardinality(), this.getMultiplicityCS(), null, "cardinality", null, 0, 1, RelationMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRelationMember_RoleName(), ecorePackage.getEString(), "roleName", null, 0, 1, RelationMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(cardinalityTypeEClass, CardinalityType.class, "CardinalityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(primitiveTypeRefCSEClass, PrimitiveTypeRefCS.class, "PrimitiveTypeRefCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPrimitiveTypeRefCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, PrimitiveTypeRefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(simpleCardinalityEClass, SimpleCardinality.class, "SimpleCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSimpleCardinality_Cardinality(), this.getCardinalityValue(), null, "cardinality", null, 0, 1, SimpleCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(collectionTypeCSEClass, CollectionTypeCS.class, "CollectionTypeCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCollectionTypeCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, CollectionTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionTypeCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, CollectionTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionTypeCS_OwnedCollectionMultiplicity(), this.getMultiplicityCS(), null, "ownedCollectionMultiplicity", null, 0, 1, CollectionTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(doubleCardinalityEClass, DoubleCardinality.class, "DoubleCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDoubleCardinality_OriginCardinality(), this.getCardinalityValue(), null, "originCardinality", null, 0, 1, DoubleCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDoubleCardinality_DestinyCardinality(), this.getCardinalityValue(), null, "destinyCardinality", null, 0, 1, DoubleCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(mapTypeCSEClass, MapTypeCS.class, "MapTypeCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMapTypeCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, MapTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapTypeCS_OwnedKeyType(), this.getTypedRefCS(), null, "ownedKeyType", null, 0, 1, MapTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapTypeCS_OwnedValueType(), this.getTypedRefCS(), null, "ownedValueType", null, 0, 1, MapTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(cardinalityValueEClass, CardinalityValue.class, "CardinalityValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(tupleTypeCSEClass, TupleTypeCS.class, "TupleTypeCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTupleTypeCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, TupleTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTupleTypeCS_OwnedParts(), this.getTuplePartCS(), null, "ownedParts", null, 0, -1, TupleTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(intCardinalityEClass, IntCardinality.class, "IntCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntCardinality_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(tuplePartCSEClass, TuplePartCS.class, "TuplePartCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTuplePartCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, TuplePartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTuplePartCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, TuplePartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(asteriskCardinalityEClass, AsteriskCardinality.class, "AsteriskCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAsteriskCardinality_Value(), ecorePackage.getEString(), "value", null, 0, 1, AsteriskCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(collectionPatternCSEClass, CollectionPatternCS.class, "CollectionPatternCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCollectionPatternCS_OwnedType(), this.getCollectionTypeCS(), null, "ownedType", null, 0, 1, CollectionPatternCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionPatternCS_OwnedParts(), this.getPatternExpCS(), null, "ownedParts", null, 0, -1, CollectionPatternCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCollectionPatternCS_RestVariableName(), ecorePackage.getEString(), "restVariableName", null, 0, 1, CollectionPatternCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(patternExpCSEClass, PatternExpCS.class, "PatternExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPatternExpCS_PatternVariableName(), ecorePackage.getEString(), "patternVariableName", null, 0, 1, PatternExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPatternExpCS_OwnedPatternType(), this.getTypedRefCS(), null, "ownedPatternType", null, 0, 1, PatternExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typedRefCSEClass, TypedRefCS.class, "TypedRefCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypedRefCS_OwnedMultiplicity(), this.getMultiplicityCS(), null, "ownedMultiplicity", null, 0, 1, TypedRefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeLiteralExpCSEClass, TypeLiteralExpCS.class, "TypeLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeLiteralExpCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, TypeLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeNameExpCSEClass, TypeNameExpCS.class, "TypeNameExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeNameExpCS_OwnedPathName(), this.getPathNameCS(), null, "ownedPathName", null, 0, 1, TypeNameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameExpCS_OwnedCurlyBracketedClause(), this.getCurlyBracketedClauseCS(), null, "ownedCurlyBracketedClause", null, 0, 1, TypeNameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameExpCS_OwnedPatternGuard(), this.getExpCS(), null, "ownedPatternGuard", null, 0, 1, TypeNameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(curlyBracketedClauseCSEClass, CurlyBracketedClauseCS.class, "CurlyBracketedClauseCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCurlyBracketedClauseCS_OwnedParts(), this.getShadowPartCS(), null, "ownedParts", null, 0, -1, CurlyBracketedClauseCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(shadowPartCSEClass, ShadowPartCS.class, "ShadowPartCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getShadowPartCS_ReferredProperty(), ecorePackage.getEString(), "referredProperty", null, 0, 1, ShadowPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getShadowPartCS_OwnedInitExpression(), ecorePackage.getEObject(), null, "ownedInitExpression", null, 0, 1, ShadowPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringLiteralExpCSEClass, StringLiteralExpCS.class, "StringLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringLiteralExpCS_Segments(), ecorePackage.getEString(), "segments", null, 0, -1, StringLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicityBoundsCSEClass, MultiplicityBoundsCS.class, "MultiplicityBoundsCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityBoundsCS_LowerBound(), ecorePackage.getEString(), "lowerBound", null, 0, 1, MultiplicityBoundsCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityBoundsCS_UpperBound(), ecorePackage.getEString(), "upperBound", null, 0, 1, MultiplicityBoundsCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicityCSEClass, MultiplicityCS.class, "MultiplicityCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityCS_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, MultiplicityCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicityStringCSEClass, MultiplicityStringCS.class, "MultiplicityStringCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityStringCS_StringBounds(), ecorePackage.getEString(), "stringBounds", null, 0, 1, MultiplicityStringCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pathNameCSEClass, PathNameCS.class, "PathNameCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPathNameCS_OwnedPathElements(), ecorePackage.getEString(), "ownedPathElements", null, 0, -1, PathNameCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expCSEClass, ExpCS.class, "ExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(primitiveLiteralExpCSEClass, PrimitiveLiteralExpCS.class, "PrimitiveLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nameExpCSEClass, NameExpCS.class, "NameExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNameExpCS_OwnedPathName(), this.getPathNameCS(), null, "ownedPathName", null, 0, 1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameExpCS_OwnedSquareBracketedClauses(), this.getSquareBracketedClauseCS(), null, "ownedSquareBracketedClauses", null, 0, -1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameExpCS_OwnedRoundBracketedClause(), this.getRoundBracketedClauseCS(), null, "ownedRoundBracketedClause", null, 0, 1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameExpCS_OwnedCurlyBracketedClause(), this.getCurlyBracketedClauseCS(), null, "ownedCurlyBracketedClause", null, 0, 1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNameExpCS_IsPre(), ecorePackage.getEBoolean(), "isPre", null, 0, 1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNameExpCS_Pre(), ecorePackage.getEBoolean(), "pre", null, 0, 1, NameExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(squareBracketedClauseCSEClass, SquareBracketedClauseCS.class, "SquareBracketedClauseCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSquareBracketedClauseCS_OwnedTerms(), this.getExpCS(), null, "ownedTerms", null, 0, -1, SquareBracketedClauseCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(collectionLiteralExpCSEClass, CollectionLiteralExpCS.class, "CollectionLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCollectionLiteralExpCS_OwnedType(), this.getCollectionTypeCS(), null, "ownedType", null, 0, 1, CollectionLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionLiteralExpCS_OwnedParts(), this.getCollectionLiteralPartCS(), null, "ownedParts", null, 0, -1, CollectionLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(collectionLiteralPartCSEClass, CollectionLiteralPartCS.class, "CollectionLiteralPartCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCollectionLiteralPartCS_OwnedExpression(), ecorePackage.getEObject(), null, "ownedExpression", null, 0, 1, CollectionLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionLiteralPartCS_OwnedLastExpression(), this.getExpCS(), null, "ownedLastExpression", null, 0, 1, CollectionLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lambdaLiteralExpCSEClass, LambdaLiteralExpCS.class, "LambdaLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLambdaLiteralExpCS_OwnedExpressionCS(), this.getExpCS(), null, "ownedExpressionCS", null, 0, 1, LambdaLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mapLiteralExpCSEClass, MapLiteralExpCS.class, "MapLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMapLiteralExpCS_OwnedType(), this.getMapTypeCS(), null, "ownedType", null, 0, 1, MapLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapLiteralExpCS_OwnedParts(), this.getMapLiteralPartCS(), null, "ownedParts", null, 0, -1, MapLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mapLiteralPartCSEClass, MapLiteralPartCS.class, "MapLiteralPartCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMapLiteralPartCS_OwnedKey(), this.getExpCS(), null, "ownedKey", null, 0, 1, MapLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapLiteralPartCS_OwnedValue(), this.getExpCS(), null, "ownedValue", null, 0, 1, MapLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tupleLiteralExpCSEClass, TupleLiteralExpCS.class, "TupleLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTupleLiteralExpCS_OwnedParts(), this.getTupleLiteralPartCS(), null, "ownedParts", null, 0, -1, TupleLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tupleLiteralPartCSEClass, TupleLiteralPartCS.class, "TupleLiteralPartCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTupleLiteralPartCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, TupleLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTupleLiteralPartCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, TupleLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTupleLiteralPartCS_OwnedInitExpression(), this.getExpCS(), null, "ownedInitExpression", null, 0, 1, TupleLiteralPartCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberLiteralExpCSEClass, NumberLiteralExpCS.class, "NumberLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumberLiteralExpCS_Value(), ecorePackage.getEInt(), "value", null, 0, 1, NumberLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanLiteralExpCSEClass, BooleanLiteralExpCS.class, "BooleanLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanLiteralExpCS_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, BooleanLiteralExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unlimitedNaturalLiteralExpCSEClass, UnlimitedNaturalLiteralExpCS.class, "UnlimitedNaturalLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(invalidLiteralExpCSEClass, InvalidLiteralExpCS.class, "InvalidLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nullLiteralExpCSEClass, NullLiteralExpCS.class, "NullLiteralExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nestedExpCSEClass, NestedExpCS.class, "NestedExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNestedExpCS_OwnedExpression(), this.getExpCS(), null, "ownedExpression", null, 0, 1, NestedExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifExpCSEClass, IfExpCS.class, "IfExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfExpCS_OwnedCondition(), ecorePackage.getEObject(), null, "ownedCondition", null, 0, 1, IfExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfExpCS_OwnedThenExpression(), this.getExpCS(), null, "ownedThenExpression", null, 0, 1, IfExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfExpCS_OwnedIfThenExpressions(), this.getIfThenExpCS(), null, "ownedIfThenExpressions", null, 0, -1, IfExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfExpCS_OwnedElseExpression(), this.getExpCS(), null, "ownedElseExpression", null, 0, 1, IfExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifThenExpCSEClass, IfThenExpCS.class, "IfThenExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfThenExpCS_OwnedCondition(), this.getExpCS(), null, "ownedCondition", null, 0, 1, IfThenExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfThenExpCS_OwnedThenExpression(), this.getExpCS(), null, "ownedThenExpression", null, 0, 1, IfThenExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(letExpCSEClass, LetExpCS.class, "LetExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLetExpCS_OwnedVariables(), this.getLetVariableCS(), null, "ownedVariables", null, 0, -1, LetExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLetExpCS_OwnedInExpression(), this.getExpCS(), null, "ownedInExpression", null, 0, 1, LetExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(letVariableCSEClass, LetVariableCS.class, "LetVariableCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLetVariableCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, LetVariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLetVariableCS_OwnedRoundBracketedClause(), this.getRoundBracketedClauseCS(), null, "ownedRoundBracketedClause", null, 0, 1, LetVariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLetVariableCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, LetVariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLetVariableCS_OwnedInitExpression(), this.getExpCS(), null, "ownedInitExpression", null, 0, 1, LetVariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(roundBracketedClauseCSEClass, RoundBracketedClauseCS.class, "RoundBracketedClauseCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoundBracketedClauseCS_OwnedArguments(), this.getNavigatingArgCS(), null, "ownedArguments", null, 0, -1, RoundBracketedClauseCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(navigatingArgCSEClass, NavigatingArgCS.class, "NavigatingArgCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNavigatingArgCS_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNavigatingArgCS_OwnedNameExpression(), this.getExpCS(), null, "ownedNameExpression", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNavigatingArgCS_SymbolT(), ecorePackage.getEString(), "symbolT", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNavigatingArgCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNavigatingArgCS_SymbolIE(), ecorePackage.getEString(), "symbolIE", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNavigatingArgCS_OwnedInitExpression(), this.getExpCS(), null, "ownedInitExpression", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNavigatingArgCS_SymbolCI(), ecorePackage.getEString(), "symbolCI", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNavigatingArgCS_OwnedCoIterator(), this.getVariableCS(), null, "ownedCoIterator", null, 0, 1, NavigatingArgCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableCSEClass, VariableCS.class, "VariableCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableCS_OwnedType(), this.getTypedRefCS(), null, "ownedType", null, 0, 1, VariableCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(infixExpCSEClass, InfixExpCS.class, "InfixExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInfixExpCS_OwnedLeft(), this.getExpCS(), null, "ownedLeft", null, 0, 1, InfixExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfixExpCS_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, InfixExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfixExpCS_OwnedRight(), this.getExpCS(), null, "ownedRight", null, 0, 1, InfixExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(prefixExpCSEClass, PrefixExpCS.class, "PrefixExpCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPrefixExpCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, PrefixExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrefixExpCS_OwnedRight(), this.getExpCS(), null, "ownedRight", null, 0, 1, PrefixExpCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

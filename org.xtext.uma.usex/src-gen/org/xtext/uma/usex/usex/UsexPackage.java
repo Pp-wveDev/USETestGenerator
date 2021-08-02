@@ -142,13 +142,22 @@ public interface UsexPackage extends EPackage
   int USE_CLASS__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
+   * The feature id for the '<em><b>Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_CLASS__ABSTRACT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USE_CLASS__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int USE_CLASS__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -157,7 +166,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS__OPERATIONS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int USE_CLASS__OPERATIONS = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -166,7 +175,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS__CONSTRAINTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int USE_CLASS__CONSTRAINTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Use Class</em>' class.
@@ -175,7 +184,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int USE_CLASS_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -215,7 +224,7 @@ public interface UsexPackage extends EPackage
   int ATTRIBUTE__INITIALIZATION = 2;
 
   /**
-   * The feature id for the '<em><b>Derived From</b></em>' attribute.
+   * The feature id for the '<em><b>Derived From</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -308,137 +317,6 @@ public interface UsexPackage extends EPackage
   int CLASS_TYPE_FEATURE_COUNT = ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AttributeInitializationImpl <em>Attribute Initialization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.AttributeInitializationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAttributeInitialization()
-   * @generated
-   */
-  int ATTRIBUTE_INITIALIZATION = 7;
-
-  /**
-   * The number of structural features of the '<em>Attribute Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_INITIALIZATION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.DoubleInitializationImpl <em>Double Initialization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.DoubleInitializationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getDoubleInitialization()
-   * @generated
-   */
-  int DOUBLE_INITIALIZATION = 8;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_INITIALIZATION__VALUE = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Double Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_INITIALIZATION_FEATURE_COUNT = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.BooleanInitializationImpl <em>Boolean Initialization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.BooleanInitializationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getBooleanInitialization()
-   * @generated
-   */
-  int BOOLEAN_INITIALIZATION = 9;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_INITIALIZATION__VALUE = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Boolean Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_INITIALIZATION_FEATURE_COUNT = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.IntegerInitializationImpl <em>Integer Initialization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.IntegerInitializationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIntegerInitialization()
-   * @generated
-   */
-  int INTEGER_INITIALIZATION = 10;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEGER_INITIALIZATION__VALUE = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Integer Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEGER_INITIALIZATION_FEATURE_COUNT = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.StringInitializationImpl <em>String Initialization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.StringInitializationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getStringInitialization()
-   * @generated
-   */
-  int STRING_INITIALIZATION = 11;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_INITIALIZATION__VALUE = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>String Initialization</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_INITIALIZATION_FEATURE_COUNT = ATTRIBUTE_INITIALIZATION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.OperationImpl <em>Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -446,7 +324,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 12;
+  int OPERATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -476,7 +354,7 @@ public interface UsexPackage extends EPackage
   int OPERATION__RETURN_PARAMETER = 2;
 
   /**
-   * The feature id for the '<em><b>Operation Body</b></em>' attribute.
+   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -501,7 +379,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMethod()
    * @generated
    */
-  int METHOD = 13;
+  int METHOD = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -531,7 +409,7 @@ public interface UsexPackage extends EPackage
   int METHOD__RETURN_PARAMETER = OPERATION__RETURN_PARAMETER;
 
   /**
-   * The feature id for the '<em><b>Operation Body</b></em>' attribute.
+   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -565,7 +443,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 14;
+  int QUERY = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -595,7 +473,7 @@ public interface UsexPackage extends EPackage
   int QUERY__RETURN_PARAMETER = OPERATION__RETURN_PARAMETER;
 
   /**
-   * The feature id for the '<em><b>Operation Body</b></em>' attribute.
+   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -620,7 +498,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 15;
+  int PARAMETER = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -657,7 +535,16 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 16;
+  int CONDITION = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Condition Body</b></em>' containment reference.
@@ -666,7 +553,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION__CONDITION_BODY = 0;
+  int CONDITION__CONDITION_BODY = 1;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -675,7 +562,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_FEATURE_COUNT = 1;
+  int CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PreconditionImpl <em>Precondition</em>}' class.
@@ -685,7 +572,16 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrecondition()
    * @generated
    */
-  int PRECONDITION = 17;
+  int PRECONDITION = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRECONDITION__NAME = CONDITION__NAME;
 
   /**
    * The feature id for the '<em><b>Condition Body</b></em>' containment reference.
@@ -713,7 +609,16 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPostcondition()
    * @generated
    */
-  int POSTCONDITION = 18;
+  int POSTCONDITION = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSTCONDITION__NAME = CONDITION__NAME;
 
   /**
    * The feature id for the '<em><b>Condition Body</b></em>' containment reference.
@@ -734,14 +639,14 @@ public interface UsexPackage extends EPackage
   int POSTCONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ConditionBodyImpl <em>Condition Body</em>}' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ConstraintImpl <em>Constraint</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.ConditionBodyImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getConditionBody()
+   * @see org.xtext.uma.usex.usex.impl.ConstraintImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getConstraint()
    * @generated
    */
-  int CONDITION_BODY = 19;
+  int CONSTRAINT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -750,44 +655,16 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITION_BODY__NAME = 0;
+  int CONSTRAINT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * The feature id for the '<em><b>Constraint Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION_BODY__CONDITION = 1;
-
-  /**
-   * The number of structural features of the '<em>Condition Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_BODY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ConstraintImpl <em>Constraint</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.ConstraintImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getConstraint()
-   * @generated
-   */
-  int CONSTRAINT = 20;
-
-  /**
-   * The feature id for the '<em><b>Condition Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINT__CONDITION_BODY = 0;
+  int CONSTRAINT__CONSTRAINT_BODY = 1;
 
   /**
    * The number of structural features of the '<em>Constraint</em>' class.
@@ -796,7 +673,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_FEATURE_COUNT = 1;
+  int CONSTRAINT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.RelationImpl <em>Relation</em>}' class.
@@ -806,7 +683,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelation()
    * @generated
    */
-  int RELATION = 21;
+  int RELATION = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -818,13 +695,22 @@ public interface UsexPackage extends EPackage
   int RELATION__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
+   * The feature id for the '<em><b>Relation Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATION__RELATION_TYPE = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Relation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATION__RELATION_BODY = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int RELATION__RELATION_BODY = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Relation</em>' class.
@@ -833,81 +719,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AssociationImpl <em>Association</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.AssociationImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAssociation()
-   * @generated
-   */
-  int ASSOCIATION = 22;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSOCIATION__NAME = RELATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Relation Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSOCIATION__RELATION_BODY = RELATION__RELATION_BODY;
-
-  /**
-   * The number of structural features of the '<em>Association</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSOCIATION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CompositionImpl <em>Composition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.CompositionImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getComposition()
-   * @generated
-   */
-  int COMPOSITION = 23;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITION__NAME = RELATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Relation Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITION__RELATION_BODY = RELATION__RELATION_BODY;
-
-  /**
-   * The number of structural features of the '<em>Composition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 0;
+  int RELATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.RelationBodyImpl <em>Relation Body</em>}' class.
@@ -917,7 +729,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelationBody()
    * @generated
    */
-  int RELATION_BODY = 24;
+  int RELATION_BODY = 16;
 
   /**
    * The feature id for the '<em><b>Origin Class</b></em>' containment reference.
@@ -954,7 +766,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelationMember()
    * @generated
    */
-  int RELATION_MEMBER = 25;
+  int RELATION_MEMBER = 17;
 
   /**
    * The feature id for the '<em><b>Class</b></em>' reference.
@@ -993,117 +805,1068 @@ public interface UsexPackage extends EPackage
   int RELATION_MEMBER_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CardinalityTypeImpl <em>Cardinality Type</em>}' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TypedRefCSImpl <em>Typed Ref CS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.CardinalityTypeImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCardinalityType()
+   * @see org.xtext.uma.usex.usex.impl.TypedRefCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypedRefCS()
    * @generated
    */
-  int CARDINALITY_TYPE = 26;
+  int TYPED_REF_CS = 25;
 
   /**
-   * The number of structural features of the '<em>Cardinality Type</em>' class.
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CARDINALITY_TYPE_FEATURE_COUNT = 0;
+  int TYPED_REF_CS__OWNED_MULTIPLICITY = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.SimpleCardinalityImpl <em>Simple Cardinality</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.SimpleCardinalityImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getSimpleCardinality()
-   * @generated
-   */
-  int SIMPLE_CARDINALITY = 27;
-
-  /**
-   * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+   * The number of structural features of the '<em>Typed Ref CS</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_CARDINALITY__CARDINALITY = CARDINALITY_TYPE_FEATURE_COUNT + 0;
+  int TYPED_REF_CS_FEATURE_COUNT = 1;
 
   /**
-   * The number of structural features of the '<em>Simple Cardinality</em>' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PrimitiveTypeRefCSImpl <em>Primitive Type Ref CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.PrimitiveTypeRefCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveTypeRefCS()
+   * @generated
+   */
+  int PRIMITIVE_TYPE_REF_CS = 18;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_CARDINALITY_FEATURE_COUNT = CARDINALITY_TYPE_FEATURE_COUNT + 1;
+  int PRIMITIVE_TYPE_REF_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.DoubleCardinalityImpl <em>Double Cardinality</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.DoubleCardinalityImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getDoubleCardinality()
-   * @generated
-   */
-  int DOUBLE_CARDINALITY = 28;
-
-  /**
-   * The feature id for the '<em><b>Origin Cardinality</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOUBLE_CARDINALITY__ORIGIN_CARDINALITY = CARDINALITY_TYPE_FEATURE_COUNT + 0;
+  int PRIMITIVE_TYPE_REF_CS__NAME = TYPED_REF_CS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Destiny Cardinality</b></em>' containment reference.
+   * The number of structural features of the '<em>Primitive Type Ref CS</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOUBLE_CARDINALITY__DESTINY_CARDINALITY = CARDINALITY_TYPE_FEATURE_COUNT + 1;
+  int PRIMITIVE_TYPE_REF_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Double Cardinality</em>' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CollectionTypeCSImpl <em>Collection Type CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CollectionTypeCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionTypeCS()
+   * @generated
+   */
+  int COLLECTION_TYPE_CS = 19;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOUBLE_CARDINALITY_FEATURE_COUNT = CARDINALITY_TYPE_FEATURE_COUNT + 2;
+  int COLLECTION_TYPE_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CardinalityValueImpl <em>Cardinality Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.CardinalityValueImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCardinalityValue()
-   * @generated
-   */
-  int CARDINALITY_VALUE = 29;
-
-  /**
-   * The number of structural features of the '<em>Cardinality Value</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CARDINALITY_VALUE_FEATURE_COUNT = 0;
+  int COLLECTION_TYPE_CS__NAME = TYPED_REF_CS_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.IntCardinalityImpl <em>Int Cardinality</em>}' class.
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.IntCardinalityImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIntCardinality()
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE_CS__OWNED_TYPE = TYPED_REF_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Collection Multiplicity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE_CS__OWNED_COLLECTION_MULTIPLICITY = TYPED_REF_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Collection Type CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MapTypeCSImpl <em>Map Type CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MapTypeCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapTypeCS()
    * @generated
    */
-  int INT_CARDINALITY = 30;
+  int MAP_TYPE_CS = 20;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_CS__NAME = TYPED_REF_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Key Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_CS__OWNED_KEY_TYPE = TYPED_REF_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Value Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_CS__OWNED_VALUE_TYPE = TYPED_REF_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Map Type CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_TYPE_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TupleTypeCSImpl <em>Tuple Type CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TupleTypeCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleTypeCS()
+   * @generated
+   */
+  int TUPLE_TYPE_CS = 21;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_TYPE_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_TYPE_CS__NAME = TYPED_REF_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_TYPE_CS__OWNED_PARTS = TYPED_REF_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Tuple Type CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_TYPE_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TuplePartCSImpl <em>Tuple Part CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TuplePartCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTuplePartCS()
+   * @generated
+   */
+  int TUPLE_PART_CS = 22;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_PART_CS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_PART_CS__OWNED_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Tuple Part CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_PART_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CollectionPatternCSImpl <em>Collection Pattern CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CollectionPatternCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionPatternCS()
+   * @generated
+   */
+  int COLLECTION_PATTERN_CS = 23;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_PATTERN_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_PATTERN_CS__OWNED_TYPE = TYPED_REF_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_PATTERN_CS__OWNED_PARTS = TYPED_REF_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Rest Variable Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_PATTERN_CS__REST_VARIABLE_NAME = TYPED_REF_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Collection Pattern CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_PATTERN_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PatternExpCSImpl <em>Pattern Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.PatternExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPatternExpCS()
+   * @generated
+   */
+  int PATTERN_EXP_CS = 24;
+
+  /**
+   * The feature id for the '<em><b>Pattern Variable Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_EXP_CS__PATTERN_VARIABLE_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Pattern Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_EXP_CS__OWNED_PATTERN_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Pattern Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATTERN_EXP_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ExpCSImpl <em>Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.ExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getExpCS()
+   * @generated
+   */
+  int EXP_CS = 35;
+
+  /**
+   * The number of structural features of the '<em>Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_CS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TypeLiteralExpCSImpl <em>Type Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TypeLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeLiteralExpCS()
+   * @generated
+   */
+  int TYPE_LITERAL_EXP_CS = 26;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LITERAL_EXP_CS__OWNED_TYPE = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Type Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TypeNameExpCSImpl <em>Type Name Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TypeNameExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeNameExpCS()
+   * @generated
+   */
+  int TYPE_NAME_EXP_CS = 27;
+
+  /**
+   * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_EXP_CS__OWNED_MULTIPLICITY = TYPED_REF_CS__OWNED_MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Owned Path Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_EXP_CS__OWNED_PATH_NAME = TYPED_REF_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Curly Bracketed Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE = TYPED_REF_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Pattern Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_EXP_CS__OWNED_PATTERN_GUARD = TYPED_REF_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Type Name Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_NAME_EXP_CS_FEATURE_COUNT = TYPED_REF_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CurlyBracketedClauseCSImpl <em>Curly Bracketed Clause CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CurlyBracketedClauseCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCurlyBracketedClauseCS()
+   * @generated
+   */
+  int CURLY_BRACKETED_CLAUSE_CS = 28;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CURLY_BRACKETED_CLAUSE_CS__OWNED_PARTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Curly Bracketed Clause CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CURLY_BRACKETED_CLAUSE_CS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ShadowPartCSImpl <em>Shadow Part CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.ShadowPartCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getShadowPartCS()
+   * @generated
+   */
+  int SHADOW_PART_CS = 29;
+
+  /**
+   * The feature id for the '<em><b>Referred Property</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHADOW_PART_CS__REFERRED_PROPERTY = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Init Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHADOW_PART_CS__OWNED_INIT_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Shadow Part CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHADOW_PART_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PrimitiveLiteralExpCSImpl <em>Primitive Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.PrimitiveLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveLiteralExpCS()
+   * @generated
+   */
+  int PRIMITIVE_LITERAL_EXP_CS = 36;
+
+  /**
+   * The number of structural features of the '<em>Primitive Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.StringLiteralExpCSImpl <em>String Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.StringLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getStringLiteralExpCS()
+   * @generated
+   */
+  int STRING_LITERAL_EXP_CS = 30;
+
+  /**
+   * The feature id for the '<em><b>Segments</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL_EXP_CS__SEGMENTS = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityCSImpl <em>Multiplicity CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MultiplicityCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityCS()
+   * @generated
+   */
+  int MULTIPLICITY_CS = 32;
+
+  /**
+   * The feature id for the '<em><b>Symbol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_CS__SYMBOL = 0;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_CS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityBoundsCSImpl <em>Multiplicity Bounds CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MultiplicityBoundsCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityBoundsCS()
+   * @generated
+   */
+  int MULTIPLICITY_BOUNDS_CS = 31;
+
+  /**
+   * The feature id for the '<em><b>Symbol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS_CS__SYMBOL = MULTIPLICITY_CS__SYMBOL;
+
+  /**
+   * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS_CS__LOWER_BOUND = MULTIPLICITY_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS_CS__UPPER_BOUND = MULTIPLICITY_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity Bounds CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS_CS_FEATURE_COUNT = MULTIPLICITY_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityStringCSImpl <em>Multiplicity String CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MultiplicityStringCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityStringCS()
+   * @generated
+   */
+  int MULTIPLICITY_STRING_CS = 33;
+
+  /**
+   * The feature id for the '<em><b>Symbol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_STRING_CS__SYMBOL = MULTIPLICITY_CS__SYMBOL;
+
+  /**
+   * The feature id for the '<em><b>String Bounds</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_STRING_CS__STRING_BOUNDS = MULTIPLICITY_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity String CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_STRING_CS_FEATURE_COUNT = MULTIPLICITY_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PathNameCSImpl <em>Path Name CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.PathNameCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPathNameCS()
+   * @generated
+   */
+  int PATH_NAME_CS = 34;
+
+  /**
+   * The feature id for the '<em><b>Owned Path Elements</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATH_NAME_CS__OWNED_PATH_ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Path Name CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PATH_NAME_CS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.NameExpCSImpl <em>Name Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.NameExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNameExpCS()
+   * @generated
+   */
+  int NAME_EXP_CS = 37;
+
+  /**
+   * The feature id for the '<em><b>Owned Path Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__OWNED_PATH_NAME = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Square Bracketed Clauses</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__OWNED_SQUARE_BRACKETED_CLAUSES = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Round Bracketed Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__OWNED_ROUND_BRACKETED_CLAUSE = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Curly Bracketed Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE = EXP_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Pre</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__IS_PRE = EXP_CS_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Pre</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS__PRE = EXP_CS_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Name Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.SquareBracketedClauseCSImpl <em>Square Bracketed Clause CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.SquareBracketedClauseCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getSquareBracketedClauseCS()
+   * @generated
+   */
+  int SQUARE_BRACKETED_CLAUSE_CS = 38;
+
+  /**
+   * The feature id for the '<em><b>Owned Terms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_BRACKETED_CLAUSE_CS__OWNED_TERMS = 0;
+
+  /**
+   * The number of structural features of the '<em>Square Bracketed Clause CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_BRACKETED_CLAUSE_CS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CollectionLiteralExpCSImpl <em>Collection Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CollectionLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralExpCS()
+   * @generated
+   */
+  int COLLECTION_LITERAL_EXP_CS = 39;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_EXP_CS__OWNED_TYPE = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_EXP_CS__OWNED_PARTS = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Collection Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CollectionLiteralPartCSImpl <em>Collection Literal Part CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CollectionLiteralPartCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralPartCS()
+   * @generated
+   */
+  int COLLECTION_LITERAL_PART_CS = 40;
+
+  /**
+   * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_PART_CS__OWNED_EXPRESSION = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Last Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_PART_CS__OWNED_LAST_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Collection Literal Part CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_LITERAL_PART_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.LambdaLiteralExpCSImpl <em>Lambda Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.LambdaLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLambdaLiteralExpCS()
+   * @generated
+   */
+  int LAMBDA_LITERAL_EXP_CS = 41;
+
+  /**
+   * The feature id for the '<em><b>Owned Expression CS</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA_LITERAL_EXP_CS__OWNED_EXPRESSION_CS = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Lambda Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MapLiteralExpCSImpl <em>Map Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MapLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralExpCS()
+   * @generated
+   */
+  int MAP_LITERAL_EXP_CS = 42;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_EXP_CS__OWNED_TYPE = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_EXP_CS__OWNED_PARTS = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Map Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MapLiteralPartCSImpl <em>Map Literal Part CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MapLiteralPartCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralPartCS()
+   * @generated
+   */
+  int MAP_LITERAL_PART_CS = 43;
+
+  /**
+   * The feature id for the '<em><b>Owned Key</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_PART_CS__OWNED_KEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_PART_CS__OWNED_VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Map Literal Part CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_LITERAL_PART_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TupleLiteralExpCSImpl <em>Tuple Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TupleLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralExpCS()
+   * @generated
+   */
+  int TUPLE_LITERAL_EXP_CS = 44;
+
+  /**
+   * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_EXP_CS__OWNED_PARTS = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Tuple Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.TupleLiteralPartCSImpl <em>Tuple Literal Part CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.TupleLiteralPartCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralPartCS()
+   * @generated
+   */
+  int TUPLE_LITERAL_PART_CS = 45;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_PART_CS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_PART_CS__OWNED_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Init Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_PART_CS__OWNED_INIT_EXPRESSION = 2;
+
+  /**
+   * The number of structural features of the '<em>Tuple Literal Part CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_LITERAL_PART_CS_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.NumberLiteralExpCSImpl <em>Number Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.NumberLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNumberLiteralExpCS()
+   * @generated
+   */
+  int NUMBER_LITERAL_EXP_CS = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1112,44 +1875,552 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INT_CARDINALITY__VALUE = CARDINALITY_VALUE_FEATURE_COUNT + 0;
+  int NUMBER_LITERAL_EXP_CS__VALUE = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Int Cardinality</em>' class.
+   * The number of structural features of the '<em>Number Literal Exp CS</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INT_CARDINALITY_FEATURE_COUNT = CARDINALITY_VALUE_FEATURE_COUNT + 1;
+  int NUMBER_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AsteriskCardinalityImpl <em>Asterisk Cardinality</em>}' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.BooleanLiteralExpCSImpl <em>Boolean Literal Exp CS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.AsteriskCardinalityImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAsteriskCardinality()
+   * @see org.xtext.uma.usex.usex.impl.BooleanLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getBooleanLiteralExpCS()
    * @generated
    */
-  int ASTERISK_CARDINALITY = 31;
+  int BOOLEAN_LITERAL_EXP_CS = 47;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASTERISK_CARDINALITY__VALUE = CARDINALITY_VALUE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Asterisk Cardinality</em>' class.
+   * The feature id for the '<em><b>Symbol</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASTERISK_CARDINALITY_FEATURE_COUNT = CARDINALITY_VALUE_FEATURE_COUNT + 1;
+  int BOOLEAN_LITERAL_EXP_CS__SYMBOL = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.UnlimitedNaturalLiteralExpCSImpl <em>Unlimited Natural Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.UnlimitedNaturalLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getUnlimitedNaturalLiteralExpCS()
+   * @generated
+   */
+  int UNLIMITED_NATURAL_LITERAL_EXP_CS = 48;
+
+  /**
+   * The number of structural features of the '<em>Unlimited Natural Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNLIMITED_NATURAL_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.InvalidLiteralExpCSImpl <em>Invalid Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.InvalidLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInvalidLiteralExpCS()
+   * @generated
+   */
+  int INVALID_LITERAL_EXP_CS = 49;
+
+  /**
+   * The number of structural features of the '<em>Invalid Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVALID_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.NullLiteralExpCSImpl <em>Null Literal Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.NullLiteralExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNullLiteralExpCS()
+   * @generated
+   */
+  int NULL_LITERAL_EXP_CS = 50;
+
+  /**
+   * The number of structural features of the '<em>Null Literal Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NULL_LITERAL_EXP_CS_FEATURE_COUNT = PRIMITIVE_LITERAL_EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.NestedExpCSImpl <em>Nested Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.NestedExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNestedExpCS()
+   * @generated
+   */
+  int NESTED_EXP_CS = 51;
+
+  /**
+   * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_EXP_CS__OWNED_EXPRESSION = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Nested Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NESTED_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.IfExpCSImpl <em>If Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.IfExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfExpCS()
+   * @generated
+   */
+  int IF_EXP_CS = 52;
+
+  /**
+   * The feature id for the '<em><b>Owned Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EXP_CS__OWNED_CONDITION = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Then Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EXP_CS__OWNED_THEN_EXPRESSION = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned If Then Expressions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EXP_CS__OWNED_IF_THEN_EXPRESSIONS = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Else Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EXP_CS__OWNED_ELSE_EXPRESSION = EXP_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>If Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.IfThenExpCSImpl <em>If Then Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.IfThenExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfThenExpCS()
+   * @generated
+   */
+  int IF_THEN_EXP_CS = 53;
+
+  /**
+   * The feature id for the '<em><b>Owned Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_THEN_EXP_CS__OWNED_CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Then Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_THEN_EXP_CS__OWNED_THEN_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>If Then Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_THEN_EXP_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.LetExpCSImpl <em>Let Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.LetExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetExpCS()
+   * @generated
+   */
+  int LET_EXP_CS = 54;
+
+  /**
+   * The feature id for the '<em><b>Owned Variables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_EXP_CS__OWNED_VARIABLES = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned In Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_EXP_CS__OWNED_IN_EXPRESSION = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Let Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.LetVariableCSImpl <em>Let Variable CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.LetVariableCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetVariableCS()
+   * @generated
+   */
+  int LET_VARIABLE_CS = 55;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_VARIABLE_CS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Round Bracketed Clause</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_VARIABLE_CS__OWNED_ROUND_BRACKETED_CLAUSE = 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_VARIABLE_CS__OWNED_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Init Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_VARIABLE_CS__OWNED_INIT_EXPRESSION = 3;
+
+  /**
+   * The number of structural features of the '<em>Let Variable CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LET_VARIABLE_CS_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.RoundBracketedClauseCSImpl <em>Round Bracketed Clause CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.RoundBracketedClauseCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRoundBracketedClauseCS()
+   * @generated
+   */
+  int ROUND_BRACKETED_CLAUSE_CS = 56;
+
+  /**
+   * The feature id for the '<em><b>Owned Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROUND_BRACKETED_CLAUSE_CS__OWNED_ARGUMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Round Bracketed Clause CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROUND_BRACKETED_CLAUSE_CS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.NavigatingArgCSImpl <em>Navigating Arg CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.NavigatingArgCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNavigatingArgCS()
+   * @generated
+   */
+  int NAVIGATING_ARG_CS = 57;
+
+  /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__PREFIX = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Name Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__OWNED_NAME_EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Symbol T</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__SYMBOL_T = 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__OWNED_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Symbol IE</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__SYMBOL_IE = 4;
+
+  /**
+   * The feature id for the '<em><b>Owned Init Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__OWNED_INIT_EXPRESSION = 5;
+
+  /**
+   * The feature id for the '<em><b>Symbol CI</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__SYMBOL_CI = 6;
+
+  /**
+   * The feature id for the '<em><b>Owned Co Iterator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS__OWNED_CO_ITERATOR = 7;
+
+  /**
+   * The number of structural features of the '<em>Navigating Arg CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAVIGATING_ARG_CS_FEATURE_COUNT = 8;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.VariableCSImpl <em>Variable CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.VariableCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getVariableCS()
+   * @generated
+   */
+  int VARIABLE_CS = 58;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CS__OWNED_TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Variable CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_CS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.InfixExpCSImpl <em>Infix Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.InfixExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInfixExpCS()
+   * @generated
+   */
+  int INFIX_EXP_CS = 59;
+
+  /**
+   * The feature id for the '<em><b>Owned Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFIX_EXP_CS__OWNED_LEFT = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFIX_EXP_CS__OPERATOR = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFIX_EXP_CS__OWNED_RIGHT = EXP_CS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Infix Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFIX_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.PrefixExpCSImpl <em>Prefix Exp CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.PrefixExpCSImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrefixExpCS()
+   * @generated
+   */
+  int PREFIX_EXP_CS = 60;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIX_EXP_CS__NAME = EXP_CS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIX_EXP_CS__OWNED_RIGHT = EXP_CS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Prefix Exp CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIX_EXP_CS_FEATURE_COUNT = EXP_CS_FEATURE_COUNT + 2;
 
 
   /**
@@ -1214,6 +2485,17 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EClass getUseClass();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.UseClass#isAbstract <em>Abstract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Abstract</em>'.
+   * @see org.xtext.uma.usex.usex.UseClass#isAbstract()
+   * @see #getUseClass()
+   * @generated
+   */
+  EAttribute getUseClass_Abstract();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.UseClass#getAttributes <em>Attributes</em>}'.
@@ -1292,15 +2574,15 @@ public interface UsexPackage extends EPackage
   EReference getAttribute_Initialization();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.Attribute#getDerivedFrom <em>Derived From</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Attribute#getDerivedFrom <em>Derived From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Derived From</em>'.
+   * @return the meta object for the containment reference '<em>Derived From</em>'.
    * @see org.xtext.uma.usex.usex.Attribute#getDerivedFrom()
    * @see #getAttribute()
    * @generated
    */
-  EAttribute getAttribute_DerivedFrom();
+  EReference getAttribute_DerivedFrom();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.AttributeType <em>Attribute Type</em>}'.
@@ -1355,100 +2637,6 @@ public interface UsexPackage extends EPackage
   EReference getClassType_Type();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.AttributeInitialization <em>Attribute Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute Initialization</em>'.
-   * @see org.xtext.uma.usex.usex.AttributeInitialization
-   * @generated
-   */
-  EClass getAttributeInitialization();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.DoubleInitialization <em>Double Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Double Initialization</em>'.
-   * @see org.xtext.uma.usex.usex.DoubleInitialization
-   * @generated
-   */
-  EClass getDoubleInitialization();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.DoubleInitialization#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.DoubleInitialization#getValue()
-   * @see #getDoubleInitialization()
-   * @generated
-   */
-  EAttribute getDoubleInitialization_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.BooleanInitialization <em>Boolean Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Initialization</em>'.
-   * @see org.xtext.uma.usex.usex.BooleanInitialization
-   * @generated
-   */
-  EClass getBooleanInitialization();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.BooleanInitialization#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.BooleanInitialization#getValue()
-   * @see #getBooleanInitialization()
-   * @generated
-   */
-  EAttribute getBooleanInitialization_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.IntegerInitialization <em>Integer Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Integer Initialization</em>'.
-   * @see org.xtext.uma.usex.usex.IntegerInitialization
-   * @generated
-   */
-  EClass getIntegerInitialization();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.IntegerInitialization#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.IntegerInitialization#getValue()
-   * @see #getIntegerInitialization()
-   * @generated
-   */
-  EAttribute getIntegerInitialization_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.StringInitialization <em>String Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>String Initialization</em>'.
-   * @see org.xtext.uma.usex.usex.StringInitialization
-   * @generated
-   */
-  EClass getStringInitialization();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.StringInitialization#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.StringInitialization#getValue()
-   * @see #getStringInitialization()
-   * @generated
-   */
-  EAttribute getStringInitialization_Value();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1492,15 +2680,15 @@ public interface UsexPackage extends EPackage
   EReference getOperation_ReturnParameter();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Operation Body</em>'.
+   * @return the meta object for the containment reference '<em>Operation Body</em>'.
    * @see org.xtext.uma.usex.usex.Operation#getOperationBody()
    * @see #getOperation()
    * @generated
    */
-  EAttribute getOperation_OperationBody();
+  EReference getOperation_OperationBody();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Method <em>Method</em>}'.
@@ -1576,6 +2764,17 @@ public interface UsexPackage extends EPackage
   EClass getCondition();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.Condition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.Condition#getName()
+   * @see #getCondition()
+   * @generated
+   */
+  EAttribute getCondition_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Condition#getConditionBody <em>Condition Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1607,38 +2806,6 @@ public interface UsexPackage extends EPackage
   EClass getPostcondition();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.ConditionBody <em>Condition Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Condition Body</em>'.
-   * @see org.xtext.uma.usex.usex.ConditionBody
-   * @generated
-   */
-  EClass getConditionBody();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.ConditionBody#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.uma.usex.usex.ConditionBody#getName()
-   * @see #getConditionBody()
-   * @generated
-   */
-  EAttribute getConditionBody_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.ConditionBody#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Condition</em>'.
-   * @see org.xtext.uma.usex.usex.ConditionBody#getCondition()
-   * @see #getConditionBody()
-   * @generated
-   */
-  EAttribute getConditionBody_Condition();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Constraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1649,15 +2816,26 @@ public interface UsexPackage extends EPackage
   EClass getConstraint();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Constraint#getConditionBody <em>Condition Body</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.Constraint#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition Body</em>'.
-   * @see org.xtext.uma.usex.usex.Constraint#getConditionBody()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.Constraint#getName()
    * @see #getConstraint()
    * @generated
    */
-  EReference getConstraint_ConditionBody();
+  EAttribute getConstraint_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Constraint#getConstraintBody <em>Constraint Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Constraint Body</em>'.
+   * @see org.xtext.uma.usex.usex.Constraint#getConstraintBody()
+   * @see #getConstraint()
+   * @generated
+   */
+  EReference getConstraint_ConstraintBody();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Relation <em>Relation</em>}'.
@@ -1670,6 +2848,17 @@ public interface UsexPackage extends EPackage
   EClass getRelation();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.Relation#getRelationType <em>Relation Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Relation Type</em>'.
+   * @see org.xtext.uma.usex.usex.Relation#getRelationType()
+   * @see #getRelation()
+   * @generated
+   */
+  EAttribute getRelation_RelationType();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Relation#getRelationBody <em>Relation Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1679,26 +2868,6 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EReference getRelation_RelationBody();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Association <em>Association</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Association</em>'.
-   * @see org.xtext.uma.usex.usex.Association
-   * @generated
-   */
-  EClass getAssociation();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Composition <em>Composition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Composition</em>'.
-   * @see org.xtext.uma.usex.usex.Composition
-   * @generated
-   */
-  EClass getComposition();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.RelationBody <em>Relation Body</em>}'.
@@ -1776,119 +2945,1325 @@ public interface UsexPackage extends EPackage
   EAttribute getRelationMember_RoleName();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CardinalityType <em>Cardinality Type</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.PrimitiveTypeRefCS <em>Primitive Type Ref CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Cardinality Type</em>'.
-   * @see org.xtext.uma.usex.usex.CardinalityType
+   * @return the meta object for class '<em>Primitive Type Ref CS</em>'.
+   * @see org.xtext.uma.usex.usex.PrimitiveTypeRefCS
    * @generated
    */
-  EClass getCardinalityType();
+  EClass getPrimitiveTypeRefCS();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.SimpleCardinality <em>Simple Cardinality</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.PrimitiveTypeRefCS#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Simple Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.SimpleCardinality
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.PrimitiveTypeRefCS#getName()
+   * @see #getPrimitiveTypeRefCS()
    * @generated
    */
-  EClass getSimpleCardinality();
+  EAttribute getPrimitiveTypeRefCS_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.SimpleCardinality#getCardinality <em>Cardinality</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CollectionTypeCS <em>Collection Type CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.SimpleCardinality#getCardinality()
-   * @see #getSimpleCardinality()
+   * @return the meta object for class '<em>Collection Type CS</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionTypeCS
    * @generated
    */
-  EReference getSimpleCardinality_Cardinality();
+  EClass getCollectionTypeCS();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.DoubleCardinality <em>Double Cardinality</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.CollectionTypeCS#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Double Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.DoubleCardinality
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionTypeCS#getName()
+   * @see #getCollectionTypeCS()
    * @generated
    */
-  EClass getDoubleCardinality();
+  EAttribute getCollectionTypeCS_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.DoubleCardinality#getOriginCardinality <em>Origin Cardinality</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionTypeCS#getOwnedType <em>Owned Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Origin Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.DoubleCardinality#getOriginCardinality()
-   * @see #getDoubleCardinality()
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionTypeCS#getOwnedType()
+   * @see #getCollectionTypeCS()
    * @generated
    */
-  EReference getDoubleCardinality_OriginCardinality();
+  EReference getCollectionTypeCS_OwnedType();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.DoubleCardinality#getDestinyCardinality <em>Destiny Cardinality</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionTypeCS#getOwnedCollectionMultiplicity <em>Owned Collection Multiplicity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Destiny Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.DoubleCardinality#getDestinyCardinality()
-   * @see #getDoubleCardinality()
+   * @return the meta object for the containment reference '<em>Owned Collection Multiplicity</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionTypeCS#getOwnedCollectionMultiplicity()
+   * @see #getCollectionTypeCS()
    * @generated
    */
-  EReference getDoubleCardinality_DestinyCardinality();
+  EReference getCollectionTypeCS_OwnedCollectionMultiplicity();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CardinalityValue <em>Cardinality Value</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MapTypeCS <em>Map Type CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Cardinality Value</em>'.
-   * @see org.xtext.uma.usex.usex.CardinalityValue
+   * @return the meta object for class '<em>Map Type CS</em>'.
+   * @see org.xtext.uma.usex.usex.MapTypeCS
    * @generated
    */
-  EClass getCardinalityValue();
+  EClass getMapTypeCS();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.IntCardinality <em>Int Cardinality</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MapTypeCS#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Int Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.IntCardinality
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.MapTypeCS#getName()
+   * @see #getMapTypeCS()
    * @generated
    */
-  EClass getIntCardinality();
+  EAttribute getMapTypeCS_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.IntCardinality#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MapTypeCS#getOwnedKeyType <em>Owned Key Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Key Type</em>'.
+   * @see org.xtext.uma.usex.usex.MapTypeCS#getOwnedKeyType()
+   * @see #getMapTypeCS()
+   * @generated
+   */
+  EReference getMapTypeCS_OwnedKeyType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MapTypeCS#getOwnedValueType <em>Owned Value Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Value Type</em>'.
+   * @see org.xtext.uma.usex.usex.MapTypeCS#getOwnedValueType()
+   * @see #getMapTypeCS()
+   * @generated
+   */
+  EReference getMapTypeCS_OwnedValueType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TupleTypeCS <em>Tuple Type CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Type CS</em>'.
+   * @see org.xtext.uma.usex.usex.TupleTypeCS
+   * @generated
+   */
+  EClass getTupleTypeCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.TupleTypeCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.TupleTypeCS#getName()
+   * @see #getTupleTypeCS()
+   * @generated
+   */
+  EAttribute getTupleTypeCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.TupleTypeCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.TupleTypeCS#getOwnedParts()
+   * @see #getTupleTypeCS()
+   * @generated
+   */
+  EReference getTupleTypeCS_OwnedParts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TuplePartCS <em>Tuple Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Part CS</em>'.
+   * @see org.xtext.uma.usex.usex.TuplePartCS
+   * @generated
+   */
+  EClass getTuplePartCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.TuplePartCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.TuplePartCS#getName()
+   * @see #getTuplePartCS()
+   * @generated
+   */
+  EAttribute getTuplePartCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TuplePartCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.TuplePartCS#getOwnedType()
+   * @see #getTuplePartCS()
+   * @generated
+   */
+  EReference getTuplePartCS_OwnedType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CollectionPatternCS <em>Collection Pattern CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Collection Pattern CS</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionPatternCS
+   * @generated
+   */
+  EClass getCollectionPatternCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionPatternCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionPatternCS#getOwnedType()
+   * @see #getCollectionPatternCS()
+   * @generated
+   */
+  EReference getCollectionPatternCS_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.CollectionPatternCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionPatternCS#getOwnedParts()
+   * @see #getCollectionPatternCS()
+   * @generated
+   */
+  EReference getCollectionPatternCS_OwnedParts();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.CollectionPatternCS#getRestVariableName <em>Rest Variable Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Rest Variable Name</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionPatternCS#getRestVariableName()
+   * @see #getCollectionPatternCS()
+   * @generated
+   */
+  EAttribute getCollectionPatternCS_RestVariableName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.PatternExpCS <em>Pattern Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pattern Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.PatternExpCS
+   * @generated
+   */
+  EClass getPatternExpCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.PatternExpCS#getPatternVariableName <em>Pattern Variable Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pattern Variable Name</em>'.
+   * @see org.xtext.uma.usex.usex.PatternExpCS#getPatternVariableName()
+   * @see #getPatternExpCS()
+   * @generated
+   */
+  EAttribute getPatternExpCS_PatternVariableName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.PatternExpCS#getOwnedPatternType <em>Owned Pattern Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Pattern Type</em>'.
+   * @see org.xtext.uma.usex.usex.PatternExpCS#getOwnedPatternType()
+   * @see #getPatternExpCS()
+   * @generated
+   */
+  EReference getPatternExpCS_OwnedPatternType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TypedRefCS <em>Typed Ref CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Typed Ref CS</em>'.
+   * @see org.xtext.uma.usex.usex.TypedRefCS
+   * @generated
+   */
+  EClass getTypedRefCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TypedRefCS#getOwnedMultiplicity <em>Owned Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Multiplicity</em>'.
+   * @see org.xtext.uma.usex.usex.TypedRefCS#getOwnedMultiplicity()
+   * @see #getTypedRefCS()
+   * @generated
+   */
+  EReference getTypedRefCS_OwnedMultiplicity();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TypeLiteralExpCS <em>Type Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.TypeLiteralExpCS
+   * @generated
+   */
+  EClass getTypeLiteralExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TypeLiteralExpCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.TypeLiteralExpCS#getOwnedType()
+   * @see #getTypeLiteralExpCS()
+   * @generated
+   */
+  EReference getTypeLiteralExpCS_OwnedType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TypeNameExpCS <em>Type Name Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Name Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.TypeNameExpCS
+   * @generated
+   */
+  EClass getTypeNameExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedPathName <em>Owned Path Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Path Name</em>'.
+   * @see org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedPathName()
+   * @see #getTypeNameExpCS()
+   * @generated
+   */
+  EReference getTypeNameExpCS_OwnedPathName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedCurlyBracketedClause <em>Owned Curly Bracketed Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Curly Bracketed Clause</em>'.
+   * @see org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedCurlyBracketedClause()
+   * @see #getTypeNameExpCS()
+   * @generated
+   */
+  EReference getTypeNameExpCS_OwnedCurlyBracketedClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedPatternGuard <em>Owned Pattern Guard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Pattern Guard</em>'.
+   * @see org.xtext.uma.usex.usex.TypeNameExpCS#getOwnedPatternGuard()
+   * @see #getTypeNameExpCS()
+   * @generated
+   */
+  EReference getTypeNameExpCS_OwnedPatternGuard();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CurlyBracketedClauseCS <em>Curly Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Curly Bracketed Clause CS</em>'.
+   * @see org.xtext.uma.usex.usex.CurlyBracketedClauseCS
+   * @generated
+   */
+  EClass getCurlyBracketedClauseCS();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.CurlyBracketedClauseCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.CurlyBracketedClauseCS#getOwnedParts()
+   * @see #getCurlyBracketedClauseCS()
+   * @generated
+   */
+  EReference getCurlyBracketedClauseCS_OwnedParts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.ShadowPartCS <em>Shadow Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Shadow Part CS</em>'.
+   * @see org.xtext.uma.usex.usex.ShadowPartCS
+   * @generated
+   */
+  EClass getShadowPartCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.ShadowPartCS#getReferredProperty <em>Referred Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Referred Property</em>'.
+   * @see org.xtext.uma.usex.usex.ShadowPartCS#getReferredProperty()
+   * @see #getShadowPartCS()
+   * @generated
+   */
+  EAttribute getShadowPartCS_ReferredProperty();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.ShadowPartCS#getOwnedInitExpression <em>Owned Init Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Init Expression</em>'.
+   * @see org.xtext.uma.usex.usex.ShadowPartCS#getOwnedInitExpression()
+   * @see #getShadowPartCS()
+   * @generated
+   */
+  EReference getShadowPartCS_OwnedInitExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.StringLiteralExpCS <em>String Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.StringLiteralExpCS
+   * @generated
+   */
+  EClass getStringLiteralExpCS();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.uma.usex.usex.StringLiteralExpCS#getSegments <em>Segments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Segments</em>'.
+   * @see org.xtext.uma.usex.usex.StringLiteralExpCS#getSegments()
+   * @see #getStringLiteralExpCS()
+   * @generated
+   */
+  EAttribute getStringLiteralExpCS_Segments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MultiplicityBoundsCS <em>Multiplicity Bounds CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity Bounds CS</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityBoundsCS
+   * @generated
+   */
+  EClass getMultiplicityBoundsCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MultiplicityBoundsCS#getLowerBound <em>Lower Bound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Lower Bound</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityBoundsCS#getLowerBound()
+   * @see #getMultiplicityBoundsCS()
+   * @generated
+   */
+  EAttribute getMultiplicityBoundsCS_LowerBound();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MultiplicityBoundsCS#getUpperBound <em>Upper Bound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Upper Bound</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityBoundsCS#getUpperBound()
+   * @see #getMultiplicityBoundsCS()
+   * @generated
+   */
+  EAttribute getMultiplicityBoundsCS_UpperBound();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MultiplicityCS <em>Multiplicity CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity CS</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityCS
+   * @generated
+   */
+  EClass getMultiplicityCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MultiplicityCS#getSymbol <em>Symbol</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Symbol</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityCS#getSymbol()
+   * @see #getMultiplicityCS()
+   * @generated
+   */
+  EAttribute getMultiplicityCS_Symbol();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MultiplicityStringCS <em>Multiplicity String CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity String CS</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityStringCS
+   * @generated
+   */
+  EClass getMultiplicityStringCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MultiplicityStringCS#getStringBounds <em>String Bounds</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String Bounds</em>'.
+   * @see org.xtext.uma.usex.usex.MultiplicityStringCS#getStringBounds()
+   * @see #getMultiplicityStringCS()
+   * @generated
+   */
+  EAttribute getMultiplicityStringCS_StringBounds();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.PathNameCS <em>Path Name CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Path Name CS</em>'.
+   * @see org.xtext.uma.usex.usex.PathNameCS
+   * @generated
+   */
+  EClass getPathNameCS();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.uma.usex.usex.PathNameCS#getOwnedPathElements <em>Owned Path Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Owned Path Elements</em>'.
+   * @see org.xtext.uma.usex.usex.PathNameCS#getOwnedPathElements()
+   * @see #getPathNameCS()
+   * @generated
+   */
+  EAttribute getPathNameCS_OwnedPathElements();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.ExpCS <em>Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.ExpCS
+   * @generated
+   */
+  EClass getExpCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.PrimitiveLiteralExpCS <em>Primitive Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primitive Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.PrimitiveLiteralExpCS
+   * @generated
+   */
+  EClass getPrimitiveLiteralExpCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.NameExpCS <em>Name Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Name Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS
+   * @generated
+   */
+  EClass getNameExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NameExpCS#getOwnedPathName <em>Owned Path Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Path Name</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#getOwnedPathName()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EReference getNameExpCS_OwnedPathName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.NameExpCS#getOwnedSquareBracketedClauses <em>Owned Square Bracketed Clauses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Square Bracketed Clauses</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#getOwnedSquareBracketedClauses()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EReference getNameExpCS_OwnedSquareBracketedClauses();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NameExpCS#getOwnedRoundBracketedClause <em>Owned Round Bracketed Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Round Bracketed Clause</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#getOwnedRoundBracketedClause()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EReference getNameExpCS_OwnedRoundBracketedClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NameExpCS#getOwnedCurlyBracketedClause <em>Owned Curly Bracketed Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Curly Bracketed Clause</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#getOwnedCurlyBracketedClause()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EReference getNameExpCS_OwnedCurlyBracketedClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NameExpCS#isIsPre <em>Is Pre</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Pre</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#isIsPre()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EAttribute getNameExpCS_IsPre();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NameExpCS#isPre <em>Pre</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pre</em>'.
+   * @see org.xtext.uma.usex.usex.NameExpCS#isPre()
+   * @see #getNameExpCS()
+   * @generated
+   */
+  EAttribute getNameExpCS_Pre();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.SquareBracketedClauseCS <em>Square Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Square Bracketed Clause CS</em>'.
+   * @see org.xtext.uma.usex.usex.SquareBracketedClauseCS
+   * @generated
+   */
+  EClass getSquareBracketedClauseCS();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.SquareBracketedClauseCS#getOwnedTerms <em>Owned Terms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Terms</em>'.
+   * @see org.xtext.uma.usex.usex.SquareBracketedClauseCS#getOwnedTerms()
+   * @see #getSquareBracketedClauseCS()
+   * @generated
+   */
+  EReference getSquareBracketedClauseCS_OwnedTerms();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CollectionLiteralExpCS <em>Collection Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Collection Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralExpCS
+   * @generated
+   */
+  EClass getCollectionLiteralExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionLiteralExpCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralExpCS#getOwnedType()
+   * @see #getCollectionLiteralExpCS()
+   * @generated
+   */
+  EReference getCollectionLiteralExpCS_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.CollectionLiteralExpCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralExpCS#getOwnedParts()
+   * @see #getCollectionLiteralExpCS()
+   * @generated
+   */
+  EReference getCollectionLiteralExpCS_OwnedParts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CollectionLiteralPartCS <em>Collection Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Collection Literal Part CS</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralPartCS
+   * @generated
+   */
+  EClass getCollectionLiteralPartCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionLiteralPartCS#getOwnedExpression <em>Owned Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Expression</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralPartCS#getOwnedExpression()
+   * @see #getCollectionLiteralPartCS()
+   * @generated
+   */
+  EReference getCollectionLiteralPartCS_OwnedExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionLiteralPartCS#getOwnedLastExpression <em>Owned Last Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Last Expression</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralPartCS#getOwnedLastExpression()
+   * @see #getCollectionLiteralPartCS()
+   * @generated
+   */
+  EReference getCollectionLiteralPartCS_OwnedLastExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.LambdaLiteralExpCS <em>Lambda Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Lambda Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.LambdaLiteralExpCS
+   * @generated
+   */
+  EClass getLambdaLiteralExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.LambdaLiteralExpCS#getOwnedExpressionCS <em>Owned Expression CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Expression CS</em>'.
+   * @see org.xtext.uma.usex.usex.LambdaLiteralExpCS#getOwnedExpressionCS()
+   * @see #getLambdaLiteralExpCS()
+   * @generated
+   */
+  EReference getLambdaLiteralExpCS_OwnedExpressionCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MapLiteralExpCS <em>Map Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Map Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralExpCS
+   * @generated
+   */
+  EClass getMapLiteralExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MapLiteralExpCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralExpCS#getOwnedType()
+   * @see #getMapLiteralExpCS()
+   * @generated
+   */
+  EReference getMapLiteralExpCS_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.MapLiteralExpCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralExpCS#getOwnedParts()
+   * @see #getMapLiteralExpCS()
+   * @generated
+   */
+  EReference getMapLiteralExpCS_OwnedParts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MapLiteralPartCS <em>Map Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Map Literal Part CS</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralPartCS
+   * @generated
+   */
+  EClass getMapLiteralPartCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MapLiteralPartCS#getOwnedKey <em>Owned Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Key</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralPartCS#getOwnedKey()
+   * @see #getMapLiteralPartCS()
+   * @generated
+   */
+  EReference getMapLiteralPartCS_OwnedKey();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MapLiteralPartCS#getOwnedValue <em>Owned Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Value</em>'.
+   * @see org.xtext.uma.usex.usex.MapLiteralPartCS#getOwnedValue()
+   * @see #getMapLiteralPartCS()
+   * @generated
+   */
+  EReference getMapLiteralPartCS_OwnedValue();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TupleLiteralExpCS <em>Tuple Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralExpCS
+   * @generated
+   */
+  EClass getTupleLiteralExpCS();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.TupleLiteralExpCS#getOwnedParts <em>Owned Parts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Parts</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralExpCS#getOwnedParts()
+   * @see #getTupleLiteralExpCS()
+   * @generated
+   */
+  EReference getTupleLiteralExpCS_OwnedParts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.TupleLiteralPartCS <em>Tuple Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Literal Part CS</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralPartCS
+   * @generated
+   */
+  EClass getTupleLiteralPartCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.TupleLiteralPartCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralPartCS#getName()
+   * @see #getTupleLiteralPartCS()
+   * @generated
+   */
+  EAttribute getTupleLiteralPartCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TupleLiteralPartCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralPartCS#getOwnedType()
+   * @see #getTupleLiteralPartCS()
+   * @generated
+   */
+  EReference getTupleLiteralPartCS_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.TupleLiteralPartCS#getOwnedInitExpression <em>Owned Init Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Init Expression</em>'.
+   * @see org.xtext.uma.usex.usex.TupleLiteralPartCS#getOwnedInitExpression()
+   * @see #getTupleLiteralPartCS()
+   * @generated
+   */
+  EReference getTupleLiteralPartCS_OwnedInitExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.NumberLiteralExpCS <em>Number Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.NumberLiteralExpCS
+   * @generated
+   */
+  EClass getNumberLiteralExpCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NumberLiteralExpCS#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.IntCardinality#getValue()
-   * @see #getIntCardinality()
+   * @see org.xtext.uma.usex.usex.NumberLiteralExpCS#getValue()
+   * @see #getNumberLiteralExpCS()
    * @generated
    */
-  EAttribute getIntCardinality_Value();
+  EAttribute getNumberLiteralExpCS_Value();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.AsteriskCardinality <em>Asterisk Cardinality</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.BooleanLiteralExpCS <em>Boolean Literal Exp CS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Asterisk Cardinality</em>'.
-   * @see org.xtext.uma.usex.usex.AsteriskCardinality
+   * @return the meta object for class '<em>Boolean Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.BooleanLiteralExpCS
    * @generated
    */
-  EClass getAsteriskCardinality();
+  EClass getBooleanLiteralExpCS();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.AsteriskCardinality#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.BooleanLiteralExpCS#getSymbol <em>Symbol</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.uma.usex.usex.AsteriskCardinality#getValue()
-   * @see #getAsteriskCardinality()
+   * @return the meta object for the attribute '<em>Symbol</em>'.
+   * @see org.xtext.uma.usex.usex.BooleanLiteralExpCS#getSymbol()
+   * @see #getBooleanLiteralExpCS()
    * @generated
    */
-  EAttribute getAsteriskCardinality_Value();
+  EAttribute getBooleanLiteralExpCS_Symbol();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS <em>Unlimited Natural Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unlimited Natural Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS
+   * @generated
+   */
+  EClass getUnlimitedNaturalLiteralExpCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.InvalidLiteralExpCS <em>Invalid Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Invalid Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.InvalidLiteralExpCS
+   * @generated
+   */
+  EClass getInvalidLiteralExpCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.NullLiteralExpCS <em>Null Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Null Literal Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.NullLiteralExpCS
+   * @generated
+   */
+  EClass getNullLiteralExpCS();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.NestedExpCS <em>Nested Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Nested Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.NestedExpCS
+   * @generated
+   */
+  EClass getNestedExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NestedExpCS#getOwnedExpression <em>Owned Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Expression</em>'.
+   * @see org.xtext.uma.usex.usex.NestedExpCS#getOwnedExpression()
+   * @see #getNestedExpCS()
+   * @generated
+   */
+  EReference getNestedExpCS_OwnedExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.IfExpCS <em>If Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.IfExpCS
+   * @generated
+   */
+  EClass getIfExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.IfExpCS#getOwnedCondition <em>Owned Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Condition</em>'.
+   * @see org.xtext.uma.usex.usex.IfExpCS#getOwnedCondition()
+   * @see #getIfExpCS()
+   * @generated
+   */
+  EReference getIfExpCS_OwnedCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.IfExpCS#getOwnedThenExpression <em>Owned Then Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Then Expression</em>'.
+   * @see org.xtext.uma.usex.usex.IfExpCS#getOwnedThenExpression()
+   * @see #getIfExpCS()
+   * @generated
+   */
+  EReference getIfExpCS_OwnedThenExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.IfExpCS#getOwnedIfThenExpressions <em>Owned If Then Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned If Then Expressions</em>'.
+   * @see org.xtext.uma.usex.usex.IfExpCS#getOwnedIfThenExpressions()
+   * @see #getIfExpCS()
+   * @generated
+   */
+  EReference getIfExpCS_OwnedIfThenExpressions();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.IfExpCS#getOwnedElseExpression <em>Owned Else Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Else Expression</em>'.
+   * @see org.xtext.uma.usex.usex.IfExpCS#getOwnedElseExpression()
+   * @see #getIfExpCS()
+   * @generated
+   */
+  EReference getIfExpCS_OwnedElseExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.IfThenExpCS <em>If Then Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Then Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.IfThenExpCS
+   * @generated
+   */
+  EClass getIfThenExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.IfThenExpCS#getOwnedCondition <em>Owned Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Condition</em>'.
+   * @see org.xtext.uma.usex.usex.IfThenExpCS#getOwnedCondition()
+   * @see #getIfThenExpCS()
+   * @generated
+   */
+  EReference getIfThenExpCS_OwnedCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.IfThenExpCS#getOwnedThenExpression <em>Owned Then Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Then Expression</em>'.
+   * @see org.xtext.uma.usex.usex.IfThenExpCS#getOwnedThenExpression()
+   * @see #getIfThenExpCS()
+   * @generated
+   */
+  EReference getIfThenExpCS_OwnedThenExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.LetExpCS <em>Let Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Let Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.LetExpCS
+   * @generated
+   */
+  EClass getLetExpCS();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.LetExpCS#getOwnedVariables <em>Owned Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Variables</em>'.
+   * @see org.xtext.uma.usex.usex.LetExpCS#getOwnedVariables()
+   * @see #getLetExpCS()
+   * @generated
+   */
+  EReference getLetExpCS_OwnedVariables();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.LetExpCS#getOwnedInExpression <em>Owned In Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned In Expression</em>'.
+   * @see org.xtext.uma.usex.usex.LetExpCS#getOwnedInExpression()
+   * @see #getLetExpCS()
+   * @generated
+   */
+  EReference getLetExpCS_OwnedInExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.LetVariableCS <em>Let Variable CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Let Variable CS</em>'.
+   * @see org.xtext.uma.usex.usex.LetVariableCS
+   * @generated
+   */
+  EClass getLetVariableCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.LetVariableCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.LetVariableCS#getName()
+   * @see #getLetVariableCS()
+   * @generated
+   */
+  EAttribute getLetVariableCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.LetVariableCS#getOwnedRoundBracketedClause <em>Owned Round Bracketed Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Round Bracketed Clause</em>'.
+   * @see org.xtext.uma.usex.usex.LetVariableCS#getOwnedRoundBracketedClause()
+   * @see #getLetVariableCS()
+   * @generated
+   */
+  EReference getLetVariableCS_OwnedRoundBracketedClause();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.LetVariableCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.LetVariableCS#getOwnedType()
+   * @see #getLetVariableCS()
+   * @generated
+   */
+  EReference getLetVariableCS_OwnedType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.LetVariableCS#getOwnedInitExpression <em>Owned Init Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Init Expression</em>'.
+   * @see org.xtext.uma.usex.usex.LetVariableCS#getOwnedInitExpression()
+   * @see #getLetVariableCS()
+   * @generated
+   */
+  EReference getLetVariableCS_OwnedInitExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.RoundBracketedClauseCS <em>Round Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Round Bracketed Clause CS</em>'.
+   * @see org.xtext.uma.usex.usex.RoundBracketedClauseCS
+   * @generated
+   */
+  EClass getRoundBracketedClauseCS();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.RoundBracketedClauseCS#getOwnedArguments <em>Owned Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Arguments</em>'.
+   * @see org.xtext.uma.usex.usex.RoundBracketedClauseCS#getOwnedArguments()
+   * @see #getRoundBracketedClauseCS()
+   * @generated
+   */
+  EReference getRoundBracketedClauseCS_OwnedArguments();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.NavigatingArgCS <em>Navigating Arg CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Navigating Arg CS</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS
+   * @generated
+   */
+  EClass getNavigatingArgCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getPrefix()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EAttribute getNavigatingArgCS_Prefix();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedNameExpression <em>Owned Name Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Name Expression</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedNameExpression()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EReference getNavigatingArgCS_OwnedNameExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolT <em>Symbol T</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Symbol T</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolT()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EAttribute getNavigatingArgCS_SymbolT();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedType()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EReference getNavigatingArgCS_OwnedType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolIE <em>Symbol IE</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Symbol IE</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolIE()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EAttribute getNavigatingArgCS_SymbolIE();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedInitExpression <em>Owned Init Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Init Expression</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedInitExpression()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EReference getNavigatingArgCS_OwnedInitExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolCI <em>Symbol CI</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Symbol CI</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getSymbolCI()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EAttribute getNavigatingArgCS_SymbolCI();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedCoIterator <em>Owned Co Iterator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Co Iterator</em>'.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS#getOwnedCoIterator()
+   * @see #getNavigatingArgCS()
+   * @generated
+   */
+  EReference getNavigatingArgCS_OwnedCoIterator();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.VariableCS <em>Variable CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable CS</em>'.
+   * @see org.xtext.uma.usex.usex.VariableCS
+   * @generated
+   */
+  EClass getVariableCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.VariableCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.VariableCS#getName()
+   * @see #getVariableCS()
+   * @generated
+   */
+  EAttribute getVariableCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.VariableCS#getOwnedType <em>Owned Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Type</em>'.
+   * @see org.xtext.uma.usex.usex.VariableCS#getOwnedType()
+   * @see #getVariableCS()
+   * @generated
+   */
+  EReference getVariableCS_OwnedType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.InfixExpCS <em>Infix Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Infix Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.InfixExpCS
+   * @generated
+   */
+  EClass getInfixExpCS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.InfixExpCS#getOwnedLeft <em>Owned Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Left</em>'.
+   * @see org.xtext.uma.usex.usex.InfixExpCS#getOwnedLeft()
+   * @see #getInfixExpCS()
+   * @generated
+   */
+  EReference getInfixExpCS_OwnedLeft();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.InfixExpCS#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.xtext.uma.usex.usex.InfixExpCS#getOperator()
+   * @see #getInfixExpCS()
+   * @generated
+   */
+  EAttribute getInfixExpCS_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.InfixExpCS#getOwnedRight <em>Owned Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Right</em>'.
+   * @see org.xtext.uma.usex.usex.InfixExpCS#getOwnedRight()
+   * @see #getInfixExpCS()
+   * @generated
+   */
+  EReference getInfixExpCS_OwnedRight();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.PrefixExpCS <em>Prefix Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Prefix Exp CS</em>'.
+   * @see org.xtext.uma.usex.usex.PrefixExpCS
+   * @generated
+   */
+  EClass getPrefixExpCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.PrefixExpCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.PrefixExpCS#getName()
+   * @see #getPrefixExpCS()
+   * @generated
+   */
+  EAttribute getPrefixExpCS_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.PrefixExpCS#getOwnedRight <em>Owned Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Owned Right</em>'.
+   * @see org.xtext.uma.usex.usex.PrefixExpCS#getOwnedRight()
+   * @see #getPrefixExpCS()
+   * @generated
+   */
+  EReference getPrefixExpCS_OwnedRight();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1968,6 +4343,14 @@ public interface UsexPackage extends EPackage
     EClass USE_CLASS = eINSTANCE.getUseClass();
 
     /**
+     * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute USE_CLASS__ABSTRACT = eINSTANCE.getUseClass_Abstract();
+
+    /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2026,12 +4409,12 @@ public interface UsexPackage extends EPackage
     EReference ATTRIBUTE__INITIALIZATION = eINSTANCE.getAttribute_Initialization();
 
     /**
-     * The meta object literal for the '<em><b>Derived From</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Derived From</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__DERIVED_FROM = eINSTANCE.getAttribute_DerivedFrom();
+    EReference ATTRIBUTE__DERIVED_FROM = eINSTANCE.getAttribute_DerivedFrom();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AttributeTypeImpl <em>Attribute Type</em>}' class.
@@ -2080,88 +4463,6 @@ public interface UsexPackage extends EPackage
     EReference CLASS_TYPE__TYPE = eINSTANCE.getClassType_Type();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AttributeInitializationImpl <em>Attribute Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.AttributeInitializationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAttributeInitialization()
-     * @generated
-     */
-    EClass ATTRIBUTE_INITIALIZATION = eINSTANCE.getAttributeInitialization();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.DoubleInitializationImpl <em>Double Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.DoubleInitializationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getDoubleInitialization()
-     * @generated
-     */
-    EClass DOUBLE_INITIALIZATION = eINSTANCE.getDoubleInitialization();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DOUBLE_INITIALIZATION__VALUE = eINSTANCE.getDoubleInitialization_Value();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.BooleanInitializationImpl <em>Boolean Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.BooleanInitializationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getBooleanInitialization()
-     * @generated
-     */
-    EClass BOOLEAN_INITIALIZATION = eINSTANCE.getBooleanInitialization();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOLEAN_INITIALIZATION__VALUE = eINSTANCE.getBooleanInitialization_Value();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.IntegerInitializationImpl <em>Integer Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.IntegerInitializationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIntegerInitialization()
-     * @generated
-     */
-    EClass INTEGER_INITIALIZATION = eINSTANCE.getIntegerInitialization();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTEGER_INITIALIZATION__VALUE = eINSTANCE.getIntegerInitialization_Value();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.StringInitializationImpl <em>String Initialization</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.StringInitializationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getStringInitialization()
-     * @generated
-     */
-    EClass STRING_INITIALIZATION = eINSTANCE.getStringInitialization();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STRING_INITIALIZATION__VALUE = eINSTANCE.getStringInitialization_Value();
-
-    /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.OperationImpl <em>Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2196,12 +4497,12 @@ public interface UsexPackage extends EPackage
     EReference OPERATION__RETURN_PARAMETER = eINSTANCE.getOperation_ReturnParameter();
 
     /**
-     * The meta object literal for the '<em><b>Operation Body</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Operation Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION__OPERATION_BODY = eINSTANCE.getOperation_OperationBody();
+    EReference OPERATION__OPERATION_BODY = eINSTANCE.getOperation_OperationBody();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MethodImpl <em>Method</em>}' class.
@@ -2268,6 +4569,14 @@ public interface UsexPackage extends EPackage
     EClass CONDITION = eINSTANCE.getCondition();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONDITION__NAME = eINSTANCE.getCondition_Name();
+
+    /**
      * The meta object literal for the '<em><b>Condition Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2296,32 +4605,6 @@ public interface UsexPackage extends EPackage
     EClass POSTCONDITION = eINSTANCE.getPostcondition();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ConditionBodyImpl <em>Condition Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.ConditionBodyImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getConditionBody()
-     * @generated
-     */
-    EClass CONDITION_BODY = eINSTANCE.getConditionBody();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONDITION_BODY__NAME = eINSTANCE.getConditionBody_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONDITION_BODY__CONDITION = eINSTANCE.getConditionBody_Condition();
-
-    /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ConstraintImpl <em>Constraint</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2332,12 +4615,20 @@ public interface UsexPackage extends EPackage
     EClass CONSTRAINT = eINSTANCE.getConstraint();
 
     /**
-     * The meta object literal for the '<em><b>Condition Body</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONSTRAINT__CONDITION_BODY = eINSTANCE.getConstraint_ConditionBody();
+    EAttribute CONSTRAINT__NAME = eINSTANCE.getConstraint_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Constraint Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRAINT__CONSTRAINT_BODY = eINSTANCE.getConstraint_ConstraintBody();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.RelationImpl <em>Relation</em>}' class.
@@ -2350,32 +4641,20 @@ public interface UsexPackage extends EPackage
     EClass RELATION = eINSTANCE.getRelation();
 
     /**
+     * The meta object literal for the '<em><b>Relation Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RELATION__RELATION_TYPE = eINSTANCE.getRelation_RelationType();
+
+    /**
      * The meta object literal for the '<em><b>Relation Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference RELATION__RELATION_BODY = eINSTANCE.getRelation_RelationBody();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AssociationImpl <em>Association</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.AssociationImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAssociation()
-     * @generated
-     */
-    EClass ASSOCIATION = eINSTANCE.getAssociation();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CompositionImpl <em>Composition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.CompositionImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getComposition()
-     * @generated
-     */
-    EClass COMPOSITION = eINSTANCE.getComposition();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.RelationBodyImpl <em>Relation Body</em>}' class.
@@ -2438,78 +4717,694 @@ public interface UsexPackage extends EPackage
     EAttribute RELATION_MEMBER__ROLE_NAME = eINSTANCE.getRelationMember_RoleName();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CardinalityTypeImpl <em>Cardinality Type</em>}' class.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.PrimitiveTypeRefCSImpl <em>Primitive Type Ref CS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.CardinalityTypeImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCardinalityType()
+     * @see org.xtext.uma.usex.usex.impl.PrimitiveTypeRefCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveTypeRefCS()
      * @generated
      */
-    EClass CARDINALITY_TYPE = eINSTANCE.getCardinalityType();
+    EClass PRIMITIVE_TYPE_REF_CS = eINSTANCE.getPrimitiveTypeRefCS();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.SimpleCardinalityImpl <em>Simple Cardinality</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.SimpleCardinalityImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getSimpleCardinality()
      * @generated
      */
-    EClass SIMPLE_CARDINALITY = eINSTANCE.getSimpleCardinality();
+    EAttribute PRIMITIVE_TYPE_REF_CS__NAME = eINSTANCE.getPrimitiveTypeRefCS_Name();
 
     /**
-     * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CollectionTypeCSImpl <em>Collection Type CS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CollectionTypeCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionTypeCS()
      * @generated
      */
-    EReference SIMPLE_CARDINALITY__CARDINALITY = eINSTANCE.getSimpleCardinality_Cardinality();
+    EClass COLLECTION_TYPE_CS = eINSTANCE.getCollectionTypeCS();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.DoubleCardinalityImpl <em>Double Cardinality</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.DoubleCardinalityImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getDoubleCardinality()
      * @generated
      */
-    EClass DOUBLE_CARDINALITY = eINSTANCE.getDoubleCardinality();
+    EAttribute COLLECTION_TYPE_CS__NAME = eINSTANCE.getCollectionTypeCS_Name();
 
     /**
-     * The meta object literal for the '<em><b>Origin Cardinality</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOUBLE_CARDINALITY__ORIGIN_CARDINALITY = eINSTANCE.getDoubleCardinality_OriginCardinality();
+    EReference COLLECTION_TYPE_CS__OWNED_TYPE = eINSTANCE.getCollectionTypeCS_OwnedType();
 
     /**
-     * The meta object literal for the '<em><b>Destiny Cardinality</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Owned Collection Multiplicity</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOUBLE_CARDINALITY__DESTINY_CARDINALITY = eINSTANCE.getDoubleCardinality_DestinyCardinality();
+    EReference COLLECTION_TYPE_CS__OWNED_COLLECTION_MULTIPLICITY = eINSTANCE.getCollectionTypeCS_OwnedCollectionMultiplicity();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CardinalityValueImpl <em>Cardinality Value</em>}' class.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MapTypeCSImpl <em>Map Type CS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.CardinalityValueImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCardinalityValue()
+     * @see org.xtext.uma.usex.usex.impl.MapTypeCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapTypeCS()
      * @generated
      */
-    EClass CARDINALITY_VALUE = eINSTANCE.getCardinalityValue();
+    EClass MAP_TYPE_CS = eINSTANCE.getMapTypeCS();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.IntCardinalityImpl <em>Int Cardinality</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.IntCardinalityImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIntCardinality()
      * @generated
      */
-    EClass INT_CARDINALITY = eINSTANCE.getIntCardinality();
+    EAttribute MAP_TYPE_CS__NAME = eINSTANCE.getMapTypeCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Key Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_TYPE_CS__OWNED_KEY_TYPE = eINSTANCE.getMapTypeCS_OwnedKeyType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Value Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_TYPE_CS__OWNED_VALUE_TYPE = eINSTANCE.getMapTypeCS_OwnedValueType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TupleTypeCSImpl <em>Tuple Type CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TupleTypeCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleTypeCS()
+     * @generated
+     */
+    EClass TUPLE_TYPE_CS = eINSTANCE.getTupleTypeCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TUPLE_TYPE_CS__NAME = eINSTANCE.getTupleTypeCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_TYPE_CS__OWNED_PARTS = eINSTANCE.getTupleTypeCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TuplePartCSImpl <em>Tuple Part CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TuplePartCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTuplePartCS()
+     * @generated
+     */
+    EClass TUPLE_PART_CS = eINSTANCE.getTuplePartCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TUPLE_PART_CS__NAME = eINSTANCE.getTuplePartCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_PART_CS__OWNED_TYPE = eINSTANCE.getTuplePartCS_OwnedType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CollectionPatternCSImpl <em>Collection Pattern CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CollectionPatternCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionPatternCS()
+     * @generated
+     */
+    EClass COLLECTION_PATTERN_CS = eINSTANCE.getCollectionPatternCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_PATTERN_CS__OWNED_TYPE = eINSTANCE.getCollectionPatternCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_PATTERN_CS__OWNED_PARTS = eINSTANCE.getCollectionPatternCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '<em><b>Rest Variable Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLLECTION_PATTERN_CS__REST_VARIABLE_NAME = eINSTANCE.getCollectionPatternCS_RestVariableName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.PatternExpCSImpl <em>Pattern Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.PatternExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPatternExpCS()
+     * @generated
+     */
+    EClass PATTERN_EXP_CS = eINSTANCE.getPatternExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Pattern Variable Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PATTERN_EXP_CS__PATTERN_VARIABLE_NAME = eINSTANCE.getPatternExpCS_PatternVariableName();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Pattern Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PATTERN_EXP_CS__OWNED_PATTERN_TYPE = eINSTANCE.getPatternExpCS_OwnedPatternType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TypedRefCSImpl <em>Typed Ref CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TypedRefCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypedRefCS()
+     * @generated
+     */
+    EClass TYPED_REF_CS = eINSTANCE.getTypedRefCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Multiplicity</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPED_REF_CS__OWNED_MULTIPLICITY = eINSTANCE.getTypedRefCS_OwnedMultiplicity();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TypeLiteralExpCSImpl <em>Type Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TypeLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeLiteralExpCS()
+     * @generated
+     */
+    EClass TYPE_LITERAL_EXP_CS = eINSTANCE.getTypeLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_LITERAL_EXP_CS__OWNED_TYPE = eINSTANCE.getTypeLiteralExpCS_OwnedType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TypeNameExpCSImpl <em>Type Name Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TypeNameExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeNameExpCS()
+     * @generated
+     */
+    EClass TYPE_NAME_EXP_CS = eINSTANCE.getTypeNameExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Path Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_NAME_EXP_CS__OWNED_PATH_NAME = eINSTANCE.getTypeNameExpCS_OwnedPathName();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Curly Bracketed Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE = eINSTANCE.getTypeNameExpCS_OwnedCurlyBracketedClause();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Pattern Guard</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_NAME_EXP_CS__OWNED_PATTERN_GUARD = eINSTANCE.getTypeNameExpCS_OwnedPatternGuard();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CurlyBracketedClauseCSImpl <em>Curly Bracketed Clause CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CurlyBracketedClauseCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCurlyBracketedClauseCS()
+     * @generated
+     */
+    EClass CURLY_BRACKETED_CLAUSE_CS = eINSTANCE.getCurlyBracketedClauseCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CURLY_BRACKETED_CLAUSE_CS__OWNED_PARTS = eINSTANCE.getCurlyBracketedClauseCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ShadowPartCSImpl <em>Shadow Part CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.ShadowPartCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getShadowPartCS()
+     * @generated
+     */
+    EClass SHADOW_PART_CS = eINSTANCE.getShadowPartCS();
+
+    /**
+     * The meta object literal for the '<em><b>Referred Property</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SHADOW_PART_CS__REFERRED_PROPERTY = eINSTANCE.getShadowPartCS_ReferredProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Init Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SHADOW_PART_CS__OWNED_INIT_EXPRESSION = eINSTANCE.getShadowPartCS_OwnedInitExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.StringLiteralExpCSImpl <em>String Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.StringLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getStringLiteralExpCS()
+     * @generated
+     */
+    EClass STRING_LITERAL_EXP_CS = eINSTANCE.getStringLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Segments</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_LITERAL_EXP_CS__SEGMENTS = eINSTANCE.getStringLiteralExpCS_Segments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityBoundsCSImpl <em>Multiplicity Bounds CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.MultiplicityBoundsCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityBoundsCS()
+     * @generated
+     */
+    EClass MULTIPLICITY_BOUNDS_CS = eINSTANCE.getMultiplicityBoundsCS();
+
+    /**
+     * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_BOUNDS_CS__LOWER_BOUND = eINSTANCE.getMultiplicityBoundsCS_LowerBound();
+
+    /**
+     * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_BOUNDS_CS__UPPER_BOUND = eINSTANCE.getMultiplicityBoundsCS_UpperBound();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityCSImpl <em>Multiplicity CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.MultiplicityCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityCS()
+     * @generated
+     */
+    EClass MULTIPLICITY_CS = eINSTANCE.getMultiplicityCS();
+
+    /**
+     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_CS__SYMBOL = eINSTANCE.getMultiplicityCS_Symbol();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MultiplicityStringCSImpl <em>Multiplicity String CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.MultiplicityStringCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityStringCS()
+     * @generated
+     */
+    EClass MULTIPLICITY_STRING_CS = eINSTANCE.getMultiplicityStringCS();
+
+    /**
+     * The meta object literal for the '<em><b>String Bounds</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_STRING_CS__STRING_BOUNDS = eINSTANCE.getMultiplicityStringCS_StringBounds();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.PathNameCSImpl <em>Path Name CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.PathNameCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPathNameCS()
+     * @generated
+     */
+    EClass PATH_NAME_CS = eINSTANCE.getPathNameCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Path Elements</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PATH_NAME_CS__OWNED_PATH_ELEMENTS = eINSTANCE.getPathNameCS_OwnedPathElements();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ExpCSImpl <em>Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.ExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getExpCS()
+     * @generated
+     */
+    EClass EXP_CS = eINSTANCE.getExpCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.PrimitiveLiteralExpCSImpl <em>Primitive Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.PrimitiveLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveLiteralExpCS()
+     * @generated
+     */
+    EClass PRIMITIVE_LITERAL_EXP_CS = eINSTANCE.getPrimitiveLiteralExpCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.NameExpCSImpl <em>Name Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.NameExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNameExpCS()
+     * @generated
+     */
+    EClass NAME_EXP_CS = eINSTANCE.getNameExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Path Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAME_EXP_CS__OWNED_PATH_NAME = eINSTANCE.getNameExpCS_OwnedPathName();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Square Bracketed Clauses</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAME_EXP_CS__OWNED_SQUARE_BRACKETED_CLAUSES = eINSTANCE.getNameExpCS_OwnedSquareBracketedClauses();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Round Bracketed Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAME_EXP_CS__OWNED_ROUND_BRACKETED_CLAUSE = eINSTANCE.getNameExpCS_OwnedRoundBracketedClause();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Curly Bracketed Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAME_EXP_CS__OWNED_CURLY_BRACKETED_CLAUSE = eINSTANCE.getNameExpCS_OwnedCurlyBracketedClause();
+
+    /**
+     * The meta object literal for the '<em><b>Is Pre</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAME_EXP_CS__IS_PRE = eINSTANCE.getNameExpCS_IsPre();
+
+    /**
+     * The meta object literal for the '<em><b>Pre</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAME_EXP_CS__PRE = eINSTANCE.getNameExpCS_Pre();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.SquareBracketedClauseCSImpl <em>Square Bracketed Clause CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.SquareBracketedClauseCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getSquareBracketedClauseCS()
+     * @generated
+     */
+    EClass SQUARE_BRACKETED_CLAUSE_CS = eINSTANCE.getSquareBracketedClauseCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Terms</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SQUARE_BRACKETED_CLAUSE_CS__OWNED_TERMS = eINSTANCE.getSquareBracketedClauseCS_OwnedTerms();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CollectionLiteralExpCSImpl <em>Collection Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CollectionLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralExpCS()
+     * @generated
+     */
+    EClass COLLECTION_LITERAL_EXP_CS = eINSTANCE.getCollectionLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_LITERAL_EXP_CS__OWNED_TYPE = eINSTANCE.getCollectionLiteralExpCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_LITERAL_EXP_CS__OWNED_PARTS = eINSTANCE.getCollectionLiteralExpCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CollectionLiteralPartCSImpl <em>Collection Literal Part CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CollectionLiteralPartCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralPartCS()
+     * @generated
+     */
+    EClass COLLECTION_LITERAL_PART_CS = eINSTANCE.getCollectionLiteralPartCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_LITERAL_PART_CS__OWNED_EXPRESSION = eINSTANCE.getCollectionLiteralPartCS_OwnedExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Last Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_LITERAL_PART_CS__OWNED_LAST_EXPRESSION = eINSTANCE.getCollectionLiteralPartCS_OwnedLastExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.LambdaLiteralExpCSImpl <em>Lambda Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.LambdaLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLambdaLiteralExpCS()
+     * @generated
+     */
+    EClass LAMBDA_LITERAL_EXP_CS = eINSTANCE.getLambdaLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Expression CS</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAMBDA_LITERAL_EXP_CS__OWNED_EXPRESSION_CS = eINSTANCE.getLambdaLiteralExpCS_OwnedExpressionCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MapLiteralExpCSImpl <em>Map Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.MapLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralExpCS()
+     * @generated
+     */
+    EClass MAP_LITERAL_EXP_CS = eINSTANCE.getMapLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_LITERAL_EXP_CS__OWNED_TYPE = eINSTANCE.getMapLiteralExpCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_LITERAL_EXP_CS__OWNED_PARTS = eINSTANCE.getMapLiteralExpCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MapLiteralPartCSImpl <em>Map Literal Part CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.MapLiteralPartCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralPartCS()
+     * @generated
+     */
+    EClass MAP_LITERAL_PART_CS = eINSTANCE.getMapLiteralPartCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Key</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_LITERAL_PART_CS__OWNED_KEY = eINSTANCE.getMapLiteralPartCS_OwnedKey();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_LITERAL_PART_CS__OWNED_VALUE = eINSTANCE.getMapLiteralPartCS_OwnedValue();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TupleLiteralExpCSImpl <em>Tuple Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TupleLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralExpCS()
+     * @generated
+     */
+    EClass TUPLE_LITERAL_EXP_CS = eINSTANCE.getTupleLiteralExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Parts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_LITERAL_EXP_CS__OWNED_PARTS = eINSTANCE.getTupleLiteralExpCS_OwnedParts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.TupleLiteralPartCSImpl <em>Tuple Literal Part CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.TupleLiteralPartCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralPartCS()
+     * @generated
+     */
+    EClass TUPLE_LITERAL_PART_CS = eINSTANCE.getTupleLiteralPartCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TUPLE_LITERAL_PART_CS__NAME = eINSTANCE.getTupleLiteralPartCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_LITERAL_PART_CS__OWNED_TYPE = eINSTANCE.getTupleLiteralPartCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Init Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_LITERAL_PART_CS__OWNED_INIT_EXPRESSION = eINSTANCE.getTupleLiteralPartCS_OwnedInitExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.NumberLiteralExpCSImpl <em>Number Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.NumberLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNumberLiteralExpCS()
+     * @generated
+     */
+    EClass NUMBER_LITERAL_EXP_CS = eINSTANCE.getNumberLiteralExpCS();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -2517,25 +5412,387 @@ public interface UsexPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INT_CARDINALITY__VALUE = eINSTANCE.getIntCardinality_Value();
+    EAttribute NUMBER_LITERAL_EXP_CS__VALUE = eINSTANCE.getNumberLiteralExpCS_Value();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AsteriskCardinalityImpl <em>Asterisk Cardinality</em>}' class.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.BooleanLiteralExpCSImpl <em>Boolean Literal Exp CS</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.AsteriskCardinalityImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAsteriskCardinality()
+     * @see org.xtext.uma.usex.usex.impl.BooleanLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getBooleanLiteralExpCS()
      * @generated
      */
-    EClass ASTERISK_CARDINALITY = eINSTANCE.getAsteriskCardinality();
+    EClass BOOLEAN_LITERAL_EXP_CS = eINSTANCE.getBooleanLiteralExpCS();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ASTERISK_CARDINALITY__VALUE = eINSTANCE.getAsteriskCardinality_Value();
+    EAttribute BOOLEAN_LITERAL_EXP_CS__SYMBOL = eINSTANCE.getBooleanLiteralExpCS_Symbol();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.UnlimitedNaturalLiteralExpCSImpl <em>Unlimited Natural Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.UnlimitedNaturalLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getUnlimitedNaturalLiteralExpCS()
+     * @generated
+     */
+    EClass UNLIMITED_NATURAL_LITERAL_EXP_CS = eINSTANCE.getUnlimitedNaturalLiteralExpCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.InvalidLiteralExpCSImpl <em>Invalid Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.InvalidLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInvalidLiteralExpCS()
+     * @generated
+     */
+    EClass INVALID_LITERAL_EXP_CS = eINSTANCE.getInvalidLiteralExpCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.NullLiteralExpCSImpl <em>Null Literal Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.NullLiteralExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNullLiteralExpCS()
+     * @generated
+     */
+    EClass NULL_LITERAL_EXP_CS = eINSTANCE.getNullLiteralExpCS();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.NestedExpCSImpl <em>Nested Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.NestedExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNestedExpCS()
+     * @generated
+     */
+    EClass NESTED_EXP_CS = eINSTANCE.getNestedExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NESTED_EXP_CS__OWNED_EXPRESSION = eINSTANCE.getNestedExpCS_OwnedExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.IfExpCSImpl <em>If Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.IfExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfExpCS()
+     * @generated
+     */
+    EClass IF_EXP_CS = eINSTANCE.getIfExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EXP_CS__OWNED_CONDITION = eINSTANCE.getIfExpCS_OwnedCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Then Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EXP_CS__OWNED_THEN_EXPRESSION = eINSTANCE.getIfExpCS_OwnedThenExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Owned If Then Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EXP_CS__OWNED_IF_THEN_EXPRESSIONS = eINSTANCE.getIfExpCS_OwnedIfThenExpressions();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Else Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EXP_CS__OWNED_ELSE_EXPRESSION = eINSTANCE.getIfExpCS_OwnedElseExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.IfThenExpCSImpl <em>If Then Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.IfThenExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfThenExpCS()
+     * @generated
+     */
+    EClass IF_THEN_EXP_CS = eINSTANCE.getIfThenExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_THEN_EXP_CS__OWNED_CONDITION = eINSTANCE.getIfThenExpCS_OwnedCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Then Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_THEN_EXP_CS__OWNED_THEN_EXPRESSION = eINSTANCE.getIfThenExpCS_OwnedThenExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.LetExpCSImpl <em>Let Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.LetExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetExpCS()
+     * @generated
+     */
+    EClass LET_EXP_CS = eINSTANCE.getLetExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Variables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LET_EXP_CS__OWNED_VARIABLES = eINSTANCE.getLetExpCS_OwnedVariables();
+
+    /**
+     * The meta object literal for the '<em><b>Owned In Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LET_EXP_CS__OWNED_IN_EXPRESSION = eINSTANCE.getLetExpCS_OwnedInExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.LetVariableCSImpl <em>Let Variable CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.LetVariableCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetVariableCS()
+     * @generated
+     */
+    EClass LET_VARIABLE_CS = eINSTANCE.getLetVariableCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LET_VARIABLE_CS__NAME = eINSTANCE.getLetVariableCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Round Bracketed Clause</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LET_VARIABLE_CS__OWNED_ROUND_BRACKETED_CLAUSE = eINSTANCE.getLetVariableCS_OwnedRoundBracketedClause();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LET_VARIABLE_CS__OWNED_TYPE = eINSTANCE.getLetVariableCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Init Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LET_VARIABLE_CS__OWNED_INIT_EXPRESSION = eINSTANCE.getLetVariableCS_OwnedInitExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.RoundBracketedClauseCSImpl <em>Round Bracketed Clause CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.RoundBracketedClauseCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRoundBracketedClauseCS()
+     * @generated
+     */
+    EClass ROUND_BRACKETED_CLAUSE_CS = eINSTANCE.getRoundBracketedClauseCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROUND_BRACKETED_CLAUSE_CS__OWNED_ARGUMENTS = eINSTANCE.getRoundBracketedClauseCS_OwnedArguments();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.NavigatingArgCSImpl <em>Navigating Arg CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.NavigatingArgCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNavigatingArgCS()
+     * @generated
+     */
+    EClass NAVIGATING_ARG_CS = eINSTANCE.getNavigatingArgCS();
+
+    /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAVIGATING_ARG_CS__PREFIX = eINSTANCE.getNavigatingArgCS_Prefix();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Name Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAVIGATING_ARG_CS__OWNED_NAME_EXPRESSION = eINSTANCE.getNavigatingArgCS_OwnedNameExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Symbol T</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAVIGATING_ARG_CS__SYMBOL_T = eINSTANCE.getNavigatingArgCS_SymbolT();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAVIGATING_ARG_CS__OWNED_TYPE = eINSTANCE.getNavigatingArgCS_OwnedType();
+
+    /**
+     * The meta object literal for the '<em><b>Symbol IE</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAVIGATING_ARG_CS__SYMBOL_IE = eINSTANCE.getNavigatingArgCS_SymbolIE();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Init Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAVIGATING_ARG_CS__OWNED_INIT_EXPRESSION = eINSTANCE.getNavigatingArgCS_OwnedInitExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Symbol CI</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAVIGATING_ARG_CS__SYMBOL_CI = eINSTANCE.getNavigatingArgCS_SymbolCI();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Co Iterator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAVIGATING_ARG_CS__OWNED_CO_ITERATOR = eINSTANCE.getNavigatingArgCS_OwnedCoIterator();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.VariableCSImpl <em>Variable CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.VariableCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getVariableCS()
+     * @generated
+     */
+    EClass VARIABLE_CS = eINSTANCE.getVariableCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_CS__NAME = eINSTANCE.getVariableCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_CS__OWNED_TYPE = eINSTANCE.getVariableCS_OwnedType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.InfixExpCSImpl <em>Infix Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.InfixExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInfixExpCS()
+     * @generated
+     */
+    EClass INFIX_EXP_CS = eINSTANCE.getInfixExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INFIX_EXP_CS__OWNED_LEFT = eINSTANCE.getInfixExpCS_OwnedLeft();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INFIX_EXP_CS__OPERATOR = eINSTANCE.getInfixExpCS_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INFIX_EXP_CS__OWNED_RIGHT = eINSTANCE.getInfixExpCS_OwnedRight();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.PrefixExpCSImpl <em>Prefix Exp CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.PrefixExpCSImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrefixExpCS()
+     * @generated
+     */
+    EClass PREFIX_EXP_CS = eINSTANCE.getPrefixExpCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFIX_EXP_CS__NAME = eINSTANCE.getPrefixExpCS_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFIX_EXP_CS__OWNED_RIGHT = eINSTANCE.getPrefixExpCS_OwnedRight();
 
   }
 

@@ -111,31 +111,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createClassTypeAdapter();
       }
       @Override
-      public Adapter caseAttributeInitialization(AttributeInitialization object)
-      {
-        return createAttributeInitializationAdapter();
-      }
-      @Override
-      public Adapter caseDoubleInitialization(DoubleInitialization object)
-      {
-        return createDoubleInitializationAdapter();
-      }
-      @Override
-      public Adapter caseBooleanInitialization(BooleanInitialization object)
-      {
-        return createBooleanInitializationAdapter();
-      }
-      @Override
-      public Adapter caseIntegerInitialization(IntegerInitialization object)
-      {
-        return createIntegerInitializationAdapter();
-      }
-      @Override
-      public Adapter caseStringInitialization(StringInitialization object)
-      {
-        return createStringInitializationAdapter();
-      }
-      @Override
       public Adapter caseOperation(Operation object)
       {
         return createOperationAdapter();
@@ -171,11 +146,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createPostconditionAdapter();
       }
       @Override
-      public Adapter caseConditionBody(ConditionBody object)
-      {
-        return createConditionBodyAdapter();
-      }
-      @Override
       public Adapter caseConstraint(Constraint object)
       {
         return createConstraintAdapter();
@@ -184,16 +154,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRelation(Relation object)
       {
         return createRelationAdapter();
-      }
-      @Override
-      public Adapter caseAssociation(Association object)
-      {
-        return createAssociationAdapter();
-      }
-      @Override
-      public Adapter caseComposition(Composition object)
-      {
-        return createCompositionAdapter();
       }
       @Override
       public Adapter caseRelationBody(RelationBody object)
@@ -206,34 +166,219 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createRelationMemberAdapter();
       }
       @Override
-      public Adapter caseCardinalityType(CardinalityType object)
+      public Adapter casePrimitiveTypeRefCS(PrimitiveTypeRefCS object)
       {
-        return createCardinalityTypeAdapter();
+        return createPrimitiveTypeRefCSAdapter();
       }
       @Override
-      public Adapter caseSimpleCardinality(SimpleCardinality object)
+      public Adapter caseCollectionTypeCS(CollectionTypeCS object)
       {
-        return createSimpleCardinalityAdapter();
+        return createCollectionTypeCSAdapter();
       }
       @Override
-      public Adapter caseDoubleCardinality(DoubleCardinality object)
+      public Adapter caseMapTypeCS(MapTypeCS object)
       {
-        return createDoubleCardinalityAdapter();
+        return createMapTypeCSAdapter();
       }
       @Override
-      public Adapter caseCardinalityValue(CardinalityValue object)
+      public Adapter caseTupleTypeCS(TupleTypeCS object)
       {
-        return createCardinalityValueAdapter();
+        return createTupleTypeCSAdapter();
       }
       @Override
-      public Adapter caseIntCardinality(IntCardinality object)
+      public Adapter caseTuplePartCS(TuplePartCS object)
       {
-        return createIntCardinalityAdapter();
+        return createTuplePartCSAdapter();
       }
       @Override
-      public Adapter caseAsteriskCardinality(AsteriskCardinality object)
+      public Adapter caseCollectionPatternCS(CollectionPatternCS object)
       {
-        return createAsteriskCardinalityAdapter();
+        return createCollectionPatternCSAdapter();
+      }
+      @Override
+      public Adapter casePatternExpCS(PatternExpCS object)
+      {
+        return createPatternExpCSAdapter();
+      }
+      @Override
+      public Adapter caseTypedRefCS(TypedRefCS object)
+      {
+        return createTypedRefCSAdapter();
+      }
+      @Override
+      public Adapter caseTypeLiteralExpCS(TypeLiteralExpCS object)
+      {
+        return createTypeLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseTypeNameExpCS(TypeNameExpCS object)
+      {
+        return createTypeNameExpCSAdapter();
+      }
+      @Override
+      public Adapter caseCurlyBracketedClauseCS(CurlyBracketedClauseCS object)
+      {
+        return createCurlyBracketedClauseCSAdapter();
+      }
+      @Override
+      public Adapter caseShadowPartCS(ShadowPartCS object)
+      {
+        return createShadowPartCSAdapter();
+      }
+      @Override
+      public Adapter caseStringLiteralExpCS(StringLiteralExpCS object)
+      {
+        return createStringLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityBoundsCS(MultiplicityBoundsCS object)
+      {
+        return createMultiplicityBoundsCSAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityCS(MultiplicityCS object)
+      {
+        return createMultiplicityCSAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityStringCS(MultiplicityStringCS object)
+      {
+        return createMultiplicityStringCSAdapter();
+      }
+      @Override
+      public Adapter casePathNameCS(PathNameCS object)
+      {
+        return createPathNameCSAdapter();
+      }
+      @Override
+      public Adapter caseExpCS(ExpCS object)
+      {
+        return createExpCSAdapter();
+      }
+      @Override
+      public Adapter casePrimitiveLiteralExpCS(PrimitiveLiteralExpCS object)
+      {
+        return createPrimitiveLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseNameExpCS(NameExpCS object)
+      {
+        return createNameExpCSAdapter();
+      }
+      @Override
+      public Adapter caseSquareBracketedClauseCS(SquareBracketedClauseCS object)
+      {
+        return createSquareBracketedClauseCSAdapter();
+      }
+      @Override
+      public Adapter caseCollectionLiteralExpCS(CollectionLiteralExpCS object)
+      {
+        return createCollectionLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseCollectionLiteralPartCS(CollectionLiteralPartCS object)
+      {
+        return createCollectionLiteralPartCSAdapter();
+      }
+      @Override
+      public Adapter caseLambdaLiteralExpCS(LambdaLiteralExpCS object)
+      {
+        return createLambdaLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseMapLiteralExpCS(MapLiteralExpCS object)
+      {
+        return createMapLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseMapLiteralPartCS(MapLiteralPartCS object)
+      {
+        return createMapLiteralPartCSAdapter();
+      }
+      @Override
+      public Adapter caseTupleLiteralExpCS(TupleLiteralExpCS object)
+      {
+        return createTupleLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseTupleLiteralPartCS(TupleLiteralPartCS object)
+      {
+        return createTupleLiteralPartCSAdapter();
+      }
+      @Override
+      public Adapter caseNumberLiteralExpCS(NumberLiteralExpCS object)
+      {
+        return createNumberLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseBooleanLiteralExpCS(BooleanLiteralExpCS object)
+      {
+        return createBooleanLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseUnlimitedNaturalLiteralExpCS(UnlimitedNaturalLiteralExpCS object)
+      {
+        return createUnlimitedNaturalLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseInvalidLiteralExpCS(InvalidLiteralExpCS object)
+      {
+        return createInvalidLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseNullLiteralExpCS(NullLiteralExpCS object)
+      {
+        return createNullLiteralExpCSAdapter();
+      }
+      @Override
+      public Adapter caseNestedExpCS(NestedExpCS object)
+      {
+        return createNestedExpCSAdapter();
+      }
+      @Override
+      public Adapter caseIfExpCS(IfExpCS object)
+      {
+        return createIfExpCSAdapter();
+      }
+      @Override
+      public Adapter caseIfThenExpCS(IfThenExpCS object)
+      {
+        return createIfThenExpCSAdapter();
+      }
+      @Override
+      public Adapter caseLetExpCS(LetExpCS object)
+      {
+        return createLetExpCSAdapter();
+      }
+      @Override
+      public Adapter caseLetVariableCS(LetVariableCS object)
+      {
+        return createLetVariableCSAdapter();
+      }
+      @Override
+      public Adapter caseRoundBracketedClauseCS(RoundBracketedClauseCS object)
+      {
+        return createRoundBracketedClauseCSAdapter();
+      }
+      @Override
+      public Adapter caseNavigatingArgCS(NavigatingArgCS object)
+      {
+        return createNavigatingArgCSAdapter();
+      }
+      @Override
+      public Adapter caseVariableCS(VariableCS object)
+      {
+        return createVariableCSAdapter();
+      }
+      @Override
+      public Adapter caseInfixExpCS(InfixExpCS object)
+      {
+        return createInfixExpCSAdapter();
+      }
+      @Override
+      public Adapter casePrefixExpCS(PrefixExpCS object)
+      {
+        return createPrefixExpCSAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -363,81 +508,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.AttributeInitialization <em>Attribute Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.AttributeInitialization
-   * @generated
-   */
-  public Adapter createAttributeInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.DoubleInitialization <em>Double Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.DoubleInitialization
-   * @generated
-   */
-  public Adapter createDoubleInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.BooleanInitialization <em>Boolean Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.BooleanInitialization
-   * @generated
-   */
-  public Adapter createBooleanInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.IntegerInitialization <em>Integer Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.IntegerInitialization
-   * @generated
-   */
-  public Adapter createIntegerInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.StringInitialization <em>String Initialization</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.StringInitialization
-   * @generated
-   */
-  public Adapter createStringInitializationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -543,21 +613,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.ConditionBody <em>Condition Body</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.ConditionBody
-   * @generated
-   */
-  public Adapter createConditionBodyAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Constraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -583,36 +638,6 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRelationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Association <em>Association</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.Association
-   * @generated
-   */
-  public Adapter createAssociationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Composition <em>Composition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.Composition
-   * @generated
-   */
-  public Adapter createCompositionAdapter()
   {
     return null;
   }
@@ -648,91 +673,646 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CardinalityType <em>Cardinality Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.PrimitiveTypeRefCS <em>Primitive Type Ref CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.CardinalityType
+   * @see org.xtext.uma.usex.usex.PrimitiveTypeRefCS
    * @generated
    */
-  public Adapter createCardinalityTypeAdapter()
+  public Adapter createPrimitiveTypeRefCSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.SimpleCardinality <em>Simple Cardinality</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CollectionTypeCS <em>Collection Type CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.SimpleCardinality
+   * @see org.xtext.uma.usex.usex.CollectionTypeCS
    * @generated
    */
-  public Adapter createSimpleCardinalityAdapter()
+  public Adapter createCollectionTypeCSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.DoubleCardinality <em>Double Cardinality</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MapTypeCS <em>Map Type CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.DoubleCardinality
+   * @see org.xtext.uma.usex.usex.MapTypeCS
    * @generated
    */
-  public Adapter createDoubleCardinalityAdapter()
+  public Adapter createMapTypeCSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CardinalityValue <em>Cardinality Value</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TupleTypeCS <em>Tuple Type CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.CardinalityValue
+   * @see org.xtext.uma.usex.usex.TupleTypeCS
    * @generated
    */
-  public Adapter createCardinalityValueAdapter()
+  public Adapter createTupleTypeCSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.IntCardinality <em>Int Cardinality</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TuplePartCS <em>Tuple Part CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.IntCardinality
+   * @see org.xtext.uma.usex.usex.TuplePartCS
    * @generated
    */
-  public Adapter createIntCardinalityAdapter()
+  public Adapter createTuplePartCSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.AsteriskCardinality <em>Asterisk Cardinality</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CollectionPatternCS <em>Collection Pattern CS</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.AsteriskCardinality
+   * @see org.xtext.uma.usex.usex.CollectionPatternCS
    * @generated
    */
-  public Adapter createAsteriskCardinalityAdapter()
+  public Adapter createCollectionPatternCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.PatternExpCS <em>Pattern Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.PatternExpCS
+   * @generated
+   */
+  public Adapter createPatternExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TypedRefCS <em>Typed Ref CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.TypedRefCS
+   * @generated
+   */
+  public Adapter createTypedRefCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TypeLiteralExpCS <em>Type Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.TypeLiteralExpCS
+   * @generated
+   */
+  public Adapter createTypeLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TypeNameExpCS <em>Type Name Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.TypeNameExpCS
+   * @generated
+   */
+  public Adapter createTypeNameExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CurlyBracketedClauseCS <em>Curly Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.CurlyBracketedClauseCS
+   * @generated
+   */
+  public Adapter createCurlyBracketedClauseCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.ShadowPartCS <em>Shadow Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.ShadowPartCS
+   * @generated
+   */
+  public Adapter createShadowPartCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.StringLiteralExpCS <em>String Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.StringLiteralExpCS
+   * @generated
+   */
+  public Adapter createStringLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MultiplicityBoundsCS <em>Multiplicity Bounds CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.MultiplicityBoundsCS
+   * @generated
+   */
+  public Adapter createMultiplicityBoundsCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MultiplicityCS <em>Multiplicity CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.MultiplicityCS
+   * @generated
+   */
+  public Adapter createMultiplicityCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MultiplicityStringCS <em>Multiplicity String CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.MultiplicityStringCS
+   * @generated
+   */
+  public Adapter createMultiplicityStringCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.PathNameCS <em>Path Name CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.PathNameCS
+   * @generated
+   */
+  public Adapter createPathNameCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.ExpCS <em>Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.ExpCS
+   * @generated
+   */
+  public Adapter createExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.PrimitiveLiteralExpCS <em>Primitive Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.PrimitiveLiteralExpCS
+   * @generated
+   */
+  public Adapter createPrimitiveLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.NameExpCS <em>Name Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.NameExpCS
+   * @generated
+   */
+  public Adapter createNameExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.SquareBracketedClauseCS <em>Square Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.SquareBracketedClauseCS
+   * @generated
+   */
+  public Adapter createSquareBracketedClauseCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CollectionLiteralExpCS <em>Collection Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralExpCS
+   * @generated
+   */
+  public Adapter createCollectionLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CollectionLiteralPartCS <em>Collection Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.CollectionLiteralPartCS
+   * @generated
+   */
+  public Adapter createCollectionLiteralPartCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.LambdaLiteralExpCS <em>Lambda Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.LambdaLiteralExpCS
+   * @generated
+   */
+  public Adapter createLambdaLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MapLiteralExpCS <em>Map Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.MapLiteralExpCS
+   * @generated
+   */
+  public Adapter createMapLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MapLiteralPartCS <em>Map Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.MapLiteralPartCS
+   * @generated
+   */
+  public Adapter createMapLiteralPartCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TupleLiteralExpCS <em>Tuple Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.TupleLiteralExpCS
+   * @generated
+   */
+  public Adapter createTupleLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.TupleLiteralPartCS <em>Tuple Literal Part CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.TupleLiteralPartCS
+   * @generated
+   */
+  public Adapter createTupleLiteralPartCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.NumberLiteralExpCS <em>Number Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.NumberLiteralExpCS
+   * @generated
+   */
+  public Adapter createNumberLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.BooleanLiteralExpCS <em>Boolean Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.BooleanLiteralExpCS
+   * @generated
+   */
+  public Adapter createBooleanLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS <em>Unlimited Natural Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS
+   * @generated
+   */
+  public Adapter createUnlimitedNaturalLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.InvalidLiteralExpCS <em>Invalid Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.InvalidLiteralExpCS
+   * @generated
+   */
+  public Adapter createInvalidLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.NullLiteralExpCS <em>Null Literal Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.NullLiteralExpCS
+   * @generated
+   */
+  public Adapter createNullLiteralExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.NestedExpCS <em>Nested Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.NestedExpCS
+   * @generated
+   */
+  public Adapter createNestedExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.IfExpCS <em>If Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.IfExpCS
+   * @generated
+   */
+  public Adapter createIfExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.IfThenExpCS <em>If Then Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.IfThenExpCS
+   * @generated
+   */
+  public Adapter createIfThenExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.LetExpCS <em>Let Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.LetExpCS
+   * @generated
+   */
+  public Adapter createLetExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.LetVariableCS <em>Let Variable CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.LetVariableCS
+   * @generated
+   */
+  public Adapter createLetVariableCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.RoundBracketedClauseCS <em>Round Bracketed Clause CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.RoundBracketedClauseCS
+   * @generated
+   */
+  public Adapter createRoundBracketedClauseCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.NavigatingArgCS <em>Navigating Arg CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.NavigatingArgCS
+   * @generated
+   */
+  public Adapter createNavigatingArgCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.VariableCS <em>Variable CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.VariableCS
+   * @generated
+   */
+  public Adapter createVariableCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.InfixExpCS <em>Infix Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.InfixExpCS
+   * @generated
+   */
+  public Adapter createInfixExpCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.PrefixExpCS <em>Prefix Exp CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.PrefixExpCS
+   * @generated
+   */
+  public Adapter createPrefixExpCSAdapter()
   {
     return null;
   }

@@ -85,25 +85,25 @@ public interface Operation extends EObject
   void setReturnParameter(AttributeType value);
 
   /**
-   * Returns the value of the '<em><b>Operation Body</b></em>' attribute.
+   * Returns the value of the '<em><b>Operation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation Body</em>' attribute.
-   * @see #setOperationBody(String)
+   * @return the value of the '<em>Operation Body</em>' containment reference.
+   * @see #setOperationBody(ExpCS)
    * @see org.xtext.uma.usex.usex.UsexPackage#getOperation_OperationBody()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getOperationBody();
+  ExpCS getOperationBody();
 
   /**
-   * Sets the value of the '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation Body</em>' attribute.
+   * @param value the new value of the '<em>Operation Body</em>' containment reference.
    * @see #getOperationBody()
    * @generated
    */
-  void setOperationBody(String value);
+  void setOperationBody(ExpCS value);
 
 } // Operation

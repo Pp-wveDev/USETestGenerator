@@ -75,12 +75,12 @@ public interface Attribute extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Initialization</em>' containment reference.
-   * @see #setInitialization(AttributeInitialization)
+   * @see #setInitialization(ExpCS)
    * @see org.xtext.uma.usex.usex.UsexPackage#getAttribute_Initialization()
    * @model containment="true"
    * @generated
    */
-  AttributeInitialization getInitialization();
+  ExpCS getInitialization();
 
   /**
    * Sets the value of the '{@link org.xtext.uma.usex.usex.Attribute#getInitialization <em>Initialization</em>}' containment reference.
@@ -90,28 +90,28 @@ public interface Attribute extends EObject
    * @see #getInitialization()
    * @generated
    */
-  void setInitialization(AttributeInitialization value);
+  void setInitialization(ExpCS value);
 
   /**
-   * Returns the value of the '<em><b>Derived From</b></em>' attribute.
+   * Returns the value of the '<em><b>Derived From</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Derived From</em>' attribute.
-   * @see #setDerivedFrom(String)
+   * @return the value of the '<em>Derived From</em>' containment reference.
+   * @see #setDerivedFrom(ExpCS)
    * @see org.xtext.uma.usex.usex.UsexPackage#getAttribute_DerivedFrom()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDerivedFrom();
+  ExpCS getDerivedFrom();
 
   /**
-   * Sets the value of the '{@link org.xtext.uma.usex.usex.Attribute#getDerivedFrom <em>Derived From</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Attribute#getDerivedFrom <em>Derived From</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Derived From</em>' attribute.
+   * @param value the new value of the '<em>Derived From</em>' containment reference.
    * @see #getDerivedFrom()
    * @generated
    */
-  void setDerivedFrom(String value);
+  void setDerivedFrom(ExpCS value);
 
 } // Attribute

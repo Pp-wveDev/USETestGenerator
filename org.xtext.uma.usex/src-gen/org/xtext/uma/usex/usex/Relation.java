@@ -13,6 +13,7 @@ package org.xtext.uma.usex.usex;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.Relation#getRelationType <em>Relation Type</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Relation#getRelationBody <em>Relation Body</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package org.xtext.uma.usex.usex;
  */
 public interface Relation extends AbstractElement
 {
+  /**
+   * Returns the value of the '<em><b>Relation Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Relation Type</em>' attribute.
+   * @see #setRelationType(String)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getRelation_RelationType()
+   * @model
+   * @generated
+   */
+  String getRelationType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Relation#getRelationType <em>Relation Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Relation Type</em>' attribute.
+   * @see #getRelationType()
+   * @generated
+   */
+  void setRelationType(String value);
+
   /**
    * Returns the value of the '<em><b>Relation Body</b></em>' containment reference.
    * <!-- begin-user-doc -->

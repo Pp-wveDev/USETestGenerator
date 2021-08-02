@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.uma.usex.usex.Condition;
-import org.xtext.uma.usex.usex.ConditionBody;
+import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.UsexPackage;
 
 /**
@@ -24,6 +24,7 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.ConditionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.ConditionImpl#getConditionBody <em>Condition Body</em>}</li>
  * </ul>
  *
@@ -32,6 +33,26 @@ import org.xtext.uma.usex.usex.UsexPackage;
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
   /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getConditionBody() <em>Condition Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -39,7 +60,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected ConditionBody conditionBody;
+  protected ExpCS conditionBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +89,32 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
-  public ConditionBody getConditionBody()
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.CONDITION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExpCS getConditionBody()
   {
     return conditionBody;
   }
@@ -78,9 +124,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConditionBody(ConditionBody newConditionBody, NotificationChain msgs)
+  public NotificationChain basicSetConditionBody(ExpCS newConditionBody, NotificationChain msgs)
   {
-    ConditionBody oldConditionBody = conditionBody;
+    ExpCS oldConditionBody = conditionBody;
     conditionBody = newConditionBody;
     if (eNotificationRequired())
     {
@@ -96,7 +142,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
-  public void setConditionBody(ConditionBody newConditionBody)
+  public void setConditionBody(ExpCS newConditionBody)
   {
     if (newConditionBody != conditionBody)
     {
@@ -138,6 +184,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case UsexPackage.CONDITION__NAME:
+        return getName();
       case UsexPackage.CONDITION__CONDITION_BODY:
         return getConditionBody();
     }
@@ -154,8 +202,11 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case UsexPackage.CONDITION__NAME:
+        setName((String)newValue);
+        return;
       case UsexPackage.CONDITION__CONDITION_BODY:
-        setConditionBody((ConditionBody)newValue);
+        setConditionBody((ExpCS)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +222,11 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case UsexPackage.CONDITION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case UsexPackage.CONDITION__CONDITION_BODY:
-        setConditionBody((ConditionBody)null);
+        setConditionBody((ExpCS)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +242,29 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
+      case UsexPackage.CONDITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case UsexPackage.CONDITION__CONDITION_BODY:
         return conditionBody != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ConditionImpl

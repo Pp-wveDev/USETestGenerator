@@ -52,12 +52,12 @@ public interface RelationMember extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cardinality</em>' containment reference.
-   * @see #setCardinality(CardinalityType)
+   * @see #setCardinality(MultiplicityCS)
    * @see org.xtext.uma.usex.usex.UsexPackage#getRelationMember_Cardinality()
    * @model containment="true"
    * @generated
    */
-  CardinalityType getCardinality();
+  MultiplicityCS getCardinality();
 
   /**
    * Sets the value of the '{@link org.xtext.uma.usex.usex.RelationMember#getCardinality <em>Cardinality</em>}' containment reference.
@@ -67,7 +67,7 @@ public interface RelationMember extends EObject
    * @see #getCardinality()
    * @generated
    */
-  void setCardinality(CardinalityType value);
+  void setCardinality(MultiplicityCS value);
 
   /**
    * Returns the value of the '<em><b>Role Name</b></em>' attribute.

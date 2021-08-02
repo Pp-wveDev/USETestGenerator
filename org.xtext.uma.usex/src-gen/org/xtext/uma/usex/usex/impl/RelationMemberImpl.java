@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.uma.usex.usex.CardinalityType;
+import org.xtext.uma.usex.usex.MultiplicityCS;
 import org.xtext.uma.usex.usex.RelationMember;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexPackage;
@@ -52,7 +52,7 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected CardinalityType cardinality;
+  protected MultiplicityCS cardinality;
 
   /**
    * The default value of the '{@link #getRoleName() <em>Role Name</em>}' attribute.
@@ -146,7 +146,7 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public CardinalityType getCardinality()
+  public MultiplicityCS getCardinality()
   {
     return cardinality;
   }
@@ -156,9 +156,9 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCardinality(CardinalityType newCardinality, NotificationChain msgs)
+  public NotificationChain basicSetCardinality(MultiplicityCS newCardinality, NotificationChain msgs)
   {
-    CardinalityType oldCardinality = cardinality;
+    MultiplicityCS oldCardinality = cardinality;
     cardinality = newCardinality;
     if (eNotificationRequired())
     {
@@ -174,7 +174,7 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setCardinality(CardinalityType newCardinality)
+  public void setCardinality(MultiplicityCS newCardinality)
   {
     if (newCardinality != cardinality)
     {
@@ -266,7 +266,7 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
         setClass((UseClass)newValue);
         return;
       case UsexPackage.RELATION_MEMBER__CARDINALITY:
-        setCardinality((CardinalityType)newValue);
+        setCardinality((MultiplicityCS)newValue);
         return;
       case UsexPackage.RELATION_MEMBER__ROLE_NAME:
         setRoleName((String)newValue);
@@ -289,7 +289,7 @@ public class RelationMemberImpl extends MinimalEObjectImpl.Container implements 
         setClass((UseClass)null);
         return;
       case UsexPackage.RELATION_MEMBER__CARDINALITY:
-        setCardinality((CardinalityType)null);
+        setCardinality((MultiplicityCS)null);
         return;
       case UsexPackage.RELATION_MEMBER__ROLE_NAME:
         setRoleName(ROLE_NAME_EDEFAULT);

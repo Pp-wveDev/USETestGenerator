@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.UseClass#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getOperations <em>Operations</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getConstraints <em>Constraints</em>}</li>
@@ -25,6 +26,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface UseClass extends AbstractElement
 {
+  /**
+   * Returns the value of the '<em><b>Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Abstract</em>' attribute.
+   * @see #setAbstract(boolean)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getUseClass_Abstract()
+   * @model
+   * @generated
+   */
+  boolean isAbstract();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.UseClass#isAbstract <em>Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Abstract</em>' attribute.
+   * @see #isAbstract()
+   * @generated
+   */
+  void setAbstract(boolean value);
+
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.uma.usex.usex.Attribute}.

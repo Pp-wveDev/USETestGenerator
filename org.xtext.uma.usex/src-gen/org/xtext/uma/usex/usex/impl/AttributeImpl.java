@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.uma.usex.usex.Attribute;
-import org.xtext.uma.usex.usex.AttributeInitialization;
 import org.xtext.uma.usex.usex.AttributeType;
+import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.UsexPackage;
 
 /**
@@ -73,27 +73,17 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    * @ordered
    */
-  protected AttributeInitialization initialization;
+  protected ExpCS initialization;
 
   /**
-   * The default value of the '{@link #getDerivedFrom() <em>Derived From</em>}' attribute.
+   * The cached value of the '{@link #getDerivedFrom() <em>Derived From</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDerivedFrom()
    * @generated
    * @ordered
    */
-  protected static final String DERIVED_FROM_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDerivedFrom() <em>Derived From</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDerivedFrom()
-   * @generated
-   * @ordered
-   */
-  protected String derivedFrom = DERIVED_FROM_EDEFAULT;
+  protected ExpCS derivedFrom;
 
   /**
    * <!-- begin-user-doc -->
@@ -197,7 +187,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public AttributeInitialization getInitialization()
+  public ExpCS getInitialization()
   {
     return initialization;
   }
@@ -207,9 +197,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInitialization(AttributeInitialization newInitialization, NotificationChain msgs)
+  public NotificationChain basicSetInitialization(ExpCS newInitialization, NotificationChain msgs)
   {
-    AttributeInitialization oldInitialization = initialization;
+    ExpCS oldInitialization = initialization;
     initialization = newInitialization;
     if (eNotificationRequired())
     {
@@ -225,7 +215,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public void setInitialization(AttributeInitialization newInitialization)
+  public void setInitialization(ExpCS newInitialization)
   {
     if (newInitialization != initialization)
     {
@@ -247,7 +237,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public String getDerivedFrom()
+  public ExpCS getDerivedFrom()
   {
     return derivedFrom;
   }
@@ -257,13 +247,38 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDerivedFrom(String newDerivedFrom)
+  public NotificationChain basicSetDerivedFrom(ExpCS newDerivedFrom, NotificationChain msgs)
   {
-    String oldDerivedFrom = derivedFrom;
+    ExpCS oldDerivedFrom = derivedFrom;
     derivedFrom = newDerivedFrom;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.ATTRIBUTE__DERIVED_FROM, oldDerivedFrom, derivedFrom));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UsexPackage.ATTRIBUTE__DERIVED_FROM, oldDerivedFrom, newDerivedFrom);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDerivedFrom(ExpCS newDerivedFrom)
+  {
+    if (newDerivedFrom != derivedFrom)
+    {
+      NotificationChain msgs = null;
+      if (derivedFrom != null)
+        msgs = ((InternalEObject)derivedFrom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UsexPackage.ATTRIBUTE__DERIVED_FROM, null, msgs);
+      if (newDerivedFrom != null)
+        msgs = ((InternalEObject)newDerivedFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UsexPackage.ATTRIBUTE__DERIVED_FROM, null, msgs);
+      msgs = basicSetDerivedFrom(newDerivedFrom, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.ATTRIBUTE__DERIVED_FROM, newDerivedFrom, newDerivedFrom));
   }
 
   /**
@@ -280,6 +295,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         return basicSetType(null, msgs);
       case UsexPackage.ATTRIBUTE__INITIALIZATION:
         return basicSetInitialization(null, msgs);
+      case UsexPackage.ATTRIBUTE__DERIVED_FROM:
+        return basicSetDerivedFrom(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -323,10 +340,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setType((AttributeType)newValue);
         return;
       case UsexPackage.ATTRIBUTE__INITIALIZATION:
-        setInitialization((AttributeInitialization)newValue);
+        setInitialization((ExpCS)newValue);
         return;
       case UsexPackage.ATTRIBUTE__DERIVED_FROM:
-        setDerivedFrom((String)newValue);
+        setDerivedFrom((ExpCS)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -349,10 +366,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setType((AttributeType)null);
         return;
       case UsexPackage.ATTRIBUTE__INITIALIZATION:
-        setInitialization((AttributeInitialization)null);
+        setInitialization((ExpCS)null);
         return;
       case UsexPackage.ATTRIBUTE__DERIVED_FROM:
-        setDerivedFrom(DERIVED_FROM_EDEFAULT);
+        setDerivedFrom((ExpCS)null);
         return;
     }
     super.eUnset(featureID);
@@ -375,7 +392,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
       case UsexPackage.ATTRIBUTE__INITIALIZATION:
         return initialization != null;
       case UsexPackage.ATTRIBUTE__DERIVED_FROM:
-        return DERIVED_FROM_EDEFAULT == null ? derivedFrom != null : !DERIVED_FROM_EDEFAULT.equals(derivedFrom);
+        return derivedFrom != null;
     }
     return super.eIsSet(featureID);
   }
@@ -393,8 +410,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", derivedFrom: ");
-    result.append(derivedFrom);
     result.append(')');
     return result.toString();
   }

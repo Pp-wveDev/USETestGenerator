@@ -1,0 +1,7 @@
+FOR mode random steps 10
+
+begin declarations
+	TEST rarm : RArm
+	configuration : Configuration
+	item : Item
+end

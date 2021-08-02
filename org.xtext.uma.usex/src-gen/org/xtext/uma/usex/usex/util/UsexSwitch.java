@@ -125,45 +125,6 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.ATTRIBUTE_INITIALIZATION:
-      {
-        AttributeInitialization attributeInitialization = (AttributeInitialization)theEObject;
-        T result = caseAttributeInitialization(attributeInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.DOUBLE_INITIALIZATION:
-      {
-        DoubleInitialization doubleInitialization = (DoubleInitialization)theEObject;
-        T result = caseDoubleInitialization(doubleInitialization);
-        if (result == null) result = caseAttributeInitialization(doubleInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.BOOLEAN_INITIALIZATION:
-      {
-        BooleanInitialization booleanInitialization = (BooleanInitialization)theEObject;
-        T result = caseBooleanInitialization(booleanInitialization);
-        if (result == null) result = caseAttributeInitialization(booleanInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.INTEGER_INITIALIZATION:
-      {
-        IntegerInitialization integerInitialization = (IntegerInitialization)theEObject;
-        T result = caseIntegerInitialization(integerInitialization);
-        if (result == null) result = caseAttributeInitialization(integerInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.STRING_INITIALIZATION:
-      {
-        StringInitialization stringInitialization = (StringInitialization)theEObject;
-        T result = caseStringInitialization(stringInitialization);
-        if (result == null) result = caseAttributeInitialization(stringInitialization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case UsexPackage.OPERATION:
       {
         Operation operation = (Operation)theEObject;
@@ -217,13 +178,6 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.CONDITION_BODY:
-      {
-        ConditionBody conditionBody = (ConditionBody)theEObject;
-        T result = caseConditionBody(conditionBody);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case UsexPackage.CONSTRAINT:
       {
         Constraint constraint = (Constraint)theEObject;
@@ -236,24 +190,6 @@ public class UsexSwitch<T> extends Switch<T>
         Relation relation = (Relation)theEObject;
         T result = caseRelation(relation);
         if (result == null) result = caseAbstractElement(relation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.ASSOCIATION:
-      {
-        Association association = (Association)theEObject;
-        T result = caseAssociation(association);
-        if (result == null) result = caseRelation(association);
-        if (result == null) result = caseAbstractElement(association);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case UsexPackage.COMPOSITION:
-      {
-        Composition composition = (Composition)theEObject;
-        T result = caseComposition(composition);
-        if (result == null) result = caseRelation(composition);
-        if (result == null) result = caseAbstractElement(composition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -271,49 +207,336 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.CARDINALITY_TYPE:
+      case UsexPackage.PRIMITIVE_TYPE_REF_CS:
       {
-        CardinalityType cardinalityType = (CardinalityType)theEObject;
-        T result = caseCardinalityType(cardinalityType);
+        PrimitiveTypeRefCS primitiveTypeRefCS = (PrimitiveTypeRefCS)theEObject;
+        T result = casePrimitiveTypeRefCS(primitiveTypeRefCS);
+        if (result == null) result = caseTypedRefCS(primitiveTypeRefCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.SIMPLE_CARDINALITY:
+      case UsexPackage.COLLECTION_TYPE_CS:
       {
-        SimpleCardinality simpleCardinality = (SimpleCardinality)theEObject;
-        T result = caseSimpleCardinality(simpleCardinality);
-        if (result == null) result = caseCardinalityType(simpleCardinality);
+        CollectionTypeCS collectionTypeCS = (CollectionTypeCS)theEObject;
+        T result = caseCollectionTypeCS(collectionTypeCS);
+        if (result == null) result = caseTypedRefCS(collectionTypeCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.DOUBLE_CARDINALITY:
+      case UsexPackage.MAP_TYPE_CS:
       {
-        DoubleCardinality doubleCardinality = (DoubleCardinality)theEObject;
-        T result = caseDoubleCardinality(doubleCardinality);
-        if (result == null) result = caseCardinalityType(doubleCardinality);
+        MapTypeCS mapTypeCS = (MapTypeCS)theEObject;
+        T result = caseMapTypeCS(mapTypeCS);
+        if (result == null) result = caseTypedRefCS(mapTypeCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.CARDINALITY_VALUE:
+      case UsexPackage.TUPLE_TYPE_CS:
       {
-        CardinalityValue cardinalityValue = (CardinalityValue)theEObject;
-        T result = caseCardinalityValue(cardinalityValue);
+        TupleTypeCS tupleTypeCS = (TupleTypeCS)theEObject;
+        T result = caseTupleTypeCS(tupleTypeCS);
+        if (result == null) result = caseTypedRefCS(tupleTypeCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.INT_CARDINALITY:
+      case UsexPackage.TUPLE_PART_CS:
       {
-        IntCardinality intCardinality = (IntCardinality)theEObject;
-        T result = caseIntCardinality(intCardinality);
-        if (result == null) result = caseCardinalityValue(intCardinality);
+        TuplePartCS tuplePartCS = (TuplePartCS)theEObject;
+        T result = caseTuplePartCS(tuplePartCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.ASTERISK_CARDINALITY:
+      case UsexPackage.COLLECTION_PATTERN_CS:
       {
-        AsteriskCardinality asteriskCardinality = (AsteriskCardinality)theEObject;
-        T result = caseAsteriskCardinality(asteriskCardinality);
-        if (result == null) result = caseCardinalityValue(asteriskCardinality);
+        CollectionPatternCS collectionPatternCS = (CollectionPatternCS)theEObject;
+        T result = caseCollectionPatternCS(collectionPatternCS);
+        if (result == null) result = caseTypedRefCS(collectionPatternCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.PATTERN_EXP_CS:
+      {
+        PatternExpCS patternExpCS = (PatternExpCS)theEObject;
+        T result = casePatternExpCS(patternExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.TYPED_REF_CS:
+      {
+        TypedRefCS typedRefCS = (TypedRefCS)theEObject;
+        T result = caseTypedRefCS(typedRefCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.TYPE_LITERAL_EXP_CS:
+      {
+        TypeLiteralExpCS typeLiteralExpCS = (TypeLiteralExpCS)theEObject;
+        T result = caseTypeLiteralExpCS(typeLiteralExpCS);
+        if (result == null) result = caseExpCS(typeLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.TYPE_NAME_EXP_CS:
+      {
+        TypeNameExpCS typeNameExpCS = (TypeNameExpCS)theEObject;
+        T result = caseTypeNameExpCS(typeNameExpCS);
+        if (result == null) result = caseTypedRefCS(typeNameExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.CURLY_BRACKETED_CLAUSE_CS:
+      {
+        CurlyBracketedClauseCS curlyBracketedClauseCS = (CurlyBracketedClauseCS)theEObject;
+        T result = caseCurlyBracketedClauseCS(curlyBracketedClauseCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.SHADOW_PART_CS:
+      {
+        ShadowPartCS shadowPartCS = (ShadowPartCS)theEObject;
+        T result = caseShadowPartCS(shadowPartCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.STRING_LITERAL_EXP_CS:
+      {
+        StringLiteralExpCS stringLiteralExpCS = (StringLiteralExpCS)theEObject;
+        T result = caseStringLiteralExpCS(stringLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(stringLiteralExpCS);
+        if (result == null) result = caseExpCS(stringLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.MULTIPLICITY_BOUNDS_CS:
+      {
+        MultiplicityBoundsCS multiplicityBoundsCS = (MultiplicityBoundsCS)theEObject;
+        T result = caseMultiplicityBoundsCS(multiplicityBoundsCS);
+        if (result == null) result = caseMultiplicityCS(multiplicityBoundsCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.MULTIPLICITY_CS:
+      {
+        MultiplicityCS multiplicityCS = (MultiplicityCS)theEObject;
+        T result = caseMultiplicityCS(multiplicityCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.MULTIPLICITY_STRING_CS:
+      {
+        MultiplicityStringCS multiplicityStringCS = (MultiplicityStringCS)theEObject;
+        T result = caseMultiplicityStringCS(multiplicityStringCS);
+        if (result == null) result = caseMultiplicityCS(multiplicityStringCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.PATH_NAME_CS:
+      {
+        PathNameCS pathNameCS = (PathNameCS)theEObject;
+        T result = casePathNameCS(pathNameCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.EXP_CS:
+      {
+        ExpCS expCS = (ExpCS)theEObject;
+        T result = caseExpCS(expCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.PRIMITIVE_LITERAL_EXP_CS:
+      {
+        PrimitiveLiteralExpCS primitiveLiteralExpCS = (PrimitiveLiteralExpCS)theEObject;
+        T result = casePrimitiveLiteralExpCS(primitiveLiteralExpCS);
+        if (result == null) result = caseExpCS(primitiveLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.NAME_EXP_CS:
+      {
+        NameExpCS nameExpCS = (NameExpCS)theEObject;
+        T result = caseNameExpCS(nameExpCS);
+        if (result == null) result = caseExpCS(nameExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.SQUARE_BRACKETED_CLAUSE_CS:
+      {
+        SquareBracketedClauseCS squareBracketedClauseCS = (SquareBracketedClauseCS)theEObject;
+        T result = caseSquareBracketedClauseCS(squareBracketedClauseCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.COLLECTION_LITERAL_EXP_CS:
+      {
+        CollectionLiteralExpCS collectionLiteralExpCS = (CollectionLiteralExpCS)theEObject;
+        T result = caseCollectionLiteralExpCS(collectionLiteralExpCS);
+        if (result == null) result = caseExpCS(collectionLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.COLLECTION_LITERAL_PART_CS:
+      {
+        CollectionLiteralPartCS collectionLiteralPartCS = (CollectionLiteralPartCS)theEObject;
+        T result = caseCollectionLiteralPartCS(collectionLiteralPartCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.LAMBDA_LITERAL_EXP_CS:
+      {
+        LambdaLiteralExpCS lambdaLiteralExpCS = (LambdaLiteralExpCS)theEObject;
+        T result = caseLambdaLiteralExpCS(lambdaLiteralExpCS);
+        if (result == null) result = caseExpCS(lambdaLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.MAP_LITERAL_EXP_CS:
+      {
+        MapLiteralExpCS mapLiteralExpCS = (MapLiteralExpCS)theEObject;
+        T result = caseMapLiteralExpCS(mapLiteralExpCS);
+        if (result == null) result = caseExpCS(mapLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.MAP_LITERAL_PART_CS:
+      {
+        MapLiteralPartCS mapLiteralPartCS = (MapLiteralPartCS)theEObject;
+        T result = caseMapLiteralPartCS(mapLiteralPartCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.TUPLE_LITERAL_EXP_CS:
+      {
+        TupleLiteralExpCS tupleLiteralExpCS = (TupleLiteralExpCS)theEObject;
+        T result = caseTupleLiteralExpCS(tupleLiteralExpCS);
+        if (result == null) result = caseExpCS(tupleLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.TUPLE_LITERAL_PART_CS:
+      {
+        TupleLiteralPartCS tupleLiteralPartCS = (TupleLiteralPartCS)theEObject;
+        T result = caseTupleLiteralPartCS(tupleLiteralPartCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.NUMBER_LITERAL_EXP_CS:
+      {
+        NumberLiteralExpCS numberLiteralExpCS = (NumberLiteralExpCS)theEObject;
+        T result = caseNumberLiteralExpCS(numberLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(numberLiteralExpCS);
+        if (result == null) result = caseExpCS(numberLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.BOOLEAN_LITERAL_EXP_CS:
+      {
+        BooleanLiteralExpCS booleanLiteralExpCS = (BooleanLiteralExpCS)theEObject;
+        T result = caseBooleanLiteralExpCS(booleanLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(booleanLiteralExpCS);
+        if (result == null) result = caseExpCS(booleanLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.UNLIMITED_NATURAL_LITERAL_EXP_CS:
+      {
+        UnlimitedNaturalLiteralExpCS unlimitedNaturalLiteralExpCS = (UnlimitedNaturalLiteralExpCS)theEObject;
+        T result = caseUnlimitedNaturalLiteralExpCS(unlimitedNaturalLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(unlimitedNaturalLiteralExpCS);
+        if (result == null) result = caseExpCS(unlimitedNaturalLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.INVALID_LITERAL_EXP_CS:
+      {
+        InvalidLiteralExpCS invalidLiteralExpCS = (InvalidLiteralExpCS)theEObject;
+        T result = caseInvalidLiteralExpCS(invalidLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(invalidLiteralExpCS);
+        if (result == null) result = caseExpCS(invalidLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.NULL_LITERAL_EXP_CS:
+      {
+        NullLiteralExpCS nullLiteralExpCS = (NullLiteralExpCS)theEObject;
+        T result = caseNullLiteralExpCS(nullLiteralExpCS);
+        if (result == null) result = casePrimitiveLiteralExpCS(nullLiteralExpCS);
+        if (result == null) result = caseExpCS(nullLiteralExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.NESTED_EXP_CS:
+      {
+        NestedExpCS nestedExpCS = (NestedExpCS)theEObject;
+        T result = caseNestedExpCS(nestedExpCS);
+        if (result == null) result = caseExpCS(nestedExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.IF_EXP_CS:
+      {
+        IfExpCS ifExpCS = (IfExpCS)theEObject;
+        T result = caseIfExpCS(ifExpCS);
+        if (result == null) result = caseExpCS(ifExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.IF_THEN_EXP_CS:
+      {
+        IfThenExpCS ifThenExpCS = (IfThenExpCS)theEObject;
+        T result = caseIfThenExpCS(ifThenExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.LET_EXP_CS:
+      {
+        LetExpCS letExpCS = (LetExpCS)theEObject;
+        T result = caseLetExpCS(letExpCS);
+        if (result == null) result = caseExpCS(letExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.LET_VARIABLE_CS:
+      {
+        LetVariableCS letVariableCS = (LetVariableCS)theEObject;
+        T result = caseLetVariableCS(letVariableCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.ROUND_BRACKETED_CLAUSE_CS:
+      {
+        RoundBracketedClauseCS roundBracketedClauseCS = (RoundBracketedClauseCS)theEObject;
+        T result = caseRoundBracketedClauseCS(roundBracketedClauseCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.NAVIGATING_ARG_CS:
+      {
+        NavigatingArgCS navigatingArgCS = (NavigatingArgCS)theEObject;
+        T result = caseNavigatingArgCS(navigatingArgCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.VARIABLE_CS:
+      {
+        VariableCS variableCS = (VariableCS)theEObject;
+        T result = caseVariableCS(variableCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.INFIX_EXP_CS:
+      {
+        InfixExpCS infixExpCS = (InfixExpCS)theEObject;
+        T result = caseInfixExpCS(infixExpCS);
+        if (result == null) result = caseExpCS(infixExpCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.PREFIX_EXP_CS:
+      {
+        PrefixExpCS prefixExpCS = (PrefixExpCS)theEObject;
+        T result = casePrefixExpCS(prefixExpCS);
+        if (result == null) result = caseExpCS(prefixExpCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -434,86 +657,6 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Initialization</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Initialization</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAttributeInitialization(AttributeInitialization object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Double Initialization</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Double Initialization</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDoubleInitialization(DoubleInitialization object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Initialization</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Initialization</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBooleanInitialization(BooleanInitialization object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Integer Initialization</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Integer Initialization</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIntegerInitialization(IntegerInitialization object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>String Initialization</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Initialization</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStringInitialization(StringInitialization object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -626,22 +769,6 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Condition Body</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Condition Body</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConditionBody(ConditionBody object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -669,38 +796,6 @@ public class UsexSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRelation(Relation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Association</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Association</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAssociation(Association object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Composition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Composition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComposition(Composition object)
   {
     return null;
   }
@@ -738,97 +833,689 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Cardinality Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Primitive Type Ref CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Cardinality Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Primitive Type Ref CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCardinalityType(CardinalityType object)
+  public T casePrimitiveTypeRefCS(PrimitiveTypeRefCS object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Simple Cardinality</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Collection Type CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Simple Cardinality</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Collection Type CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSimpleCardinality(SimpleCardinality object)
+  public T caseCollectionTypeCS(CollectionTypeCS object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Double Cardinality</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Map Type CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Double Cardinality</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Map Type CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDoubleCardinality(DoubleCardinality object)
+  public T caseMapTypeCS(MapTypeCS object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Cardinality Value</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Type CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Cardinality Value</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Type CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCardinalityValue(CardinalityValue object)
+  public T caseTupleTypeCS(TupleTypeCS object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Int Cardinality</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Part CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Int Cardinality</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Part CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIntCardinality(IntCardinality object)
+  public T caseTuplePartCS(TuplePartCS object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Asterisk Cardinality</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Collection Pattern CS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Asterisk Cardinality</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Collection Pattern CS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAsteriskCardinality(AsteriskCardinality object)
+  public T caseCollectionPatternCS(CollectionPatternCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pattern Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pattern Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePatternExpCS(PatternExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Typed Ref CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Typed Ref CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypedRefCS(TypedRefCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeLiteralExpCS(TypeLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Name Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Name Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeNameExpCS(TypeNameExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Curly Bracketed Clause CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Curly Bracketed Clause CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCurlyBracketedClauseCS(CurlyBracketedClauseCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Shadow Part CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Shadow Part CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShadowPartCS(ShadowPartCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringLiteralExpCS(StringLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Bounds CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity Bounds CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityBoundsCS(MultiplicityBoundsCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityCS(MultiplicityCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity String CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity String CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityStringCS(MultiplicityStringCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Path Name CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Path Name CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePathNameCS(PathNameCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpCS(ExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primitive Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primitive Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimitiveLiteralExpCS(PrimitiveLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameExpCS(NameExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Square Bracketed Clause CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Square Bracketed Clause CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSquareBracketedClauseCS(SquareBracketedClauseCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Collection Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Collection Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCollectionLiteralExpCS(CollectionLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Collection Literal Part CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Collection Literal Part CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCollectionLiteralPartCS(CollectionLiteralPartCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Lambda Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Lambda Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLambdaLiteralExpCS(LambdaLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapLiteralExpCS(MapLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Literal Part CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Literal Part CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapLiteralPartCS(MapLiteralPartCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTupleLiteralExpCS(TupleLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Literal Part CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Literal Part CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTupleLiteralPartCS(TupleLiteralPartCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberLiteralExpCS(NumberLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanLiteralExpCS(BooleanLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unlimited Natural Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unlimited Natural Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnlimitedNaturalLiteralExpCS(UnlimitedNaturalLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Invalid Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Invalid Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInvalidLiteralExpCS(InvalidLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Null Literal Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Null Literal Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNullLiteralExpCS(NullLiteralExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Nested Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Nested Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNestedExpCS(NestedExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfExpCS(IfExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Then Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Then Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfThenExpCS(IfThenExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Let Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Let Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLetExpCS(LetExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Let Variable CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Let Variable CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLetVariableCS(LetVariableCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Round Bracketed Clause CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Round Bracketed Clause CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoundBracketedClauseCS(RoundBracketedClauseCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Navigating Arg CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Navigating Arg CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNavigatingArgCS(NavigatingArgCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableCS(VariableCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Infix Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Infix Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInfixExpCS(InfixExpCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefix Exp CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefix Exp CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefixExpCS(PrefixExpCS object)
   {
     return null;
   }

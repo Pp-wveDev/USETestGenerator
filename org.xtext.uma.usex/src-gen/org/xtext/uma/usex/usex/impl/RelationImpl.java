@@ -23,6 +23,7 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.RelationImpl#getRelationType <em>Relation Type</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.RelationImpl#getRelationBody <em>Relation Body</em>}</li>
  * </ul>
  *
@@ -30,6 +31,26 @@ import org.xtext.uma.usex.usex.UsexPackage;
  */
 public class RelationImpl extends AbstractElementImpl implements Relation
 {
+  /**
+   * The default value of the '{@link #getRelationType() <em>Relation Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationType()
+   * @generated
+   * @ordered
+   */
+  protected static final String RELATION_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRelationType() <em>Relation Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationType()
+   * @generated
+   * @ordered
+   */
+  protected String relationType = RELATION_TYPE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getRelationBody() <em>Relation Body</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +80,31 @@ public class RelationImpl extends AbstractElementImpl implements Relation
   protected EClass eStaticClass()
   {
     return UsexPackage.Literals.RELATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getRelationType()
+  {
+    return relationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRelationType(String newRelationType)
+  {
+    String oldRelationType = relationType;
+    relationType = newRelationType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.RELATION__RELATION_TYPE, oldRelationType, relationType));
   }
 
   /**
@@ -137,6 +183,8 @@ public class RelationImpl extends AbstractElementImpl implements Relation
   {
     switch (featureID)
     {
+      case UsexPackage.RELATION__RELATION_TYPE:
+        return getRelationType();
       case UsexPackage.RELATION__RELATION_BODY:
         return getRelationBody();
     }
@@ -153,6 +201,9 @@ public class RelationImpl extends AbstractElementImpl implements Relation
   {
     switch (featureID)
     {
+      case UsexPackage.RELATION__RELATION_TYPE:
+        setRelationType((String)newValue);
+        return;
       case UsexPackage.RELATION__RELATION_BODY:
         setRelationBody((RelationBody)newValue);
         return;
@@ -170,6 +221,9 @@ public class RelationImpl extends AbstractElementImpl implements Relation
   {
     switch (featureID)
     {
+      case UsexPackage.RELATION__RELATION_TYPE:
+        setRelationType(RELATION_TYPE_EDEFAULT);
+        return;
       case UsexPackage.RELATION__RELATION_BODY:
         setRelationBody((RelationBody)null);
         return;
@@ -187,10 +241,29 @@ public class RelationImpl extends AbstractElementImpl implements Relation
   {
     switch (featureID)
     {
+      case UsexPackage.RELATION__RELATION_TYPE:
+        return RELATION_TYPE_EDEFAULT == null ? relationType != null : !RELATION_TYPE_EDEFAULT.equals(relationType);
       case UsexPackage.RELATION__RELATION_BODY:
         return relationBody != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (relationType: ");
+    result.append(relationType);
+    result.append(')');
+    return result.toString();
   }
 
 } //RelationImpl

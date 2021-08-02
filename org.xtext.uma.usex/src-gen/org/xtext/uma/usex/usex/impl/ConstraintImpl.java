@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.uma.usex.usex.ConditionBody;
 import org.xtext.uma.usex.usex.Constraint;
+import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.UsexPackage;
 
 /**
@@ -24,7 +24,8 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.uma.usex.usex.impl.ConstraintImpl#getConditionBody <em>Condition Body</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.ConstraintImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.ConstraintImpl#getConstraintBody <em>Constraint Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +33,34 @@ import org.xtext.uma.usex.usex.UsexPackage;
 public class ConstraintImpl extends MinimalEObjectImpl.Container implements Constraint
 {
   /**
-   * The cached value of the '{@link #getConditionBody() <em>Condition Body</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConditionBody()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected ConditionBody conditionBody;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getConstraintBody() <em>Constraint Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConstraintBody()
+   * @generated
+   * @ordered
+   */
+  protected ExpCS constraintBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +89,9 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
    * @generated
    */
   @Override
-  public ConditionBody getConditionBody()
+  public String getName()
   {
-    return conditionBody;
+    return name;
   }
 
   /**
@@ -78,13 +99,38 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConditionBody(ConditionBody newConditionBody, NotificationChain msgs)
+  @Override
+  public void setName(String newName)
   {
-    ConditionBody oldConditionBody = conditionBody;
-    conditionBody = newConditionBody;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.CONSTRAINT__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExpCS getConstraintBody()
+  {
+    return constraintBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConstraintBody(ExpCS newConstraintBody, NotificationChain msgs)
+  {
+    ExpCS oldConstraintBody = constraintBody;
+    constraintBody = newConstraintBody;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UsexPackage.CONSTRAINT__CONDITION_BODY, oldConditionBody, newConditionBody);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UsexPackage.CONSTRAINT__CONSTRAINT_BODY, oldConstraintBody, newConstraintBody);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +142,20 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
    * @generated
    */
   @Override
-  public void setConditionBody(ConditionBody newConditionBody)
+  public void setConstraintBody(ExpCS newConstraintBody)
   {
-    if (newConditionBody != conditionBody)
+    if (newConstraintBody != constraintBody)
     {
       NotificationChain msgs = null;
-      if (conditionBody != null)
-        msgs = ((InternalEObject)conditionBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UsexPackage.CONSTRAINT__CONDITION_BODY, null, msgs);
-      if (newConditionBody != null)
-        msgs = ((InternalEObject)newConditionBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UsexPackage.CONSTRAINT__CONDITION_BODY, null, msgs);
-      msgs = basicSetConditionBody(newConditionBody, msgs);
+      if (constraintBody != null)
+        msgs = ((InternalEObject)constraintBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UsexPackage.CONSTRAINT__CONSTRAINT_BODY, null, msgs);
+      if (newConstraintBody != null)
+        msgs = ((InternalEObject)newConstraintBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UsexPackage.CONSTRAINT__CONSTRAINT_BODY, null, msgs);
+      msgs = basicSetConstraintBody(newConstraintBody, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.CONSTRAINT__CONDITION_BODY, newConditionBody, newConditionBody));
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.CONSTRAINT__CONSTRAINT_BODY, newConstraintBody, newConstraintBody));
   }
 
   /**
@@ -122,8 +168,8 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
   {
     switch (featureID)
     {
-      case UsexPackage.CONSTRAINT__CONDITION_BODY:
-        return basicSetConditionBody(null, msgs);
+      case UsexPackage.CONSTRAINT__CONSTRAINT_BODY:
+        return basicSetConstraintBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +184,10 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
   {
     switch (featureID)
     {
-      case UsexPackage.CONSTRAINT__CONDITION_BODY:
-        return getConditionBody();
+      case UsexPackage.CONSTRAINT__NAME:
+        return getName();
+      case UsexPackage.CONSTRAINT__CONSTRAINT_BODY:
+        return getConstraintBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +202,11 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
   {
     switch (featureID)
     {
-      case UsexPackage.CONSTRAINT__CONDITION_BODY:
-        setConditionBody((ConditionBody)newValue);
+      case UsexPackage.CONSTRAINT__NAME:
+        setName((String)newValue);
+        return;
+      case UsexPackage.CONSTRAINT__CONSTRAINT_BODY:
+        setConstraintBody((ExpCS)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +222,11 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
   {
     switch (featureID)
     {
-      case UsexPackage.CONSTRAINT__CONDITION_BODY:
-        setConditionBody((ConditionBody)null);
+      case UsexPackage.CONSTRAINT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case UsexPackage.CONSTRAINT__CONSTRAINT_BODY:
+        setConstraintBody((ExpCS)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +242,29 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
   {
     switch (featureID)
     {
-      case UsexPackage.CONSTRAINT__CONDITION_BODY:
-        return conditionBody != null;
+      case UsexPackage.CONSTRAINT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case UsexPackage.CONSTRAINT__CONSTRAINT_BODY:
+        return constraintBody != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ConstraintImpl

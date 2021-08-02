@@ -5,12 +5,15 @@ package org.xtext.uma.usex.usex.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,6 +32,7 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getConstraints <em>Constraints</em>}</li>
@@ -38,6 +42,26 @@ import org.xtext.uma.usex.usex.UsexPackage;
  */
 public class UseClassImpl extends AbstractElementImpl implements UseClass
 {
+  /**
+   * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAbstract()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ABSTRACT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAbstract()
+   * @generated
+   * @ordered
+   */
+  protected boolean abstract_ = ABSTRACT_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,6 +111,31 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
   protected EClass eStaticClass()
   {
     return UsexPackage.Literals.USE_CLASS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isAbstract()
+  {
+    return abstract_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAbstract(boolean newAbstract)
+  {
+    boolean oldAbstract = abstract_;
+    abstract_ = newAbstract;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.USE_CLASS__ABSTRACT, oldAbstract, abstract_));
   }
 
   /**
@@ -164,6 +213,8 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
   {
     switch (featureID)
     {
+      case UsexPackage.USE_CLASS__ABSTRACT:
+        return isAbstract();
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         return getAttributes();
       case UsexPackage.USE_CLASS__OPERATIONS:
@@ -185,6 +236,9 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
   {
     switch (featureID)
     {
+      case UsexPackage.USE_CLASS__ABSTRACT:
+        setAbstract((Boolean)newValue);
+        return;
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
@@ -211,6 +265,9 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
   {
     switch (featureID)
     {
+      case UsexPackage.USE_CLASS__ABSTRACT:
+        setAbstract(ABSTRACT_EDEFAULT);
+        return;
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         getAttributes().clear();
         return;
@@ -234,6 +291,8 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
   {
     switch (featureID)
     {
+      case UsexPackage.USE_CLASS__ABSTRACT:
+        return abstract_ != ABSTRACT_EDEFAULT;
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
       case UsexPackage.USE_CLASS__OPERATIONS:
@@ -242,6 +301,23 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
         return constraints != null && !constraints.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (abstract: ");
+    result.append(abstract_);
+    result.append(')');
+    return result.toString();
   }
 
 } //UseClassImpl

@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.generator.UsexGenerator"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.usex.Query"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.util.UseClassUtil"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.generator.model.UserVariable"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.usex.UseClass"/>
+    <fullyQualifiedTypeName name="org.xtext.example.mydsl.generator.model.DeclaredVariable"/>
+    <fullyQualifiedTypeName name="org.xtext.example.mydsl.generator.ConfxGenerator"/>
+</qualifiedTypeNameHistroy>
