@@ -6,6 +6,7 @@ package org.xtext.uma.usex.generator;
 import com.google.common.collect.Iterables;
 import com.google.inject.Injector;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,13 @@ import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.uma.usex.UsexStandaloneSetup;
+import org.xtext.uma.usex.generator.forMode.TestClassGenerator;
+import org.xtext.uma.usex.generator.forMode.TestClassGeneratorBreadth;
+import org.xtext.uma.usex.generator.forMode.TestClassGeneratorDepth;
+import org.xtext.uma.usex.generator.forMode.TestClassGeneratorRandom;
 import org.xtext.uma.usex.generator.general.ConditionQueriesGenerator;
+import org.xtext.uma.usex.generator.general.FinalConditionQueriesGenerator;
 import org.xtext.uma.usex.generator.general.InvariantQueriesGenerator;
-import org.xtext.uma.usex.generator.general.TestClassGenerator;
 import org.xtext.uma.usex.generator.model.ConfigurationParameters;
 import org.xtext.uma.usex.generator.model.QueriesFromConstraints;
 import org.xtext.uma.usex.generator.model.QueriesFromPre;
@@ -35,6 +40,7 @@ import org.xtext.uma.usex.generator.outputGenerator.OutputGenerator;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexFactory;
+import org.xtext.uma.usex.util.TestGenerationException;
 import org.xtext.uma.usex.util.UseClassUtil;
 import org.xtext.uma.usex.util.UseToUsex;
 
@@ -49,22 +55,79 @@ public class UsexGenerator extends AbstractGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final Model model = ((Model[])Conversions.unwrapArray((Iterables.<Model>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Model.class)), Model.class))[0];
+    UsexFactory usexFactory = UsexFactory.eINSTANCE;
+    UseClassUtil useClassUtil = new UseClassUtil(resource);
+    Map<UseClass, List<QueriesFromPre>> generatedQueriesFromMethods = ConditionQueriesGenerator.generateNewQueriesFromPre(useClassUtil);
+    List<QueriesFromConstraints> generatedQueriesFromConstraints = InvariantQueriesGenerator.getQueriesFromInv(useClassUtil);
+    FinalConditionQueriesGenerator.addFinalConditions(useClassUtil);
+    List<UserVariable> userVariables = new ArrayList<UserVariable>();
+    UseClass _class = useClassUtil.getClass("RArm");
+    UserVariable uV = new UserVariable(_class, "target");
+    userVariables.add(uV);
+    TestClassGeneratorDepth tCG = new TestClassGeneratorDepth(useClassUtil, userVariables, 
+      (-10), 10);
+    UseClass testClass = tCG.generateTestClass();
+    model.getElements().add(testClass);
+    try (PrintWriter out = new Function0<PrintWriter>() {
+      @Override
+      public PrintWriter apply() {
+        try {
+          return new PrintWriter("RArm_Generated.use");
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
+        }
+      }
+    }.apply()) {
+      out.println(OutputGenerator.compile(model));
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        e.printStackTrace();
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
   }
   
-  public static Model generateModel(final Resource r, final String testClass, final int intMin, final int intMax) {
+  public static Model generateModel(final Resource r, final String testClass, final String forMode, final int intMin, final int intMax) {
     final Model model = ((Model[])Conversions.unwrapArray((Iterables.<Model>filter(IteratorExtensions.<EObject>toIterable(r.getAllContents()), Model.class)), Model.class))[0];
     UsexFactory usexFactory = UsexFactory.eINSTANCE;
     UseClassUtil useClassUtil = new UseClassUtil(r);
     List<UserVariable> userVariables = new ArrayList<UserVariable>();
     UseClass targetUseClass = useClassUtil.getClassFromName(testClass);
+    if ((targetUseClass == null)) {
+      throw new TestGenerationException("Target class could not be found at the model.");
+    }
     UserVariable targetVar = new UserVariable(targetUseClass, "target");
     userVariables.add(targetVar);
     Map<UseClass, List<QueriesFromPre>> generatedQueriesFromMethods = ConditionQueriesGenerator.generateNewQueriesFromPre(useClassUtil);
     List<QueriesFromConstraints> generatedQueriesFromConstraints = InvariantQueriesGenerator.getQueriesFromInv(useClassUtil);
     InvariantQueriesGenerator.addInvQueriesToModelAsPostcond(model, generatedQueriesFromConstraints);
-    TestClassGenerator TestClassGenerator = new org.xtext.uma.usex.generator.general.TestClassGenerator(useClassUtil, usexFactory, generatedQueriesFromMethods, generatedQueriesFromConstraints, userVariables, intMin, intMax);
-    UseClass _test = TestClassGenerator.generateTestClass();
-    model.getElements().add(_test);
+    FinalConditionQueriesGenerator.addFinalConditions(useClassUtil);
+    TestClassGenerator tCG = null;
+    if (forMode != null) {
+      switch (forMode) {
+        case "random":
+          TestClassGeneratorRandom _testClassGeneratorRandom = new TestClassGeneratorRandom(useClassUtil, userVariables, intMin, intMax);
+          tCG = _testClassGeneratorRandom;
+          break;
+        case "depth":
+          TestClassGeneratorDepth _testClassGeneratorDepth = new TestClassGeneratorDepth(useClassUtil, userVariables, intMin, intMax);
+          tCG = _testClassGeneratorDepth;
+          break;
+        case "breadth":
+          TestClassGeneratorBreadth _testClassGeneratorBreadth = new TestClassGeneratorBreadth(useClassUtil, userVariables, intMin, intMax);
+          tCG = _testClassGeneratorBreadth;
+          break;
+        default:
+          throw new TestGenerationException("Test mode not found.");
+      }
+    } else {
+      throw new TestGenerationException("Test mode not found.");
+    }
+    UseClass test = tCG.generateTestClass();
+    model.getElements().add(test);
     return model;
   }
   
@@ -72,8 +135,18 @@ public class UsexGenerator extends AbstractGenerator {
     String _property = System.getProperty("user.dir");
     StringBuilder path = new StringBuilder(_property);
     path.append(("/" + fName));
-    String _string = path.toString();
-    File f = new File(_string);
+    File f = null;
+    try {
+      String _string = path.toString();
+      File _file = new File(_string);
+      f = _file;
+    } catch (final Throwable _t) {
+      if (_t instanceof FileNotFoundException) {
+        throw new TestGenerationException("File could not be found");
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
     URI uri = URI.createFileURI(f.getAbsolutePath());
     Injector injector = new UsexStandaloneSetup().createInjectorAndDoEMFRegistration();
     XtextResourceSet resourceSet = injector.<XtextResourceSet>getInstance(XtextResourceSet.class);
@@ -102,9 +175,19 @@ public class UsexGenerator extends AbstractGenerator {
     try {
       String _xblockexpression = null;
       {
-        String middleFile = UseToUsex.useToUsex(confParam.getModelFile());
+        String middleFile = null;
+        try {
+          middleFile = UseToUsex.useToUsex(confParam.getModelFile());
+        } catch (final Throwable _t) {
+          if (_t instanceof FileNotFoundException) {
+            throw new TestGenerationException("Could not find the file specified ");
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        }
         Resource r = UsexGenerator.getResource(middleFile);
         Model model = UsexGenerator.generateModel(r, confParam.getTestClass(), 
+          confParam.getForMode(), 
           confParam.getIntMin(), 
           confParam.getIntMax());
         UseToUsex.deleteTmp(middleFile);
@@ -130,7 +213,7 @@ public class UsexGenerator extends AbstractGenerator {
             throw Exceptions.sneakyThrow(_t);
           }
         }
-        _xblockexpression = InputOutput.<String>println("File generated");
+        _xblockexpression = InputOutput.<String>println("File successfully generated");
       }
       return _xblockexpression;
     } catch (Throwable _e) {

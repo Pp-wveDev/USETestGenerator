@@ -53,6 +53,9 @@ class OCLGenerator {
 	def static compileBody(ExpCS cs)
 	'''«(cs.compileFinal).toString.substring(1).replaceAll("\"", "").replaceAll("        ","\n")»'''
 	
+	def static compileCheck(ExpCS cs) 
+	'''«(cs.compileFinal).toString.replaceAll("and ", "and\n")»'''
+	
 	static def compile(ExpCS exp) 
 	'''
 		«IF (exp instanceof CollectionLiteralExpCS)»

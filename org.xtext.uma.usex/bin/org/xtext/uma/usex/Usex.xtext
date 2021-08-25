@@ -14,18 +14,25 @@ generalConstraint:
 ;
 
 AbstractElement:
-	Relation | UseClass
+	Relation | UseClass | Enumeration
 ;
 
 // --------------------------------- CLASSES ---------------------------------
 
 UseClass:
-	(abstract?='abstract')? 'class' name=ID
+	(abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
 	('attributes' attributes+=(Attribute)*)?
 	('operations' operations+=(Operation)*)?
 	('constraints' constraints+=(Constraint)*)?
 	'end'
 ;
+
+// --------------------------------- ENUMERATION ---------------------------------
+Enumeration:
+	'enum' name=ID '{' (elements+=EnumerationElem)+ '}';
+
+EnumerationElem:
+	name=ID (',')?;
 
 // --------------------------------- ATTRIBUTES ---------------------------------
 Attribute:
@@ -35,7 +42,7 @@ Attribute:
 ;
 
 AttributeType:
-	(PrimitiveType | ClassType)
+	(PrimitiveType | ClassType | CollectionType)
 ;
 
 PrimitiveType:
@@ -46,20 +53,27 @@ ClassType:
 	type=[UseClass]
 ;
 
+CollectionType:
+	colType=CollectionTypeIdentifier '(' (objType=AttributeType)? ')'
+;
+
 // --------------------------------- OPERATION & QUERIES ---------------------------------
 Operation:
-	Method | Query
+	Query | Method
+;
+
+Query:
+	name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType '=' operationBody=ExpCS
 ;
 
 Method:
 	name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
-	('begin' operationBody=ExpCS 'end')?
+	(operationBody=MethodBody)?
 	conditions+=(Condition)*
 ;
 
-Query:
-	name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType
-	'=' operationBody=ExpCS
+MethodBody:
+	'begin' code=ExpCS 'end'
 ;
 
 Parameter:
@@ -326,23 +340,19 @@ NestedExpCS returns NestedExpCS:
 IfExpCS returns IfExpCS:
 	'if' ownedCondition=(ExpCS|PatternExpCS)
 	'then' ownedThenExpression=ExpCS
-//	ifThenExpressions+=IfThenExpCS
 	(ownedIfThenExpressions+=ElseIfThenExpCS)*
 	'else' ownedElseExpression=ExpCS
 	'endif' ;
-//IfThenExpCS returns IfThenExpCS:
-//	'if' condition=ExpCS
-//	'then' thenExpression=ExpCS
-//;
+	
 ElseIfThenExpCS returns IfThenExpCS:
 	'elseif' ownedCondition=ExpCS
 	'then' ownedThenExpression=ExpCS
-	
 ;
 
 LetExpCS returns LetExpCS:
 	'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
-	'in' ownedInExpression=ExpCS ;
+	'in' ownedInExpression=ExpCS 
+;
 
 LetVariableCS returns LetVariableCS:
 	name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS ;

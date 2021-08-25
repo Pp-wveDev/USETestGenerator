@@ -19,12 +19,22 @@ import org.xtext.uma.usex.usex.UseClass
 import org.xtext.uma.usex.generator.outputGenerator.OCLGenerator
 import org.xtext.uma.usex.usex.Precondition
 import org.xtext.uma.usex.usex.Postcondition
+import org.xtext.uma.usex.usex.CollectionType
+import org.xtext.uma.usex.usex.Enumeration
+import org.xtext.uma.usex.usex.EnumerationElem
+import org.xtext.uma.usex.util.TestGenerationException
 
 class OutputGenerator {
 	// Model compilation
-	static def compile(Model m) 
+	static def compile(Model m)
 	'''
 		model «m.name»
+		
+		««« Enumerations
+				«FOR enumeration : m.elements.filter(Enumeration)»
+					«enumeration.compile»
+					
+				«ENDFOR»
 		
 		««« Classes
 		«FOR useClass : m.elements.filter(UseClass)»
@@ -38,6 +48,26 @@ class OutputGenerator {
 			
 		«ENDFOR»
 	'''
+	
+	// Enumeration compilation
+	private static def compile(Enumeration en) 
+	'''
+		enum «en.name» «IF en.elements.length > 0»{«compileEnumerationList(en.elements)»}«ENDIF»
+	'''
+	
+	// Enumeration List compilation
+	private static def compileEnumerationList(EList<EnumerationElem> enumList) {
+		var StringBuilder sB = new StringBuilder();
+		
+		for(var i=0; i<enumList.size(); i++) {
+			sB.append(enumList.get(i));
+			if(i < enumList.size-1) {
+				sB.append(',');
+			}
+		}
+		
+		return sB.toString();
+	}
 	
 	// Class compilation
 	private static def compile(UseClass cl)
@@ -63,7 +93,7 @@ class OutputGenerator {
 	'''
 	
 	// Operation compilation
-	private static def compile(Operation op) 
+	static def compile(Operation op) 
 	{
 		switch(op) {
 			Method:
@@ -86,13 +116,15 @@ class OutputGenerator {
 	'''
 	
 	// AttributeType compilation
-	static def compile(AttributeType attrType) 
+	static def compile(AttributeType attrType)
 	{
 		switch(attrType) {
 			ClassType: 
-				(attrType as ClassType).type.name
+				return (attrType as ClassType).type.name
 			PrimitiveType:
-				(attrType as PrimitiveType).type
+				return (attrType as PrimitiveType).type
+			CollectionType:
+				return (attrType as CollectionType).colType + "(" + (attrType as CollectionType).objType.compile + ")"
 		}
 	}
 	
@@ -103,10 +135,17 @@ class OutputGenerator {
 		«IF m.operationBody !== null»
 			begin	«getBody(m)»
 			end
+		«ELSE» 
+			«generateException("Operations must have a body: " + m.name)»
 		«ENDIF»
 		«IF m.conditions !== null»«FOR cond : m.conditions»«cond.compile»«ENDFOR»«ENDIF»
 		
 	'''
+	static def generateException(String m) {
+		System.err.println(m);	
+		System.err.println("Testing model could not be generated.");
+		System.exit(-1);
+	}
 	
 	static def getHeader(Method q)
 	'''
@@ -115,22 +154,30 @@ class OutputGenerator {
 	
 	private static def getBody(Method m) {
 		if(m.name !== "test") {
-			return OCLGenerator.compileBody(m.operationBody);
+			return OCLGenerator.compileBody(m.operationBody.code);
 		} else {
-			return OCLGenerator.compile(m.operationBody);
+			return OCLGenerator.compile(m.operationBody.code);
 		}
 			
+	}
+	
+	private static def getBody(Query q) {
+		if(q.name.startsWith("_check")) {
+			return OCLGenerator.compileCheck(q.operationBody);
+		} else {
+			return OCLGenerator.compileFinal(q.operationBody);
+		}
 	}
 	
 	// Query compilation
 	private static def compile(Query q)
 	'''
 		«q.name»(«listParameters(q.inputParameters, true)») «q.writeReturn»
-			= «OCLGenerator.compileFinal(q.operationBody)»
+			= «getBody(q)»
 		
 	'''
 	
-	static def getHeader(Query q) 
+	static def getHeader(Query q)
 	'''
 		«q.name»(«listParameters(q.inputParameters, false)»)
 	'''

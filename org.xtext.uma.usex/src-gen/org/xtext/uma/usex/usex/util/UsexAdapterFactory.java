@@ -81,6 +81,11 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter casegeneralConstraint(generalConstraint object)
+      {
+        return creategeneralConstraintAdapter();
+      }
+      @Override
       public Adapter caseAbstractElement(AbstractElement object)
       {
         return createAbstractElementAdapter();
@@ -89,6 +94,16 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUseClass(UseClass object)
       {
         return createUseClassAdapter();
+      }
+      @Override
+      public Adapter caseEnumeration(Enumeration object)
+      {
+        return createEnumerationAdapter();
+      }
+      @Override
+      public Adapter caseEnumerationElem(EnumerationElem object)
+      {
+        return createEnumerationElemAdapter();
       }
       @Override
       public Adapter caseAttribute(Attribute object)
@@ -111,9 +126,19 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createClassTypeAdapter();
       }
       @Override
+      public Adapter caseCollectionType(CollectionType object)
+      {
+        return createCollectionTypeAdapter();
+      }
+      @Override
       public Adapter caseOperation(Operation object)
       {
         return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseQuery(Query object)
+      {
+        return createQueryAdapter();
       }
       @Override
       public Adapter caseMethod(Method object)
@@ -121,9 +146,9 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createMethodAdapter();
       }
       @Override
-      public Adapter caseQuery(Query object)
+      public Adapter caseMethodBody(MethodBody object)
       {
-        return createQueryAdapter();
+        return createMethodBodyAdapter();
       }
       @Override
       public Adapter caseParameter(Parameter object)
@@ -418,6 +443,21 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.generalConstraint <em>general Constraint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.generalConstraint
+   * @generated
+   */
+  public Adapter creategeneralConstraintAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -443,6 +483,36 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUseClassAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Enumeration <em>Enumeration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.Enumeration
+   * @generated
+   */
+  public Adapter createEnumerationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.EnumerationElem <em>Enumeration Elem</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.EnumerationElem
+   * @generated
+   */
+  public Adapter createEnumerationElemAdapter()
   {
     return null;
   }
@@ -508,6 +578,21 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.CollectionType <em>Collection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.CollectionType
+   * @generated
+   */
+  public Adapter createCollectionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -518,6 +603,21 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Query <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.uma.usex.usex.Query
+   * @generated
+   */
+  public Adapter createQueryAdapter()
   {
     return null;
   }
@@ -538,16 +638,16 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.Query <em>Query</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.MethodBody <em>Method Body</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.Query
+   * @see org.xtext.uma.usex.usex.MethodBody
    * @generated
    */
-  public Adapter createQueryAdapter()
+  public Adapter createMethodBodyAdapter()
   {
     return null;
   }

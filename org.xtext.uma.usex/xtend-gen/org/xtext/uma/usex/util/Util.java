@@ -7,9 +7,15 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.xtext.uma.usex.generator.model.QueriesFromPre;
 import org.xtext.uma.usex.generator.model.UserVariable;
+import org.xtext.uma.usex.generator.outputGenerator.OutputGenerator;
+import org.xtext.uma.usex.usex.AttributeType;
+import org.xtext.uma.usex.usex.ClassType;
 import org.xtext.uma.usex.usex.Method;
+import org.xtext.uma.usex.usex.Operation;
+import org.xtext.uma.usex.usex.PrimitiveType;
 import org.xtext.uma.usex.usex.Query;
 import org.xtext.uma.usex.usex.UseClass;
+import org.xtext.uma.usex.usex.UsexFactory;
 
 @SuppressWarnings("all")
 public class Util {
@@ -67,5 +73,42 @@ public class Util {
   
   public static String withoutSelf(final String selfVar) {
     return selfVar.split("self.")[1];
+  }
+  
+  public static String queryDeclaration(final Query q) {
+    StringBuilder sB = new StringBuilder();
+    return sB.toString();
+  }
+  
+  public static String getHeader(final Operation op) {
+    String _xifexpression = null;
+    if ((op instanceof Query)) {
+      _xifexpression = OutputGenerator.getHeader(((Query)op)).toString();
+    } else {
+      String _xifexpression_1 = null;
+      if ((op instanceof Method)) {
+        _xifexpression_1 = OutputGenerator.getHeader(((Method)op)).toString();
+      } else {
+        return "";
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
+  }
+  
+  public static AttributeType cloneType(final AttributeType aT) {
+    UsexFactory usexFactory = UsexFactory.eINSTANCE;
+    if ((aT instanceof PrimitiveType)) {
+      PrimitiveType res = usexFactory.createPrimitiveType();
+      res.setType(((PrimitiveType)aT).getType());
+      return res;
+    } else {
+      if ((aT instanceof ClassType)) {
+        ClassType res_1 = usexFactory.createClassType();
+        res_1.setType(((ClassType)aT).getType());
+        return res_1;
+      }
+    }
+    return null;
   }
 }

@@ -18,10 +18,13 @@ import org.xtext.uma.usex.usex.ClassType;
 import org.xtext.uma.usex.usex.CollectionLiteralExpCS;
 import org.xtext.uma.usex.usex.CollectionLiteralPartCS;
 import org.xtext.uma.usex.usex.CollectionPatternCS;
+import org.xtext.uma.usex.usex.CollectionType;
 import org.xtext.uma.usex.usex.CollectionTypeCS;
 import org.xtext.uma.usex.usex.Condition;
 import org.xtext.uma.usex.usex.Constraint;
 import org.xtext.uma.usex.usex.CurlyBracketedClauseCS;
+import org.xtext.uma.usex.usex.Enumeration;
+import org.xtext.uma.usex.usex.EnumerationElem;
 import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.IfExpCS;
 import org.xtext.uma.usex.usex.IfThenExpCS;
@@ -34,6 +37,7 @@ import org.xtext.uma.usex.usex.MapLiteralExpCS;
 import org.xtext.uma.usex.usex.MapLiteralPartCS;
 import org.xtext.uma.usex.usex.MapTypeCS;
 import org.xtext.uma.usex.usex.Method;
+import org.xtext.uma.usex.usex.MethodBody;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.MultiplicityBoundsCS;
 import org.xtext.uma.usex.usex.MultiplicityCS;
@@ -73,6 +77,7 @@ import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexFactory;
 import org.xtext.uma.usex.usex.UsexPackage;
 import org.xtext.uma.usex.usex.VariableCS;
+import org.xtext.uma.usex.usex.generalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,6 +99,13 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass generalConstraintEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass abstractElementEClass = null;
 
   /**
@@ -102,6 +114,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   private EClass useClassEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumerationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumerationElemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,7 +162,21 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass collectionTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass operationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass queryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -150,7 +190,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass queryEClass = null;
+  private EClass methodBodyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -611,6 +651,61 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
+  public EReference getModel_GeneralConstraints()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getgeneralConstraint()
+  {
+    return generalConstraintEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getgeneralConstraint_ContextClass()
+  {
+    return (EReference)generalConstraintEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getgeneralConstraint_Name()
+  {
+    return (EAttribute)generalConstraintEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getgeneralConstraint_ConstraintBody()
+  {
+    return (EReference)generalConstraintEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAbstractElement()
   {
     return abstractElementEClass;
@@ -680,6 +775,50 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
   public EReference getUseClass_Constraints()
   {
     return (EReference)useClassEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEnumeration()
+  {
+    return enumerationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnumeration_Elements()
+  {
+    return (EReference)enumerationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEnumerationElem()
+  {
+    return enumerationElemEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEnumerationElem_Name()
+  {
+    return (EAttribute)enumerationElemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -798,6 +937,39 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
+  public EClass getCollectionType()
+  {
+    return collectionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCollectionType_ColType()
+  {
+    return (EAttribute)collectionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCollectionType_ObjType()
+  {
+    return (EReference)collectionTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getOperation()
   {
     return operationEClass;
@@ -842,9 +1014,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getOperation_OperationBody()
+  public EClass getQuery()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+    return queryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getQuery_OperationBody()
+  {
+    return (EReference)queryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -864,7 +1047,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getMethod_Conditions()
+  public EReference getMethod_OperationBody()
   {
     return (EReference)methodEClass.getEStructuralFeatures().get(0);
   }
@@ -875,9 +1058,31 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getQuery()
+  public EReference getMethod_Conditions()
   {
-    return queryEClass;
+    return (EReference)methodEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMethodBody()
+  {
+    return methodBodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMethodBody_Code()
+  {
+    return (EReference)methodBodyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2509,6 +2714,12 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     modelEClass = createEClass(MODEL);
     createEAttribute(modelEClass, MODEL__NAME);
     createEReference(modelEClass, MODEL__ELEMENTS);
+    createEReference(modelEClass, MODEL__GENERAL_CONSTRAINTS);
+
+    generalConstraintEClass = createEClass(GENERAL_CONSTRAINT);
+    createEReference(generalConstraintEClass, GENERAL_CONSTRAINT__CONTEXT_CLASS);
+    createEAttribute(generalConstraintEClass, GENERAL_CONSTRAINT__NAME);
+    createEReference(generalConstraintEClass, GENERAL_CONSTRAINT__CONSTRAINT_BODY);
 
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
     createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
@@ -2518,6 +2729,12 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEReference(useClassEClass, USE_CLASS__ATTRIBUTES);
     createEReference(useClassEClass, USE_CLASS__OPERATIONS);
     createEReference(useClassEClass, USE_CLASS__CONSTRAINTS);
+
+    enumerationEClass = createEClass(ENUMERATION);
+    createEReference(enumerationEClass, ENUMERATION__ELEMENTS);
+
+    enumerationElemEClass = createEClass(ENUMERATION_ELEM);
+    createEAttribute(enumerationElemEClass, ENUMERATION_ELEM__NAME);
 
     attributeEClass = createEClass(ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -2533,16 +2750,24 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     classTypeEClass = createEClass(CLASS_TYPE);
     createEReference(classTypeEClass, CLASS_TYPE__TYPE);
 
+    collectionTypeEClass = createEClass(COLLECTION_TYPE);
+    createEAttribute(collectionTypeEClass, COLLECTION_TYPE__COL_TYPE);
+    createEReference(collectionTypeEClass, COLLECTION_TYPE__OBJ_TYPE);
+
     operationEClass = createEClass(OPERATION);
     createEAttribute(operationEClass, OPERATION__NAME);
     createEReference(operationEClass, OPERATION__INPUT_PARAMETERS);
     createEReference(operationEClass, OPERATION__RETURN_PARAMETER);
-    createEReference(operationEClass, OPERATION__OPERATION_BODY);
-
-    methodEClass = createEClass(METHOD);
-    createEReference(methodEClass, METHOD__CONDITIONS);
 
     queryEClass = createEClass(QUERY);
+    createEReference(queryEClass, QUERY__OPERATION_BODY);
+
+    methodEClass = createEClass(METHOD);
+    createEReference(methodEClass, METHOD__OPERATION_BODY);
+    createEReference(methodEClass, METHOD__CONDITIONS);
+
+    methodBodyEClass = createEClass(METHOD_BODY);
+    createEReference(methodBodyEClass, METHOD_BODY__CODE);
 
     parameterEClass = createEClass(PARAMETER);
     createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -2771,10 +2996,12 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
 
     // Add supertypes to classes
     useClassEClass.getESuperTypes().add(this.getAbstractElement());
+    enumerationEClass.getESuperTypes().add(this.getAbstractElement());
     primitiveTypeEClass.getESuperTypes().add(this.getAttributeType());
     classTypeEClass.getESuperTypes().add(this.getAttributeType());
-    methodEClass.getESuperTypes().add(this.getOperation());
+    collectionTypeEClass.getESuperTypes().add(this.getAttributeType());
     queryEClass.getESuperTypes().add(this.getOperation());
+    methodEClass.getESuperTypes().add(this.getOperation());
     preconditionEClass.getESuperTypes().add(this.getCondition());
     postconditionEClass.getESuperTypes().add(this.getCondition());
     relationEClass.getESuperTypes().add(this.getAbstractElement());
@@ -2809,6 +3036,12 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_GeneralConstraints(), this.getgeneralConstraint(), null, "generalConstraints", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalConstraintEClass, generalConstraint.class, "generalConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getgeneralConstraint_ContextClass(), this.getUseClass(), null, "contextClass", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getgeneralConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getgeneralConstraint_ConstraintBody(), this.getExpCS(), null, "constraintBody", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2818,6 +3051,12 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEReference(getUseClass_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Operations(), this.getOperation(), null, "operations", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnumeration_Elements(), this.getEnumerationElem(), null, "elements", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumerationElemEClass, EnumerationElem.class, "EnumerationElem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumerationElem_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumerationElem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2833,16 +3072,24 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEClass(classTypeEClass, ClassType.class, "ClassType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getClassType_Type(), this.getUseClass(), null, "type", null, 0, 1, ClassType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(collectionTypeEClass, CollectionType.class, "CollectionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCollectionType_ColType(), ecorePackage.getEString(), "colType", null, 0, 1, CollectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollectionType_ObjType(), this.getAttributeType(), null, "objType", null, 0, 1, CollectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_InputParameters(), this.getParameter(), null, "inputParameters", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_ReturnParameter(), this.getAttributeType(), null, "returnParameter", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_OperationBody(), this.getExpCS(), null, "operationBody", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMethod_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getQuery_OperationBody(), this.getExpCS(), null, "operationBody", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethod_OperationBody(), this.getMethodBody(), null, "operationBody", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodBodyEClass, MethodBody.class, "MethodBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethodBody_Code(), this.getExpCS(), null, "code", null, 0, 1, MethodBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.uma.usex.usex.Model#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Model#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.Model#getGeneralConstraints <em>General Constraints</em>}</li>
  * </ul>
  *
  * @see org.xtext.uma.usex.usex.UsexPackage#getModel()
@@ -59,5 +60,17 @@ public interface Model extends EObject
    * @generated
    */
   EList<AbstractElement> getElements();
+
+  /**
+   * Returns the value of the '<em><b>General Constraints</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.uma.usex.usex.generalConstraint}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>General Constraints</em>' containment reference list.
+   * @see org.xtext.uma.usex.usex.UsexPackage#getModel_GeneralConstraints()
+   * @model containment="true"
+   * @generated
+   */
+  EList<generalConstraint> getGeneralConstraints();
 
 } // Model

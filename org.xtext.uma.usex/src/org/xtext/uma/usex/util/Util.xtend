@@ -7,6 +7,12 @@ import java.util.List
 import org.xtext.uma.usex.usex.Method
 import org.xtext.uma.usex.generator.model.QueriesFromPre
 import org.xtext.uma.usex.usex.Query
+import org.xtext.uma.usex.usex.Operation
+import org.xtext.uma.usex.generator.outputGenerator.OutputGenerator
+import org.xtext.uma.usex.usex.AttributeType
+import org.xtext.uma.usex.usex.UsexFactory
+import org.xtext.uma.usex.usex.PrimitiveType
+import org.xtext.uma.usex.usex.ClassType
 
 class Util {
 	// Returns the CharSequence without \n
@@ -39,10 +45,47 @@ class Util {
 	
 	static def getGenQueriesForMethod(Method m, List<QueriesFromPre> qG) {
 		var res = qG.filter[QueriesFromPre queries | queries.targetMethod.equals(m)];
+		
 		return res.length > 0 ? res.get(0).generatedQueries : null;
 	}
 	
 	static def String withoutSelf(String selfVar) {
 		return selfVar.split('self.').get(1);
+	}
+	
+	static def String queryDeclaration(Query q) {
+		var sB = new StringBuilder();
+		
+		return sB.toString();
+	}
+	
+	static def String getHeader(Operation op) {
+		if(op instanceof Query) {
+			OutputGenerator.getHeader(op).toString;
+		} else if(op instanceof Method) {
+			OutputGenerator.getHeader(op).toString;
+		} else {
+			return "";
+		}
+	}
+	
+	def static AttributeType cloneType(AttributeType aT) {
+		var usexFactory = UsexFactory.eINSTANCE;
+		
+		if(aT instanceof PrimitiveType) {
+			var res = usexFactory.createPrimitiveType();
+			
+			res.type = aT.type;
+
+			return res;
+		} else if(aT instanceof ClassType) {
+			var res = usexFactory.createClassType();
+			
+			res.type = aT.type;
+
+			return res;
+		}
+		
+		return null;
 	}
 }

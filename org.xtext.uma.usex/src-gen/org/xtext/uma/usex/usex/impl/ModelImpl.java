@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.uma.usex.usex.AbstractElement;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.UsexPackage;
+import org.xtext.uma.usex.usex.generalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +34,7 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * <ul>
  *   <li>{@link org.xtext.uma.usex.usex.impl.ModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.ModelImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.ModelImpl#getGeneralConstraints <em>General Constraints</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +70,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<AbstractElement> elements;
+
+  /**
+   * The cached value of the '{@link #getGeneralConstraints() <em>General Constraints</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGeneralConstraints()
+   * @generated
+   * @ordered
+   */
+  protected EList<generalConstraint> generalConstraints;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,12 +148,29 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public EList<generalConstraint> getGeneralConstraints()
+  {
+    if (generalConstraints == null)
+    {
+      generalConstraints = new EObjectContainmentEList<generalConstraint>(generalConstraint.class, this, UsexPackage.MODEL__GENERAL_CONSTRAINTS);
+    }
+    return generalConstraints;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case UsexPackage.MODEL__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
+        return ((InternalEList<?>)getGeneralConstraints()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -160,6 +189,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getName();
       case UsexPackage.MODEL__ELEMENTS:
         return getElements();
+      case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
+        return getGeneralConstraints();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,6 +213,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getElements().clear();
         getElements().addAll((Collection<? extends AbstractElement>)newValue);
         return;
+      case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
+        getGeneralConstraints().clear();
+        getGeneralConstraints().addAll((Collection<? extends generalConstraint>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -202,6 +237,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case UsexPackage.MODEL__ELEMENTS:
         getElements().clear();
         return;
+      case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
+        getGeneralConstraints().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +258,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case UsexPackage.MODEL__ELEMENTS:
         return elements != null && !elements.isEmpty();
+      case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
+        return generalConstraints != null && !generalConstraints.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -4,6 +4,9 @@ import java.util.List
 import org.xtext.uma.usex.usex.UseClass
 import org.eclipse.emf.ecore.resource.Resource
 import org.xtext.uma.usex.usex.Method
+import java.util.ArrayList
+import org.xtext.uma.usex.usex.Query
+import org.xtext.uma.usex.usex.UsexFactory
 
 class UseClassUtil {
 	List<UseClass> classList;
@@ -22,7 +25,7 @@ class UseClassUtil {
 		return null;
 	}
 	
-	def getClassList() {
+	public def getClassList() {
 		return classList;
 	}
 	
@@ -50,5 +53,45 @@ class UseClassUtil {
 		}
 		
 		return null;
+	}
+	
+	def ArrayList<Query> getInvQueries(UseClass uCl) {
+		var ArrayList<Query> res = new ArrayList<Query>();
+		
+		for(query : uCl.operations.filter(Query)) {
+			if(query.name.startsWith('_inv')) {
+				res.add(query);
+			}
+		}
+		
+		return res;
+	}
+	
+	def ArrayList<Query> getQueriesFromMethod(UseClass uCl, Method method) {
+		var ArrayList<Query> res = new ArrayList<Query>();
+		
+		for(query : uCl.operations.filter(Query)) {
+			if(query.name.startsWith('_'+ method.name)) {
+				var usexFactory = UsexFactory.eINSTANCE;
+				
+				// new Query
+				var newQuery = usexFactory.createQuery();
+				newQuery.name = query.name;
+				
+				for(param : query.inputParameters) {
+					var newParam = usexFactory.createParameter();
+					newParam.name = param.name;
+					
+					newParam.type = Util.cloneType(param.type);
+					
+					newQuery.inputParameters.add(newParam);
+				}
+				
+				
+				res.add(newQuery);
+			}
+		}
+		
+		return res;
 	}
 }

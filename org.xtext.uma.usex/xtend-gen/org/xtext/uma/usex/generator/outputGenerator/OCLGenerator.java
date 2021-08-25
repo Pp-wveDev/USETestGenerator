@@ -66,6 +66,13 @@ public class OCLGenerator {
     return _builder;
   }
   
+  public static CharSequence compileCheck(final ExpCS cs) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _replaceAll = OCLGenerator.compileFinal(cs).toString().replaceAll("and ", "and\n");
+    _builder.append(_replaceAll);
+    return _builder;
+  }
+  
   public static CharSequence compile(final ExpCS exp) {
     StringConcatenation _builder = new StringConcatenation();
     {

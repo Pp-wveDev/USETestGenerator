@@ -33,6 +33,15 @@ public interface UsexFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>general Constraint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>general Constraint</em>'.
+   * @generated
+   */
+  generalConstraint creategeneralConstraint();
+
+  /**
    * Returns a new object of class '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +58,24 @@ public interface UsexFactory extends EFactory
    * @generated
    */
   UseClass createUseClass();
+
+  /**
+   * Returns a new object of class '<em>Enumeration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration</em>'.
+   * @generated
+   */
+  Enumeration createEnumeration();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Elem</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Elem</em>'.
+   * @generated
+   */
+  EnumerationElem createEnumerationElem();
 
   /**
    * Returns a new object of class '<em>Attribute</em>'.
@@ -87,6 +114,15 @@ public interface UsexFactory extends EFactory
   ClassType createClassType();
 
   /**
+   * Returns a new object of class '<em>Collection Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Collection Type</em>'.
+   * @generated
+   */
+  CollectionType createCollectionType();
+
+  /**
    * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +130,15 @@ public interface UsexFactory extends EFactory
    * @generated
    */
   Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Query</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query</em>'.
+   * @generated
+   */
+  Query createQuery();
 
   /**
    * Returns a new object of class '<em>Method</em>'.
@@ -105,13 +150,13 @@ public interface UsexFactory extends EFactory
   Method createMethod();
 
   /**
-   * Returns a new object of class '<em>Query</em>'.
+   * Returns a new object of class '<em>Method Body</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query</em>'.
+   * @return a new object of class '<em>Method Body</em>'.
    * @generated
    */
-  Query createQuery();
+  MethodBody createMethodBody();
 
   /**
    * Returns a new object of class '<em>Parameter</em>'.

@@ -21,9 +21,12 @@ import org.xtext.uma.usex.usex.ClassType;
 import org.xtext.uma.usex.usex.CollectionLiteralExpCS;
 import org.xtext.uma.usex.usex.CollectionLiteralPartCS;
 import org.xtext.uma.usex.usex.CollectionPatternCS;
+import org.xtext.uma.usex.usex.CollectionType;
 import org.xtext.uma.usex.usex.CollectionTypeCS;
 import org.xtext.uma.usex.usex.Constraint;
 import org.xtext.uma.usex.usex.CurlyBracketedClauseCS;
+import org.xtext.uma.usex.usex.Enumeration;
+import org.xtext.uma.usex.usex.EnumerationElem;
 import org.xtext.uma.usex.usex.IfExpCS;
 import org.xtext.uma.usex.usex.IfThenExpCS;
 import org.xtext.uma.usex.usex.InfixExpCS;
@@ -35,6 +38,7 @@ import org.xtext.uma.usex.usex.MapLiteralExpCS;
 import org.xtext.uma.usex.usex.MapLiteralPartCS;
 import org.xtext.uma.usex.usex.MapTypeCS;
 import org.xtext.uma.usex.usex.Method;
+import org.xtext.uma.usex.usex.MethodBody;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.MultiplicityBoundsCS;
 import org.xtext.uma.usex.usex.MultiplicityStringCS;
@@ -68,6 +72,7 @@ import org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexPackage;
 import org.xtext.uma.usex.usex.VariableCS;
+import org.xtext.uma.usex.usex.generalConstraint;
 
 @SuppressWarnings("all")
 public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -109,6 +114,9 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case UsexPackage.COLLECTION_TYPE:
+				sequence_CollectionType(context, (CollectionType) semanticObject); 
+				return; 
 			case UsexPackage.COLLECTION_TYPE_CS:
 				if (rule == grammarAccess.getCollectionTypeCSRule()
 						|| rule == grammarAccess.getTypeExpWithoutMultiplicityCSRule()
@@ -130,6 +138,12 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case UsexPackage.CURLY_BRACKETED_CLAUSE_CS:
 				sequence_CurlyBracketedClauseCS(context, (CurlyBracketedClauseCS) semanticObject); 
+				return; 
+			case UsexPackage.ENUMERATION:
+				sequence_Enumeration(context, (Enumeration) semanticObject); 
+				return; 
+			case UsexPackage.ENUMERATION_ELEM:
+				sequence_EnumerationElem(context, (EnumerationElem) semanticObject); 
 				return; 
 			case UsexPackage.IF_EXP_CS:
 				sequence_IfExpCS(context, (IfExpCS) semanticObject); 
@@ -176,6 +190,9 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				else break;
 			case UsexPackage.METHOD:
 				sequence_Method(context, (Method) semanticObject); 
+				return; 
+			case UsexPackage.METHOD_BODY:
+				sequence_MethodBody(context, (MethodBody) semanticObject); 
 				return; 
 			case UsexPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -352,6 +369,9 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case UsexPackage.VARIABLE_CS:
 				sequence_CoIteratorVariableCS(context, (VariableCS) semanticObject); 
 				return; 
+			case UsexPackage.GENERAL_CONSTRAINT:
+				sequence_generalConstraint(context, (generalConstraint) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -520,6 +540,19 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AttributeType returns CollectionType
+	 *     CollectionType returns CollectionType
+	 *
+	 * Constraint:
+	 *     (colType=CollectionTypeIdentifier objType=AttributeType?)
+	 */
+	protected void sequence_CollectionType(ISerializationContext context, CollectionType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Constraint returns Constraint
 	 *
 	 * Constraint:
@@ -560,6 +593,37 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getElseIfThenExpCSAccess().getOwnedConditionExpCSParserRuleCall_1_0(), semanticObject.getOwnedCondition());
 		feeder.accept(grammarAccess.getElseIfThenExpCSAccess().getOwnedThenExpressionExpCSParserRuleCall_3_0(), semanticObject.getOwnedThenExpression());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EnumerationElem returns EnumerationElem
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_EnumerationElem(ISerializationContext context, EnumerationElem semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, UsexPackage.Literals.ENUMERATION_ELEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.ENUMERATION_ELEM__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnumerationElemAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractElement returns Enumeration
+	 *     Enumeration returns Enumeration
+	 *
+	 * Constraint:
+	 *     (name=ID elements+=EnumerationElem+)
+	 */
+	protected void sequence_Enumeration(ISerializationContext context, Enumeration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -756,11 +820,29 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     MethodBody returns MethodBody
+	 *
+	 * Constraint:
+	 *     code=ExpCS
+	 */
+	protected void sequence_MethodBody(ISerializationContext context, MethodBody semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, UsexPackage.Literals.METHOD_BODY__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.METHOD_BODY__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMethodBodyAccess().getCodeExpCSParserRuleCall_1_0(), semanticObject.getCode());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Operation returns Method
 	 *     Method returns Method
 	 *
 	 * Constraint:
-	 *     (name=ID inputParameters+=Parameter* returnParameter=AttributeType? operationBody=ExpCS? conditions+=Condition*)
+	 *     (name=ID inputParameters+=Parameter* returnParameter=AttributeType? operationBody=MethodBody? conditions+=Condition*)
 	 */
 	protected void sequence_Method(ISerializationContext context, Method semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -772,7 +854,7 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=AbstractElement*)
+	 *     (name=ID elements+=AbstractElement* generalConstraints+=generalConstraint*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1456,6 +1538,18 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (abstract?='abstract'? name=ID attributes+=Attribute* operations+=Operation* constraints+=Constraint*)
 	 */
 	protected void sequence_UseClass(ISerializationContext context, UseClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     generalConstraint returns generalConstraint
+	 *
+	 * Constraint:
+	 *     (contextClass=[UseClass|ID] name=ID? constraintBody=ExpCS)
+	 */
+	protected void sequence_generalConstraint(ISerializationContext context, generalConstraint semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

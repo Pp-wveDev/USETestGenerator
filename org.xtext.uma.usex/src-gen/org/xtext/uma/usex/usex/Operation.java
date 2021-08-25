@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.uma.usex.usex.Operation#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Operation#getInputParameters <em>Input Parameters</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Operation#getReturnParameter <em>Return Parameter</em>}</li>
- *   <li>{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}</li>
  * </ul>
  *
  * @see org.xtext.uma.usex.usex.UsexPackage#getOperation()
@@ -83,27 +82,5 @@ public interface Operation extends EObject
    * @generated
    */
   void setReturnParameter(AttributeType value);
-
-  /**
-   * Returns the value of the '<em><b>Operation Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation Body</em>' containment reference.
-   * @see #setOperationBody(ExpCS)
-   * @see org.xtext.uma.usex.usex.UsexPackage#getOperation_OperationBody()
-   * @model containment="true"
-   * @generated
-   */
-  ExpCS getOperationBody();
-
-  /**
-   * Sets the value of the '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation Body</em>' containment reference.
-   * @see #getOperationBody()
-   * @generated
-   */
-  void setOperationBody(ExpCS value);
 
 } // Operation

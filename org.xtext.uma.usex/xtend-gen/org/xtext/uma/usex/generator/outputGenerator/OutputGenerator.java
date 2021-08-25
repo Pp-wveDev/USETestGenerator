@@ -3,13 +3,18 @@ package org.xtext.uma.usex.generator.outputGenerator;
 import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.xtext.uma.usex.usex.Attribute;
 import org.xtext.uma.usex.usex.AttributeType;
 import org.xtext.uma.usex.usex.ClassType;
+import org.xtext.uma.usex.usex.CollectionType;
 import org.xtext.uma.usex.usex.Condition;
 import org.xtext.uma.usex.usex.Constraint;
+import org.xtext.uma.usex.usex.Enumeration;
+import org.xtext.uma.usex.usex.EnumerationElem;
 import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.Method;
+import org.xtext.uma.usex.usex.MethodBody;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.Operation;
 import org.xtext.uma.usex.usex.Parameter;
@@ -32,9 +37,9 @@ public class OutputGenerator {
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     {
-      Iterable<UseClass> _filter = Iterables.<UseClass>filter(m.getElements(), UseClass.class);
-      for(final UseClass useClass : _filter) {
-        CharSequence _compile = OutputGenerator.compile(useClass);
+      Iterable<Enumeration> _filter = Iterables.<Enumeration>filter(m.getElements(), Enumeration.class);
+      for(final Enumeration enumeration : _filter) {
+        CharSequence _compile = OutputGenerator.compile(enumeration);
         _builder.append(_compile);
         _builder.newLineIfNotEmpty();
         _builder.newLine();
@@ -42,15 +47,61 @@ public class OutputGenerator {
     }
     _builder.newLine();
     {
-      Iterable<Relation> _filter_1 = Iterables.<Relation>filter(m.getElements(), Relation.class);
-      for(final Relation relation : _filter_1) {
-        CharSequence _compile_1 = OutputGenerator.compile(relation);
+      Iterable<UseClass> _filter_1 = Iterables.<UseClass>filter(m.getElements(), UseClass.class);
+      for(final UseClass useClass : _filter_1) {
+        CharSequence _compile_1 = OutputGenerator.compile(useClass);
         _builder.append(_compile_1);
         _builder.newLineIfNotEmpty();
         _builder.newLine();
       }
     }
+    _builder.newLine();
+    {
+      Iterable<Relation> _filter_2 = Iterables.<Relation>filter(m.getElements(), Relation.class);
+      for(final Relation relation : _filter_2) {
+        CharSequence _compile_2 = OutputGenerator.compile(relation);
+        _builder.append(_compile_2);
+        _builder.newLineIfNotEmpty();
+        _builder.newLine();
+      }
+    }
     return _builder;
+  }
+  
+  private static CharSequence compile(final Enumeration en) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("enum ");
+    String _name = en.getName();
+    _builder.append(_name);
+    _builder.append(" ");
+    {
+      int _length = ((Object[])Conversions.unwrapArray(en.getElements(), Object.class)).length;
+      boolean _greaterThan = (_length > 0);
+      if (_greaterThan) {
+        _builder.append("{");
+        String _compileEnumerationList = OutputGenerator.compileEnumerationList(en.getElements());
+        _builder.append(_compileEnumerationList);
+        _builder.append("}");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  private static String compileEnumerationList(final EList<EnumerationElem> enumList) {
+    StringBuilder sB = new StringBuilder();
+    for (int i = 0; (i < enumList.size()); i++) {
+      {
+        sB.append(enumList.get(i));
+        int _size = enumList.size();
+        int _minus = (_size - 1);
+        boolean _lessThan = (i < _minus);
+        if (_lessThan) {
+          sB.append(",");
+        }
+      }
+    }
+    return sB.toString();
   }
   
   private static CharSequence compile(final UseClass cl) {
@@ -123,7 +174,7 @@ public class OutputGenerator {
     return _builder;
   }
   
-  private static CharSequence compile(final Operation op) {
+  public static CharSequence compile(final Operation op) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (op instanceof Method) {
@@ -173,19 +224,28 @@ public class OutputGenerator {
   }
   
   public static String compile(final AttributeType attrType) {
-    String _switchResult = null;
     boolean _matched = false;
     if (attrType instanceof ClassType) {
       _matched=true;
-      _switchResult = ((ClassType) attrType).getType().getName();
+      return ((ClassType) attrType).getType().getName();
     }
     if (!_matched) {
       if (attrType instanceof PrimitiveType) {
         _matched=true;
-        _switchResult = ((PrimitiveType) attrType).getType();
+        return ((PrimitiveType) attrType).getType();
       }
     }
-    return _switchResult;
+    if (!_matched) {
+      if (attrType instanceof CollectionType) {
+        _matched=true;
+        String _colType = ((CollectionType) attrType).getColType();
+        String _plus = (_colType + "(");
+        Object _compile = OutputGenerator.compile(((CollectionType) attrType).getObjType());
+        String _plus_1 = (_plus + _compile);
+        return (_plus_1 + ")");
+      }
+    }
+    return null;
   }
   
   private static CharSequence compile(final Method m) {
@@ -200,7 +260,7 @@ public class OutputGenerator {
     _builder.append(_writeReturn);
     _builder.newLineIfNotEmpty();
     {
-      ExpCS _operationBody = m.getOperationBody();
+      MethodBody _operationBody = m.getOperationBody();
       boolean _tripleNotEquals = (_operationBody != null);
       if (_tripleNotEquals) {
         _builder.append("begin\t");
@@ -209,6 +269,11 @@ public class OutputGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("end");
         _builder.newLine();
+      } else {
+        String _name_1 = m.getName();
+        String _plus = ("Operations must have a body: " + _name_1);
+        OutputGenerator.generateException(_plus);
+        _builder.newLineIfNotEmpty();
       }
     }
     {
@@ -229,6 +294,12 @@ public class OutputGenerator {
     return _builder;
   }
   
+  public static void generateException(final String m) {
+    System.err.println(m);
+    System.err.println("Testing model could not be generated.");
+    System.exit((-1));
+  }
+  
   public static CharSequence getHeader(final Method q) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = q.getName();
@@ -245,9 +316,18 @@ public class OutputGenerator {
     String _name = m.getName();
     boolean _tripleNotEquals = (_name != "test");
     if (_tripleNotEquals) {
-      return OCLGenerator.compileBody(m.getOperationBody());
+      return OCLGenerator.compileBody(m.getOperationBody().getCode());
     } else {
-      return OCLGenerator.compile(m.getOperationBody());
+      return OCLGenerator.compile(m.getOperationBody().getCode());
+    }
+  }
+  
+  private static CharSequence getBody(final Query q) {
+    boolean _startsWith = q.getName().startsWith("_check");
+    if (_startsWith) {
+      return OCLGenerator.compileCheck(q.getOperationBody());
+    } else {
+      return OCLGenerator.compileFinal(q.getOperationBody());
     }
   }
   
@@ -264,8 +344,8 @@ public class OutputGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("= ");
-    CharSequence _compileFinal = OCLGenerator.compileFinal(q.getOperationBody());
-    _builder.append(_compileFinal, "\t");
+    CharSequence _body = OutputGenerator.getBody(q);
+    _builder.append(_body, "\t");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     return _builder;

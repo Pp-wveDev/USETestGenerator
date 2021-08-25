@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.Method#getOperationBody <em>Operation Body</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.Method#getConditions <em>Conditions</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Method extends Operation
 {
+  /**
+   * Returns the value of the '<em><b>Operation Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operation Body</em>' containment reference.
+   * @see #setOperationBody(MethodBody)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getMethod_OperationBody()
+   * @model containment="true"
+   * @generated
+   */
+  MethodBody getOperationBody();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Method#getOperationBody <em>Operation Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Operation Body</em>' containment reference.
+   * @see #getOperationBody()
+   * @generated
+   */
+  void setOperationBody(MethodBody value);
+
   /**
    * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.uma.usex.usex.Condition}.

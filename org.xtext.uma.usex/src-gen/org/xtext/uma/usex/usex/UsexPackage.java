@@ -86,13 +86,68 @@ public interface UsexPackage extends EPackage
   int MODEL__ELEMENTS = 1;
 
   /**
+   * The feature id for the '<em><b>General Constraints</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__GENERAL_CONSTRAINTS = 2;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl <em>general Constraint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.generalConstraintImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getgeneralConstraint()
+   * @generated
+   */
+  int GENERAL_CONSTRAINT = 1;
+
+  /**
+   * The feature id for the '<em><b>Context Class</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONSTRAINT__CONTEXT_CLASS = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONSTRAINT__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Constraint Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONSTRAINT__CONSTRAINT_BODY = 2;
+
+  /**
+   * The number of structural features of the '<em>general Constraint</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONSTRAINT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -102,7 +157,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 1;
+  int ABSTRACT_ELEMENT = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,7 +185,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getUseClass()
    * @generated
    */
-  int USE_CLASS = 2;
+  int USE_CLASS = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -187,6 +242,71 @@ public interface UsexPackage extends EPackage
   int USE_CLASS_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.EnumerationImpl <em>Enumeration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.EnumerationImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getEnumeration()
+   * @generated
+   */
+  int ENUMERATION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION__ELEMENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Enumeration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.EnumerationElemImpl <em>Enumeration Elem</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.EnumerationElemImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getEnumerationElem()
+   * @generated
+   */
+  int ENUMERATION_ELEM = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_ELEM__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Enumeration Elem</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_ELEM_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.AttributeImpl <em>Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -194,7 +314,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 3;
+  int ATTRIBUTE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +369,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getAttributeType()
    * @generated
    */
-  int ATTRIBUTE_TYPE = 4;
+  int ATTRIBUTE_TYPE = 7;
 
   /**
    * The number of structural features of the '<em>Attribute Type</em>' class.
@@ -268,7 +388,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveType()
    * @generated
    */
-  int PRIMITIVE_TYPE = 5;
+  int PRIMITIVE_TYPE = 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -296,7 +416,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getClassType()
    * @generated
    */
-  int CLASS_TYPE = 6;
+  int CLASS_TYPE = 9;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -317,6 +437,43 @@ public interface UsexPackage extends EPackage
   int CLASS_TYPE_FEATURE_COUNT = ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.CollectionTypeImpl <em>Collection Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.CollectionTypeImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionType()
+   * @generated
+   */
+  int COLLECTION_TYPE = 10;
+
+  /**
+   * The feature id for the '<em><b>Col Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE__COL_TYPE = ATTRIBUTE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Obj Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE__OBJ_TYPE = ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Collection Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLLECTION_TYPE_FEATURE_COUNT = ATTRIBUTE_TYPE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.OperationImpl <em>Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -324,7 +481,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 7;
+  int OPERATION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -354,86 +511,13 @@ public interface UsexPackage extends EPackage
   int OPERATION__RETURN_PARAMETER = 2;
 
   /**
-   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__OPERATION_BODY = 3;
-
-  /**
    * The number of structural features of the '<em>Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MethodImpl <em>Method</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.MethodImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMethod()
-   * @generated
-   */
-  int METHOD = 8;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__NAME = OPERATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Input Parameters</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__INPUT_PARAMETERS = OPERATION__INPUT_PARAMETERS;
-
-  /**
-   * The feature id for the '<em><b>Return Parameter</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__RETURN_PARAMETER = OPERATION__RETURN_PARAMETER;
-
-  /**
-   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__OPERATION_BODY = OPERATION__OPERATION_BODY;
-
-  /**
-   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__CONDITIONS = OPERATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Method</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+  int OPERATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.QueryImpl <em>Query</em>}' class.
@@ -443,7 +527,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getQuery()
    * @generated
    */
-  int QUERY = 9;
+  int QUERY = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -479,7 +563,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY__OPERATION_BODY = OPERATION__OPERATION_BODY;
+  int QUERY__OPERATION_BODY = OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Query</em>' class.
@@ -488,7 +572,99 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 0;
+  int QUERY_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MethodImpl <em>Method</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MethodImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMethod()
+   * @generated
+   */
+  int METHOD = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__NAME = OPERATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Input Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__INPUT_PARAMETERS = OPERATION__INPUT_PARAMETERS;
+
+  /**
+   * The feature id for the '<em><b>Return Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__RETURN_PARAMETER = OPERATION__RETURN_PARAMETER;
+
+  /**
+   * The feature id for the '<em><b>Operation Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__OPERATION_BODY = OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__CONDITIONS = OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Method</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.MethodBodyImpl <em>Method Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.uma.usex.usex.impl.MethodBodyImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMethodBody()
+   * @generated
+   */
+  int METHOD_BODY = 14;
+
+  /**
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_BODY__CODE = 0;
+
+  /**
+   * The number of structural features of the '<em>Method Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_BODY_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -498,7 +674,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 10;
+  int PARAMETER = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -535,7 +711,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 11;
+  int CONDITION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -572,7 +748,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrecondition()
    * @generated
    */
-  int PRECONDITION = 12;
+  int PRECONDITION = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -609,7 +785,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPostcondition()
    * @generated
    */
-  int POSTCONDITION = 13;
+  int POSTCONDITION = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -646,7 +822,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getConstraint()
    * @generated
    */
-  int CONSTRAINT = 14;
+  int CONSTRAINT = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -683,7 +859,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelation()
    * @generated
    */
-  int RELATION = 15;
+  int RELATION = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -729,7 +905,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelationBody()
    * @generated
    */
-  int RELATION_BODY = 16;
+  int RELATION_BODY = 21;
 
   /**
    * The feature id for the '<em><b>Origin Class</b></em>' containment reference.
@@ -766,7 +942,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRelationMember()
    * @generated
    */
-  int RELATION_MEMBER = 17;
+  int RELATION_MEMBER = 22;
 
   /**
    * The feature id for the '<em><b>Class</b></em>' reference.
@@ -812,7 +988,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypedRefCS()
    * @generated
    */
-  int TYPED_REF_CS = 25;
+  int TYPED_REF_CS = 30;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -840,7 +1016,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveTypeRefCS()
    * @generated
    */
-  int PRIMITIVE_TYPE_REF_CS = 18;
+  int PRIMITIVE_TYPE_REF_CS = 23;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -877,7 +1053,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionTypeCS()
    * @generated
    */
-  int COLLECTION_TYPE_CS = 19;
+  int COLLECTION_TYPE_CS = 24;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -932,7 +1108,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapTypeCS()
    * @generated
    */
-  int MAP_TYPE_CS = 20;
+  int MAP_TYPE_CS = 25;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -987,7 +1163,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleTypeCS()
    * @generated
    */
-  int TUPLE_TYPE_CS = 21;
+  int TUPLE_TYPE_CS = 26;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -1033,7 +1209,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTuplePartCS()
    * @generated
    */
-  int TUPLE_PART_CS = 22;
+  int TUPLE_PART_CS = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1070,7 +1246,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionPatternCS()
    * @generated
    */
-  int COLLECTION_PATTERN_CS = 23;
+  int COLLECTION_PATTERN_CS = 28;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -1125,7 +1301,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPatternExpCS()
    * @generated
    */
-  int PATTERN_EXP_CS = 24;
+  int PATTERN_EXP_CS = 29;
 
   /**
    * The feature id for the '<em><b>Pattern Variable Name</b></em>' attribute.
@@ -1162,7 +1338,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getExpCS()
    * @generated
    */
-  int EXP_CS = 35;
+  int EXP_CS = 40;
 
   /**
    * The number of structural features of the '<em>Exp CS</em>' class.
@@ -1181,7 +1357,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeLiteralExpCS()
    * @generated
    */
-  int TYPE_LITERAL_EXP_CS = 26;
+  int TYPE_LITERAL_EXP_CS = 31;
 
   /**
    * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1209,7 +1385,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTypeNameExpCS()
    * @generated
    */
-  int TYPE_NAME_EXP_CS = 27;
+  int TYPE_NAME_EXP_CS = 32;
 
   /**
    * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
@@ -1264,7 +1440,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCurlyBracketedClauseCS()
    * @generated
    */
-  int CURLY_BRACKETED_CLAUSE_CS = 28;
+  int CURLY_BRACKETED_CLAUSE_CS = 33;
 
   /**
    * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
@@ -1292,7 +1468,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getShadowPartCS()
    * @generated
    */
-  int SHADOW_PART_CS = 29;
+  int SHADOW_PART_CS = 34;
 
   /**
    * The feature id for the '<em><b>Referred Property</b></em>' attribute.
@@ -1329,7 +1505,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrimitiveLiteralExpCS()
    * @generated
    */
-  int PRIMITIVE_LITERAL_EXP_CS = 36;
+  int PRIMITIVE_LITERAL_EXP_CS = 41;
 
   /**
    * The number of structural features of the '<em>Primitive Literal Exp CS</em>' class.
@@ -1348,7 +1524,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getStringLiteralExpCS()
    * @generated
    */
-  int STRING_LITERAL_EXP_CS = 30;
+  int STRING_LITERAL_EXP_CS = 35;
 
   /**
    * The feature id for the '<em><b>Segments</b></em>' attribute list.
@@ -1376,7 +1552,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityCS()
    * @generated
    */
-  int MULTIPLICITY_CS = 32;
+  int MULTIPLICITY_CS = 37;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -1404,7 +1580,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityBoundsCS()
    * @generated
    */
-  int MULTIPLICITY_BOUNDS_CS = 31;
+  int MULTIPLICITY_BOUNDS_CS = 36;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -1450,7 +1626,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMultiplicityStringCS()
    * @generated
    */
-  int MULTIPLICITY_STRING_CS = 33;
+  int MULTIPLICITY_STRING_CS = 38;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -1487,7 +1663,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPathNameCS()
    * @generated
    */
-  int PATH_NAME_CS = 34;
+  int PATH_NAME_CS = 39;
 
   /**
    * The feature id for the '<em><b>Owned Path Elements</b></em>' attribute list.
@@ -1515,7 +1691,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNameExpCS()
    * @generated
    */
-  int NAME_EXP_CS = 37;
+  int NAME_EXP_CS = 42;
 
   /**
    * The feature id for the '<em><b>Owned Path Name</b></em>' containment reference.
@@ -1588,7 +1764,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getSquareBracketedClauseCS()
    * @generated
    */
-  int SQUARE_BRACKETED_CLAUSE_CS = 38;
+  int SQUARE_BRACKETED_CLAUSE_CS = 43;
 
   /**
    * The feature id for the '<em><b>Owned Terms</b></em>' containment reference list.
@@ -1616,7 +1792,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralExpCS()
    * @generated
    */
-  int COLLECTION_LITERAL_EXP_CS = 39;
+  int COLLECTION_LITERAL_EXP_CS = 44;
 
   /**
    * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1653,7 +1829,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionLiteralPartCS()
    * @generated
    */
-  int COLLECTION_LITERAL_PART_CS = 40;
+  int COLLECTION_LITERAL_PART_CS = 45;
 
   /**
    * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
@@ -1690,7 +1866,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLambdaLiteralExpCS()
    * @generated
    */
-  int LAMBDA_LITERAL_EXP_CS = 41;
+  int LAMBDA_LITERAL_EXP_CS = 46;
 
   /**
    * The feature id for the '<em><b>Owned Expression CS</b></em>' containment reference.
@@ -1718,7 +1894,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralExpCS()
    * @generated
    */
-  int MAP_LITERAL_EXP_CS = 42;
+  int MAP_LITERAL_EXP_CS = 47;
 
   /**
    * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1755,7 +1931,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMapLiteralPartCS()
    * @generated
    */
-  int MAP_LITERAL_PART_CS = 43;
+  int MAP_LITERAL_PART_CS = 48;
 
   /**
    * The feature id for the '<em><b>Owned Key</b></em>' containment reference.
@@ -1792,7 +1968,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralExpCS()
    * @generated
    */
-  int TUPLE_LITERAL_EXP_CS = 44;
+  int TUPLE_LITERAL_EXP_CS = 49;
 
   /**
    * The feature id for the '<em><b>Owned Parts</b></em>' containment reference list.
@@ -1820,7 +1996,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getTupleLiteralPartCS()
    * @generated
    */
-  int TUPLE_LITERAL_PART_CS = 45;
+  int TUPLE_LITERAL_PART_CS = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1866,7 +2042,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNumberLiteralExpCS()
    * @generated
    */
-  int NUMBER_LITERAL_EXP_CS = 46;
+  int NUMBER_LITERAL_EXP_CS = 51;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1894,7 +2070,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getBooleanLiteralExpCS()
    * @generated
    */
-  int BOOLEAN_LITERAL_EXP_CS = 47;
+  int BOOLEAN_LITERAL_EXP_CS = 52;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -1922,7 +2098,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getUnlimitedNaturalLiteralExpCS()
    * @generated
    */
-  int UNLIMITED_NATURAL_LITERAL_EXP_CS = 48;
+  int UNLIMITED_NATURAL_LITERAL_EXP_CS = 53;
 
   /**
    * The number of structural features of the '<em>Unlimited Natural Literal Exp CS</em>' class.
@@ -1941,7 +2117,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInvalidLiteralExpCS()
    * @generated
    */
-  int INVALID_LITERAL_EXP_CS = 49;
+  int INVALID_LITERAL_EXP_CS = 54;
 
   /**
    * The number of structural features of the '<em>Invalid Literal Exp CS</em>' class.
@@ -1960,7 +2136,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNullLiteralExpCS()
    * @generated
    */
-  int NULL_LITERAL_EXP_CS = 50;
+  int NULL_LITERAL_EXP_CS = 55;
 
   /**
    * The number of structural features of the '<em>Null Literal Exp CS</em>' class.
@@ -1979,7 +2155,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNestedExpCS()
    * @generated
    */
-  int NESTED_EXP_CS = 51;
+  int NESTED_EXP_CS = 56;
 
   /**
    * The feature id for the '<em><b>Owned Expression</b></em>' containment reference.
@@ -2007,7 +2183,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfExpCS()
    * @generated
    */
-  int IF_EXP_CS = 52;
+  int IF_EXP_CS = 57;
 
   /**
    * The feature id for the '<em><b>Owned Condition</b></em>' containment reference.
@@ -2062,7 +2238,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getIfThenExpCS()
    * @generated
    */
-  int IF_THEN_EXP_CS = 53;
+  int IF_THEN_EXP_CS = 58;
 
   /**
    * The feature id for the '<em><b>Owned Condition</b></em>' containment reference.
@@ -2099,7 +2275,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetExpCS()
    * @generated
    */
-  int LET_EXP_CS = 54;
+  int LET_EXP_CS = 59;
 
   /**
    * The feature id for the '<em><b>Owned Variables</b></em>' containment reference list.
@@ -2136,7 +2312,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getLetVariableCS()
    * @generated
    */
-  int LET_VARIABLE_CS = 55;
+  int LET_VARIABLE_CS = 60;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2191,7 +2367,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getRoundBracketedClauseCS()
    * @generated
    */
-  int ROUND_BRACKETED_CLAUSE_CS = 56;
+  int ROUND_BRACKETED_CLAUSE_CS = 61;
 
   /**
    * The feature id for the '<em><b>Owned Arguments</b></em>' containment reference list.
@@ -2219,7 +2395,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getNavigatingArgCS()
    * @generated
    */
-  int NAVIGATING_ARG_CS = 57;
+  int NAVIGATING_ARG_CS = 62;
 
   /**
    * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -2310,7 +2486,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getVariableCS()
    * @generated
    */
-  int VARIABLE_CS = 58;
+  int VARIABLE_CS = 63;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2347,7 +2523,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getInfixExpCS()
    * @generated
    */
-  int INFIX_EXP_CS = 59;
+  int INFIX_EXP_CS = 64;
 
   /**
    * The feature id for the '<em><b>Owned Left</b></em>' containment reference.
@@ -2393,7 +2569,7 @@ public interface UsexPackage extends EPackage
    * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getPrefixExpCS()
    * @generated
    */
-  int PREFIX_EXP_CS = 60;
+  int PREFIX_EXP_CS = 65;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2454,6 +2630,60 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EReference getModel_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.Model#getGeneralConstraints <em>General Constraints</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>General Constraints</em>'.
+   * @see org.xtext.uma.usex.usex.Model#getGeneralConstraints()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_GeneralConstraints();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.generalConstraint <em>general Constraint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>general Constraint</em>'.
+   * @see org.xtext.uma.usex.usex.generalConstraint
+   * @generated
+   */
+  EClass getgeneralConstraint();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.uma.usex.usex.generalConstraint#getContextClass <em>Context Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Context Class</em>'.
+   * @see org.xtext.uma.usex.usex.generalConstraint#getContextClass()
+   * @see #getgeneralConstraint()
+   * @generated
+   */
+  EReference getgeneralConstraint_ContextClass();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.generalConstraint#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.generalConstraint#getName()
+   * @see #getgeneralConstraint()
+   * @generated
+   */
+  EAttribute getgeneralConstraint_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.generalConstraint#getConstraintBody <em>Constraint Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Constraint Body</em>'.
+   * @see org.xtext.uma.usex.usex.generalConstraint#getConstraintBody()
+   * @see #getgeneralConstraint()
+   * @generated
+   */
+  EReference getgeneralConstraint_ConstraintBody();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.AbstractElement <em>Abstract Element</em>}'.
@@ -2529,6 +2759,48 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EReference getUseClass_Constraints();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Enumeration <em>Enumeration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enumeration</em>'.
+   * @see org.xtext.uma.usex.usex.Enumeration
+   * @generated
+   */
+  EClass getEnumeration();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.Enumeration#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.xtext.uma.usex.usex.Enumeration#getElements()
+   * @see #getEnumeration()
+   * @generated
+   */
+  EReference getEnumeration_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.EnumerationElem <em>Enumeration Elem</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enumeration Elem</em>'.
+   * @see org.xtext.uma.usex.usex.EnumerationElem
+   * @generated
+   */
+  EClass getEnumerationElem();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.EnumerationElem#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.uma.usex.usex.EnumerationElem#getName()
+   * @see #getEnumerationElem()
+   * @generated
+   */
+  EAttribute getEnumerationElem_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Attribute <em>Attribute</em>}'.
@@ -2637,6 +2909,38 @@ public interface UsexPackage extends EPackage
   EReference getClassType_Type();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.CollectionType <em>Collection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Collection Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionType
+   * @generated
+   */
+  EClass getCollectionType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.CollectionType#getColType <em>Col Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Col Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionType#getColType()
+   * @see #getCollectionType()
+   * @generated
+   */
+  EAttribute getCollectionType_ColType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.CollectionType#getObjType <em>Obj Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Obj Type</em>'.
+   * @see org.xtext.uma.usex.usex.CollectionType#getObjType()
+   * @see #getCollectionType()
+   * @generated
+   */
+  EReference getCollectionType_ObjType();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2680,15 +2984,25 @@ public interface UsexPackage extends EPackage
   EReference getOperation_ReturnParameter();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Operation#getOperationBody <em>Operation Body</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Query <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Query</em>'.
+   * @see org.xtext.uma.usex.usex.Query
+   * @generated
+   */
+  EClass getQuery();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Query#getOperationBody <em>Operation Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Operation Body</em>'.
-   * @see org.xtext.uma.usex.usex.Operation#getOperationBody()
-   * @see #getOperation()
+   * @see org.xtext.uma.usex.usex.Query#getOperationBody()
+   * @see #getQuery()
    * @generated
    */
-  EReference getOperation_OperationBody();
+  EReference getQuery_OperationBody();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Method <em>Method</em>}'.
@@ -2699,6 +3013,17 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EClass getMethod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.Method#getOperationBody <em>Operation Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operation Body</em>'.
+   * @see org.xtext.uma.usex.usex.Method#getOperationBody()
+   * @see #getMethod()
+   * @generated
+   */
+  EReference getMethod_OperationBody();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.Method#getConditions <em>Conditions</em>}'.
@@ -2712,14 +3037,25 @@ public interface UsexPackage extends EPackage
   EReference getMethod_Conditions();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Query <em>Query</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.MethodBody <em>Method Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Query</em>'.
-   * @see org.xtext.uma.usex.usex.Query
+   * @return the meta object for class '<em>Method Body</em>'.
+   * @see org.xtext.uma.usex.usex.MethodBody
    * @generated
    */
-  EClass getQuery();
+  EClass getMethodBody();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MethodBody#getCode <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Code</em>'.
+   * @see org.xtext.uma.usex.usex.MethodBody#getCode()
+   * @see #getMethodBody()
+   * @generated
+   */
+  EReference getMethodBody_Code();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Parameter <em>Parameter</em>}'.
@@ -4315,6 +4651,48 @@ public interface UsexPackage extends EPackage
     EReference MODEL__ELEMENTS = eINSTANCE.getModel_Elements();
 
     /**
+     * The meta object literal for the '<em><b>General Constraints</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__GENERAL_CONSTRAINTS = eINSTANCE.getModel_GeneralConstraints();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl <em>general Constraint</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.generalConstraintImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getgeneralConstraint()
+     * @generated
+     */
+    EClass GENERAL_CONSTRAINT = eINSTANCE.getgeneralConstraint();
+
+    /**
+     * The meta object literal for the '<em><b>Context Class</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERAL_CONSTRAINT__CONTEXT_CLASS = eINSTANCE.getgeneralConstraint_ContextClass();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CONSTRAINT__NAME = eINSTANCE.getgeneralConstraint_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Constraint Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERAL_CONSTRAINT__CONSTRAINT_BODY = eINSTANCE.getgeneralConstraint_ConstraintBody();
+
+    /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4373,6 +4751,42 @@ public interface UsexPackage extends EPackage
      * @generated
      */
     EReference USE_CLASS__CONSTRAINTS = eINSTANCE.getUseClass_Constraints();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.EnumerationImpl <em>Enumeration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.EnumerationImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getEnumeration()
+     * @generated
+     */
+    EClass ENUMERATION = eINSTANCE.getEnumeration();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUMERATION__ELEMENTS = eINSTANCE.getEnumeration_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.EnumerationElemImpl <em>Enumeration Elem</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.EnumerationElemImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getEnumerationElem()
+     * @generated
+     */
+    EClass ENUMERATION_ELEM = eINSTANCE.getEnumerationElem();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUMERATION_ELEM__NAME = eINSTANCE.getEnumerationElem_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -4463,6 +4877,32 @@ public interface UsexPackage extends EPackage
     EReference CLASS_TYPE__TYPE = eINSTANCE.getClassType_Type();
 
     /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.CollectionTypeImpl <em>Collection Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.CollectionTypeImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getCollectionType()
+     * @generated
+     */
+    EClass COLLECTION_TYPE = eINSTANCE.getCollectionType();
+
+    /**
+     * The meta object literal for the '<em><b>Col Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLLECTION_TYPE__COL_TYPE = eINSTANCE.getCollectionType_ColType();
+
+    /**
+     * The meta object literal for the '<em><b>Obj Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COLLECTION_TYPE__OBJ_TYPE = eINSTANCE.getCollectionType_ObjType();
+
+    /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.OperationImpl <em>Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4497,12 +4937,22 @@ public interface UsexPackage extends EPackage
     EReference OPERATION__RETURN_PARAMETER = eINSTANCE.getOperation_ReturnParameter();
 
     /**
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.QueryImpl <em>Query</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.uma.usex.usex.impl.QueryImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getQuery()
+     * @generated
+     */
+    EClass QUERY = eINSTANCE.getQuery();
+
+    /**
      * The meta object literal for the '<em><b>Operation Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATION__OPERATION_BODY = eINSTANCE.getOperation_OperationBody();
+    EReference QUERY__OPERATION_BODY = eINSTANCE.getQuery_OperationBody();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MethodImpl <em>Method</em>}' class.
@@ -4515,6 +4965,14 @@ public interface UsexPackage extends EPackage
     EClass METHOD = eINSTANCE.getMethod();
 
     /**
+     * The meta object literal for the '<em><b>Operation Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD__OPERATION_BODY = eINSTANCE.getMethod_OperationBody();
+
+    /**
      * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4523,14 +4981,22 @@ public interface UsexPackage extends EPackage
     EReference METHOD__CONDITIONS = eINSTANCE.getMethod_Conditions();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.QueryImpl <em>Query</em>}' class.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.MethodBodyImpl <em>Method Body</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.QueryImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getQuery()
+     * @see org.xtext.uma.usex.usex.impl.MethodBodyImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getMethodBody()
      * @generated
      */
-    EClass QUERY = eINSTANCE.getQuery();
+    EClass METHOD_BODY = eINSTANCE.getMethodBody();
+
+    /**
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_BODY__CODE = eINSTANCE.getMethodBody_Code();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ParameterImpl <em>Parameter</em>}' class.

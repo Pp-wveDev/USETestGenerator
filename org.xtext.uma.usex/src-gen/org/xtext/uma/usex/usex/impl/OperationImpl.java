@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.uma.usex.usex.AttributeType;
-import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.Operation;
 import org.xtext.uma.usex.usex.Parameter;
 import org.xtext.uma.usex.usex.UsexPackage;
@@ -36,7 +35,6 @@ import org.xtext.uma.usex.usex.UsexPackage;
  *   <li>{@link org.xtext.uma.usex.usex.impl.OperationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.OperationImpl#getInputParameters <em>Input Parameters</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.OperationImpl#getReturnParameter <em>Return Parameter</em>}</li>
- *   <li>{@link org.xtext.uma.usex.usex.impl.OperationImpl#getOperationBody <em>Operation Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,16 +80,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * @ordered
    */
   protected AttributeType returnParameter;
-
-  /**
-   * The cached value of the '{@link #getOperationBody() <em>Operation Body</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOperationBody()
-   * @generated
-   * @ordered
-   */
-  protected ExpCS operationBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -210,56 +198,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * @generated
    */
   @Override
-  public ExpCS getOperationBody()
-  {
-    return operationBody;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOperationBody(ExpCS newOperationBody, NotificationChain msgs)
-  {
-    ExpCS oldOperationBody = operationBody;
-    operationBody = newOperationBody;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UsexPackage.OPERATION__OPERATION_BODY, oldOperationBody, newOperationBody);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setOperationBody(ExpCS newOperationBody)
-  {
-    if (newOperationBody != operationBody)
-    {
-      NotificationChain msgs = null;
-      if (operationBody != null)
-        msgs = ((InternalEObject)operationBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UsexPackage.OPERATION__OPERATION_BODY, null, msgs);
-      if (newOperationBody != null)
-        msgs = ((InternalEObject)newOperationBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UsexPackage.OPERATION__OPERATION_BODY, null, msgs);
-      msgs = basicSetOperationBody(newOperationBody, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.OPERATION__OPERATION_BODY, newOperationBody, newOperationBody));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -268,8 +206,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return ((InternalEList<?>)getInputParameters()).basicRemove(otherEnd, msgs);
       case UsexPackage.OPERATION__RETURN_PARAMETER:
         return basicSetReturnParameter(null, msgs);
-      case UsexPackage.OPERATION__OPERATION_BODY:
-        return basicSetOperationBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -290,8 +226,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return getInputParameters();
       case UsexPackage.OPERATION__RETURN_PARAMETER:
         return getReturnParameter();
-      case UsexPackage.OPERATION__OPERATION_BODY:
-        return getOperationBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,9 +251,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
       case UsexPackage.OPERATION__RETURN_PARAMETER:
         setReturnParameter((AttributeType)newValue);
         return;
-      case UsexPackage.OPERATION__OPERATION_BODY:
-        setOperationBody((ExpCS)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -343,9 +274,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
       case UsexPackage.OPERATION__RETURN_PARAMETER:
         setReturnParameter((AttributeType)null);
         return;
-      case UsexPackage.OPERATION__OPERATION_BODY:
-        setOperationBody((ExpCS)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -366,8 +294,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return inputParameters != null && !inputParameters.isEmpty();
       case UsexPackage.OPERATION__RETURN_PARAMETER:
         return returnParameter != null;
-      case UsexPackage.OPERATION__OPERATION_BODY:
-        return operationBody != null;
     }
     return super.eIsSet(featureID);
   }

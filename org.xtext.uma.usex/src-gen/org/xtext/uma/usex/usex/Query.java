@@ -9,6 +9,12 @@ package org.xtext.uma.usex.usex;
  * A representation of the model object '<em><b>Query</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.uma.usex.usex.Query#getOperationBody <em>Operation Body</em>}</li>
+ * </ul>
  *
  * @see org.xtext.uma.usex.usex.UsexPackage#getQuery()
  * @model
@@ -16,4 +22,26 @@ package org.xtext.uma.usex.usex;
  */
 public interface Query extends Operation
 {
+  /**
+   * Returns the value of the '<em><b>Operation Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operation Body</em>' containment reference.
+   * @see #setOperationBody(ExpCS)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getQuery_OperationBody()
+   * @model containment="true"
+   * @generated
+   */
+  ExpCS getOperationBody();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.Query#getOperationBody <em>Operation Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Operation Body</em>' containment reference.
+   * @see #getOperationBody()
+   * @generated
+   */
+  void setOperationBody(ExpCS value);
+
 } // Query

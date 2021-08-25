@@ -21,6 +21,8 @@ import org.xtext.uma.usex.services.UsexGrammarAccess;
 public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected UsexGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_EnumerationElem_CommaKeyword_1_q;
+	protected AbstractElementAlias match_Model_ConstraintsKeyword_3_0_q;
 	protected AbstractElementAlias match_Parameter_CommaKeyword_3_q;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
 	protected AbstractElementAlias match_UseClass_AttributesKeyword_3_0_q;
@@ -30,6 +32,8 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (UsexGrammarAccess) access;
+		match_EnumerationElem_CommaKeyword_1_q = new TokenAlias(false, true, grammarAccess.getEnumerationElemAccess().getCommaKeyword_1());
+		match_Model_ConstraintsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getConstraintsKeyword_3_0());
 		match_Parameter_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_3());
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
 		match_UseClass_AttributesKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getAttributesKeyword_3_0());
@@ -49,7 +53,11 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Parameter_CommaKeyword_3_q.equals(syntax))
+			if (match_EnumerationElem_CommaKeyword_1_q.equals(syntax))
+				emit_EnumerationElem_CommaKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_ConstraintsKeyword_3_0_q.equals(syntax))
+				emit_Model_ConstraintsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parameter_CommaKeyword_3_q.equals(syntax))
 				emit_Parameter_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -63,6 +71,29 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) (rule end)
+	 */
+	protected void emit_EnumerationElem_CommaKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'constraints'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     elements+=AbstractElement (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Model_ConstraintsKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ','?

@@ -66,15 +66,20 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
     switch (eClass.getClassifierID())
     {
       case UsexPackage.MODEL: return createModel();
+      case UsexPackage.GENERAL_CONSTRAINT: return creategeneralConstraint();
       case UsexPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case UsexPackage.USE_CLASS: return createUseClass();
+      case UsexPackage.ENUMERATION: return createEnumeration();
+      case UsexPackage.ENUMERATION_ELEM: return createEnumerationElem();
       case UsexPackage.ATTRIBUTE: return createAttribute();
       case UsexPackage.ATTRIBUTE_TYPE: return createAttributeType();
       case UsexPackage.PRIMITIVE_TYPE: return createPrimitiveType();
       case UsexPackage.CLASS_TYPE: return createClassType();
+      case UsexPackage.COLLECTION_TYPE: return createCollectionType();
       case UsexPackage.OPERATION: return createOperation();
-      case UsexPackage.METHOD: return createMethod();
       case UsexPackage.QUERY: return createQuery();
+      case UsexPackage.METHOD: return createMethod();
+      case UsexPackage.METHOD_BODY: return createMethodBody();
       case UsexPackage.PARAMETER: return createParameter();
       case UsexPackage.CONDITION: return createCondition();
       case UsexPackage.PRECONDITION: return createPrecondition();
@@ -149,6 +154,18 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
    * @generated
    */
   @Override
+  public generalConstraint creategeneralConstraint()
+  {
+    generalConstraintImpl generalConstraint = new generalConstraintImpl();
+    return generalConstraint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AbstractElement createAbstractElement()
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
@@ -165,6 +182,30 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
   {
     UseClassImpl useClass = new UseClassImpl();
     return useClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Enumeration createEnumeration()
+  {
+    EnumerationImpl enumeration = new EnumerationImpl();
+    return enumeration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EnumerationElem createEnumerationElem()
+  {
+    EnumerationElemImpl enumerationElem = new EnumerationElemImpl();
+    return enumerationElem;
   }
 
   /**
@@ -221,10 +262,34 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
    * @generated
    */
   @Override
+  public CollectionType createCollectionType()
+  {
+    CollectionTypeImpl collectionType = new CollectionTypeImpl();
+    return collectionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Operation createOperation()
   {
     OperationImpl operation = new OperationImpl();
     return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Query createQuery()
+  {
+    QueryImpl query = new QueryImpl();
+    return query;
   }
 
   /**
@@ -245,10 +310,10 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
    * @generated
    */
   @Override
-  public Query createQuery()
+  public MethodBody createMethodBody()
   {
-    QueryImpl query = new QueryImpl();
-    return query;
+    MethodBodyImpl methodBody = new MethodBodyImpl();
+    return methodBody;
   }
 
   /**

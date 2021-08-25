@@ -32,13 +32,17 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementsAbstractElementParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cConstraintsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cGeneralConstraintsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0 = (RuleCall)cGeneralConstraintsAssignment_3_1.eContents().get(0);
 		
 		//Model:
-		//    'model' name=ID elements+=(AbstractElement)*
+		//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'model' name=ID elements+=(AbstractElement)*
+		//'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//'model'
@@ -55,19 +59,85 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//(AbstractElement)
 		public RuleCall getElementsAbstractElementParserRuleCall_2_0() { return cElementsAbstractElementParserRuleCall_2_0; }
+		
+		//('constraints' generalConstraints+=(generalConstraint)*)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'constraints'
+		public Keyword getConstraintsKeyword_3_0() { return cConstraintsKeyword_3_0; }
+		
+		//generalConstraints+=(generalConstraint)*
+		public Assignment getGeneralConstraintsAssignment_3_1() { return cGeneralConstraintsAssignment_3_1; }
+		
+		//(generalConstraint)
+		public RuleCall getGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0() { return cGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0; }
+	}
+	public class GeneralConstraintElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.generalConstraint");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cContextKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cContextClassAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cContextClassUseClassCrossReference_1_0 = (CrossReference)cContextClassAssignment_1.eContents().get(0);
+		private final RuleCall cContextClassUseClassIDTerminalRuleCall_1_0_1 = (RuleCall)cContextClassUseClassCrossReference_1_0.eContents().get(1);
+		private final Keyword cInvKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cConstraintBodyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cConstraintBodyExpCSParserRuleCall_5_0 = (RuleCall)cConstraintBodyAssignment_5.eContents().get(0);
+		
+		//// --------------------------------- GEN CONSTRAINTS ---------------------------------
+		//generalConstraint:
+		//    'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
+		public Group getGroup() { return cGroup; }
+		
+		//'context'
+		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
+		
+		//contextClass=[UseClass]
+		public Assignment getContextClassAssignment_1() { return cContextClassAssignment_1; }
+		
+		//[UseClass]
+		public CrossReference getContextClassUseClassCrossReference_1_0() { return cContextClassUseClassCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getContextClassUseClassIDTerminalRuleCall_1_0_1() { return cContextClassUseClassIDTerminalRuleCall_1_0_1; }
+		
+		//'inv'
+		public Keyword getInvKeyword_2() { return cInvKeyword_2; }
+		
+		//(name=ID)?
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//constraintBody=ExpCS
+		public Assignment getConstraintBodyAssignment_5() { return cConstraintBodyAssignment_5; }
+		
+		//ExpCS
+		public RuleCall getConstraintBodyExpCSParserRuleCall_5_0() { return cConstraintBodyExpCSParserRuleCall_5_0; }
 	}
 	public class AbstractElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.AbstractElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cRelationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cUseClassParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEnumerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//    Relation | UseClass
+		//    Relation | UseClass | Enumeration
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Relation | UseClass
+		//Relation | UseClass | Enumeration
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Relation
@@ -75,6 +145,9 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//UseClass
 		public RuleCall getUseClassParserRuleCall_1() { return cUseClassParserRuleCall_1; }
+		
+		//Enumeration
+		public RuleCall getEnumerationParserRuleCall_2() { return cEnumerationParserRuleCall_2; }
 	}
 	public class UseClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.UseClass");
@@ -100,7 +173,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//// --------------------------------- CLASSES ---------------------------------
 		//UseClass:
-		//    (abstract?='abstract')? 'class' name=ID
+		//    (abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
 		//    ('attributes' attributes+=(Attribute)*)?
 		//    ('operations' operations+=(Operation)*)?
 		//    ('constraints' constraints+=(Constraint)*)?
@@ -108,7 +181,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(abstract?='abstract')? 'class' name=ID
+		//(abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
 		//('attributes' attributes+=(Attribute)*)?
 		//('operations' operations+=(Operation)*)?
 		//('constraints' constraints+=(Constraint)*)?
@@ -130,7 +203,8 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//('attributes' attributes+=(Attribute)*)?
+		////('>' parentClass=[UseClass])?
+		//   ('attributes' attributes+=(Attribute)*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'attributes'
@@ -168,6 +242,69 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//'end'
 		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
+	}
+	public class EnumerationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Enumeration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsEnumerationElemParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//// --------------------------------- ENUMERATION ---------------------------------
+		//Enumeration:
+		//    'enum' name=ID '{' (elements+=EnumerationElem)+ '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'enum' name=ID '{' (elements+=EnumerationElem)+ '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'enum'
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(elements+=EnumerationElem)+
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
+		
+		//EnumerationElem
+		public RuleCall getElementsEnumerationElemParserRuleCall_3_0() { return cElementsEnumerationElemParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class EnumerationElemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.EnumerationElem");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//EnumerationElem:
+		//    name=ID (',')?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID (',')?
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//(',')?
+		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Attribute");
@@ -251,13 +388,14 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cPrimitiveTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cClassTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCollectionTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AttributeType:
-		//    (PrimitiveType | ClassType)
+		//    (PrimitiveType | ClassType | CollectionType)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(PrimitiveType | ClassType)
+		//(PrimitiveType | ClassType | CollectionType)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//PrimitiveType
@@ -265,6 +403,9 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//ClassType
 		public RuleCall getClassTypeParserRuleCall_1() { return cClassTypeParserRuleCall_1; }
+		
+		//CollectionType
+		public RuleCall getCollectionTypeParserRuleCall_2() { return cCollectionTypeParserRuleCall_2; }
 	}
 	public class PrimitiveTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.PrimitiveType");
@@ -318,110 +459,62 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getTypeUseClassIDTerminalRuleCall_0_1() { return cTypeUseClassIDTerminalRuleCall_0_1; }
 	}
-	public class OperationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Operation");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMethodParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cQueryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//// --------------------------------- OPERATION & QUERIES ---------------------------------
-		//Operation:
-		//    Method | Query
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Method | Query
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Method
-		public RuleCall getMethodParserRuleCall_0() { return cMethodParserRuleCall_0; }
-		
-		//Query
-		public RuleCall getQueryParserRuleCall_1() { return cQueryParserRuleCall_1; }
-	}
-	public class MethodElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Method");
+	public class CollectionTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.CollectionType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cColTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cColTypeCollectionTypeIdentifierParserRuleCall_0_0 = (RuleCall)cColTypeAssignment_0.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cInputParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInputParametersParameterParserRuleCall_2_0 = (RuleCall)cInputParametersAssignment_2.eContents().get(0);
+		private final Assignment cObjTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cObjTypeAttributeTypeParserRuleCall_2_0 = (RuleCall)cObjTypeAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cReturnParameterAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cReturnParameterAttributeTypeParserRuleCall_4_1_0 = (RuleCall)cReturnParameterAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cBeginKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cOperationBodyAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cOperationBodyExpCSParserRuleCall_5_1_0 = (RuleCall)cOperationBodyAssignment_5_1.eContents().get(0);
-		private final Keyword cEndKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cConditionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cConditionsConditionParserRuleCall_6_0 = (RuleCall)cConditionsAssignment_6.eContents().get(0);
 		
-		//Method:
-		//    name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
-		//    ('begin' operationBody=ExpCS 'end')?
-		//    conditions+=(Condition)*
+		//CollectionType:
+		//    colType=CollectionTypeIdentifier '(' (objType=AttributeType)? ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
-		//('begin' operationBody=ExpCS 'end')?
-		//conditions+=(Condition)*
+		//colType=CollectionTypeIdentifier '(' (objType=AttributeType)? ')'
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//colType=CollectionTypeIdentifier
+		public Assignment getColTypeAssignment_0() { return cColTypeAssignment_0; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		//CollectionTypeIdentifier
+		public RuleCall getColTypeCollectionTypeIdentifierParserRuleCall_0_0() { return cColTypeCollectionTypeIdentifierParserRuleCall_0_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//inputParameters+=(Parameter)*
-		public Assignment getInputParametersAssignment_2() { return cInputParametersAssignment_2; }
+		//(objType=AttributeType)?
+		public Assignment getObjTypeAssignment_2() { return cObjTypeAssignment_2; }
 		
-		//(Parameter)
-		public RuleCall getInputParametersParameterParserRuleCall_2_0() { return cInputParametersParameterParserRuleCall_2_0; }
+		//AttributeType
+		public RuleCall getObjTypeAttributeTypeParserRuleCall_2_0() { return cObjTypeAttributeTypeParserRuleCall_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class OperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Operation");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cQueryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMethodParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//(':' returnParameter=AttributeType)?
-		public Group getGroup_4() { return cGroup_4; }
+		//// --------------------------------- OPERATION & QUERIES ---------------------------------
+		//Operation:
+		//    Query | Method
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//':'
-		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
+		//Query | Method
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//returnParameter=AttributeType
-		public Assignment getReturnParameterAssignment_4_1() { return cReturnParameterAssignment_4_1; }
+		//Query
+		public RuleCall getQueryParserRuleCall_0() { return cQueryParserRuleCall_0; }
 		
-		//AttributeType
-		public RuleCall getReturnParameterAttributeTypeParserRuleCall_4_1_0() { return cReturnParameterAttributeTypeParserRuleCall_4_1_0; }
-		
-		//('begin' operationBody=ExpCS 'end')?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'begin'
-		public Keyword getBeginKeyword_5_0() { return cBeginKeyword_5_0; }
-		
-		//operationBody=ExpCS
-		public Assignment getOperationBodyAssignment_5_1() { return cOperationBodyAssignment_5_1; }
-		
-		//ExpCS
-		public RuleCall getOperationBodyExpCSParserRuleCall_5_1_0() { return cOperationBodyExpCSParserRuleCall_5_1_0; }
-		
-		//'end'
-		public Keyword getEndKeyword_5_2() { return cEndKeyword_5_2; }
-		
-		//conditions+=(Condition)*
-		public Assignment getConditionsAssignment_6() { return cConditionsAssignment_6; }
-		
-		//(Condition)
-		public RuleCall getConditionsConditionParserRuleCall_6_0() { return cConditionsConditionParserRuleCall_6_0; }
+		//Method
+		public RuleCall getMethodParserRuleCall_1() { return cMethodParserRuleCall_1; }
 	}
 	public class QueryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Query");
@@ -440,13 +533,11 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOperationBodyExpCSParserRuleCall_7_0 = (RuleCall)cOperationBodyAssignment_7.eContents().get(0);
 		
 		//Query:
-		//    name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType
-		//    '=' operationBody=ExpCS
+		//    name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType '=' operationBody=ExpCS
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType
-		//'=' operationBody=ExpCS
+		//name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType '=' operationBody=ExpCS
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -484,6 +575,106 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//ExpCS
 		public RuleCall getOperationBodyExpCSParserRuleCall_7_0() { return cOperationBodyExpCSParserRuleCall_7_0; }
+	}
+	public class MethodElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Method");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cInputParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInputParametersParameterParserRuleCall_2_0 = (RuleCall)cInputParametersAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cReturnParameterAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cReturnParameterAttributeTypeParserRuleCall_4_1_0 = (RuleCall)cReturnParameterAssignment_4_1.eContents().get(0);
+		private final Assignment cOperationBodyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOperationBodyMethodBodyParserRuleCall_5_0 = (RuleCall)cOperationBodyAssignment_5.eContents().get(0);
+		private final Assignment cConditionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cConditionsConditionParserRuleCall_6_0 = (RuleCall)cConditionsAssignment_6.eContents().get(0);
+		
+		//Method:
+		//    name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
+		//    (operationBody=MethodBody)?
+		//    conditions+=(Condition)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
+		//(operationBody=MethodBody)?
+		//conditions+=(Condition)*
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//inputParameters+=(Parameter)*
+		public Assignment getInputParametersAssignment_2() { return cInputParametersAssignment_2; }
+		
+		//(Parameter)
+		public RuleCall getInputParametersParameterParserRuleCall_2_0() { return cInputParametersParameterParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//(':' returnParameter=AttributeType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//':'
+		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
+		
+		//returnParameter=AttributeType
+		public Assignment getReturnParameterAssignment_4_1() { return cReturnParameterAssignment_4_1; }
+		
+		//AttributeType
+		public RuleCall getReturnParameterAttributeTypeParserRuleCall_4_1_0() { return cReturnParameterAttributeTypeParserRuleCall_4_1_0; }
+		
+		//(operationBody=MethodBody)?
+		public Assignment getOperationBodyAssignment_5() { return cOperationBodyAssignment_5; }
+		
+		//MethodBody
+		public RuleCall getOperationBodyMethodBodyParserRuleCall_5_0() { return cOperationBodyMethodBodyParserRuleCall_5_0; }
+		
+		//conditions+=(Condition)*
+		public Assignment getConditionsAssignment_6() { return cConditionsAssignment_6; }
+		
+		//(Condition)
+		public RuleCall getConditionsConditionParserRuleCall_6_0() { return cConditionsConditionParserRuleCall_6_0; }
+	}
+	public class MethodBodyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.MethodBody");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBeginKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCodeExpCSParserRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
+		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//MethodBody:
+		//    'begin' code=ExpCS 'end'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'begin' code=ExpCS 'end'
+		public Group getGroup() { return cGroup; }
+		
+		//'begin'
+		public Keyword getBeginKeyword_0() { return cBeginKeyword_0; }
+		
+		//code=ExpCS
+		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
+		
+		//ExpCS
+		public RuleCall getCodeExpCSParserRuleCall_1_0() { return cCodeExpCSParserRuleCall_1_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
 	}
 	public class ParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Parameter");
@@ -2706,18 +2897,16 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//IfExpCS returns IfExpCS:
 		//    'if' ownedCondition=(ExpCS|PatternExpCS)
 		//    'then' ownedThenExpression=ExpCS
-		////    ifThenExpressions+=IfThenExpCS
 		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
 		//    'else' ownedElseExpression=ExpCS
 		//    'endif' ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    'if' ownedCondition=(ExpCS|PatternExpCS)
-		//    'then' ownedThenExpression=ExpCS
-		////    ifThenExpressions+=IfThenExpCS
-		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
-		//    'else' ownedElseExpression=ExpCS
-		//    'endif'
+		//'if' ownedCondition=(ExpCS|PatternExpCS)
+		//'then' ownedThenExpression=ExpCS
+		//(ownedIfThenExpressions+=ElseIfThenExpCS)*
+		//'else' ownedElseExpression=ExpCS
+		//'endif'
 		public Group getGroup() { return cGroup; }
 		
 		//'if'
@@ -2744,8 +2933,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ExpCS
 		public RuleCall getOwnedThenExpressionExpCSParserRuleCall_3_0() { return cOwnedThenExpressionExpCSParserRuleCall_3_0; }
 		
-		////    ifThenExpressions+=IfThenExpCS
-		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
+		//(ownedIfThenExpressions+=ElseIfThenExpCS)*
 		public Assignment getOwnedIfThenExpressionsAssignment_4() { return cOwnedIfThenExpressionsAssignment_4; }
 		
 		//ElseIfThenExpCS
@@ -2773,10 +2961,6 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cOwnedThenExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOwnedThenExpressionExpCSParserRuleCall_3_0 = (RuleCall)cOwnedThenExpressionAssignment_3.eContents().get(0);
 		
-		////IfThenExpCS returns IfThenExpCS:
-		////    'if' condition=ExpCS
-		////    'then' thenExpression=ExpCS
-		////;
 		//ElseIfThenExpCS returns IfThenExpCS:
 		//    'elseif' ownedCondition=ExpCS
 		//    'then' ownedThenExpression=ExpCS
@@ -2821,7 +3005,8 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//LetExpCS returns LetExpCS:
 		//    'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
-		//    'in' ownedInExpression=ExpCS ;
+		//    'in' ownedInExpression=ExpCS
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
@@ -3590,15 +3775,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	
 	private final ModelElements pModel;
+	private final GeneralConstraintElements pGeneralConstraint;
 	private final AbstractElementElements pAbstractElement;
 	private final UseClassElements pUseClass;
+	private final EnumerationElements pEnumeration;
+	private final EnumerationElemElements pEnumerationElem;
 	private final AttributeElements pAttribute;
 	private final AttributeTypeElements pAttributeType;
 	private final PrimitiveTypeElements pPrimitiveType;
 	private final ClassTypeElements pClassType;
+	private final CollectionTypeElements pCollectionType;
 	private final OperationElements pOperation;
-	private final MethodElements pMethod;
 	private final QueryElements pQuery;
+	private final MethodElements pMethod;
+	private final MethodBodyElements pMethodBody;
 	private final ParameterElements pParameter;
 	private final ConditionElements pCondition;
 	private final PreconditionElements pPrecondition;
@@ -3682,15 +3872,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pGeneralConstraint = new GeneralConstraintElements();
 		this.pAbstractElement = new AbstractElementElements();
 		this.pUseClass = new UseClassElements();
+		this.pEnumeration = new EnumerationElements();
+		this.pEnumerationElem = new EnumerationElemElements();
 		this.pAttribute = new AttributeElements();
 		this.pAttributeType = new AttributeTypeElements();
 		this.pPrimitiveType = new PrimitiveTypeElements();
 		this.pClassType = new ClassTypeElements();
+		this.pCollectionType = new CollectionTypeElements();
 		this.pOperation = new OperationElements();
-		this.pMethod = new MethodElements();
 		this.pQuery = new QueryElements();
+		this.pMethod = new MethodElements();
+		this.pMethodBody = new MethodBodyElements();
 		this.pParameter = new ParameterElements();
 		this.pCondition = new ConditionElements();
 		this.pPrecondition = new PreconditionElements();
@@ -3793,7 +3988,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
 	
 	//Model:
-	//    'model' name=ID elements+=(AbstractElement)*
+	//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -3803,8 +3998,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getModelAccess().getRule();
 	}
 	
+	//// --------------------------------- GEN CONSTRAINTS ---------------------------------
+	//generalConstraint:
+	//    'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
+	//;
+	public GeneralConstraintElements getGeneralConstraintAccess() {
+		return pGeneralConstraint;
+	}
+	
+	public ParserRule getGeneralConstraintRule() {
+		return getGeneralConstraintAccess().getRule();
+	}
+	
 	//AbstractElement:
-	//    Relation | UseClass
+	//    Relation | UseClass | Enumeration
 	//;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
@@ -3816,7 +4023,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//// --------------------------------- CLASSES ---------------------------------
 	//UseClass:
-	//    (abstract?='abstract')? 'class' name=ID
+	//    (abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
 	//    ('attributes' attributes+=(Attribute)*)?
 	//    ('operations' operations+=(Operation)*)?
 	//    ('constraints' constraints+=(Constraint)*)?
@@ -3828,6 +4035,27 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getUseClassRule() {
 		return getUseClassAccess().getRule();
+	}
+	
+	//// --------------------------------- ENUMERATION ---------------------------------
+	//Enumeration:
+	//    'enum' name=ID '{' (elements+=EnumerationElem)+ '}';
+	public EnumerationElements getEnumerationAccess() {
+		return pEnumeration;
+	}
+	
+	public ParserRule getEnumerationRule() {
+		return getEnumerationAccess().getRule();
+	}
+	
+	//EnumerationElem:
+	//    name=ID (',')?;
+	public EnumerationElemElements getEnumerationElemAccess() {
+		return pEnumerationElem;
+	}
+	
+	public ParserRule getEnumerationElemRule() {
+		return getEnumerationElemAccess().getRule();
 	}
 	
 	//// --------------------------------- ATTRIBUTES ---------------------------------
@@ -3845,7 +4073,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//AttributeType:
-	//    (PrimitiveType | ClassType)
+	//    (PrimitiveType | ClassType | CollectionType)
 	//;
 	public AttributeTypeElements getAttributeTypeAccess() {
 		return pAttributeType;
@@ -3877,9 +4105,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getClassTypeAccess().getRule();
 	}
 	
+	//CollectionType:
+	//    colType=CollectionTypeIdentifier '(' (objType=AttributeType)? ')'
+	//;
+	public CollectionTypeElements getCollectionTypeAccess() {
+		return pCollectionType;
+	}
+	
+	public ParserRule getCollectionTypeRule() {
+		return getCollectionTypeAccess().getRule();
+	}
+	
 	//// --------------------------------- OPERATION & QUERIES ---------------------------------
 	//Operation:
-	//    Method | Query
+	//    Query | Method
 	//;
 	public OperationElements getOperationAccess() {
 		return pOperation;
@@ -3889,9 +4128,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getOperationAccess().getRule();
 	}
 	
+	//Query:
+	//    name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType '=' operationBody=ExpCS
+	//;
+	public QueryElements getQueryAccess() {
+		return pQuery;
+	}
+	
+	public ParserRule getQueryRule() {
+		return getQueryAccess().getRule();
+	}
+	
 	//Method:
 	//    name=ID '(' inputParameters+=(Parameter)* ')' (':' returnParameter=AttributeType)?
-	//    ('begin' operationBody=ExpCS 'end')?
+	//    (operationBody=MethodBody)?
 	//    conditions+=(Condition)*
 	//;
 	public MethodElements getMethodAccess() {
@@ -3902,16 +4152,15 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getMethodAccess().getRule();
 	}
 	
-	//Query:
-	//    name=ID '(' inputParameters+=(Parameter)* ')' ':' returnParameter=AttributeType
-	//    '=' operationBody=ExpCS
+	//MethodBody:
+	//    'begin' code=ExpCS 'end'
 	//;
-	public QueryElements getQueryAccess() {
-		return pQuery;
+	public MethodBodyElements getMethodBodyAccess() {
+		return pMethodBody;
 	}
 	
-	public ParserRule getQueryRule() {
-		return getQueryAccess().getRule();
+	public ParserRule getMethodBodyRule() {
+		return getMethodBodyAccess().getRule();
 	}
 	
 	//Parameter:
@@ -4602,7 +4851,6 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//IfExpCS returns IfExpCS:
 	//    'if' ownedCondition=(ExpCS|PatternExpCS)
 	//    'then' ownedThenExpression=ExpCS
-	////    ifThenExpressions+=IfThenExpCS
 	//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
 	//    'else' ownedElseExpression=ExpCS
 	//    'endif' ;
@@ -4614,10 +4862,6 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getIfExpCSAccess().getRule();
 	}
 	
-	////IfThenExpCS returns IfThenExpCS:
-	////    'if' condition=ExpCS
-	////    'then' thenExpression=ExpCS
-	////;
 	//ElseIfThenExpCS returns IfThenExpCS:
 	//    'elseif' ownedCondition=ExpCS
 	//    'then' ownedThenExpression=ExpCS
@@ -4632,7 +4876,8 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//LetExpCS returns LetExpCS:
 	//    'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
-	//    'in' ownedInExpression=ExpCS ;
+	//    'in' ownedInExpression=ExpCS
+	//;
 	public LetExpCSElements getLetExpCSAccess() {
 		return pLetExpCS;
 	}

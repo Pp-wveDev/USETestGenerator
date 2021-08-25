@@ -10,4 +10,6 @@
     <fullyQualifiedTypeName name="org.xtext.uma.usex.usex.UseClass"/>
     <fullyQualifiedTypeName name="org.xtext.example.mydsl.generator.model.DeclaredVariable"/>
     <fullyQualifiedTypeName name="org.xtext.example.mydsl.generator.ConfxGenerator"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="org.xtext.uma.usex.util.TestGenerationException"/>
 </qualifiedTypeNameHistroy>

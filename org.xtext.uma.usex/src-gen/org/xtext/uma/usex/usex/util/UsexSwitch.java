@@ -80,6 +80,13 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case UsexPackage.GENERAL_CONSTRAINT:
+      {
+        generalConstraint generalConstraint = (generalConstraint)theEObject;
+        T result = casegeneralConstraint(generalConstraint);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case UsexPackage.ABSTRACT_ELEMENT:
       {
         AbstractElement abstractElement = (AbstractElement)theEObject;
@@ -92,6 +99,21 @@ public class UsexSwitch<T> extends Switch<T>
         UseClass useClass = (UseClass)theEObject;
         T result = caseUseClass(useClass);
         if (result == null) result = caseAbstractElement(useClass);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.ENUMERATION:
+      {
+        Enumeration enumeration = (Enumeration)theEObject;
+        T result = caseEnumeration(enumeration);
+        if (result == null) result = caseAbstractElement(enumeration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.ENUMERATION_ELEM:
+      {
+        EnumerationElem enumerationElem = (EnumerationElem)theEObject;
+        T result = caseEnumerationElem(enumerationElem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,10 +147,26 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case UsexPackage.COLLECTION_TYPE:
+      {
+        CollectionType collectionType = (CollectionType)theEObject;
+        T result = caseCollectionType(collectionType);
+        if (result == null) result = caseAttributeType(collectionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case UsexPackage.OPERATION:
       {
         Operation operation = (Operation)theEObject;
         T result = caseOperation(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UsexPackage.QUERY:
+      {
+        Query query = (Query)theEObject;
+        T result = caseQuery(query);
+        if (result == null) result = caseOperation(query);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -140,11 +178,10 @@ public class UsexSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UsexPackage.QUERY:
+      case UsexPackage.METHOD_BODY:
       {
-        Query query = (Query)theEObject;
-        T result = caseQuery(query);
-        if (result == null) result = caseOperation(query);
+        MethodBody methodBody = (MethodBody)theEObject;
+        T result = caseMethodBody(methodBody);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -561,6 +598,22 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>general Constraint</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>general Constraint</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casegeneralConstraint(generalConstraint object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -588,6 +641,38 @@ public class UsexSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUseClass(UseClass object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumeration(Enumeration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enumeration Elem</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enumeration Elem</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumerationElem(EnumerationElem object)
   {
     return null;
   }
@@ -657,6 +742,22 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Collection Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Collection Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCollectionType(CollectionType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -668,6 +769,22 @@ public class UsexSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuery(Query object)
   {
     return null;
   }
@@ -689,17 +806,17 @@ public class UsexSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Query</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Method Body</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Query</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Method Body</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseQuery(Query object)
+  public T caseMethodBody(MethodBody object)
   {
     return null;
   }

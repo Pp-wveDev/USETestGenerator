@@ -6,15 +6,26 @@ public class ConfigurationParameters {
   
   private String testClass;
   
+  private String forMode;
+  
   private int intMin;
   
   private int intMax;
   
-  public ConfigurationParameters(final String mf, final String testClass, final int intMin, final int intMax) {
+  public ConfigurationParameters(final String mf, final String forMode, final String testClass, final int intMin, final int intMax) {
     this.modelFile = mf;
     this.testClass = testClass;
+    this.forMode = forMode;
     this.intMin = intMin;
     this.intMax = intMax;
+  }
+  
+  public ConfigurationParameters() {
+    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  }
+  
+  public String getForMode() {
+    return this.forMode;
   }
   
   public String getModelFile() {
@@ -47,5 +58,9 @@ public class ConfigurationParameters {
   
   public int setIntMax(final int intMax) {
     return this.intMax = intMax;
+  }
+  
+  public String setForMode(final String forMode) {
+    return this.forMode = forMode;
   }
 }

@@ -9,6 +9,12 @@
     <genClasses ecoreClass="Usex.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Model/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Model/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Model/generalConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//generalConstraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Usex.ecore#//generalConstraint/contextClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//generalConstraint/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//generalConstraint/constraintBody"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//AbstractElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//AbstractElement/name"/>
@@ -18,6 +24,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/operations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//UseClass/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//Enumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Enumeration/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//EnumerationElem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//EnumerationElem/name"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Attribute/name"/>
@@ -32,16 +44,25 @@
     <genClasses ecoreClass="Usex.ecore#//ClassType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Usex.ecore#//ClassType/type"/>
     </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//CollectionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//CollectionType/colType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//CollectionType/objType"/>
+    </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Operation/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/inputParameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/returnParameter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Operation/operationBody"/>
+    </genClasses>
+    <genClasses ecoreClass="Usex.ecore#//Query">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Query/operationBody"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Method">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Method/operationBody"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Method/conditions"/>
     </genClasses>
-    <genClasses ecoreClass="Usex.ecore#//Query"/>
+    <genClasses ecoreClass="Usex.ecore#//MethodBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MethodBody/code"/>
+    </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Parameter/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Parameter/type"/>

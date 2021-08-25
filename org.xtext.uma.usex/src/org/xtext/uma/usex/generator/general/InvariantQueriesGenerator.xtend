@@ -1,20 +1,16 @@
 package org.xtext.uma.usex.generator.general
 
-import java.util.Map
 import org.xtext.uma.usex.usex.UseClass
 import org.xtext.uma.usex.usex.Query
 import org.xtext.uma.usex.util.UseClassUtil
 import org.xtext.uma.usex.usex.UsexFactory
 import org.xtext.uma.usex.usex.PrimitiveType
-import org.xtext.uma.usex.usex.Constraint
 import org.xtext.uma.usex.generator.outputGenerator.OCLGenerator
 import org.xtext.uma.usex.generator.model.QueriesFromConstraints
 import java.util.List
 import java.util.ArrayList
 import org.xtext.uma.usex.usex.Model
 import org.xtext.uma.usex.usex.Method
-import org.xtext.uma.usex.usex.Postcondition
-import org.xtext.uma.usex.generator.outputGenerator.OutputGenerator
 
 class InvariantQueriesGenerator {
 	def static List<QueriesFromConstraints> getQueriesFromInv(UseClassUtil usu) {
@@ -35,7 +31,7 @@ class InvariantQueriesGenerator {
 				
 				// Get return type
 				var returnType = getBooleanType();
-			
+			 
 				// Adding code
 				var code = usexFactory.createStringLiteralExpCS();
 				code.segments.add(OCLGenerator.compileFinal(constraint.constraintBody).toString());
@@ -73,7 +69,6 @@ class InvariantQueriesGenerator {
 					var code = usexFactory.createStringLiteralExpCS();
 					code.segments.add(OCLGenerator.compileFinal(query.operationBody).toString());
 					postCond.conditionBody = code;
-					
 					
 					// Add to method
 					method.conditions.add(postCond);
