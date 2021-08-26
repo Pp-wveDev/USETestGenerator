@@ -1,7 +1,6 @@
 package testGenerator;
 
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.xtext.uma.usex.generator.UsexGenerator;
 import org.xtext.uma.usex.generator.model.ConfigurationParameters;
 import org.xtext.uma.usex.util.TestGenerationException;
@@ -30,8 +29,7 @@ class main {
     int _length = args.length;
     boolean _tripleNotEquals = (_length != 5);
     if (_tripleNotEquals) {
-      InputOutput.<String>println("You must include 5 parameters");
-      System.exit(1);
+      throw new TestGenerationException("You must include 5 parameters");
     }
     String modelFile = args[0];
     String testClass = args[1];
@@ -43,28 +41,16 @@ class main {
       intMax = Integer.parseInt(args[4]);
     } catch (final Throwable _t) {
       if (_t instanceof NumberFormatException) {
-        main.printTerminalError("Error parsing min/max numeric parameters");
-        System.exit((-1));
+        throw new TestGenerationException("Error parsing min/max numeric parameters");
       } else {
         throw Exceptions.sneakyThrow(_t);
       }
     }
     if ((intMin > intMax)) {
-      main.printTerminalError("Minimum parameter bigger than max parameter.");
-      System.exit((-1));
+      throw new TestGenerationException("Minimum parameter bigger than max parameter.");
     }
     ConfigurationParameters configurationParameters = new ConfigurationParameters(modelFile, forMode, testClass, intMin, intMax);
-    try {
-      UsexGenerator.generateFromFile(configurationParameters);
-    } catch (final Throwable _t) {
-      if (_t instanceof TestGenerationException) {
-        final TestGenerationException e = (TestGenerationException)_t;
-        main.printTerminalError(e.getMessage());
-        System.exit((-1));
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
-    }
+    UsexGenerator.generateFromFile(configurationParameters);
   }
   
   public static void printTerminalError(final String err) {

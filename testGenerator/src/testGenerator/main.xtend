@@ -17,8 +17,7 @@ package class main {
 	
 	def static void main(String[] args) {
 		if(args.length !== 5) {
-			println("You must include 5 parameters");
-			System.exit(1);
+			throw new TestGenerationException("You must include 5 parameters");
 		}
 		
 		// Input parameters
@@ -32,23 +31,21 @@ package class main {
 			intMin = Integer.parseInt(args.get(3));    //|| -10;
 			intMax = Integer.parseInt(args.get(4));    //|| 10;	
 		} catch(NumberFormatException e) {
-			printTerminalError("Error parsing min/max numeric parameters");
-			System.exit(-1);
+			throw new TestGenerationException("Error parsing min/max numeric parameters");
 		}
 		
 		if(intMin > intMax) {
-			printTerminalError("Minimum parameter bigger than max parameter.");
-			System.exit(-1);
+			throw new TestGenerationException("Minimum parameter bigger than max parameter.");
 		}
 		
 		var configurationParameters = new ConfigurationParameters(modelFile, forMode, testClass, intMin, intMax);
 				
-		try {
-			UsexGenerator.generateFromFile(configurationParameters);	
-		} catch(TestGenerationException e) {
-			printTerminalError(e.message);
-			System.exit(-1);
-		}
+		//try {
+		UsexGenerator.generateFromFile(configurationParameters);	
+		//} catch(TestGenerationException e) {
+		//	printTerminalError(e.message);
+		//	System.exit(-1);
+		//}
 	}
 	
 	def static printTerminalError(String err) {
