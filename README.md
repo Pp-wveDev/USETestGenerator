@@ -1,4 +1,4 @@
-# testGenerator
+# USETestGenerator
 Herramienta creada como trabajo de fin de grado en la Universidad de Málaga.
 
 ## ¿Qué hace?
