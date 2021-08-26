@@ -3,6 +3,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-1.8"/>
 	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\peped\.p2\pool\plugins"/>
+	<item key="org.eclipse.jdt.ui.last.external.project" value="C:\Program Files (x86)\Java\jre1.8.0_291\bin\tool"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -51,7 +52,7 @@
 		<item key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="2"/>
+		<item key="pageIndex" value="0"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
 		<item key="expanded0" value="true"/>
@@ -104,8 +105,10 @@
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\peped\tfg_workspace"/>
 		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="1"/>
 		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="main - testGenerator"/>
-		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="testGenerator\work\test_2_2.jar"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="testGenerator\bin\testGenerator\USETestGenerator.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="testGenerator/bin/testGenerator/USETestGenerator.jar"/>
+			<item value="C:\Program Files (x86)\Java\jre1.8.0_291\bin\tool\test_2_2.jar"/>
 			<item value="testGenerator\work\test_2_2.jar"/>
 			<item value="testGenerator\work\test_2.jar"/>
 			<item value="testGenerator\work\test.jar"/>
