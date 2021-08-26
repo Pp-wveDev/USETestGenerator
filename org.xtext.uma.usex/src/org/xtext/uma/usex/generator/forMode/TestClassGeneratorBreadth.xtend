@@ -84,7 +84,8 @@ class TestClassGeneratorBreadth extends TestClassGenerator {
 	'''
 		declare continue : Boolean,
 				opIndex : Integer,
-				target : RArm;
+				target : RArm,
+				opSequence : Sequence(Integer);
 				
 		opIndex := «nMethods».rand().floor()+1;
 	'''
@@ -94,15 +95,21 @@ class TestClassGeneratorBreadth extends TestClassGenerator {
 		for i in Sequence{1..n} do
 			for target in «targetClass.name».allInstances() do
 				continue := true;
+				opSequence := self.queryOpSequence(opIndex, «nMethods»);
 				
-				for curr in self.queryOpSequence(opIndex, «nMethods») do
+				for curr in opSequence do
 					«generateForBody()»
+				end;
+				
+				if opIndex = «nMethods» then
+					opIndex := 1;
+				else
+					opIndex := opIndex+1;
 				end;
 			end;
 		end;
 	'''
 
-	
 	def generateForBody() 
 	'''
 		«var i = 1»
@@ -132,7 +139,8 @@ class TestClassGeneratorBreadth extends TestClassGenerator {
 	
 	def genMethodWithVariables(Method method, int i) 
 	'''
-		if curr = «i»
+		if curr = «i» and
+		   continue
 		then
 			begin
 				declare «generateMethodVariablesDeclare(method.inputParameters)»
@@ -141,6 +149,8 @@ class TestClassGeneratorBreadth extends TestClassGenerator {
 				if target._check_«method.name»(«generateMethodVariableHeader(method.inputParameters)»)
 				then
 					target.«method.name»(«generateMethodVariableHeader(method.inputParameters)»);
+					continue := false;
+					opIndex := «i»;
 				end;
 			end;
 		end;

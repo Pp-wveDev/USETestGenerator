@@ -107,7 +107,7 @@ class UsexGenerator extends AbstractGenerator {
 		FinalConditionQueriesGenerator.addFinalConditions(useClassUtil);
 		
 		// Test class creation
-		var TestClassGenerator tCG;
+		var TestClassGenerator tCG = null;
 		
 		switch(forMode) {
 			case "random":
@@ -122,9 +122,11 @@ class UsexGenerator extends AbstractGenerator {
 				tCG = new TestClassGeneratorBreadth(useClassUtil, 
 											userVariables,
 											intMin, intMax)
-			default:
-				throw new TestGenerationException("Test mode not found.")
 		}
+		if(tCG === null) {
+			throw new TestGenerationException("Incorrect test mode.");
+		}
+		
 		var test = tCG.generateTestClass();
 		model.elements.add(test);
 		

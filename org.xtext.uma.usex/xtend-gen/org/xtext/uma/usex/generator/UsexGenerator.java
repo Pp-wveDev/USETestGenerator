@@ -120,11 +120,10 @@ public class UsexGenerator extends AbstractGenerator {
           TestClassGeneratorBreadth _testClassGeneratorBreadth = new TestClassGeneratorBreadth(useClassUtil, userVariables, intMin, intMax);
           tCG = _testClassGeneratorBreadth;
           break;
-        default:
-          throw new TestGenerationException("Test mode not found.");
       }
-    } else {
-      throw new TestGenerationException("Test mode not found.");
+    }
+    if ((tCG == null)) {
+      throw new TestGenerationException("Incorrect test mode.");
     }
     UseClass test = tCG.generateTestClass();
     model.getElements().add(test);
