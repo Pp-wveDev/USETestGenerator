@@ -38,7 +38,7 @@ class Microwave
                 end;
             end;
         end
-        --pre notCooking: not self.cooking
+        pre notCooking: not self.cooking
         post powerChanged: not self.cooking implies (self.power < 4 implies self.power@pre+1 = self.power) 
 
         power_dec()
@@ -47,11 +47,13 @@ class Microwave
                 self.power := self.power + 1;
             end;
         end
+        pre notCooking: not self.cooking
 
         power_reset()
         begin
             self.power := 0;
         end
+        pre notCooking: not self.cooking
 
         -- Timer
         --timer_inc()
