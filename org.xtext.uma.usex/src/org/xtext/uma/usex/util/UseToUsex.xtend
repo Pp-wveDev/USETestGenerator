@@ -37,20 +37,16 @@ class UseToUsex {
 	
 	def private static processBody(Scanner reader) {
 		var StringBuilder sB = new StringBuilder();
-		var beginCounter = 0;
+		var continue = true;
 		
-		while(reader.hasNext && beginCounter >= 0) {
+		while(reader.hasNext && continue) {
 			var line = reader.nextLine();
 			
-			if(line.equals("begin") || line.contains("then") || line.contains("do")) {
-				beginCounter++;
-			} 
-			else if(line.contains("end")) {
-				beginCounter--;
-				if(beginCounter == -1) {
-					var decLine = line.split("e");
-					line = decLine.get(0) + "\"e" + decLine.get(1);
-				}
+			if (line.contains("end") && !line.contains(";")) {
+				var indexEnd = line.indexOf("end");
+				line = line.substring(0, indexEnd) + "\"" + line.substring(indexEnd);
+			
+				continue = false;
 			}
 			
 			sB.append(line+"\n");
@@ -62,7 +58,7 @@ class UseToUsex {
 	def static deleteTmp(String filepath) {
 		var File file = new File(filepath);
 		if (!file.delete()) {
-			println("Error deleting tmp file");
+			throw new TestGenerationException("Error deleting tmp file");
 		}
 	}
 	

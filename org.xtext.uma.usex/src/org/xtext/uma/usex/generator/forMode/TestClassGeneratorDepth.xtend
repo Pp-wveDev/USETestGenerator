@@ -17,7 +17,7 @@ class TestClassGeneratorDepth extends TestClassGenerator {
 	override generateInitialDeclare() 
 	'''
 			declare opIndex : Integer,
-				target  : RArm,
+				target  : «targetClass.name»,
 				success : Boolean;
 		
 			opIndex := «nMethods».rand().floor()+1;

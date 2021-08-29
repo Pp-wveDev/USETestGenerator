@@ -23,6 +23,7 @@ import org.xtext.uma.usex.usex.CollectionType
 import org.xtext.uma.usex.usex.Enumeration
 import org.xtext.uma.usex.usex.EnumerationElem
 import org.xtext.uma.usex.util.TestGenerationException
+import org.xtext.uma.usex.usex.UsexFactory
 
 class OutputGenerator {
 	// Model compilation
@@ -31,10 +32,10 @@ class OutputGenerator {
 		model «m.name»
 		
 		««« Enumerations
-				«FOR enumeration : m.elements.filter(Enumeration)»
-					«enumeration.compile»
-					
-				«ENDFOR»
+		«FOR enumeration : m.elements.filter(Enumeration)»
+			«enumeration.compile»
+			
+		«ENDFOR»
 		
 		««« Classes
 		«FOR useClass : m.elements.filter(UseClass)»
@@ -142,9 +143,7 @@ class OutputGenerator {
 		
 	'''
 	static def generateException(String m) {
-		System.err.println(m);	
-		System.err.println("Testing model could not be generated.");
-		System.exit(-1);
+		throw new TestGenerationException(m);
 	}
 	
 	static def getHeader(Method q)
@@ -153,12 +152,7 @@ class OutputGenerator {
 	'''
 	
 	private static def getBody(Method m) {
-		if(m.name !== "test") {
-			return OCLGenerator.compileBody(m.operationBody.code);
-		} else {
-			return OCLGenerator.compile(m.operationBody.code);
-		}
-			
+		return m.operationBody.code;
 	}
 	
 	private static def getBody(Query q) {

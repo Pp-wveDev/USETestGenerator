@@ -26,6 +26,7 @@ import org.xtext.uma.usex.usex.Relation;
 import org.xtext.uma.usex.usex.RelationBody;
 import org.xtext.uma.usex.usex.RelationMember;
 import org.xtext.uma.usex.usex.UseClass;
+import org.xtext.uma.usex.util.TestGenerationException;
 
 @SuppressWarnings("all")
 public class OutputGenerator {
@@ -264,7 +265,7 @@ public class OutputGenerator {
       boolean _tripleNotEquals = (_operationBody != null);
       if (_tripleNotEquals) {
         _builder.append("begin\t");
-        CharSequence _body = OutputGenerator.getBody(m);
+        String _body = OutputGenerator.getBody(m);
         _builder.append(_body);
         _builder.newLineIfNotEmpty();
         _builder.append("end");
@@ -295,9 +296,7 @@ public class OutputGenerator {
   }
   
   public static void generateException(final String m) {
-    System.err.println(m);
-    System.err.println("Testing model could not be generated.");
-    System.exit((-1));
+    throw new TestGenerationException(m);
   }
   
   public static CharSequence getHeader(final Method q) {
@@ -312,14 +311,8 @@ public class OutputGenerator {
     return _builder;
   }
   
-  private static CharSequence getBody(final Method m) {
-    String _name = m.getName();
-    boolean _tripleNotEquals = (_name != "test");
-    if (_tripleNotEquals) {
-      return OCLGenerator.compileBody(m.getOperationBody().getCode());
-    } else {
-      return OCLGenerator.compile(m.getOperationBody().getCode());
-    }
+  private static String getBody(final Method m) {
+    return m.getOperationBody().getCode();
   }
   
   private static CharSequence getBody(final Query q) {

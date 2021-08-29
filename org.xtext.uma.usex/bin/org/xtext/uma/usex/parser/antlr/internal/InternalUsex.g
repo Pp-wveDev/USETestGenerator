@@ -255,11 +255,11 @@ ruleAbstractElement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_0());
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_0());
 		}
-		this_Relation_0=ruleRelation
+		this_UseClass_0=ruleUseClass
 		{
-			$current = $this_Relation_0.current;
+			$current = $this_UseClass_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -267,11 +267,11 @@ ruleAbstractElement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_1());
 		}
-		this_UseClass_1=ruleUseClass
+		this_Enumeration_1=ruleEnumeration
 		{
-			$current = $this_UseClass_1.current;
+			$current = $this_Enumeration_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -279,11 +279,11 @@ ruleAbstractElement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_2());
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_2());
 		}
-		this_Enumeration_2=ruleEnumeration
+		this_Relation_2=ruleRelation
 		{
-			$current = $this_Enumeration_2.current;
+			$current = $this_Relation_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1171,20 +1171,19 @@ ruleMethodBody returns [EObject current=null]
 		}
 		(
 			(
+				lv_code_1_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getMethodBodyAccess().getCodeExpCSParserRuleCall_1_0());
+					newLeafNode(lv_code_1_0, grammarAccess.getMethodBodyAccess().getCodeSTRINGTerminalRuleCall_1_0());
 				}
-				lv_code_1_0=ruleExpCS
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMethodBodyRule());
+						$current = createModelElement(grammarAccess.getMethodBodyRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"code",
 						lv_code_1_0,
-						"org.xtext.uma.usex.Usex.ExpCS");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

@@ -649,7 +649,7 @@ public interface UsexPackage extends EPackage
   int METHOD_BODY = 14;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' containment reference.
+   * The feature id for the '<em><b>Code</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3047,15 +3047,15 @@ public interface UsexPackage extends EPackage
   EClass getMethodBody();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.MethodBody#getCode <em>Code</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.MethodBody#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Code</em>'.
+   * @return the meta object for the attribute '<em>Code</em>'.
    * @see org.xtext.uma.usex.usex.MethodBody#getCode()
    * @see #getMethodBody()
    * @generated
    */
-  EReference getMethodBody_Code();
+  EAttribute getMethodBody_Code();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.Parameter <em>Parameter</em>}'.
@@ -4991,12 +4991,12 @@ public interface UsexPackage extends EPackage
     EClass METHOD_BODY = eINSTANCE.getMethodBody();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METHOD_BODY__CODE = eINSTANCE.getMethodBody_Code();
+    EAttribute METHOD_BODY__CODE = eINSTANCE.getMethodBody_Code();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.ParameterImpl <em>Parameter</em>}' class.

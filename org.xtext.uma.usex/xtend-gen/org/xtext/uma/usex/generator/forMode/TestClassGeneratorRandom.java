@@ -19,8 +19,11 @@ public class TestClassGeneratorRandom extends TestClassGenerator {
     _builder.append("declare opIndex : Integer,");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("target  : RArm;");
-    _builder.newLine();
+    _builder.append("target  : ");
+    String _name = this.targetClass.getName();
+    _builder.append(_name, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   

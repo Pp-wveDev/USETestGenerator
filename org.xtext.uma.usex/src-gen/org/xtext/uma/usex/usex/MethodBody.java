@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface MethodBody extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Code</b></em>' containment reference.
+   * Returns the value of the '<em><b>Code</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Code</em>' containment reference.
-   * @see #setCode(ExpCS)
+   * @return the value of the '<em>Code</em>' attribute.
+   * @see #setCode(String)
    * @see org.xtext.uma.usex.usex.UsexPackage#getMethodBody_Code()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  ExpCS getCode();
+  String getCode();
 
   /**
-   * Sets the value of the '{@link org.xtext.uma.usex.usex.MethodBody#getCode <em>Code</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.MethodBody#getCode <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Code</em>' containment reference.
+   * @param value the new value of the '<em>Code</em>' attribute.
    * @see #getCode()
    * @generated
    */
-  void setCode(ExpCS value);
+  void setCode(String value);
 
 } // MethodBody

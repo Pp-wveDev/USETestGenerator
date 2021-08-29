@@ -30,10 +30,8 @@ public class TestClassGeneratorBreadth extends TestClassGenerator {
     _testParameter.setName("n");
     _testParameter.setType(this.generateIntegerType());
     _testOperation.getInputParameters().add(_testParameter);
-    StringLiteralExpCS code = this.usexFactory.createStringLiteralExpCS();
-    code.getSegments().add(this.generateTestBody().toString());
     MethodBody body = this.usexFactory.createMethodBody();
-    body.setCode(code);
+    body.setCode(this.generateTestBody().toString());
     _testOperation.setOperationBody(body);
     _test.getOperations().add(_testOperation);
     _test.getOperations().add(this.generateQueryOpSequence());
@@ -74,8 +72,11 @@ public class TestClassGeneratorBreadth extends TestClassGenerator {
     _builder.append("opIndex : Integer,");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("target : RArm,");
-    _builder.newLine();
+    _builder.append("target : ");
+    String _name = this.targetClass.getName();
+    _builder.append(_name, "\t\t");
+    _builder.append(",");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("opSequence : Sequence(Integer);");
     _builder.newLine();

@@ -96,6 +96,10 @@ public class UsexGenerator extends AbstractGenerator {
     UseClassUtil useClassUtil = new UseClassUtil(r);
     List<UserVariable> userVariables = new ArrayList<UserVariable>();
     UseClass targetUseClass = useClassUtil.getClassFromName(testClass);
+    List<UseClass> _classList = useClassUtil.getClassList();
+    for (final UseClass class_ : _classList) {
+      InputOutput.<String>println(class_.getName());
+    }
     if ((targetUseClass == null)) {
       throw new TestGenerationException("Target class could not be found at the model.");
     }
@@ -158,16 +162,12 @@ public class UsexGenerator extends AbstractGenerator {
     fsa.generateFile(fileName, OutputGenerator.compile(model));
   }
   
-  public static String deleteTmpFile(final String fName) {
-    String _xblockexpression = null;
-    {
-      int _length = fName.length();
-      int _minus = (_length - 3);
-      String _substring = fName.substring(0, _minus);
-      String middleFile = (_substring + "usex");
-      _xblockexpression = UseToUsex.deleteTmp(middleFile);
-    }
-    return _xblockexpression;
+  public static void deleteTmpFile(final String fName) {
+    int _length = fName.length();
+    int _minus = (_length - 3);
+    String _substring = fName.substring(0, _minus);
+    String middleFile = (_substring + "usex");
+    UseToUsex.deleteTmp(middleFile);
   }
   
   public static String generateFromFile(final ConfigurationParameters confParam) {

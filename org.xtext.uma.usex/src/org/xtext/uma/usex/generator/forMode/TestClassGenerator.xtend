@@ -55,11 +55,8 @@ class TestClassGenerator {
 		_testOperation.inputParameters.add(_testParameter);
 		
 		// Test method body
-		var code = usexFactory.createStringLiteralExpCS();
-		code.segments.add(generateTestBody().toString());
-		
 		var body = usexFactory.createMethodBody();
-		body.code = code;
+		body.code = generateTestBody().toString();
 		
 		_testOperation.operationBody = body;
 		

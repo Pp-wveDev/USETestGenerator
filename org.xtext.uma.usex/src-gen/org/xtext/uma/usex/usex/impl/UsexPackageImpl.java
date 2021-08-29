@@ -1080,9 +1080,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getMethodBody_Code()
+  public EAttribute getMethodBody_Code()
   {
-    return (EReference)methodBodyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)methodBodyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2767,7 +2767,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     createEReference(methodEClass, METHOD__CONDITIONS);
 
     methodBodyEClass = createEClass(METHOD_BODY);
-    createEReference(methodBodyEClass, METHOD_BODY__CODE);
+    createEAttribute(methodBodyEClass, METHOD_BODY__CODE);
 
     parameterEClass = createEClass(PARAMETER);
     createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -3089,7 +3089,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEReference(getMethod_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(methodBodyEClass, MethodBody.class, "MethodBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMethodBody_Code(), this.getExpCS(), null, "code", null, 0, 1, MethodBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMethodBody_Code(), ecorePackage.getEString(), "code", null, 0, 1, MethodBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

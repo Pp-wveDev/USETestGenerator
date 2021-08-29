@@ -16,19 +16,21 @@ public class TestClassGeneratorDepth extends TestClassGenerator {
   @Override
   public CharSequence generateInitialDeclare() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
     _builder.append("declare opIndex : Integer,");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("target  : RArm,");
-    _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
+    _builder.append("target  : ");
+    String _name = this.targetClass.getName();
+    _builder.append(_name, "\t");
+    _builder.append(",");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.append("success : Boolean;");
     _builder.newLine();
+    _builder.append("\t\t");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("opIndex := ");
-    _builder.append(this.nMethods, "\t");
+    _builder.append(this.nMethods);
     _builder.append(".rand().floor()+1;");
     _builder.newLineIfNotEmpty();
     return _builder;

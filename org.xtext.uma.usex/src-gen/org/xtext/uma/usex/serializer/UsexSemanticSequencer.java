@@ -823,7 +823,7 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MethodBody returns MethodBody
 	 *
 	 * Constraint:
-	 *     code=ExpCS
+	 *     code=STRING
 	 */
 	protected void sequence_MethodBody(ISerializationContext context, MethodBody semanticObject) {
 		if (errorAcceptor != null) {
@@ -831,7 +831,7 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.METHOD_BODY__CODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMethodBodyAccess().getCodeExpCSParserRuleCall_1_0(), semanticObject.getCode());
+		feeder.accept(grammarAccess.getMethodBodyAccess().getCodeSTRINGTerminalRuleCall_1_0(), semanticObject.getCode());
 		feeder.finish();
 	}
 	

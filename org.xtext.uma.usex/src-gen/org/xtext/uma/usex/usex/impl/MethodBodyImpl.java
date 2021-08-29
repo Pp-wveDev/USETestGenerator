@@ -4,15 +4,12 @@
 package org.xtext.uma.usex.usex.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.uma.usex.usex.ExpCS;
 import org.xtext.uma.usex.usex.MethodBody;
 import org.xtext.uma.usex.usex.UsexPackage;
 
@@ -32,14 +29,24 @@ import org.xtext.uma.usex.usex.UsexPackage;
 public class MethodBodyImpl extends MinimalEObjectImpl.Container implements MethodBody
 {
   /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
+   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCode()
    * @generated
    * @ordered
    */
-  protected ExpCS code;
+  protected static final String CODE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCode()
+   * @generated
+   * @ordered
+   */
+  protected String code = CODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +75,7 @@ public class MethodBodyImpl extends MinimalEObjectImpl.Container implements Meth
    * @generated
    */
   @Override
-  public ExpCS getCode()
+  public String getCode()
   {
     return code;
   }
@@ -78,54 +85,13 @@ public class MethodBodyImpl extends MinimalEObjectImpl.Container implements Meth
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCode(ExpCS newCode, NotificationChain msgs)
+  @Override
+  public void setCode(String newCode)
   {
-    ExpCS oldCode = code;
+    String oldCode = code;
     code = newCode;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UsexPackage.METHOD_BODY__CODE, oldCode, newCode);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCode(ExpCS newCode)
-  {
-    if (newCode != code)
-    {
-      NotificationChain msgs = null;
-      if (code != null)
-        msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - UsexPackage.METHOD_BODY__CODE, null, msgs);
-      if (newCode != null)
-        msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - UsexPackage.METHOD_BODY__CODE, null, msgs);
-      msgs = basicSetCode(newCode, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.METHOD_BODY__CODE, newCode, newCode));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case UsexPackage.METHOD_BODY__CODE:
-        return basicSetCode(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.METHOD_BODY__CODE, oldCode, code));
   }
 
   /**
@@ -155,7 +121,7 @@ public class MethodBodyImpl extends MinimalEObjectImpl.Container implements Meth
     switch (featureID)
     {
       case UsexPackage.METHOD_BODY__CODE:
-        setCode((ExpCS)newValue);
+        setCode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +138,7 @@ public class MethodBodyImpl extends MinimalEObjectImpl.Container implements Meth
     switch (featureID)
     {
       case UsexPackage.METHOD_BODY__CODE:
-        setCode((ExpCS)null);
+        setCode(CODE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -189,9 +155,26 @@ public class MethodBodyImpl extends MinimalEObjectImpl.Container implements Meth
     switch (featureID)
     {
       case UsexPackage.METHOD_BODY__CODE:
-        return code != null;
+        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (code: ");
+    result.append(code);
+    result.append(')');
+    return result.toString();
   }
 
 } //MethodBodyImpl

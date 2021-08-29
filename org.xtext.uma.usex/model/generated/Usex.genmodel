@@ -61,7 +61,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//Method/conditions"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//MethodBody">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Usex.ecore#//MethodBody/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//MethodBody/code"/>
     </genClasses>
     <genClasses ecoreClass="Usex.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Usex.ecore#//Parameter/name"/>

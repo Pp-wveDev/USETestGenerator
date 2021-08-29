@@ -17,7 +17,7 @@ class TestClassGeneratorRandom extends TestClassGenerator {
 	override generateInitialDeclare() 
 	'''
 			declare opIndex : Integer,
-				target  : RArm;
+				target  : «targetClass.name»;
 	'''
 
 	override generateIterationFor() 

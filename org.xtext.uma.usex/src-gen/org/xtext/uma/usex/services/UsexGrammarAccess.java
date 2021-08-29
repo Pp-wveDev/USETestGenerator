@@ -128,26 +128,26 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	public class AbstractElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.AbstractElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cRelationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cUseClassParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEnumerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cUseClassParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEnumerationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cRelationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//    Relation | UseClass | Enumeration
+		//    UseClass | Enumeration | Relation
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Relation | UseClass | Enumeration
+		//UseClass | Enumeration | Relation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Relation
-		public RuleCall getRelationParserRuleCall_0() { return cRelationParserRuleCall_0; }
-		
 		//UseClass
-		public RuleCall getUseClassParserRuleCall_1() { return cUseClassParserRuleCall_1; }
+		public RuleCall getUseClassParserRuleCall_0() { return cUseClassParserRuleCall_0; }
 		
 		//Enumeration
-		public RuleCall getEnumerationParserRuleCall_2() { return cEnumerationParserRuleCall_2; }
+		public RuleCall getEnumerationParserRuleCall_1() { return cEnumerationParserRuleCall_1; }
+		
+		//Relation
+		public RuleCall getRelationParserRuleCall_2() { return cRelationParserRuleCall_2; }
 	}
 	public class UseClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.UseClass");
@@ -653,25 +653,25 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBeginKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cCodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCodeExpCSParserRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
+		private final RuleCall cCodeSTRINGTerminalRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
 		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MethodBody:
-		//    'begin' code=ExpCS 'end'
+		//    'begin' code=STRING 'end'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'begin' code=ExpCS 'end'
+		//'begin' code=STRING 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//'begin'
 		public Keyword getBeginKeyword_0() { return cBeginKeyword_0; }
 		
-		//code=ExpCS
+		//code=STRING
 		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
 		
-		//ExpCS
-		public RuleCall getCodeExpCSParserRuleCall_1_0() { return cCodeExpCSParserRuleCall_1_0; }
+		//STRING
+		public RuleCall getCodeSTRINGTerminalRuleCall_1_0() { return cCodeSTRINGTerminalRuleCall_1_0; }
 		
 		//'end'
 		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
@@ -1199,7 +1199,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//TupleTypeCS returns TupleTypeCS:
-		//    name='Tuple' ('(' (ownedParts+=TuplePartCS (',' ownedParts+=TuplePartCS)*)? ')')? ;
+		//    name='Tuple' ('(' (ownedParts+=TuplePartCS (',' ownedParts+=TuplePartCS)*)? ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name='Tuple' ('(' (ownedParts+=TuplePartCS (',' ownedParts+=TuplePartCS)*)? ')')?
@@ -1711,7 +1711,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightCurlyBracketKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
 		
 		//TypeNameExpCS returns TypeNameExpCS:
-		//    ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=ExpCS '}')?)? ;
+		//    ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=ExpCS '}')?)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=ExpCS '}')?)?
@@ -2140,15 +2140,15 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		///* A prefixed let expression elaborates a let expression with zero or more unary prefix operators. */
 		//PrefixedLetExpCS returns ExpCS:
-		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS )
+		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS)
 		//|     LetExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS )
+		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS)
 		//|     LetExpCS
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS )
+		//({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{PrefixExpCS}
@@ -2182,15 +2182,15 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		///* A prefixed primary expression elaborates a primary expression with zero or more unary prefix operators. */
 		//PrefixedPrimaryExpCS returns ExpCS:
-		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS )
+		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS)
 		//|     PrimaryExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS )
+		//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS)
 		//|     PrimaryExpCS
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS )
+		//({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{PrefixExpCS}
@@ -2228,6 +2228,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//PrimaryExpCS returns ExpCS:
 		//    NestedExpCS
 		//|    IfExpCS
+		////|     SelfExpCS
 		//|     PrimitiveLiteralExpCS
 		//|     TupleLiteralExpCS
 		//|     MapLiteralExpCS
@@ -2239,6 +2240,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//    NestedExpCS
 		//|    IfExpCS
+		////|     SelfExpCS
 		//|     PrimitiveLiteralExpCS
 		//|     TupleLiteralExpCS
 		//|     MapLiteralExpCS
@@ -2339,7 +2341,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//NameExpCS returns NameExpCS:
 		//    ownedPathName=PathNameCS ownedSquareBracketedClauses+=SquareBracketedClauseCS*
-		//    ownedRoundBracketedClause=RoundBracketedClauseCS? ownedCurlyBracketedClause=CurlyBracketedClauseCS? (isPre?='@' pre?='pre')? ;
+		//    ownedRoundBracketedClause=RoundBracketedClauseCS? ownedCurlyBracketedClause=CurlyBracketedClauseCS? (isPre?='@' pre?='pre')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ownedPathName=PathNameCS ownedSquareBracketedClauses+=SquareBracketedClauseCS*
@@ -2398,7 +2400,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SquareBracketedClauseCS:
-		//    '[' ownedTerms+=ExpCS (',' ownedTerms+=ExpCS)* ']' ;
+		//    '[' ownedTerms+=ExpCS (',' ownedTerms+=ExpCS)* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'[' ownedTerms+=ExpCS (',' ownedTerms+=ExpCS)* ']'
@@ -2447,7 +2449,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//    ownedType=CollectionTypeCS
 		//    '{' (ownedParts+=CollectionLiteralPartCS
 		//    (',' ownedParts+=CollectionLiteralPartCS)*)?
-		//    '}' ;
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ownedType=CollectionTypeCS
@@ -2504,7 +2506,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedExpressionPatternExpCSParserRuleCall_1_0 = (RuleCall)cOwnedExpressionAssignment_1.eContents().get(0);
 		
 		//CollectionLiteralPartCS returns CollectionLiteralPartCS:
-		//    (ownedExpression=ExpCS ('..' ownedLastExpression=ExpCS)?) | ownedExpression=PatternExpCS ;
+		//    (ownedExpression=ExpCS ('..' ownedLastExpression=ExpCS)?) | ownedExpression=PatternExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(ownedExpression=ExpCS ('..' ownedLastExpression=ExpCS)?) | ownedExpression=PatternExpCS
@@ -2547,7 +2549,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//LambdaLiteralExpCS returns LambdaLiteralExpCS:
-		//    'Lambda' '{' ownedExpressionCS=ExpCS '}' ;
+		//    'Lambda' '{' ownedExpressionCS=ExpCS '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Lambda' '{' ownedExpressionCS=ExpCS '}'
@@ -2584,7 +2586,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MapLiteralExpCS returns MapLiteralExpCS:
-		//    ownedType=MapTypeCS '{' (ownedParts+=MapLiteralPartCS (',' ownedParts+=MapLiteralPartCS)*)? '}' ;
+		//    ownedType=MapTypeCS '{' (ownedParts+=MapLiteralPartCS (',' ownedParts+=MapLiteralPartCS)*)? '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ownedType=MapTypeCS '{' (ownedParts+=MapLiteralPartCS (',' ownedParts+=MapLiteralPartCS)*)? '}'
@@ -2633,7 +2635,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedValueExpCSParserRuleCall_2_0 = (RuleCall)cOwnedValueAssignment_2.eContents().get(0);
 		
 		//MapLiteralPartCS returns MapLiteralPartCS:
-		//    ownedKey=ExpCS '<-' ownedValue=ExpCS ;
+		//    ownedKey=ExpCS '<-' ownedValue=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ownedKey=ExpCS '<-' ownedValue=ExpCS
@@ -2668,7 +2670,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TupleLiteralExpCS returns TupleLiteralExpCS:
-		//    'Tuple' '{' ownedParts+=TupleLiteralPartCS (',' ownedParts+=TupleLiteralPartCS)* '}' ;
+		//    'Tuple' '{' ownedParts+=TupleLiteralPartCS (',' ownedParts+=TupleLiteralPartCS)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Tuple' '{' ownedParts+=TupleLiteralPartCS (',' ownedParts+=TupleLiteralPartCS)* '}'
@@ -2715,7 +2717,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedInitExpressionExpCSParserRuleCall_3_0 = (RuleCall)cOwnedInitExpressionAssignment_3.eContents().get(0);
 		
 		//TupleLiteralPartCS returns TupleLiteralPartCS:
-		//    name=UnrestrictedName (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS ;
+		//    name=UnrestrictedName (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=UnrestrictedName (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS
@@ -2754,7 +2756,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//NumberLiteralExpCS returns NumberLiteralExpCS:
-		//    value=INT ;
+		//    value=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=INT
@@ -2773,7 +2775,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//BooleanLiteralExpCS returns BooleanLiteralExpCS:
 		//    symbol='true'
-		//    | symbol='false' ;
+		//    | symbol='false';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//symbol='true'
@@ -2799,7 +2801,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//UnlimitedNaturalLiteralExpCS returns UnlimitedNaturalLiteralExpCS:
-		//    {UnlimitedNaturalLiteralExpCS} '*' ;
+		//    {UnlimitedNaturalLiteralExpCS} '*';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{UnlimitedNaturalLiteralExpCS} '*'
@@ -2818,7 +2820,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cInvalidKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//InvalidLiteralExpCS returns InvalidLiteralExpCS:
-		//    {InvalidLiteralExpCS} 'invalid' ;
+		//    {InvalidLiteralExpCS} 'invalid';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{InvalidLiteralExpCS} 'invalid'
@@ -2837,7 +2839,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cNullKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//NullLiteralExpCS returns NullLiteralExpCS:
-		//    {NullLiteralExpCS} 'null' ;
+		//    {NullLiteralExpCS} 'null';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NullLiteralExpCS} 'null'
@@ -2858,7 +2860,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//NestedExpCS returns NestedExpCS:
-		//    '(' ownedExpression=ExpCS ')' ;
+		//    '(' ownedExpression=ExpCS ')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'(' ownedExpression=ExpCS ')'
@@ -2894,19 +2896,23 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedElseExpressionExpCSParserRuleCall_6_0 = (RuleCall)cOwnedElseExpressionAssignment_6.eContents().get(0);
 		private final Keyword cEndifKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
+		////SelfExpCS returns SelfExpCS:
+		//    //{SelfExpCS} 'self';
 		//IfExpCS returns IfExpCS:
 		//    'if' ownedCondition=(ExpCS|PatternExpCS)
 		//    'then' ownedThenExpression=ExpCS
+		////    ifThenExpressions+=IfThenExpCS
 		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
 		//    'else' ownedElseExpression=ExpCS
-		//    'endif' ;
+		//    'endif';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' ownedCondition=(ExpCS|PatternExpCS)
-		//'then' ownedThenExpression=ExpCS
-		//(ownedIfThenExpressions+=ElseIfThenExpCS)*
-		//'else' ownedElseExpression=ExpCS
-		//'endif'
+		//    'if' ownedCondition=(ExpCS|PatternExpCS)
+		//    'then' ownedThenExpression=ExpCS
+		////    ifThenExpressions+=IfThenExpCS
+		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
+		//    'else' ownedElseExpression=ExpCS
+		//    'endif'
 		public Group getGroup() { return cGroup; }
 		
 		//'if'
@@ -2933,7 +2939,8 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ExpCS
 		public RuleCall getOwnedThenExpressionExpCSParserRuleCall_3_0() { return cOwnedThenExpressionExpCSParserRuleCall_3_0; }
 		
-		//(ownedIfThenExpressions+=ElseIfThenExpCS)*
+		////    ifThenExpressions+=IfThenExpCS
+		//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
 		public Assignment getOwnedIfThenExpressionsAssignment_4() { return cOwnedIfThenExpressionsAssignment_4; }
 		
 		//ElseIfThenExpCS
@@ -2961,6 +2968,10 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cOwnedThenExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOwnedThenExpressionExpCSParserRuleCall_3_0 = (RuleCall)cOwnedThenExpressionAssignment_3.eContents().get(0);
 		
+		////IfThenExpCS returns IfThenExpCS:
+		////    'if' condition=ExpCS
+		////    'then' thenExpression=ExpCS
+		////;
 		//ElseIfThenExpCS returns IfThenExpCS:
 		//    'elseif' ownedCondition=ExpCS
 		//    'then' ownedThenExpression=ExpCS
@@ -3005,8 +3016,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//LetExpCS returns LetExpCS:
 		//    'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
-		//    'in' ownedInExpression=ExpCS
-		//;
+		//    'in' ownedInExpression=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
@@ -3059,7 +3069,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedInitExpressionExpCSParserRuleCall_4_0 = (RuleCall)cOwnedInitExpressionAssignment_4.eContents().get(0);
 		
 		//LetVariableCS returns LetVariableCS:
-		//    name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS ;
+		//    name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS
@@ -3279,7 +3289,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//    prefix=',' ownedNameExpression=NavigatingArgExpCS ((symbolCI='<-' ownedCoIterator=CoIteratorVariableCS (symbolIE='=' ownedInitExpression=ExpCS)?)
 		//                                                      |(symbolT=':' ownedType=TypeExpCS (symbolCI='<-' ownedCoIterator=CoIteratorVariableCS)? (symbolIE='=' ownedInitExpression=ExpCS)?)
 		//                                                      | ((symbolT=':' ownedType=TypeExpCS)? (symbolCI='<-' ownedCoIterator=CoIteratorVariableCS)? symbolIE='in' ownedInitExpression=ExpCS)
-		//                                                      )? ;
+		//                                                      )?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//prefix=',' ownedNameExpression=NavigatingArgExpCS ((symbolCI='<-' ownedCoIterator=CoIteratorVariableCS (symbolIE='=' ownedInitExpression=ExpCS)?)
@@ -3748,7 +3758,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cOwnedTypeTypeExpCSParserRuleCall_1_1_0 = (RuleCall)cOwnedTypeAssignment_1_1.eContents().get(0);
 		
 		//CoIteratorVariableCS returns VariableCS:
-		//    name=UnrestrictedName (':' ownedType=TypeExpCS)? ;
+		//    name=UnrestrictedName (':' ownedType=TypeExpCS)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=UnrestrictedName (':' ownedType=TypeExpCS)?
@@ -4011,7 +4021,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//AbstractElement:
-	//    Relation | UseClass | Enumeration
+	//    UseClass | Enumeration | Relation
 	//;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
@@ -4153,7 +4163,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//MethodBody:
-	//    'begin' code=ExpCS 'end'
+	//    'begin' code=STRING 'end'
 	//;
 	public MethodBodyElements getMethodBodyAccess() {
 		return pMethodBody;
@@ -4326,7 +4336,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//TupleTypeCS returns TupleTypeCS:
-	//    name='Tuple' ('(' (ownedParts+=TuplePartCS (',' ownedParts+=TuplePartCS)*)? ')')? ;
+	//    name='Tuple' ('(' (ownedParts+=TuplePartCS (',' ownedParts+=TuplePartCS)*)? ')')?;
 	public TupleTypeCSElements getTupleTypeCSAccess() {
 		return pTupleTypeCS;
 	}
@@ -4497,7 +4507,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//TypeNameExpCS returns TypeNameExpCS:
-	//    ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=ExpCS '}')?)? ;
+	//    ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=ExpCS '}')?)?;
 	public TypeNameExpCSElements getTypeNameExpCSAccess() {
 		return pTypeNameExpCS;
 	}
@@ -4637,7 +4647,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	///* A prefixed let expression elaborates a let expression with zero or more unary prefix operators. */
 	//PrefixedLetExpCS returns ExpCS:
-	//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS )
+	//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS)
 	//|     LetExpCS;
 	public PrefixedLetExpCSElements getPrefixedLetExpCSAccess() {
 		return pPrefixedLetExpCS;
@@ -4649,7 +4659,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	///* A prefixed primary expression elaborates a primary expression with zero or more unary prefix operators. */
 	//PrefixedPrimaryExpCS returns ExpCS:
-	//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS )
+	//    ({PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedPrimaryExpCS)
 	//|     PrimaryExpCS;
 	public PrefixedPrimaryExpCSElements getPrefixedPrimaryExpCSAccess() {
 		return pPrefixedPrimaryExpCS;
@@ -4663,6 +4673,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//PrimaryExpCS returns ExpCS:
 	//    NestedExpCS
 	//|    IfExpCS
+	////|     SelfExpCS
 	//|     PrimitiveLiteralExpCS
 	//|     TupleLiteralExpCS
 	//|     MapLiteralExpCS
@@ -4695,7 +4706,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//NameExpCS returns NameExpCS:
 	//    ownedPathName=PathNameCS ownedSquareBracketedClauses+=SquareBracketedClauseCS*
-	//    ownedRoundBracketedClause=RoundBracketedClauseCS? ownedCurlyBracketedClause=CurlyBracketedClauseCS? (isPre?='@' pre?='pre')? ;
+	//    ownedRoundBracketedClause=RoundBracketedClauseCS? ownedCurlyBracketedClause=CurlyBracketedClauseCS? (isPre?='@' pre?='pre')?;
 	public NameExpCSElements getNameExpCSAccess() {
 		return pNameExpCS;
 	}
@@ -4705,7 +4716,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//SquareBracketedClauseCS:
-	//    '[' ownedTerms+=ExpCS (',' ownedTerms+=ExpCS)* ']' ;
+	//    '[' ownedTerms+=ExpCS (',' ownedTerms+=ExpCS)* ']';
 	public SquareBracketedClauseCSElements getSquareBracketedClauseCSAccess() {
 		return pSquareBracketedClauseCS;
 	}
@@ -4718,7 +4729,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//    ownedType=CollectionTypeCS
 	//    '{' (ownedParts+=CollectionLiteralPartCS
 	//    (',' ownedParts+=CollectionLiteralPartCS)*)?
-	//    '}' ;
+	//    '}';
 	public CollectionLiteralExpCSElements getCollectionLiteralExpCSAccess() {
 		return pCollectionLiteralExpCS;
 	}
@@ -4728,7 +4739,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//CollectionLiteralPartCS returns CollectionLiteralPartCS:
-	//    (ownedExpression=ExpCS ('..' ownedLastExpression=ExpCS)?) | ownedExpression=PatternExpCS ;
+	//    (ownedExpression=ExpCS ('..' ownedLastExpression=ExpCS)?) | ownedExpression=PatternExpCS;
 	public CollectionLiteralPartCSElements getCollectionLiteralPartCSAccess() {
 		return pCollectionLiteralPartCS;
 	}
@@ -4738,7 +4749,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//LambdaLiteralExpCS returns LambdaLiteralExpCS:
-	//    'Lambda' '{' ownedExpressionCS=ExpCS '}' ;
+	//    'Lambda' '{' ownedExpressionCS=ExpCS '}';
 	public LambdaLiteralExpCSElements getLambdaLiteralExpCSAccess() {
 		return pLambdaLiteralExpCS;
 	}
@@ -4748,7 +4759,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//MapLiteralExpCS returns MapLiteralExpCS:
-	//    ownedType=MapTypeCS '{' (ownedParts+=MapLiteralPartCS (',' ownedParts+=MapLiteralPartCS)*)? '}' ;
+	//    ownedType=MapTypeCS '{' (ownedParts+=MapLiteralPartCS (',' ownedParts+=MapLiteralPartCS)*)? '}';
 	public MapLiteralExpCSElements getMapLiteralExpCSAccess() {
 		return pMapLiteralExpCS;
 	}
@@ -4758,7 +4769,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//MapLiteralPartCS returns MapLiteralPartCS:
-	//    ownedKey=ExpCS '<-' ownedValue=ExpCS ;
+	//    ownedKey=ExpCS '<-' ownedValue=ExpCS;
 	public MapLiteralPartCSElements getMapLiteralPartCSAccess() {
 		return pMapLiteralPartCS;
 	}
@@ -4768,7 +4779,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//TupleLiteralExpCS returns TupleLiteralExpCS:
-	//    'Tuple' '{' ownedParts+=TupleLiteralPartCS (',' ownedParts+=TupleLiteralPartCS)* '}' ;
+	//    'Tuple' '{' ownedParts+=TupleLiteralPartCS (',' ownedParts+=TupleLiteralPartCS)* '}';
 	public TupleLiteralExpCSElements getTupleLiteralExpCSAccess() {
 		return pTupleLiteralExpCS;
 	}
@@ -4778,7 +4789,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//TupleLiteralPartCS returns TupleLiteralPartCS:
-	//    name=UnrestrictedName (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS ;
+	//    name=UnrestrictedName (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS;
 	public TupleLiteralPartCSElements getTupleLiteralPartCSAccess() {
 		return pTupleLiteralPartCS;
 	}
@@ -4788,7 +4799,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//NumberLiteralExpCS returns NumberLiteralExpCS:
-	//    value=INT ;
+	//    value=INT;
 	public NumberLiteralExpCSElements getNumberLiteralExpCSAccess() {
 		return pNumberLiteralExpCS;
 	}
@@ -4799,7 +4810,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//BooleanLiteralExpCS returns BooleanLiteralExpCS:
 	//    symbol='true'
-	//    | symbol='false' ;
+	//    | symbol='false';
 	public BooleanLiteralExpCSElements getBooleanLiteralExpCSAccess() {
 		return pBooleanLiteralExpCS;
 	}
@@ -4809,7 +4820,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//UnlimitedNaturalLiteralExpCS returns UnlimitedNaturalLiteralExpCS:
-	//    {UnlimitedNaturalLiteralExpCS} '*' ;
+	//    {UnlimitedNaturalLiteralExpCS} '*';
 	public UnlimitedNaturalLiteralExpCSElements getUnlimitedNaturalLiteralExpCSAccess() {
 		return pUnlimitedNaturalLiteralExpCS;
 	}
@@ -4819,7 +4830,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//InvalidLiteralExpCS returns InvalidLiteralExpCS:
-	//    {InvalidLiteralExpCS} 'invalid' ;
+	//    {InvalidLiteralExpCS} 'invalid';
 	public InvalidLiteralExpCSElements getInvalidLiteralExpCSAccess() {
 		return pInvalidLiteralExpCS;
 	}
@@ -4829,7 +4840,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//NullLiteralExpCS returns NullLiteralExpCS:
-	//    {NullLiteralExpCS} 'null' ;
+	//    {NullLiteralExpCS} 'null';
 	public NullLiteralExpCSElements getNullLiteralExpCSAccess() {
 		return pNullLiteralExpCS;
 	}
@@ -4839,7 +4850,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//NestedExpCS returns NestedExpCS:
-	//    '(' ownedExpression=ExpCS ')' ;
+	//    '(' ownedExpression=ExpCS ')';
 	public NestedExpCSElements getNestedExpCSAccess() {
 		return pNestedExpCS;
 	}
@@ -4848,12 +4859,15 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getNestedExpCSAccess().getRule();
 	}
 	
+	////SelfExpCS returns SelfExpCS:
+	//    //{SelfExpCS} 'self';
 	//IfExpCS returns IfExpCS:
 	//    'if' ownedCondition=(ExpCS|PatternExpCS)
 	//    'then' ownedThenExpression=ExpCS
+	////    ifThenExpressions+=IfThenExpCS
 	//    (ownedIfThenExpressions+=ElseIfThenExpCS)*
 	//    'else' ownedElseExpression=ExpCS
-	//    'endif' ;
+	//    'endif';
 	public IfExpCSElements getIfExpCSAccess() {
 		return pIfExpCS;
 	}
@@ -4862,6 +4876,10 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getIfExpCSAccess().getRule();
 	}
 	
+	////IfThenExpCS returns IfThenExpCS:
+	////    'if' condition=ExpCS
+	////    'then' thenExpression=ExpCS
+	////;
 	//ElseIfThenExpCS returns IfThenExpCS:
 	//    'elseif' ownedCondition=ExpCS
 	//    'then' ownedThenExpression=ExpCS
@@ -4876,8 +4894,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//LetExpCS returns LetExpCS:
 	//    'let' ownedVariables+=LetVariableCS (',' ownedVariables+=LetVariableCS)*
-	//    'in' ownedInExpression=ExpCS
-	//;
+	//    'in' ownedInExpression=ExpCS;
 	public LetExpCSElements getLetExpCSAccess() {
 		return pLetExpCS;
 	}
@@ -4887,7 +4904,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//LetVariableCS returns LetVariableCS:
-	//    name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS ;
+	//    name=UnrestrictedName ownedRoundBracketedClause=RoundBracketedClauseCS? (':' ownedType=TypeExpCS)? '=' ownedInitExpression=ExpCS;
 	public LetVariableCSElements getLetVariableCSAccess() {
 		return pLetVariableCS;
 	}
@@ -4926,7 +4943,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//    prefix=',' ownedNameExpression=NavigatingArgExpCS ((symbolCI='<-' ownedCoIterator=CoIteratorVariableCS (symbolIE='=' ownedInitExpression=ExpCS)?)
 	//                                                      |(symbolT=':' ownedType=TypeExpCS (symbolCI='<-' ownedCoIterator=CoIteratorVariableCS)? (symbolIE='=' ownedInitExpression=ExpCS)?)
 	//                                                      | ((symbolT=':' ownedType=TypeExpCS)? (symbolCI='<-' ownedCoIterator=CoIteratorVariableCS)? symbolIE='in' ownedInitExpression=ExpCS)
-	//                                                      )? ;
+	//                                                      )?;
 	public NavigatingCommaArgCSElements getNavigatingCommaArgCSAccess() {
 		return pNavigatingCommaArgCS;
 	}
@@ -4979,7 +4996,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//CoIteratorVariableCS returns VariableCS:
-	//    name=UnrestrictedName (':' ownedType=TypeExpCS)? ;
+	//    name=UnrestrictedName (':' ownedType=TypeExpCS)?;
 	public CoIteratorVariableCSElements getCoIteratorVariableCSAccess() {
 		return pCoIteratorVariableCS;
 	}

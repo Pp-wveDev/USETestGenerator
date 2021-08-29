@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class UseToUsex {
@@ -37,25 +36,18 @@ public class UseToUsex {
   
   private static String processBody(final Scanner reader) {
     StringBuilder sB = new StringBuilder();
-    int beginCounter = 0;
-    while ((reader.hasNext() && (beginCounter >= 0))) {
+    boolean continue_ = true;
+    while ((reader.hasNext() && continue_)) {
       {
         String line = reader.nextLine();
-        if (((line.equals("begin") || line.contains("then")) || line.contains("do"))) {
-          beginCounter++;
-        } else {
-          boolean _contains = line.contains("end");
-          if (_contains) {
-            beginCounter--;
-            if ((beginCounter == (-1))) {
-              String[] decLine = line.split("e");
-              String _get = decLine[0];
-              String _plus = (_get + "\"e");
-              String _get_1 = decLine[1];
-              String _plus_1 = (_plus + _get_1);
-              line = _plus_1;
-            }
-          }
+        if ((line.contains("end") && (!line.contains(";")))) {
+          int indexEnd = line.indexOf("end");
+          String _substring = line.substring(0, indexEnd);
+          String _plus = (_substring + "\"");
+          String _substring_1 = line.substring(indexEnd);
+          String _plus_1 = (_plus + _substring_1);
+          line = _plus_1;
+          continue_ = false;
         }
         sB.append((line + "\n"));
       }
@@ -63,18 +55,12 @@ public class UseToUsex {
     return sB.toString();
   }
   
-  public static String deleteTmp(final String filepath) {
-    String _xblockexpression = null;
-    {
-      File file = new File(filepath);
-      String _xifexpression = null;
-      boolean _delete = file.delete();
-      boolean _not = (!_delete);
-      if (_not) {
-        _xifexpression = InputOutput.<String>println("Error deleting tmp file");
-      }
-      _xblockexpression = _xifexpression;
+  public static void deleteTmp(final String filepath) {
+    File file = new File(filepath);
+    boolean _delete = file.delete();
+    boolean _not = (!_delete);
+    if (_not) {
+      throw new TestGenerationException("Error deleting tmp file");
     }
-    return _xblockexpression;
   }
 }

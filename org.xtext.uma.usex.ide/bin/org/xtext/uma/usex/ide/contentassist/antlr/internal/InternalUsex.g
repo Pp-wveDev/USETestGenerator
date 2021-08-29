@@ -2213,21 +2213,21 @@ rule__AbstractElement__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_0()); }
-		ruleRelation
-		{ after(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_1()); }
+		{ before(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_0()); }
 		ruleUseClass
-		{ after(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_1()); }
+		{ after(grammarAccess.getAbstractElementAccess().getUseClassParserRuleCall_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_2()); }
+		{ before(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_1()); }
 		ruleEnumeration
-		{ after(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_2()); }
+		{ after(grammarAccess.getAbstractElementAccess().getEnumerationParserRuleCall_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_2()); }
+		ruleRelation
+		{ after(grammarAccess.getAbstractElementAccess().getRelationParserRuleCall_2()); }
 	)
 ;
 finally {
@@ -12888,9 +12888,9 @@ rule__MethodBody__CodeAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getMethodBodyAccess().getCodeExpCSParserRuleCall_1_0()); }
-		ruleExpCS
-		{ after(grammarAccess.getMethodBodyAccess().getCodeExpCSParserRuleCall_1_0()); }
+		{ before(grammarAccess.getMethodBodyAccess().getCodeSTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getMethodBodyAccess().getCodeSTRINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
