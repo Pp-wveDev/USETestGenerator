@@ -81,9 +81,9 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter casegeneralConstraint(generalConstraint object)
+      public Adapter caseGeneralConstraint(GeneralConstraint object)
       {
-        return creategeneralConstraintAdapter();
+        return createGeneralConstraintAdapter();
       }
       @Override
       public Adapter caseAbstractElement(AbstractElement object)
@@ -443,16 +443,16 @@ public class UsexAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.generalConstraint <em>general Constraint</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.uma.usex.usex.GeneralConstraint <em>General Constraint</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.uma.usex.usex.generalConstraint
+   * @see org.xtext.uma.usex.usex.GeneralConstraint
    * @generated
    */
-  public Adapter creategeneralConstraintAdapter()
+  public Adapter createGeneralConstraintAdapter()
   {
     return null;
   }

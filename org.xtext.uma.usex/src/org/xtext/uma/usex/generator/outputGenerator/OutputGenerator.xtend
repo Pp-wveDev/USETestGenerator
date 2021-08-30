@@ -23,7 +23,7 @@ import org.xtext.uma.usex.usex.CollectionType
 import org.xtext.uma.usex.usex.Enumeration
 import org.xtext.uma.usex.usex.EnumerationElem
 import org.xtext.uma.usex.util.TestGenerationException
-import org.xtext.uma.usex.usex.UsexFactory
+import org.xtext.uma.usex.usex.GeneralConstraint
 
 class OutputGenerator {
 	// Model compilation
@@ -34,20 +34,26 @@ class OutputGenerator {
 		««« Enumerations
 		«FOR enumeration : m.elements.filter(Enumeration)»
 			«enumeration.compile»
-			
+
 		«ENDFOR»
-		
 		««« Classes
 		«FOR useClass : m.elements.filter(UseClass)»
 			«useClass.compile»
-			
+
 		«ENDFOR»
-		
 		««« Relations
 		«FOR relation : m.elements.filter(Relation)»
 			«relation.compile»
-			
+
 		«ENDFOR»
+		««« General Constraints
+		«IF m.generalConstraints.length > 0»
+		constraints
+			«FOR genConstraint : m.generalConstraints»
+				«genConstraint.compile»
+
+			«ENDFOR»
+		«ENDIF»
 	'''
 	
 	// Enumeration compilation
@@ -61,7 +67,7 @@ class OutputGenerator {
 		var StringBuilder sB = new StringBuilder();
 		
 		for(var i=0; i<enumList.size(); i++) {
-			sB.append(enumList.get(i));
+			sB.append(enumList.get(i).name);
 			if(i < enumList.size-1) {
 				sB.append(',');
 			}
@@ -73,21 +79,20 @@ class OutputGenerator {
 	// Class compilation
 	private static def compile(UseClass cl)
 	'''
-		«IF cl.abstract»abstract «ENDIF»class «cl.name»
-		«IF !cl.attributes.isEmpty»attributes
+		«IF cl.abstract»abstract «ENDIF»class «cl.name»«IF cl.parentClass !== null» < «cl.parentClass»«ENDIF»
+		«IF !cl.attributes.isEmpty»	attributes
 			«FOR attribute : cl.attributes»
-			«attribute.compile»
+				«attribute.compile»
 			«ENDFOR»
-			
 		«ENDIF»
-		«IF !cl.operations.isEmpty»operations
+		«IF !cl.operations.isEmpty»	operations
 			«FOR operation : cl.operations»
-			«operation.compile»
+				«operation.compile»
 			«ENDFOR»
 		«ENDIF»
-		«IF !cl.constraints.isEmpty»constraints
+		«IF !cl.constraints.isEmpty»	constraints
 			«FOR constraint : cl.constraints»
-			«constraint.compile»
+				«constraint.compile»
 			«ENDFOR»
 		«ENDIF»
 		end
@@ -134,7 +139,8 @@ class OutputGenerator {
 	'''
 		«m.name»(«listParameters(m.inputParameters, true)») «m.writeReturn»
 		«IF m.operationBody !== null»
-			begin	«getBody(m)»
+			begin
+				«getBody(m)»
 			end
 		«ELSE» 
 			«generateException("Operations must have a body: " + m.name)»
@@ -152,7 +158,7 @@ class OutputGenerator {
 	'''
 	
 	private static def getBody(Method m) {
-		return m.operationBody.code;
+		return m.operationBody.code.substring(1).replaceAll("  ", "");
 	}
 	
 	private static def getBody(Query q) {
@@ -257,6 +263,13 @@ class OutputGenerator {
 	// RelationMember compilation
 	private static def compile(RelationMember rM)
 	'''
-			«rM.class_.name» «OCLGenerator.compileFinal(rM.cardinality)» role «rM.roleName»
+			«rM.class_.name» «OCLGenerator.compileFinal(rM.cardinality)» «IF rM.roleName !== null» role «rM.roleName» «ENDIF»
+	'''
+	
+	// General constraints compilation
+	private static def compile(GeneralConstraint gC)
+	'''
+		context «gC.contextClass.name» «IF gC.name !== null»inv «gC.name»«ENDIF»:
+			«OCLGenerator.compileFinal(gC.constraintBody)»
 	'''
 }

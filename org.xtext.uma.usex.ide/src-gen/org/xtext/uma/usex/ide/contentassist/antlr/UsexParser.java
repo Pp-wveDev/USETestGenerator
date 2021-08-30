@@ -70,6 +70,7 @@ public class UsexParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUseClassAccess().getGroup_3(), "rule__UseClass__Group_3__0");
 			builder.put(grammarAccess.getUseClassAccess().getGroup_4(), "rule__UseClass__Group_4__0");
 			builder.put(grammarAccess.getUseClassAccess().getGroup_5(), "rule__UseClass__Group_5__0");
+			builder.put(grammarAccess.getUseClassAccess().getGroup_6(), "rule__UseClass__Group_6__0");
 			builder.put(grammarAccess.getEnumerationAccess().getGroup(), "rule__Enumeration__Group__0");
 			builder.put(grammarAccess.getEnumerationElemAccess().getGroup(), "rule__EnumerationElem__Group__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
@@ -87,6 +88,7 @@ public class UsexParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRelationAccess().getGroup(), "rule__Relation__Group__0");
 			builder.put(grammarAccess.getRelationBodyAccess().getGroup(), "rule__RelationBody__Group__0");
 			builder.put(grammarAccess.getRelationMemberAccess().getGroup(), "rule__RelationMember__Group__0");
+			builder.put(grammarAccess.getRelationMemberAccess().getGroup_2(), "rule__RelationMember__Group_2__0");
 			builder.put(grammarAccess.getCollectionTypeCSAccess().getGroup(), "rule__CollectionTypeCS__Group__0");
 			builder.put(grammarAccess.getCollectionTypeCSAccess().getGroup_1(), "rule__CollectionTypeCS__Group_1__0");
 			builder.put(grammarAccess.getMapTypeCSAccess().getGroup(), "rule__MapTypeCS__Group__0");
@@ -184,9 +186,10 @@ public class UsexParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGeneralConstraintAccess().getConstraintBodyAssignment_5(), "rule__GeneralConstraint__ConstraintBodyAssignment_5");
 			builder.put(grammarAccess.getUseClassAccess().getAbstractAssignment_0(), "rule__UseClass__AbstractAssignment_0");
 			builder.put(grammarAccess.getUseClassAccess().getNameAssignment_2(), "rule__UseClass__NameAssignment_2");
-			builder.put(grammarAccess.getUseClassAccess().getAttributesAssignment_3_1(), "rule__UseClass__AttributesAssignment_3_1");
-			builder.put(grammarAccess.getUseClassAccess().getOperationsAssignment_4_1(), "rule__UseClass__OperationsAssignment_4_1");
-			builder.put(grammarAccess.getUseClassAccess().getConstraintsAssignment_5_1(), "rule__UseClass__ConstraintsAssignment_5_1");
+			builder.put(grammarAccess.getUseClassAccess().getParentClassAssignment_3_1(), "rule__UseClass__ParentClassAssignment_3_1");
+			builder.put(grammarAccess.getUseClassAccess().getAttributesAssignment_4_1(), "rule__UseClass__AttributesAssignment_4_1");
+			builder.put(grammarAccess.getUseClassAccess().getOperationsAssignment_5_1(), "rule__UseClass__OperationsAssignment_5_1");
+			builder.put(grammarAccess.getUseClassAccess().getConstraintsAssignment_6_1(), "rule__UseClass__ConstraintsAssignment_6_1");
 			builder.put(grammarAccess.getEnumerationAccess().getNameAssignment_1(), "rule__Enumeration__NameAssignment_1");
 			builder.put(grammarAccess.getEnumerationAccess().getElementsAssignment_3(), "rule__Enumeration__ElementsAssignment_3");
 			builder.put(grammarAccess.getEnumerationElemAccess().getNameAssignment_0(), "rule__EnumerationElem__NameAssignment_0");
@@ -223,7 +226,7 @@ public class UsexParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRelationBodyAccess().getDestinyClassAssignment_1(), "rule__RelationBody__DestinyClassAssignment_1");
 			builder.put(grammarAccess.getRelationMemberAccess().getClassAssignment_0(), "rule__RelationMember__ClassAssignment_0");
 			builder.put(grammarAccess.getRelationMemberAccess().getCardinalityAssignment_1(), "rule__RelationMember__CardinalityAssignment_1");
-			builder.put(grammarAccess.getRelationMemberAccess().getRoleNameAssignment_3(), "rule__RelationMember__RoleNameAssignment_3");
+			builder.put(grammarAccess.getRelationMemberAccess().getRoleNameAssignment_2_1(), "rule__RelationMember__RoleNameAssignment_2_1");
 			builder.put(grammarAccess.getPrimitiveTypeCSAccess().getNameAssignment(), "rule__PrimitiveTypeCS__NameAssignment");
 			builder.put(grammarAccess.getCollectionTypeCSAccess().getNameAssignment_0(), "rule__CollectionTypeCS__NameAssignment_0");
 			builder.put(grammarAccess.getCollectionTypeCSAccess().getOwnedTypeAssignment_1_1(), "rule__CollectionTypeCS__OwnedTypeAssignment_1_1");

@@ -5,11 +5,11 @@ generate usex "http://www.xtext.org/uma/usex/Usex"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model:
-	'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
+	'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(GeneralConstraint)*)?
 ;
 
 // --------------------------------- GEN CONSTRAINTS ---------------------------------
-generalConstraint:
+GeneralConstraint:
 	'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
 ;
 
@@ -20,7 +20,7 @@ AbstractElement:
 // --------------------------------- CLASSES ---------------------------------
 
 UseClass:
-	(abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
+	(abstract?='abstract')? 'class' name=ID ('<' parentClass=ID )?
 	('attributes' attributes+=(Attribute)*)?
 	('operations' operations+=(Operation)*)?
 	('constraints' constraints+=(Constraint)*)?
@@ -109,7 +109,7 @@ RelationBody:
 ;
 
 RelationMember:
-	class=[UseClass] cardinality=MultiplicityCS 'role' roleName=ID
+	class=[UseClass] cardinality=MultiplicityCS ('role' roleName=ID)?
 ;
 
 // --------------------------------- TERMINAL RULES ---------------------------------

@@ -206,4 +206,33 @@ class UsexGenerator extends AbstractGenerator {
 		
 		println("File successfully generated");
 	}
+	
+	static def testGrammar(String filepath) {
+		var String middleFile;
+		
+		try {
+			middleFile = UseToUsex.useToUsex(filepath);	
+		} catch(FileNotFoundException e) {
+			throw new TestGenerationException("Could not find the file specified ");
+		}
+		
+		// Generate Resource
+		var Resource r = getResource(middleFile);
+		
+		// Delete tmp file
+		UseToUsex.deleteTmp(middleFile);
+		
+		// Get final name
+		var decomposedFName = filepath.split(".use");
+		var defName = decomposedFName.get(0)+"_generated.use";
+		
+		// Print model
+		try (var PrintWriter out = new PrintWriter(defName)) {
+    		out.println(OutputGenerator.compile(r.allContents.toIterable.filter(Model).get(0)));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		println("File successfully generated");
+	}
 }

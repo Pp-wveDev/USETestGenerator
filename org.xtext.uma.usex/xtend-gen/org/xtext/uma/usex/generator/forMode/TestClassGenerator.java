@@ -16,7 +16,7 @@ import org.xtext.uma.usex.usex.UsexFactory;
 import org.xtext.uma.usex.util.UseClassUtil;
 
 @SuppressWarnings("all")
-public class TestClassGenerator {
+public abstract class TestClassGenerator {
   protected UseClassUtil useClassUtil;
   
   protected UsexFactory usexFactory;

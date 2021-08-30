@@ -33,13 +33,13 @@ public interface UsexFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>general Constraint</em>'.
+   * Returns a new object of class '<em>General Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>general Constraint</em>'.
+   * @return a new object of class '<em>General Constraint</em>'.
    * @generated
    */
-  generalConstraint creategeneralConstraint();
+  GeneralConstraint createGeneralConstraint();
 
   /**
    * Returns a new object of class '<em>Abstract Element</em>'.

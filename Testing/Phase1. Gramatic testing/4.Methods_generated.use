@@ -1,0 +1,28 @@
+model Methods
+
+class test1
+	operations
+	noInOut() 
+	begin
+		declare test : String;
+	end
+	
+	return() : Boolean
+	begin
+		 result := false;
+		 result := true;
+	end
+	
+	withInput(i1 : String) 
+	begin
+		declare test : String;
+	end
+	
+	opcomplete(i1 : Boolean) : Boolean
+	begin
+		result := false;
+	end
+	
+end
+
+

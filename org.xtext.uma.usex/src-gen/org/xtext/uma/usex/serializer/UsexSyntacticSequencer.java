@@ -25,9 +25,9 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Model_ConstraintsKeyword_3_0_q;
 	protected AbstractElementAlias match_Parameter_CommaKeyword_3_q;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
-	protected AbstractElementAlias match_UseClass_AttributesKeyword_3_0_q;
-	protected AbstractElementAlias match_UseClass_ConstraintsKeyword_5_0_q;
-	protected AbstractElementAlias match_UseClass_OperationsKeyword_4_0_q;
+	protected AbstractElementAlias match_UseClass_AttributesKeyword_4_0_q;
+	protected AbstractElementAlias match_UseClass_ConstraintsKeyword_6_0_q;
+	protected AbstractElementAlias match_UseClass_OperationsKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -36,9 +36,9 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Model_ConstraintsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getConstraintsKeyword_3_0());
 		match_Parameter_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getCommaKeyword_3());
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
-		match_UseClass_AttributesKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getAttributesKeyword_3_0());
-		match_UseClass_ConstraintsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getConstraintsKeyword_5_0());
-		match_UseClass_OperationsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getOperationsKeyword_4_0());
+		match_UseClass_AttributesKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getAttributesKeyword_4_0());
+		match_UseClass_ConstraintsKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getConstraintsKeyword_6_0());
+		match_UseClass_OperationsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getUseClassAccess().getOperationsKeyword_5_0());
 	}
 	
 	@Override
@@ -61,12 +61,12 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Parameter_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_AttributesKeyword_3_0_q.equals(syntax))
-				emit_UseClass_AttributesKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_ConstraintsKeyword_5_0_q.equals(syntax))
-				emit_UseClass_ConstraintsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UseClass_OperationsKeyword_4_0_q.equals(syntax))
-				emit_UseClass_OperationsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_AttributesKeyword_4_0_q.equals(syntax))
+				emit_UseClass_AttributesKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_ConstraintsKeyword_6_0_q.equals(syntax))
+				emit_UseClass_ConstraintsKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UseClass_OperationsKeyword_5_0_q.equals(syntax))
+				emit_UseClass_OperationsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -125,8 +125,11 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=ID (ambiguity) 'operations' operations+=Operation
 	 *     name=ID (ambiguity) 'operations'? 'constraints' constraints+=Constraint
 	 *     name=ID (ambiguity) 'operations'? 'constraints'? 'end' (rule end)
+	 *     parentClass=ID (ambiguity) 'operations' operations+=Operation
+	 *     parentClass=ID (ambiguity) 'operations'? 'constraints' constraints+=Constraint
+	 *     parentClass=ID (ambiguity) 'operations'? 'constraints'? 'end' (rule end)
 	 */
-	protected void emit_UseClass_AttributesKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_AttributesKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -138,8 +141,9 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     attributes+=Attribute 'operations'? (ambiguity) 'end' (rule end)
 	 *     name=ID 'attributes'? 'operations'? (ambiguity) 'end' (rule end)
 	 *     operations+=Operation (ambiguity) 'end' (rule end)
+	 *     parentClass=ID 'attributes'? 'operations'? (ambiguity) 'end' (rule end)
 	 */
-	protected void emit_UseClass_ConstraintsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_ConstraintsKeyword_6_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -152,8 +156,10 @@ public class UsexSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     attributes+=Attribute (ambiguity) 'constraints'? 'end' (rule end)
 	 *     name=ID 'attributes'? (ambiguity) 'constraints' constraints+=Constraint
 	 *     name=ID 'attributes'? (ambiguity) 'constraints'? 'end' (rule end)
+	 *     parentClass=ID 'attributes'? (ambiguity) 'constraints' constraints+=Constraint
+	 *     parentClass=ID 'attributes'? (ambiguity) 'constraints'? 'end' (rule end)
 	 */
-	protected void emit_UseClass_OperationsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UseClass_OperationsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

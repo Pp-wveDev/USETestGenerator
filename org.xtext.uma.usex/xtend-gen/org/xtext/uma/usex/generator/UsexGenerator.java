@@ -219,4 +219,50 @@ public class UsexGenerator extends AbstractGenerator {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  public static String testGrammar(final String filepath) {
+    try {
+      String _xblockexpression = null;
+      {
+        String middleFile = null;
+        try {
+          middleFile = UseToUsex.useToUsex(filepath);
+        } catch (final Throwable _t) {
+          if (_t instanceof FileNotFoundException) {
+            throw new TestGenerationException("Could not find the file specified ");
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        }
+        Resource r = UsexGenerator.getResource(middleFile);
+        UseToUsex.deleteTmp(middleFile);
+        String[] decomposedFName = filepath.split(".use");
+        String _get = decomposedFName[0];
+        String defName = (_get + "_generated.use");
+        try (PrintWriter out = new Function0<PrintWriter>() {
+          @Override
+          public PrintWriter apply() {
+            try {
+              return new PrintWriter(defName);
+            } catch (Throwable _e) {
+              throw Exceptions.sneakyThrow(_e);
+            }
+          }
+        }.apply()) {
+          out.println(OutputGenerator.compile(((Model[])Conversions.unwrapArray((Iterables.<Model>filter(IteratorExtensions.<EObject>toIterable(r.getAllContents()), Model.class)), Model.class))[0]));
+        } catch (final Throwable _t) {
+          if (_t instanceof Exception) {
+            final Exception e = (Exception)_t;
+            e.printStackTrace();
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        }
+        _xblockexpression = InputOutput.<String>println("File successfully generated");
+      }
+      return _xblockexpression;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

@@ -33,6 +33,7 @@ import org.xtext.uma.usex.usex.UsexPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getParentClass <em>Parent Class</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.impl.UseClassImpl#getConstraints <em>Constraints</em>}</li>
@@ -61,6 +62,26 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
    * @ordered
    */
   protected boolean abstract_ = ABSTRACT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getParentClass() <em>Parent Class</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParentClass()
+   * @generated
+   * @ordered
+   */
+  protected static final String PARENT_CLASS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getParentClass() <em>Parent Class</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParentClass()
+   * @generated
+   * @ordered
+   */
+  protected String parentClass = PARENT_CLASS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -144,6 +165,31 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
    * @generated
    */
   @Override
+  public String getParentClass()
+  {
+    return parentClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setParentClass(String newParentClass)
+  {
+    String oldParentClass = parentClass;
+    parentClass = newParentClass;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, UsexPackage.USE_CLASS__PARENT_CLASS, oldParentClass, parentClass));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Attribute> getAttributes()
   {
     if (attributes == null)
@@ -215,6 +261,8 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
     {
       case UsexPackage.USE_CLASS__ABSTRACT:
         return isAbstract();
+      case UsexPackage.USE_CLASS__PARENT_CLASS:
+        return getParentClass();
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         return getAttributes();
       case UsexPackage.USE_CLASS__OPERATIONS:
@@ -238,6 +286,9 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
     {
       case UsexPackage.USE_CLASS__ABSTRACT:
         setAbstract((Boolean)newValue);
+        return;
+      case UsexPackage.USE_CLASS__PARENT_CLASS:
+        setParentClass((String)newValue);
         return;
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         getAttributes().clear();
@@ -268,6 +319,9 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
       case UsexPackage.USE_CLASS__ABSTRACT:
         setAbstract(ABSTRACT_EDEFAULT);
         return;
+      case UsexPackage.USE_CLASS__PARENT_CLASS:
+        setParentClass(PARENT_CLASS_EDEFAULT);
+        return;
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         getAttributes().clear();
         return;
@@ -293,6 +347,8 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
     {
       case UsexPackage.USE_CLASS__ABSTRACT:
         return abstract_ != ABSTRACT_EDEFAULT;
+      case UsexPackage.USE_CLASS__PARENT_CLASS:
+        return PARENT_CLASS_EDEFAULT == null ? parentClass != null : !PARENT_CLASS_EDEFAULT.equals(parentClass);
       case UsexPackage.USE_CLASS__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
       case UsexPackage.USE_CLASS__OPERATIONS:
@@ -316,6 +372,8 @@ public class UseClassImpl extends AbstractElementImpl implements UseClass
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (abstract: ");
     result.append(abstract_);
+    result.append(", parentClass: ");
+    result.append(parentClass);
     result.append(')');
     return result.toString();
   }

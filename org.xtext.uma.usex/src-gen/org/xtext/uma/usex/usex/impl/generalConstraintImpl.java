@@ -13,26 +13,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.uma.usex.usex.ExpCS;
+import org.xtext.uma.usex.usex.GeneralConstraint;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexPackage;
-import org.xtext.uma.usex.usex.generalConstraint;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>general Constraint</b></em>'.
+ * An implementation of the model object '<em><b>General Constraint</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl#getContextClass <em>Context Class</em>}</li>
- *   <li>{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl#getConstraintBody <em>Constraint Body</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.GeneralConstraintImpl#getContextClass <em>Context Class</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.GeneralConstraintImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.impl.GeneralConstraintImpl#getConstraintBody <em>Constraint Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class generalConstraintImpl extends MinimalEObjectImpl.Container implements generalConstraint
+public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implements GeneralConstraint
 {
   /**
    * The cached value of the '{@link #getContextClass() <em>Context Class</em>}' reference.
@@ -79,7 +79,7 @@ public class generalConstraintImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected generalConstraintImpl()
+  protected GeneralConstraintImpl()
   {
     super();
   }
@@ -335,4 +335,4 @@ public class generalConstraintImpl extends MinimalEObjectImpl.Container implemen
     return result.toString();
   }
 
-} //generalConstraintImpl
+} //GeneralConstraintImpl

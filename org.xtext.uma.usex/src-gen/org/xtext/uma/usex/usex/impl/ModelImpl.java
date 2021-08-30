@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.uma.usex.usex.AbstractElement;
+import org.xtext.uma.usex.usex.GeneralConstraint;
 import org.xtext.uma.usex.usex.Model;
 import org.xtext.uma.usex.usex.UsexPackage;
-import org.xtext.uma.usex.usex.generalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<generalConstraint> generalConstraints;
+  protected EList<GeneralConstraint> generalConstraints;
 
   /**
    * <!-- begin-user-doc -->
@@ -148,11 +148,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<generalConstraint> getGeneralConstraints()
+  public EList<GeneralConstraint> getGeneralConstraints()
   {
     if (generalConstraints == null)
     {
-      generalConstraints = new EObjectContainmentEList<generalConstraint>(generalConstraint.class, this, UsexPackage.MODEL__GENERAL_CONSTRAINTS);
+      generalConstraints = new EObjectContainmentEList<GeneralConstraint>(GeneralConstraint.class, this, UsexPackage.MODEL__GENERAL_CONSTRAINTS);
     }
     return generalConstraints;
   }
@@ -215,7 +215,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case UsexPackage.MODEL__GENERAL_CONSTRAINTS:
         getGeneralConstraints().clear();
-        getGeneralConstraints().addAll((Collection<? extends generalConstraint>)newValue);
+        getGeneralConstraints().addAll((Collection<? extends GeneralConstraint>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

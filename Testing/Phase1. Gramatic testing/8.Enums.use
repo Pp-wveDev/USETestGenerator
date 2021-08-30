@@ -1,0 +1,4 @@
+model Enums
+
+enum prueba1 {a}
+enum prueba2 {hola, ola}

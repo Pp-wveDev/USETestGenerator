@@ -1,0 +1,13 @@
+model TypesOfClasses
+
+class normal
+end
+
+abstract class absClass
+end
+
+class inheritedClass1 < absClass
+end
+
+class inheritedClass2 < normal
+end

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link org.xtext.uma.usex.usex.UseClass#getParentClass <em>Parent Class</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getOperations <em>Operations</em>}</li>
  *   <li>{@link org.xtext.uma.usex.usex.UseClass#getConstraints <em>Constraints</em>}</li>
@@ -47,6 +48,28 @@ public interface UseClass extends AbstractElement
    * @generated
    */
   void setAbstract(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Parent Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parent Class</em>' attribute.
+   * @see #setParentClass(String)
+   * @see org.xtext.uma.usex.usex.UsexPackage#getUseClass_ParentClass()
+   * @model
+   * @generated
+   */
+  String getParentClass();
+
+  /**
+   * Sets the value of the '{@link org.xtext.uma.usex.usex.UseClass#getParentClass <em>Parent Class</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Parent Class</em>' attribute.
+   * @see #getParentClass()
+   * @generated
+   */
+  void setParentClass(String value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.

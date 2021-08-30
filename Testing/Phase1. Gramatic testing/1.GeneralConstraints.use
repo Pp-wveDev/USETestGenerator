@@ -1,0 +1,12 @@
+model GeneralRestrictions
+
+class test
+    attributes
+        p1 : String
+end
+
+constraints
+
+context test
+inv p1EqualsName:
+    self.p1 = 'name'

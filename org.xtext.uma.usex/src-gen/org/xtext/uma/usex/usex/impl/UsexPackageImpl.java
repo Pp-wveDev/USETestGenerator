@@ -26,6 +26,7 @@ import org.xtext.uma.usex.usex.CurlyBracketedClauseCS;
 import org.xtext.uma.usex.usex.Enumeration;
 import org.xtext.uma.usex.usex.EnumerationElem;
 import org.xtext.uma.usex.usex.ExpCS;
+import org.xtext.uma.usex.usex.GeneralConstraint;
 import org.xtext.uma.usex.usex.IfExpCS;
 import org.xtext.uma.usex.usex.IfThenExpCS;
 import org.xtext.uma.usex.usex.InfixExpCS;
@@ -77,7 +78,6 @@ import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexFactory;
 import org.xtext.uma.usex.usex.UsexPackage;
 import org.xtext.uma.usex.usex.VariableCS;
-import org.xtext.uma.usex.usex.generalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -662,7 +662,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EClass getgeneralConstraint()
+  public EClass getGeneralConstraint()
   {
     return generalConstraintEClass;
   }
@@ -673,7 +673,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getgeneralConstraint_ContextClass()
+  public EReference getGeneralConstraint_ContextClass()
   {
     return (EReference)generalConstraintEClass.getEStructuralFeatures().get(0);
   }
@@ -684,7 +684,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EAttribute getgeneralConstraint_Name()
+  public EAttribute getGeneralConstraint_Name()
   {
     return (EAttribute)generalConstraintEClass.getEStructuralFeatures().get(1);
   }
@@ -695,7 +695,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getgeneralConstraint_ConstraintBody()
+  public EReference getGeneralConstraint_ConstraintBody()
   {
     return (EReference)generalConstraintEClass.getEStructuralFeatures().get(2);
   }
@@ -750,9 +750,9 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Attributes()
+  public EAttribute getUseClass_ParentClass()
   {
-    return (EReference)useClassEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)useClassEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -761,7 +761,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Operations()
+  public EReference getUseClass_Attributes()
   {
     return (EReference)useClassEClass.getEStructuralFeatures().get(2);
   }
@@ -772,9 +772,20 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
    * @generated
    */
   @Override
-  public EReference getUseClass_Constraints()
+  public EReference getUseClass_Operations()
   {
     return (EReference)useClassEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUseClass_Constraints()
+  {
+    return (EReference)useClassEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2726,6 +2737,7 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
 
     useClassEClass = createEClass(USE_CLASS);
     createEAttribute(useClassEClass, USE_CLASS__ABSTRACT);
+    createEAttribute(useClassEClass, USE_CLASS__PARENT_CLASS);
     createEReference(useClassEClass, USE_CLASS__ATTRIBUTES);
     createEReference(useClassEClass, USE_CLASS__OPERATIONS);
     createEReference(useClassEClass, USE_CLASS__CONSTRAINTS);
@@ -3036,18 +3048,19 @@ public class UsexPackageImpl extends EPackageImpl implements UsexPackage
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_GeneralConstraints(), this.getgeneralConstraint(), null, "generalConstraints", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_GeneralConstraints(), this.getGeneralConstraint(), null, "generalConstraints", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(generalConstraintEClass, generalConstraint.class, "generalConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getgeneralConstraint_ContextClass(), this.getUseClass(), null, "contextClass", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getgeneralConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getgeneralConstraint_ConstraintBody(), this.getExpCS(), null, "constraintBody", null, 0, 1, generalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(generalConstraintEClass, GeneralConstraint.class, "GeneralConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGeneralConstraint_ContextClass(), this.getUseClass(), null, "contextClass", null, 0, 1, GeneralConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralConstraint_ConstraintBody(), this.getExpCS(), null, "constraintBody", null, 0, 1, GeneralConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(useClassEClass, UseClass.class, "UseClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUseClass_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUseClass_ParentClass(), ecorePackage.getEString(), "parentClass", null, 0, 1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Operations(), this.getOperation(), null, "operations", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUseClass_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, UseClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

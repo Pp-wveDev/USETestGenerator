@@ -38,11 +38,11 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0 = (RuleCall)cGeneralConstraintsAssignment_3_1.eContents().get(0);
 		
 		//Model:
-		//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
+		//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(GeneralConstraint)*)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
+		//'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(GeneralConstraint)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//'model'
@@ -60,20 +60,20 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//(AbstractElement)
 		public RuleCall getElementsAbstractElementParserRuleCall_2_0() { return cElementsAbstractElementParserRuleCall_2_0; }
 		
-		//('constraints' generalConstraints+=(generalConstraint)*)?
+		//('constraints' generalConstraints+=(GeneralConstraint)*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'constraints'
 		public Keyword getConstraintsKeyword_3_0() { return cConstraintsKeyword_3_0; }
 		
-		//generalConstraints+=(generalConstraint)*
+		//generalConstraints+=(GeneralConstraint)*
 		public Assignment getGeneralConstraintsAssignment_3_1() { return cGeneralConstraintsAssignment_3_1; }
 		
-		//(generalConstraint)
+		//(GeneralConstraint)
 		public RuleCall getGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0() { return cGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0; }
 	}
 	public class GeneralConstraintElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.generalConstraint");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.GeneralConstraint");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cContextKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cContextClassAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -87,7 +87,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cConstraintBodyExpCSParserRuleCall_5_0 = (RuleCall)cConstraintBodyAssignment_5.eContents().get(0);
 		
 		//// --------------------------------- GEN CONSTRAINTS ---------------------------------
-		//generalConstraint:
+		//GeneralConstraint:
 		//    'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -158,22 +158,26 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cAttributesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cAttributesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cAttributesAttributeParserRuleCall_3_1_0 = (RuleCall)cAttributesAssignment_3_1.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cParentClassAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cParentClassIDTerminalRuleCall_3_1_0 = (RuleCall)cParentClassAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cOperationsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cOperationsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cOperationsOperationParserRuleCall_4_1_0 = (RuleCall)cOperationsAssignment_4_1.eContents().get(0);
+		private final Keyword cAttributesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAttributesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAttributesAttributeParserRuleCall_4_1_0 = (RuleCall)cAttributesAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cConstraintsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cConstraintsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cConstraintsConstraintParserRuleCall_5_1_0 = (RuleCall)cConstraintsAssignment_5_1.eContents().get(0);
-		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cOperationsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cOperationsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cOperationsOperationParserRuleCall_5_1_0 = (RuleCall)cOperationsAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cConstraintsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cConstraintsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cConstraintsConstraintParserRuleCall_6_1_0 = (RuleCall)cConstraintsAssignment_6_1.eContents().get(0);
+		private final Keyword cEndKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//// --------------------------------- CLASSES ---------------------------------
 		//UseClass:
-		//    (abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
+		//    (abstract?='abstract')? 'class' name=ID ('<' parentClass=ID )?
 		//    ('attributes' attributes+=(Attribute)*)?
 		//    ('operations' operations+=(Operation)*)?
 		//    ('constraints' constraints+=(Constraint)*)?
@@ -181,7 +185,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
+		//(abstract?='abstract')? 'class' name=ID ('<' parentClass=ID )?
 		//('attributes' attributes+=(Attribute)*)?
 		//('operations' operations+=(Operation)*)?
 		//('constraints' constraints+=(Constraint)*)?
@@ -203,45 +207,56 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		////('>' parentClass=[UseClass])?
-		//   ('attributes' attributes+=(Attribute)*)?
+		//('<' parentClass=ID )?
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//'attributes'
-		public Keyword getAttributesKeyword_3_0() { return cAttributesKeyword_3_0; }
+		//'<'
+		public Keyword getLessThanSignKeyword_3_0() { return cLessThanSignKeyword_3_0; }
 		
-		//attributes+=(Attribute)*
-		public Assignment getAttributesAssignment_3_1() { return cAttributesAssignment_3_1; }
+		//parentClass=ID
+		public Assignment getParentClassAssignment_3_1() { return cParentClassAssignment_3_1; }
 		
-		//(Attribute)
-		public RuleCall getAttributesAttributeParserRuleCall_3_1_0() { return cAttributesAttributeParserRuleCall_3_1_0; }
+		//ID
+		public RuleCall getParentClassIDTerminalRuleCall_3_1_0() { return cParentClassIDTerminalRuleCall_3_1_0; }
 		
-		//('operations' operations+=(Operation)*)?
+		//('attributes' attributes+=(Attribute)*)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'operations'
-		public Keyword getOperationsKeyword_4_0() { return cOperationsKeyword_4_0; }
+		//'attributes'
+		public Keyword getAttributesKeyword_4_0() { return cAttributesKeyword_4_0; }
 		
-		//operations+=(Operation)*
-		public Assignment getOperationsAssignment_4_1() { return cOperationsAssignment_4_1; }
+		//attributes+=(Attribute)*
+		public Assignment getAttributesAssignment_4_1() { return cAttributesAssignment_4_1; }
 		
-		//(Operation)
-		public RuleCall getOperationsOperationParserRuleCall_4_1_0() { return cOperationsOperationParserRuleCall_4_1_0; }
+		//(Attribute)
+		public RuleCall getAttributesAttributeParserRuleCall_4_1_0() { return cAttributesAttributeParserRuleCall_4_1_0; }
 		
-		//('constraints' constraints+=(Constraint)*)?
+		//('operations' operations+=(Operation)*)?
 		public Group getGroup_5() { return cGroup_5; }
 		
+		//'operations'
+		public Keyword getOperationsKeyword_5_0() { return cOperationsKeyword_5_0; }
+		
+		//operations+=(Operation)*
+		public Assignment getOperationsAssignment_5_1() { return cOperationsAssignment_5_1; }
+		
+		//(Operation)
+		public RuleCall getOperationsOperationParserRuleCall_5_1_0() { return cOperationsOperationParserRuleCall_5_1_0; }
+		
+		//('constraints' constraints+=(Constraint)*)?
+		public Group getGroup_6() { return cGroup_6; }
+		
 		//'constraints'
-		public Keyword getConstraintsKeyword_5_0() { return cConstraintsKeyword_5_0; }
+		public Keyword getConstraintsKeyword_6_0() { return cConstraintsKeyword_6_0; }
 		
 		//constraints+=(Constraint)*
-		public Assignment getConstraintsAssignment_5_1() { return cConstraintsAssignment_5_1; }
+		public Assignment getConstraintsAssignment_6_1() { return cConstraintsAssignment_6_1; }
 		
 		//(Constraint)
-		public RuleCall getConstraintsConstraintParserRuleCall_5_1_0() { return cConstraintsConstraintParserRuleCall_5_1_0; }
+		public RuleCall getConstraintsConstraintParserRuleCall_6_1_0() { return cConstraintsConstraintParserRuleCall_6_1_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
+		public Keyword getEndKeyword_7() { return cEndKeyword_7; }
 	}
 	public class EnumerationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.Enumeration");
@@ -936,16 +951,17 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cClassUseClassIDTerminalRuleCall_0_0_1 = (RuleCall)cClassUseClassCrossReference_0_0.eContents().get(1);
 		private final Assignment cCardinalityAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cCardinalityMultiplicityCSParserRuleCall_1_0 = (RuleCall)cCardinalityAssignment_1.eContents().get(0);
-		private final Keyword cRoleKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRoleNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRoleNameIDTerminalRuleCall_3_0 = (RuleCall)cRoleNameAssignment_3.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cRoleKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cRoleNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cRoleNameIDTerminalRuleCall_2_1_0 = (RuleCall)cRoleNameAssignment_2_1.eContents().get(0);
 		
 		//RelationMember:
-		//    class=[UseClass] cardinality=MultiplicityCS 'role' roleName=ID
+		//    class=[UseClass] cardinality=MultiplicityCS ('role' roleName=ID)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//class=[UseClass] cardinality=MultiplicityCS 'role' roleName=ID
+		//class=[UseClass] cardinality=MultiplicityCS ('role' roleName=ID)?
 		public Group getGroup() { return cGroup; }
 		
 		//class=[UseClass]
@@ -963,14 +979,17 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//MultiplicityCS
 		public RuleCall getCardinalityMultiplicityCSParserRuleCall_1_0() { return cCardinalityMultiplicityCSParserRuleCall_1_0; }
 		
+		//('role' roleName=ID)?
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//'role'
-		public Keyword getRoleKeyword_2() { return cRoleKeyword_2; }
+		public Keyword getRoleKeyword_2_0() { return cRoleKeyword_2_0; }
 		
 		//roleName=ID
-		public Assignment getRoleNameAssignment_3() { return cRoleNameAssignment_3; }
+		public Assignment getRoleNameAssignment_2_1() { return cRoleNameAssignment_2_1; }
 		
 		//ID
-		public RuleCall getRoleNameIDTerminalRuleCall_3_0() { return cRoleNameIDTerminalRuleCall_3_0; }
+		public RuleCall getRoleNameIDTerminalRuleCall_2_1_0() { return cRoleNameIDTerminalRuleCall_2_1_0; }
 	}
 	public class PrimitiveTypeIdentifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.uma.usex.Usex.PrimitiveTypeIdentifier");
@@ -3998,7 +4017,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
 	
 	//Model:
-	//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(generalConstraint)*)?
+	//    'model' name=ID elements+=(AbstractElement)* ('constraints' generalConstraints+=(GeneralConstraint)*)?
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -4009,7 +4028,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//// --------------------------------- GEN CONSTRAINTS ---------------------------------
-	//generalConstraint:
+	//GeneralConstraint:
 	//    'context' contextClass=[UseClass] 'inv' (name=ID)? ':' constraintBody=ExpCS
 	//;
 	public GeneralConstraintElements getGeneralConstraintAccess() {
@@ -4033,7 +4052,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//// --------------------------------- CLASSES ---------------------------------
 	//UseClass:
-	//    (abstract?='abstract')? 'class' name=ID //('>' parentClass=[UseClass])?
+	//    (abstract?='abstract')? 'class' name=ID ('<' parentClass=ID )?
 	//    ('attributes' attributes+=(Attribute)*)?
 	//    ('operations' operations+=(Operation)*)?
 	//    ('constraints' constraints+=(Constraint)*)?
@@ -4254,7 +4273,7 @@ public class UsexGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//RelationMember:
-	//    class=[UseClass] cardinality=MultiplicityCS 'role' roleName=ID
+	//    class=[UseClass] cardinality=MultiplicityCS ('role' roleName=ID)?
 	//;
 	public RelationMemberElements getRelationMemberAccess() {
 		return pRelationMember;

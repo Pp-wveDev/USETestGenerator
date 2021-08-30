@@ -11,7 +11,7 @@ import org.xtext.uma.usex.usex.Method
 import org.xtext.uma.usex.util.UseClassUtil
 import java.util.Random
 
-class TestClassGenerator {
+abstract class TestClassGenerator {
 	protected UseClassUtil useClassUtil;
 	protected UsexFactory usexFactory;
 	protected List<UserVariable> userVariables;

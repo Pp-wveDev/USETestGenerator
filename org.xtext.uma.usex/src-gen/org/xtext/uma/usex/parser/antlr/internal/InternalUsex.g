@@ -133,7 +133,7 @@ ruleModel returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getModelAccess().getGeneralConstraintsGeneralConstraintParserRuleCall_3_1_0());
 					}
-					lv_generalConstraints_4_0=rulegeneralConstraint
+					lv_generalConstraints_4_0=ruleGeneralConstraint
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -142,7 +142,7 @@ ruleModel returns [EObject current=null]
 							$current,
 							"generalConstraints",
 							lv_generalConstraints_4_0,
-							"org.xtext.uma.usex.Usex.generalConstraint");
+							"org.xtext.uma.usex.Usex.GeneralConstraint");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -151,15 +151,15 @@ ruleModel returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulegeneralConstraint
-entryRulegeneralConstraint returns [EObject current=null]:
+// Entry rule entryRuleGeneralConstraint
+entryRuleGeneralConstraint returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getGeneralConstraintRule()); }
-	iv_rulegeneralConstraint=rulegeneralConstraint
-	{ $current=$iv_rulegeneralConstraint.current; }
+	iv_ruleGeneralConstraint=ruleGeneralConstraint
+	{ $current=$iv_ruleGeneralConstraint.current; }
 	EOF;
 
-// Rule generalConstraint
-rulegeneralConstraint returns [EObject current=null]
+// Rule GeneralConstraint
+ruleGeneralConstraint returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -342,16 +342,40 @@ ruleUseClass returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='attributes'
+			otherlv_3='<'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getUseClassAccess().getAttributesKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getUseClassAccess().getLessThanSignKeyword_3_0());
+			}
+			(
+				(
+					lv_parentClass_4_0=RULE_ID
+					{
+						newLeafNode(lv_parentClass_4_0, grammarAccess.getUseClassAccess().getParentClassIDTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getUseClassRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"parentClass",
+							lv_parentClass_4_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_5='attributes'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getUseClassAccess().getAttributesKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUseClassAccess().getAttributesAttributeParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getUseClassAccess().getAttributesAttributeParserRuleCall_4_1_0());
 					}
-					lv_attributes_4_0=ruleAttribute
+					lv_attributes_6_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUseClassRule());
@@ -359,7 +383,7 @@ ruleUseClass returns [EObject current=null]
 						add(
 							$current,
 							"attributes",
-							lv_attributes_4_0,
+							lv_attributes_6_0,
 							"org.xtext.uma.usex.Usex.Attribute");
 						afterParserOrEnumRuleCall();
 					}
@@ -367,16 +391,16 @@ ruleUseClass returns [EObject current=null]
 			)*
 		)?
 		(
-			otherlv_5='operations'
+			otherlv_7='operations'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getUseClassAccess().getOperationsKeyword_4_0());
+				newLeafNode(otherlv_7, grammarAccess.getUseClassAccess().getOperationsKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUseClassAccess().getOperationsOperationParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getUseClassAccess().getOperationsOperationParserRuleCall_5_1_0());
 					}
-					lv_operations_6_0=ruleOperation
+					lv_operations_8_0=ruleOperation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUseClassRule());
@@ -384,7 +408,7 @@ ruleUseClass returns [EObject current=null]
 						add(
 							$current,
 							"operations",
-							lv_operations_6_0,
+							lv_operations_8_0,
 							"org.xtext.uma.usex.Usex.Operation");
 						afterParserOrEnumRuleCall();
 					}
@@ -392,16 +416,16 @@ ruleUseClass returns [EObject current=null]
 			)*
 		)?
 		(
-			otherlv_7='constraints'
+			otherlv_9='constraints'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getUseClassAccess().getConstraintsKeyword_5_0());
+				newLeafNode(otherlv_9, grammarAccess.getUseClassAccess().getConstraintsKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUseClassAccess().getConstraintsConstraintParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getUseClassAccess().getConstraintsConstraintParserRuleCall_6_1_0());
 					}
-					lv_constraints_8_0=ruleConstraint
+					lv_constraints_10_0=ruleConstraint
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUseClassRule());
@@ -409,16 +433,16 @@ ruleUseClass returns [EObject current=null]
 						add(
 							$current,
 							"constraints",
-							lv_constraints_8_0,
+							lv_constraints_10_0,
 							"org.xtext.uma.usex.Usex.Constraint");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
 		)?
-		otherlv_9='end'
+		otherlv_11='end'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getUseClassAccess().getEndKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getUseClassAccess().getEndKeyword_7());
 		}
 	)
 ;
@@ -1704,28 +1728,30 @@ ruleRelationMember returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='role'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getRelationMemberAccess().getRoleKeyword_2());
-		}
 		(
+			otherlv_2='role'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getRelationMemberAccess().getRoleKeyword_2_0());
+			}
 			(
-				lv_roleName_3_0=RULE_ID
-				{
-					newLeafNode(lv_roleName_3_0, grammarAccess.getRelationMemberAccess().getRoleNameIDTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRelationMemberRule());
+				(
+					lv_roleName_3_0=RULE_ID
+					{
+						newLeafNode(lv_roleName_3_0, grammarAccess.getRelationMemberAccess().getRoleNameIDTerminalRuleCall_2_1_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"roleName",
-						lv_roleName_3_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRelationMemberRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"roleName",
+							lv_roleName_3_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
 			)
-		)
+		)?
 	)
 ;
 

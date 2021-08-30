@@ -66,7 +66,7 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
     switch (eClass.getClassifierID())
     {
       case UsexPackage.MODEL: return createModel();
-      case UsexPackage.GENERAL_CONSTRAINT: return creategeneralConstraint();
+      case UsexPackage.GENERAL_CONSTRAINT: return createGeneralConstraint();
       case UsexPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case UsexPackage.USE_CLASS: return createUseClass();
       case UsexPackage.ENUMERATION: return createEnumeration();
@@ -154,9 +154,9 @@ public class UsexFactoryImpl extends EFactoryImpl implements UsexFactory
    * @generated
    */
   @Override
-  public generalConstraint creategeneralConstraint()
+  public GeneralConstraint createGeneralConstraint()
   {
-    generalConstraintImpl generalConstraint = new generalConstraintImpl();
+    GeneralConstraintImpl generalConstraint = new GeneralConstraintImpl();
     return generalConstraint;
   }
 

@@ -1,0 +1,25 @@
+model Relations
+
+class c1
+end
+
+class c2
+end
+
+class c3
+end
+
+association A1 between
+    c2[*] role a
+    c3[2..*] role b
+end
+
+composition C2 between
+    c1[1..7] role c
+    c3[0..*]
+end
+
+aggregation A3 between
+    c1[1] 
+    c2[ *]
+end

@@ -27,6 +27,7 @@ import org.xtext.uma.usex.usex.Constraint;
 import org.xtext.uma.usex.usex.CurlyBracketedClauseCS;
 import org.xtext.uma.usex.usex.Enumeration;
 import org.xtext.uma.usex.usex.EnumerationElem;
+import org.xtext.uma.usex.usex.GeneralConstraint;
 import org.xtext.uma.usex.usex.IfExpCS;
 import org.xtext.uma.usex.usex.IfThenExpCS;
 import org.xtext.uma.usex.usex.InfixExpCS;
@@ -72,7 +73,6 @@ import org.xtext.uma.usex.usex.UnlimitedNaturalLiteralExpCS;
 import org.xtext.uma.usex.usex.UseClass;
 import org.xtext.uma.usex.usex.UsexPackage;
 import org.xtext.uma.usex.usex.VariableCS;
-import org.xtext.uma.usex.usex.generalConstraint;
 
 @SuppressWarnings("all")
 public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -144,6 +144,9 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case UsexPackage.ENUMERATION_ELEM:
 				sequence_EnumerationElem(context, (EnumerationElem) semanticObject); 
+				return; 
+			case UsexPackage.GENERAL_CONSTRAINT:
+				sequence_GeneralConstraint(context, (GeneralConstraint) semanticObject); 
 				return; 
 			case UsexPackage.IF_EXP_CS:
 				sequence_IfExpCS(context, (IfExpCS) semanticObject); 
@@ -368,9 +371,6 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case UsexPackage.VARIABLE_CS:
 				sequence_CoIteratorVariableCS(context, (VariableCS) semanticObject); 
-				return; 
-			case UsexPackage.GENERAL_CONSTRAINT:
-				sequence_generalConstraint(context, (generalConstraint) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -654,6 +654,18 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     GeneralConstraint returns GeneralConstraint
+	 *
+	 * Constraint:
+	 *     (contextClass=[UseClass|ID] name=ID? constraintBody=ExpCS)
+	 */
+	protected void sequence_GeneralConstraint(ISerializationContext context, GeneralConstraint semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ExpCS returns IfExpCS
 	 *     ExpCS.InfixExpCS_0_1_0 returns IfExpCS
 	 *     PrefixedPrimaryExpCS returns IfExpCS
@@ -854,7 +866,7 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=ID elements+=AbstractElement* generalConstraints+=generalConstraint*)
+	 *     (name=ID elements+=AbstractElement* generalConstraints+=GeneralConstraint*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1286,22 +1298,10 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RelationMember returns RelationMember
 	 *
 	 * Constraint:
-	 *     (class=[UseClass|ID] cardinality=MultiplicityCS roleName=ID)
+	 *     (class=[UseClass|ID] cardinality=MultiplicityCS roleName=ID?)
 	 */
 	protected void sequence_RelationMember(ISerializationContext context, RelationMember semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, UsexPackage.Literals.RELATION_MEMBER__CLASS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.RELATION_MEMBER__CLASS));
-			if (transientValues.isValueTransient(semanticObject, UsexPackage.Literals.RELATION_MEMBER__CARDINALITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.RELATION_MEMBER__CARDINALITY));
-			if (transientValues.isValueTransient(semanticObject, UsexPackage.Literals.RELATION_MEMBER__ROLE_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UsexPackage.Literals.RELATION_MEMBER__ROLE_NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRelationMemberAccess().getClassUseClassIDTerminalRuleCall_0_0_1(), semanticObject.eGet(UsexPackage.Literals.RELATION_MEMBER__CLASS, false));
-		feeder.accept(grammarAccess.getRelationMemberAccess().getCardinalityMultiplicityCSParserRuleCall_1_0(), semanticObject.getCardinality());
-		feeder.accept(grammarAccess.getRelationMemberAccess().getRoleNameIDTerminalRuleCall_3_0(), semanticObject.getRoleName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1535,21 +1535,16 @@ public class UsexSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     UseClass returns UseClass
 	 *
 	 * Constraint:
-	 *     (abstract?='abstract'? name=ID attributes+=Attribute* operations+=Operation* constraints+=Constraint*)
+	 *     (
+	 *         abstract?='abstract'? 
+	 *         name=ID 
+	 *         parentClass=ID? 
+	 *         attributes+=Attribute* 
+	 *         operations+=Operation* 
+	 *         constraints+=Constraint*
+	 *     )
 	 */
 	protected void sequence_UseClass(ISerializationContext context, UseClass semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     generalConstraint returns generalConstraint
-	 *
-	 * Constraint:
-	 *     (contextClass=[UseClass|ID] name=ID? constraintBody=ExpCS)
-	 */
-	protected void sequence_generalConstraint(ISerializationContext context, generalConstraint semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

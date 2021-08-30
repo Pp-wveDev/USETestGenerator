@@ -1,0 +1,13 @@
+model Queries
+
+class test
+	operations
+	query() : Boolean
+		= false
+	
+	queryInput(i1 : String) : String
+		= i1
+	
+end
+
+

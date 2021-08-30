@@ -13,6 +13,7 @@ import org.xtext.uma.usex.usex.Constraint;
 import org.xtext.uma.usex.usex.Enumeration;
 import org.xtext.uma.usex.usex.EnumerationElem;
 import org.xtext.uma.usex.usex.ExpCS;
+import org.xtext.uma.usex.usex.GeneralConstraint;
 import org.xtext.uma.usex.usex.Method;
 import org.xtext.uma.usex.usex.MethodBody;
 import org.xtext.uma.usex.usex.Model;
@@ -46,7 +47,6 @@ public class OutputGenerator {
         _builder.newLine();
       }
     }
-    _builder.newLine();
     {
       Iterable<UseClass> _filter_1 = Iterables.<UseClass>filter(m.getElements(), UseClass.class);
       for(final UseClass useClass : _filter_1) {
@@ -56,7 +56,6 @@ public class OutputGenerator {
         _builder.newLine();
       }
     }
-    _builder.newLine();
     {
       Iterable<Relation> _filter_2 = Iterables.<Relation>filter(m.getElements(), Relation.class);
       for(final Relation relation : _filter_2) {
@@ -64,6 +63,24 @@ public class OutputGenerator {
         _builder.append(_compile_2);
         _builder.newLineIfNotEmpty();
         _builder.newLine();
+      }
+    }
+    {
+      int _length = ((Object[])Conversions.unwrapArray(m.getGeneralConstraints(), Object.class)).length;
+      boolean _greaterThan = (_length > 0);
+      if (_greaterThan) {
+        _builder.append("constraints");
+        _builder.newLine();
+        {
+          EList<GeneralConstraint> _generalConstraints = m.getGeneralConstraints();
+          for(final GeneralConstraint genConstraint : _generalConstraints) {
+            _builder.append("\t");
+            CharSequence _compile_3 = OutputGenerator.compile(genConstraint);
+            _builder.append(_compile_3, "\t");
+            _builder.newLineIfNotEmpty();
+            _builder.newLine();
+          }
+        }
       }
     }
     return _builder;
@@ -93,7 +110,7 @@ public class OutputGenerator {
     StringBuilder sB = new StringBuilder();
     for (int i = 0; (i < enumList.size()); i++) {
       {
-        sB.append(enumList.get(i));
+        sB.append(enumList.get(i).getName());
         int _size = enumList.size();
         int _minus = (_size - 1);
         boolean _lessThan = (i < _minus);
@@ -116,12 +133,21 @@ public class OutputGenerator {
     _builder.append("class ");
     String _name = cl.getName();
     _builder.append(_name);
+    {
+      String _parentClass = cl.getParentClass();
+      boolean _tripleNotEquals = (_parentClass != null);
+      if (_tripleNotEquals) {
+        _builder.append(" < ");
+        String _parentClass_1 = cl.getParentClass();
+        _builder.append(_parentClass_1);
+      }
+    }
     _builder.newLineIfNotEmpty();
     {
       boolean _isEmpty = cl.getAttributes().isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
-        _builder.append("attributes");
+        _builder.append("\tattributes");
         _builder.newLineIfNotEmpty();
         {
           EList<Attribute> _attributes = cl.getAttributes();
@@ -132,15 +158,13 @@ public class OutputGenerator {
             _builder.newLineIfNotEmpty();
           }
         }
-        _builder.append("\t");
-        _builder.newLine();
       }
     }
     {
       boolean _isEmpty_1 = cl.getOperations().isEmpty();
       boolean _not_1 = (!_isEmpty_1);
       if (_not_1) {
-        _builder.append("operations");
+        _builder.append("\toperations");
         _builder.newLineIfNotEmpty();
         {
           EList<Operation> _operations = cl.getOperations();
@@ -157,7 +181,7 @@ public class OutputGenerator {
       boolean _isEmpty_2 = cl.getConstraints().isEmpty();
       boolean _not_2 = (!_isEmpty_2);
       if (_not_2) {
-        _builder.append("constraints");
+        _builder.append("\tconstraints");
         _builder.newLineIfNotEmpty();
         {
           EList<Constraint> _constraints = cl.getConstraints();
@@ -264,9 +288,11 @@ public class OutputGenerator {
       MethodBody _operationBody = m.getOperationBody();
       boolean _tripleNotEquals = (_operationBody != null);
       if (_tripleNotEquals) {
-        _builder.append("begin\t");
+        _builder.append("begin");
+        _builder.newLine();
+        _builder.append("\t");
         String _body = OutputGenerator.getBody(m);
-        _builder.append(_body);
+        _builder.append(_body, "\t");
         _builder.newLineIfNotEmpty();
         _builder.append("end");
         _builder.newLine();
@@ -312,7 +338,7 @@ public class OutputGenerator {
   }
   
   private static String getBody(final Method m) {
-    return m.getOperationBody().getCode();
+    return m.getOperationBody().getCode().substring(1).replaceAll("  ", "");
   }
   
   private static CharSequence getBody(final Query q) {
@@ -516,9 +542,41 @@ public class OutputGenerator {
     _builder.append(" ");
     String _compileFinal = OCLGenerator.compileFinal(rM.getCardinality());
     _builder.append(_compileFinal);
-    _builder.append(" role ");
-    String _roleName = rM.getRoleName();
-    _builder.append(_roleName);
+    _builder.append(" ");
+    {
+      String _roleName = rM.getRoleName();
+      boolean _tripleNotEquals = (_roleName != null);
+      if (_tripleNotEquals) {
+        _builder.append(" role ");
+        String _roleName_1 = rM.getRoleName();
+        _builder.append(_roleName_1);
+        _builder.append(" ");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  private static CharSequence compile(final GeneralConstraint gC) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("context ");
+    String _name = gC.getContextClass().getName();
+    _builder.append(_name);
+    _builder.append(" ");
+    {
+      String _name_1 = gC.getName();
+      boolean _tripleNotEquals = (_name_1 != null);
+      if (_tripleNotEquals) {
+        _builder.append("inv ");
+        String _name_2 = gC.getName();
+        _builder.append(_name_2);
+      }
+    }
+    _builder.append(":");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    CharSequence _compileFinal = OCLGenerator.compileFinal(gC.getConstraintBody());
+    _builder.append(_compileFinal, "\t");
     _builder.newLineIfNotEmpty();
     return _builder;
   }

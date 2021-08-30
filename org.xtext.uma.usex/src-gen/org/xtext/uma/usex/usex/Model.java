@@ -63,7 +63,7 @@ public interface Model extends EObject
 
   /**
    * Returns the value of the '<em><b>General Constraints</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.uma.usex.usex.generalConstraint}.
+   * The list contents are of type {@link org.xtext.uma.usex.usex.GeneralConstraint}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>General Constraints</em>' containment reference list.
@@ -71,6 +71,6 @@ public interface Model extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<generalConstraint> getGeneralConstraints();
+  EList<GeneralConstraint> getGeneralConstraints();
 
 } // Model

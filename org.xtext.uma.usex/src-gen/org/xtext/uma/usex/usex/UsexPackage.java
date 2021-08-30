@@ -104,11 +104,11 @@ public interface UsexPackage extends EPackage
   int MODEL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl <em>general Constraint</em>}' class.
+   * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.GeneralConstraintImpl <em>General Constraint</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.uma.usex.usex.impl.generalConstraintImpl
-   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getgeneralConstraint()
+   * @see org.xtext.uma.usex.usex.impl.GeneralConstraintImpl
+   * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getGeneralConstraint()
    * @generated
    */
   int GENERAL_CONSTRAINT = 1;
@@ -141,7 +141,7 @@ public interface UsexPackage extends EPackage
   int GENERAL_CONSTRAINT__CONSTRAINT_BODY = 2;
 
   /**
-   * The number of structural features of the '<em>general Constraint</em>' class.
+   * The number of structural features of the '<em>General Constraint</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -206,13 +206,22 @@ public interface UsexPackage extends EPackage
   int USE_CLASS__ABSTRACT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Parent Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_CLASS__PARENT_CLASS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USE_CLASS__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int USE_CLASS__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -221,7 +230,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS__OPERATIONS = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int USE_CLASS__OPERATIONS = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -230,7 +239,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS__CONSTRAINTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int USE_CLASS__CONSTRAINTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Use Class</em>' class.
@@ -239,7 +248,7 @@ public interface UsexPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CLASS_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int USE_CLASS_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.xtext.uma.usex.usex.impl.EnumerationImpl <em>Enumeration</em>}' class.
@@ -2643,47 +2652,47 @@ public interface UsexPackage extends EPackage
   EReference getModel_GeneralConstraints();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.generalConstraint <em>general Constraint</em>}'.
+   * Returns the meta object for class '{@link org.xtext.uma.usex.usex.GeneralConstraint <em>General Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>general Constraint</em>'.
-   * @see org.xtext.uma.usex.usex.generalConstraint
+   * @return the meta object for class '<em>General Constraint</em>'.
+   * @see org.xtext.uma.usex.usex.GeneralConstraint
    * @generated
    */
-  EClass getgeneralConstraint();
+  EClass getGeneralConstraint();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.uma.usex.usex.generalConstraint#getContextClass <em>Context Class</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.uma.usex.usex.GeneralConstraint#getContextClass <em>Context Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Context Class</em>'.
-   * @see org.xtext.uma.usex.usex.generalConstraint#getContextClass()
-   * @see #getgeneralConstraint()
+   * @see org.xtext.uma.usex.usex.GeneralConstraint#getContextClass()
+   * @see #getGeneralConstraint()
    * @generated
    */
-  EReference getgeneralConstraint_ContextClass();
+  EReference getGeneralConstraint_ContextClass();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.generalConstraint#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.GeneralConstraint#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.uma.usex.usex.generalConstraint#getName()
-   * @see #getgeneralConstraint()
+   * @see org.xtext.uma.usex.usex.GeneralConstraint#getName()
+   * @see #getGeneralConstraint()
    * @generated
    */
-  EAttribute getgeneralConstraint_Name();
+  EAttribute getGeneralConstraint_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.generalConstraint#getConstraintBody <em>Constraint Body</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.uma.usex.usex.GeneralConstraint#getConstraintBody <em>Constraint Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Constraint Body</em>'.
-   * @see org.xtext.uma.usex.usex.generalConstraint#getConstraintBody()
-   * @see #getgeneralConstraint()
+   * @see org.xtext.uma.usex.usex.GeneralConstraint#getConstraintBody()
+   * @see #getGeneralConstraint()
    * @generated
    */
-  EReference getgeneralConstraint_ConstraintBody();
+  EReference getGeneralConstraint_ConstraintBody();
 
   /**
    * Returns the meta object for class '{@link org.xtext.uma.usex.usex.AbstractElement <em>Abstract Element</em>}'.
@@ -2726,6 +2735,17 @@ public interface UsexPackage extends EPackage
    * @generated
    */
   EAttribute getUseClass_Abstract();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.uma.usex.usex.UseClass#getParentClass <em>Parent Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Parent Class</em>'.
+   * @see org.xtext.uma.usex.usex.UseClass#getParentClass()
+   * @see #getUseClass()
+   * @generated
+   */
+  EAttribute getUseClass_ParentClass();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.uma.usex.usex.UseClass#getAttributes <em>Attributes</em>}'.
@@ -4659,14 +4679,14 @@ public interface UsexPackage extends EPackage
     EReference MODEL__GENERAL_CONSTRAINTS = eINSTANCE.getModel_GeneralConstraints();
 
     /**
-     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.generalConstraintImpl <em>general Constraint</em>}' class.
+     * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.GeneralConstraintImpl <em>General Constraint</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.uma.usex.usex.impl.generalConstraintImpl
-     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getgeneralConstraint()
+     * @see org.xtext.uma.usex.usex.impl.GeneralConstraintImpl
+     * @see org.xtext.uma.usex.usex.impl.UsexPackageImpl#getGeneralConstraint()
      * @generated
      */
-    EClass GENERAL_CONSTRAINT = eINSTANCE.getgeneralConstraint();
+    EClass GENERAL_CONSTRAINT = eINSTANCE.getGeneralConstraint();
 
     /**
      * The meta object literal for the '<em><b>Context Class</b></em>' reference feature.
@@ -4674,7 +4694,7 @@ public interface UsexPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_CONSTRAINT__CONTEXT_CLASS = eINSTANCE.getgeneralConstraint_ContextClass();
+    EReference GENERAL_CONSTRAINT__CONTEXT_CLASS = eINSTANCE.getGeneralConstraint_ContextClass();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4682,7 +4702,7 @@ public interface UsexPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GENERAL_CONSTRAINT__NAME = eINSTANCE.getgeneralConstraint_Name();
+    EAttribute GENERAL_CONSTRAINT__NAME = eINSTANCE.getGeneralConstraint_Name();
 
     /**
      * The meta object literal for the '<em><b>Constraint Body</b></em>' containment reference feature.
@@ -4690,7 +4710,7 @@ public interface UsexPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_CONSTRAINT__CONSTRAINT_BODY = eINSTANCE.getgeneralConstraint_ConstraintBody();
+    EReference GENERAL_CONSTRAINT__CONSTRAINT_BODY = eINSTANCE.getGeneralConstraint_ConstraintBody();
 
     /**
      * The meta object literal for the '{@link org.xtext.uma.usex.usex.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -4727,6 +4747,14 @@ public interface UsexPackage extends EPackage
      * @generated
      */
     EAttribute USE_CLASS__ABSTRACT = eINSTANCE.getUseClass_Abstract();
+
+    /**
+     * The meta object literal for the '<em><b>Parent Class</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute USE_CLASS__PARENT_CLASS = eINSTANCE.getUseClass_ParentClass();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.

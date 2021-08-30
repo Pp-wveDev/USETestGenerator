@@ -1,0 +1,20 @@
+model Conditions
+
+class test
+    operations
+        op1()
+        begin
+        end
+        pre precond: true
+        
+        op2()
+        begin
+        end
+        post postcond: false
+
+        op3()
+        begin
+        end
+        pre precond: true
+        post postcond: true
+end

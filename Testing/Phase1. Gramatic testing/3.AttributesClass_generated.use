@@ -1,0 +1,24 @@
+model AttributesClass
+
+class Dummy
+end
+
+class testPrim
+	attributes
+	prim1 : String
+	prim2 : Boolean
+end
+
+class testClass
+	attributes
+	class1 : Dummy
+end
+
+class testCol
+	attributes
+	col1 : Set(String)
+	col2 : Bag(Dummy)
+	col3 : Set(Collection(Dummy))
+end
+
+

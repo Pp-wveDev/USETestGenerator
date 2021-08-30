@@ -75,6 +75,7 @@
 		<item key="updateTextualMatches" value="false"/>
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
+		<item key="renameSubpackages" value="false"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
 		<item key="VisibilityModifier" value="1"/>
@@ -104,9 +105,10 @@
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_SAVE" value="false"/>
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\peped\tfg_workspace"/>
 		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="1"/>
-		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="main - testGenerator"/>
-		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\peped\tfg_workspace\USETestGenerator.jar"/>
+		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="mainTest - testGenerator"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\peped\tfg_workspace\prueba\USETestGenerator.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\peped\tfg_workspace\prueba\USETestGenerator.jar"/>
 			<item value="C:\Users\peped\tfg_workspace\USETestGenerator.jar"/>
 			<item value="testGenerator/bin/testGenerator/USETestGenerator.jar"/>
 			<item value="C:\Program Files (x86)\Java\jre1.8.0_291\bin\tool\test_2_2.jar"/>
