@@ -72,8 +72,10 @@ public class TestClassGeneratorDepth extends TestClassGenerator {
     _builder.append("if not success then");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("if opIndex+1 = 6 then");
-    _builder.newLine();
+    _builder.append("if opIndex+1 = ");
+    _builder.append(this.nMethods, "\t\t");
+    _builder.append(" then");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
     _builder.append("opIndex := 1;");
     _builder.newLine();

@@ -1,4 +1,4 @@
-ECHO Generating Scripts...
+ECHO Generating Processed Models...
 
 java -jar GrammarTestTool.jar 1.GeneralConstraints.use
 java -jar GrammarTestTool.jar 2.TypesOfClasses.use
@@ -10,4 +10,3 @@ java -jar GrammarTestTool.jar 7.Relations.use
 java -jar GrammarTestTool.jar 8.Enums.use
 
 ECHO Done
-PAUSE

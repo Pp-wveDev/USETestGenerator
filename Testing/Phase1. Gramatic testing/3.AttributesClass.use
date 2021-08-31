@@ -20,3 +20,14 @@ class testCol
         col2 : Bag(Dummy)
         col3 : Set(Collection(Dummy))
 end
+
+class testInit
+    attributes
+        initialized : String init: 'hola'
+end
+
+class testDerived
+    attributes
+        deriv : Boolean derived: self.ok and not self.ok
+        ok : Boolean
+end

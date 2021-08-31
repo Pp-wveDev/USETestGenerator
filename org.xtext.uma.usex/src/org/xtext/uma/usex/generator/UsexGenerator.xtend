@@ -88,7 +88,6 @@ class UsexGenerator extends AbstractGenerator {
 		// Create UserVariables
 		var List<UserVariable> userVariables = new ArrayList();
 		var targetUseClass = useClassUtil.getClassFromName(testClass);
-		for(class : useClassUtil.classList) {println(class.name)}
 		
 		if(targetUseClass === null) {
 			throw new TestGenerationException("Target class could not be found at the model.");

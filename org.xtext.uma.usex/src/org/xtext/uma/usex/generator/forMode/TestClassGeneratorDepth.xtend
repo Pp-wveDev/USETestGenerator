@@ -38,7 +38,7 @@ class TestClassGeneratorDepth extends TestClassGenerator {
 			«generateTargetForBody()»
 			
 			if not success then
-				if opIndex+1 = 6 then
+				if opIndex+1 = «nMethods» then
 					opIndex := 1;
 			    else
 			    	opIndex := opIndex + 1;
