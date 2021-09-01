@@ -106,8 +106,9 @@ operations
     moveSideways(x: Integer) : Integer
     begin
         self.posX := self.posX + x;
-
-        if self.withItem then
+        
+        -- MUTATION
+        if not self.withItem then
             self.grabbedItem.posX := self.posX;
         end;
 
@@ -161,8 +162,7 @@ operations
         self.posZ := self.posZ + z;
         
         if self.withItem then
-            -- MUTATION
-            self.grabbedItem.posZ := self.posZ-3;
+            self.grabbedItem.posZ := self.posZ-1;
         end;
         
         result := (self.speed * z).round().abs();

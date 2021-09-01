@@ -43,7 +43,8 @@ class Microwave
 	
 	power_dec() 
 	begin
-		self.power := self.power - 1;
+		-- MUTATION
+		self.power := self.power + 3;
 	end
 	pre decPossible:
 		self.power - 1 >= 0
@@ -143,7 +144,8 @@ class Microwave
 	
 	door_closed() 
 	begin
-		self.doorOpen := false;
+		-- MUTATION
+		self.doorOpen := true;
 	end
 	post doorClosed:
 		not self.doorOpen
@@ -178,49 +180,49 @@ class Microwave
 	post _post_inv_timerPositiveOr0:
 		self.timer >= 0
 	
-	_timer_reset_notCooking() : Boolean
-		= not self.cooking
-	
 	_timer_dec_notCooking() : Boolean
 		= not self.cooking
 	
-	_door_opened_notHeating() : Boolean
-		= not self.heating.heatingOn
-	
-	_door_opened_notCooking() : Boolean
+	_power_reset_notCooking() : Boolean
 		= not self.cooking
 	
-	_item_removed_doorOpened() : Boolean
-		= self.doorOpen
-	
-	_power_dec_decPossible() : Boolean
-		= self.power - 1 >= 0
-	
-	_item_placed_doorOpened() : Boolean
-		= self.doorOpen
-	
-	_timer_dec_decPossible() : Boolean
-		= self.timer - 1 >= 0
-	
-	_power_inc_incPossible() : Boolean
-		= self.power + 1 <= 4
-	
-	_tick_cooking() : Boolean
-		= self.cooking
-	
-	_power_reset_notCooking() : Boolean
+	_timer_reset_notCooking() : Boolean
 		= not self.cooking
 	
 	_cooking_start_doorClosed() : Boolean
 		= not self.doorOpen
 	
+	_door_opened_notCooking() : Boolean
+		= not self.cooking
+	
+	_door_opened_notHeating() : Boolean
+		= not self.heating.heatingOn
+	
+	_item_removed_doorOpened() : Boolean
+		= self.doorOpen
+	
+	_timer_inc_notCooking() : Boolean
+		= not self.cooking
+	
+	_power_dec_decPossible() : Boolean
+		= self.power - 1 >= 0
+	
+	_timer_dec_decPossible() : Boolean
+		= self.timer - 1 >= 0
+	
 	_power_inc_notCooking() : Boolean
 		= not self.cooking
 	
-	_power_dec_notCooking() : Boolean
-		= not self.cooking
+	_power_inc_incPossible() : Boolean
+		= self.power + 1 <= 4
 	
-	_timer_inc_notCooking() : Boolean
+	_item_placed_doorOpened() : Boolean
+		= self.doorOpen
+	
+	_tick_cooking() : Boolean
+		= self.cooking
+	
+	_power_dec_notCooking() : Boolean
 		= not self.cooking
 	
 	_inv_correctPower() : Boolean
@@ -229,49 +231,8 @@ class Microwave
 	_inv_timerPositiveOr0() : Boolean
 		= self.timer >= 0
 	
-	_check_door_opened() : Boolean
-		= self._door_opened_notHeating() and
-		self._door_opened_notCooking() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_power_inc() : Boolean
-		= self._power_inc_incPossible() and
-		self._power_inc_notCooking() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_item_placed() : Boolean
-		= self._item_placed_doorOpened() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_timer_inc() : Boolean
-		= self._timer_inc_notCooking() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_power_reset() : Boolean
-		= self._power_reset_notCooking() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_tick() : Boolean
-		= self._tick_cooking() and
-		self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_cooking_stop() : Boolean
-		= self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_door_closed() : Boolean
-		= self._inv_correctPower() and
-		self._inv_timerPositiveOr0()
-	
-	_check_power_dec() : Boolean
-		= self._power_dec_decPossible() and
-		self._power_dec_notCooking() and
+	_check_cooking_start() : Boolean
+		= self._cooking_start_doorClosed() and
 		self._inv_correctPower() and
 		self._inv_timerPositiveOr0()
 	
@@ -280,19 +241,60 @@ class Microwave
 		self._inv_correctPower() and
 		self._inv_timerPositiveOr0()
 	
+	_check_door_opened() : Boolean
+		= self._door_opened_notCooking() and
+		self._door_opened_notHeating() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_power_dec() : Boolean
+		= self._power_dec_decPossible() and
+		self._power_dec_notCooking() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_power_inc() : Boolean
+		= self._power_inc_notCooking() and
+		self._power_inc_incPossible() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_item_placed() : Boolean
+		= self._item_placed_doorOpened() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
 	_check_timer_reset() : Boolean
 		= self._timer_reset_notCooking() and
 		self._inv_correctPower() and
 		self._inv_timerPositiveOr0()
 	
-	_check_cooking_start() : Boolean
-		= self._cooking_start_doorClosed() and
+	_check_cooking_stop() : Boolean
+		= self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_tick() : Boolean
+		= self._tick_cooking() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_door_closed() : Boolean
+		= self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_timer_inc() : Boolean
+		= self._timer_inc_notCooking() and
 		self._inv_correctPower() and
 		self._inv_timerPositiveOr0()
 	
 	_check_timer_dec() : Boolean
 		= self._timer_dec_notCooking() and
 		self._timer_dec_decPossible() and
+		self._inv_correctPower() and
+		self._inv_timerPositiveOr0()
+	
+	_check_power_reset() : Boolean
+		= self._power_reset_notCooking() and
 		self._inv_correctPower() and
 		self._inv_timerPositiveOr0()
 	
@@ -344,10 +346,10 @@ class Lamp
 	post lampOff:
 		not self.lampOn
 	
-	_check_lamp_off() : Boolean
+	_check_lamp_on() : Boolean
 		= true
 	
-	_check_lamp_on() : Boolean
+	_check_lamp_off() : Boolean
 		= true
 	
 end
@@ -377,19 +379,19 @@ class Heating
 	post heatingOff:
 		not self.heatingOn
 	
+	_heating_on_cooking() : Boolean
+		= self.microwave.cooking
+	
 	_heating_on_doorClosed() : Boolean
 		= not self.microwave.doorOpen
 	
 	_heating_on_timeSet() : Boolean
 		= self.microwave.timer > 0
 	
-	_heating_on_cooking() : Boolean
-		= self.microwave.cooking
-	
 	_check_heating_on() : Boolean
-		= self._heating_on_doorClosed() and
-		self._heating_on_timeSet() and
-		self._heating_on_cooking()
+		= self._heating_on_cooking() and
+		self._heating_on_doorClosed() and
+		self._heating_on_timeSet()
 	
 	_check_heating_off() : Boolean
 		= true
@@ -427,21 +429,21 @@ class Turnable
 	post turnableOff:
 		not self.turnableOn
 	
+	_turnable_start_heating() : Boolean
+		= self.microwave.heating.heatingOn
+	
 	_turnable_stop_doorClosed() : Boolean
 		= not self.microwave.heating.heatingOn
 	
 	_turnable_start_doorClosed() : Boolean
 		= not self.microwave.doorOpen
 	
-	_turnable_start_heating() : Boolean
-		= self.microwave.heating.heatingOn
-	
-	_check_turnable_start() : Boolean
-		= self._turnable_start_doorClosed() and
-		self._turnable_start_heating()
-	
 	_check_turnable_stop() : Boolean
 		= self._turnable_stop_doorClosed()
+	
+	_check_turnable_start() : Boolean
+		= self._turnable_start_heating() and
+		self._turnable_start_doorClosed()
 	
 end
 
@@ -451,90 +453,114 @@ class _test
 	begin
 		
 			declare opIndex : Integer,
-				target: Microwave;
+				target: Microwave,
+				success : Boolean;
+					
+			opIndex := 13.rand().floor()+1;
 		
 			for i in Sequence{1..n} do
 				for target in Microwave.allInstances() do
-					opIndex := 13.rand().floor()+1;
+					success := false;
 					
 					if opIndex = 1
 						and target._check_tick()
 					then
 						target.tick();
+						success := true;
 					end;
 					
 					if opIndex = 2
 						and target._check_power_inc()
 					then
 						target.power_inc();
+						success := true;
 					end;
 					
 					if opIndex = 3
 						and target._check_power_dec()
 					then
 						target.power_dec();
+						success := true;
 					end;
 					
 					if opIndex = 4
 						and target._check_power_reset()
 					then
 						target.power_reset();
+						success := true;
 					end;
 					
 					if opIndex = 5
 						and target._check_timer_inc()
 					then
 						target.timer_inc();
+						success := true;
 					end;
 					
 					if opIndex = 6
 						and target._check_timer_dec()
 					then
 						target.timer_dec();
+						success := true;
 					end;
 					
 					if opIndex = 7
 						and target._check_timer_reset()
 					then
 						target.timer_reset();
+						success := true;
 					end;
 					
 					if opIndex = 8
 						and target._check_cooking_start()
 					then
 						target.cooking_start();
+						success := true;
 					end;
 					
 					if opIndex = 9
 						and target._check_cooking_stop()
 					then
 						target.cooking_stop();
+						success := true;
 					end;
 					
 					if opIndex = 10
 						and target._check_door_opened()
 					then
 						target.door_opened();
+						success := true;
 					end;
 					
 					if opIndex = 11
 						and target._check_door_closed()
 					then
 						target.door_closed();
+						success := true;
 					end;
 					
 					if opIndex = 12
 						and target._check_item_placed()
 					then
 						target.item_placed();
+						success := true;
 					end;
 					
 					if opIndex = 13
 						and target._check_item_removed()
 					then
 						target.item_removed();
+						success := true;
 					end;
 					
+					
+					if not success then
+						if opIndex+1 = 13 then
+							opIndex := 1;
+					else
+						opIndex := opIndex + 1;
+					end;
+					end;
 				end;
 			end;
 	end

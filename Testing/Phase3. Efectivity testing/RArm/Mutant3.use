@@ -2,8 +2,6 @@ model RArm
 
 class Configuration
 attributes
-    -- Indicates the arm's average movement speed.
-    -- Measured in cm/s.
     maxX : Integer init: 10
     maxY : Integer init: 10
     maxZ : Integer init: 10
@@ -38,7 +36,6 @@ operations
     post correctlyReleased: not self.grabbed
 
 constraints
-    -- An item can't be at another item's position
     inv InDiffPos:
         Item.allInstances()->forAll(i1, i2 : Item | i1 <> i2 implies 
                                                         i1.posX <> i2.posX or 
@@ -50,8 +47,6 @@ class RArm
 attributes
     speed : Real init: 10
 
-    -- Used to get the arm's current position.
-    -- Measured in cm.
     posX : Integer init: 1
     posY : Integer init: 1
     posZ : Integer init: 1
@@ -66,15 +61,11 @@ operations
     itemAtPos(posX : Integer, posY : Integer, posZ: Integer) : Item 
         = Item.allInstances -> any(it | it.posX = posX and it.posY = posY and it.posZ = posZ)
     
-    -- Returns the item at arm's position
     itemHere() : Item = itemAtPos(self.posX, self.posY, self.posZ-1)
 
-    -- Returns true if val is between min and max
     isInInterval(min : Integer, max : Integer, val : Integer) : Boolean =
         not(val < min or val > max)
 
-    -- The arm closes, grabbing what is located at its position, if there is something
-    -- OUT: The arm's grasped item, null if it doesn't grasp anything
     grasp() : Item
     begin
         declare itemHere : Item;
@@ -99,8 +90,6 @@ operations
                      then result = self.itemHere()
                      else result = null endif
 
-    -- The arm looses, releasing what it is holding, if it holds something
-    -- OUT: The arm's released item, null if it doesn't release anything
     drop() : Item
     begin
         result := self.grabbedItem;
@@ -115,9 +104,6 @@ operations
     post looseHand: not self.contracted
     post releaseItem: self.grabbedItem.oclIsUndefined()
 
-    -- The arm moves left or right
-    -- IN: movement on the X axis
-    -- OUT: invested ticks in the movement
     moveSideways(x: Integer) : Integer
     begin
         self.posX := self.posX + x;
@@ -145,9 +131,6 @@ operations
     post spentTimeValid: result >= 0
     post ItemMoved: self.withItem implies self.grabbedItem = self.itemHere()
 
-    -- The arm moves forward or backward
-    -- IN: movement on the Y axis
-    -- OUT: invested ticks in the movement
     moveForward(y: Integer) : Integer
     begin
         self.posY := self.posY + y;
@@ -174,9 +157,6 @@ operations
     post spentTimeValid: result >= 0
     post ItemMoved: self.withItem implies self.grabbedItem = self.itemHere()
 
-    -- The arm moves up or down
-    -- IN: movement on the Z axis
-    -- OUT: invested ticks in the movement
     moveUp(z: Integer) : Integer
     begin
         self.posZ := self.posZ + z;
@@ -210,7 +190,6 @@ operations
     post ItemMoved: self.withItem implies self.grabbedItem = self.itemHere()
 
 constraints
-    -- Each axis' maximum value must be bigger than its minimum
     inv minXEqualOrLessThanMaxX:
         self.configuration.minX <= self.configuration.maxX
 
@@ -220,7 +199,6 @@ constraints
     inv minZEqualOrLessThanMaxZ:
         self.configuration.minZ <= self.configuration.maxZ
 
-    -- Each axis' current position must be inside its own limits
     inv posXValid:
         self.posX >= self.configuration.minX and self.posX <= self.configuration.maxX
 
@@ -230,19 +208,15 @@ constraints
     inv posZValid:
         self.posZ >= self.configuration.minZ and self.posZ <= self.configuration.maxZ
 
-    -- Holding an item without the arm contracted isn't possible
     inv grabWithArmContracted:
         self.withItem implies self.contracted
 end
 
--- ASSOCIATIONS
--- Associates a RArm within its configuration
 association Configure between
     Configuration [1] role configuration
     RArm [1] role arm
 end
 
--- Associates a RArm with the item it grasps
 association Grabbing between
     RArm [0..1] role arm
     Item [0..1] role grabbedItem

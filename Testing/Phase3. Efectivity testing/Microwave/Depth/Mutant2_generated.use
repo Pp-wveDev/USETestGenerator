@@ -119,7 +119,8 @@ class Microwave
 	
 	cooking_stop() 
 	begin
-		self.cooking := false;
+		-- MUTATION
+		self.cooking := true;
 	end
 	post notCooking:
 		not self.cooking
@@ -451,90 +452,114 @@ class _test
 	begin
 		
 			declare opIndex : Integer,
-				target: Microwave;
+				target: Microwave,
+				success : Boolean;
+					
+			opIndex := 13.rand().floor()+1;
 		
 			for i in Sequence{1..n} do
 				for target in Microwave.allInstances() do
-					opIndex := 13.rand().floor()+1;
+					success := false;
 					
 					if opIndex = 1
 						and target._check_tick()
 					then
 						target.tick();
+						success := true;
 					end;
 					
 					if opIndex = 2
 						and target._check_power_inc()
 					then
 						target.power_inc();
+						success := true;
 					end;
 					
 					if opIndex = 3
 						and target._check_power_dec()
 					then
 						target.power_dec();
+						success := true;
 					end;
 					
 					if opIndex = 4
 						and target._check_power_reset()
 					then
 						target.power_reset();
+						success := true;
 					end;
 					
 					if opIndex = 5
 						and target._check_timer_inc()
 					then
 						target.timer_inc();
+						success := true;
 					end;
 					
 					if opIndex = 6
 						and target._check_timer_dec()
 					then
 						target.timer_dec();
+						success := true;
 					end;
 					
 					if opIndex = 7
 						and target._check_timer_reset()
 					then
 						target.timer_reset();
+						success := true;
 					end;
 					
 					if opIndex = 8
 						and target._check_cooking_start()
 					then
 						target.cooking_start();
+						success := true;
 					end;
 					
 					if opIndex = 9
 						and target._check_cooking_stop()
 					then
 						target.cooking_stop();
+						success := true;
 					end;
 					
 					if opIndex = 10
 						and target._check_door_opened()
 					then
 						target.door_opened();
+						success := true;
 					end;
 					
 					if opIndex = 11
 						and target._check_door_closed()
 					then
 						target.door_closed();
+						success := true;
 					end;
 					
 					if opIndex = 12
 						and target._check_item_placed()
 					then
 						target.item_placed();
+						success := true;
 					end;
 					
 					if opIndex = 13
 						and target._check_item_removed()
 					then
 						target.item_removed();
+						success := true;
 					end;
 					
+					
+					if not success then
+						if opIndex+1 = 13 then
+							opIndex := 1;
+					else
+						opIndex := opIndex + 1;
+					end;
+					end;
 				end;
 			end;
 	end

@@ -32,21 +32,18 @@ class Microwave
         -- Power
         power_inc()
         begin 
-            if (not self.cooking) then
-                if (self.power < 4) then
-                    self.power := self.power + 1;
-                end;
-            end;
+            self.power := self.power + 1;
         end
         pre notCooking: not self.cooking
+        pre incPossible: self.power + 1 <= 4
         post powerChanged: not self.cooking implies (self.power < 4 implies self.power@pre+1 = self.power) 
 
         power_dec()
         begin
-            if (self.power > 0) then
-                self.power := self.power + 1;
-            end;
+                -- MUTATION
+                self.power := self.power + 3;
         end
+        pre decPossible: self.power - 1 >= 0
         pre notCooking: not self.cooking
 
         power_reset()
@@ -56,14 +53,26 @@ class Microwave
         pre notCooking: not self.cooking
 
         -- Timer
-        --timer_inc()
-        --pre notCooking: not self.cooking
+        timer_inc()
+        begin
+            self.timer := self.timer + 1;
+        end
+        pre notCooking: not self.cooking
 
-        --timer_dec()
-        --pre notCooking: not self.cooking
+        timer_dec()
+        begin
+            self.timer := self.timer - 1;
+        end
+        pre notCooking: not self.cooking
+        pre decPossible: self.timer - 1 >= 0
+        post timerOk: self.timer >= 0
 
-        --timer_reset()
-        --pre  notCooking: not self.cooking
+        timer_reset()
+        begin
+            self.timer := 0;
+        end
+        pre  notCooking: not self.cooking
+        post timer0: self.timer = 0
         
 
         -- Cooking
@@ -90,7 +99,8 @@ class Microwave
 
         door_closed()
         begin
-            self.doorOpen := false;
+            -- MUTATION
+            self.doorOpen := true;
         end
         post doorClosed: not self.doorOpen
 
@@ -108,6 +118,13 @@ class Microwave
         end
         pre doorOpened: self.doorOpen
         post withoutItem: not self.withItem
+
+        constraints
+        inv correctPower:
+            self.power >= 0 and self.power <= 4
+
+        inv timerPositiveOr0:
+            self.timer >= 0
 end
 
 class Display

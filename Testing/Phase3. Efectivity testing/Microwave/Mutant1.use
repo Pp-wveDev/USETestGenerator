@@ -3,40 +3,37 @@ model Microwave
 class Microwave
     attributes
         timer : Integer init: 0
-        
+
         power : Integer init: 0
-        
+
         doorOpen : Boolean init: false
 
         cooking : Boolean init: false
-        
+
         withItem : Boolean init: false
     operations
         tick()
         begin
             if (self.timer > 0) then
-                self.timer := self.timer - 1;
+                -- MUTATION
+                self.timer := self.timer + 5;
             end;
         end
         pre cooking: self.cooking
         
         power_inc()
         begin 
-            if (not self.cooking) then
-                if (self.power < 4) then
-                    self.power := self.power + 1;
-                end;
-            end;
+            self.power := self.power + 1;
         end
         pre notCooking: not self.cooking
-        post powerChanged: not self.cooking implies (self.power < 4 implies self.power@pre+1 = self.power) 
+        pre incPossible: self.power + 1 <= 4
+        post powerChanged: not self.cooking implies (self.power < 4 implies self.power@pre+1 = self.power)
 
         power_dec()
         begin
-            if (self.power > 0) then
-                self.power := self.power + 1;
-            end;
+                self.power := self.power - 1;
         end
+        pre decPossible: self.power - 1 >= 0
         pre notCooking: not self.cooking
 
         power_reset()
@@ -55,15 +52,18 @@ class Microwave
         begin
             self.timer := self.timer - 1;
         end
-        pre timerNot0: not self.timer = 0;
         pre notCooking: not self.cooking
+        pre decPossible: self.timer - 1 >= 0
+        post timerOk: self.timer >= 0
 
         timer_reset()
         begin
-            self.timer = 0;
+            self.timer := 0;
         end
         pre  notCooking: not self.cooking
+        post timer0: self.timer = 0
         
+
         cooking_start()
         begin
             self.cooking := true;
@@ -103,6 +103,13 @@ class Microwave
         end
         pre doorOpened: self.doorOpen
         post withoutItem: not self.withItem
+
+        constraints
+        inv correctPower:
+            self.power >= 0 and self.power <= 4
+
+        inv timerPositiveOr0:
+            self.timer >= 0
 end
 
 class Display

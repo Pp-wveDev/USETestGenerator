@@ -43,7 +43,8 @@ class Microwave
 	
 	power_dec() 
 	begin
-		self.power := self.power - 1;
+		-- MUTATION
+		self.power := self.power + 3;
 	end
 	pre decPossible:
 		self.power - 1 >= 0
@@ -143,7 +144,8 @@ class Microwave
 	
 	door_closed() 
 	begin
-		self.doorOpen := false;
+		-- MUTATION
+		self.doorOpen := true;
 	end
 	post doorClosed:
 		not self.doorOpen
@@ -450,94 +452,175 @@ class _test
 	test(n : Integer) 
 	begin
 		
-			declare opIndex : Integer,
-				target: Microwave;
+			declare continue : Boolean,
+					opIndex : Integer,
+					target : Microwave,
+					opSequence : Sequence(Integer);
+					
+			opIndex := 13.rand().floor()+1;
 		
 			for i in Sequence{1..n} do
 				for target in Microwave.allInstances() do
-					opIndex := 13.rand().floor()+1;
+					continue := true;
+					opSequence := self.queryOpSequence(opIndex, 13);
 					
-					if opIndex = 1
-						and target._check_tick()
-					then
-						target.tick();
+					for curr in opSequence do
+						if continue 
+						then
+							if curr = 1
+								and target._check_tick()
+							then
+								target.tick();
+								continue := false;
+								opIndex := 1;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 2
+								and target._check_power_inc()
+							then
+								target.power_inc();
+								continue := false;
+								opIndex := 2;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 3
+								and target._check_power_dec()
+							then
+								target.power_dec();
+								continue := false;
+								opIndex := 3;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 4
+								and target._check_power_reset()
+							then
+								target.power_reset();
+								continue := false;
+								opIndex := 4;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 5
+								and target._check_timer_inc()
+							then
+								target.timer_inc();
+								continue := false;
+								opIndex := 5;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 6
+								and target._check_timer_dec()
+							then
+								target.timer_dec();
+								continue := false;
+								opIndex := 6;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 7
+								and target._check_timer_reset()
+							then
+								target.timer_reset();
+								continue := false;
+								opIndex := 7;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 8
+								and target._check_cooking_start()
+							then
+								target.cooking_start();
+								continue := false;
+								opIndex := 8;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 9
+								and target._check_cooking_stop()
+							then
+								target.cooking_stop();
+								continue := false;
+								opIndex := 9;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 10
+								and target._check_door_opened()
+							then
+								target.door_opened();
+								continue := false;
+								opIndex := 10;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 11
+								and target._check_door_closed()
+							then
+								target.door_closed();
+								continue := false;
+								opIndex := 11;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 12
+								and target._check_item_placed()
+							then
+								target.item_placed();
+								continue := false;
+								opIndex := 12;
+							end;
+						end;
+						
+						if continue 
+						then
+							if curr = 13
+								and target._check_item_removed()
+							then
+								target.item_removed();
+								continue := false;
+								opIndex := 13;
+							end;
+						end;
+						
 					end;
 					
-					if opIndex = 2
-						and target._check_power_inc()
-					then
-						target.power_inc();
+					if opIndex = 13 then
+						opIndex := 1;
+					else
+						opIndex := opIndex+1;
 					end;
-					
-					if opIndex = 3
-						and target._check_power_dec()
-					then
-						target.power_dec();
-					end;
-					
-					if opIndex = 4
-						and target._check_power_reset()
-					then
-						target.power_reset();
-					end;
-					
-					if opIndex = 5
-						and target._check_timer_inc()
-					then
-						target.timer_inc();
-					end;
-					
-					if opIndex = 6
-						and target._check_timer_dec()
-					then
-						target.timer_dec();
-					end;
-					
-					if opIndex = 7
-						and target._check_timer_reset()
-					then
-						target.timer_reset();
-					end;
-					
-					if opIndex = 8
-						and target._check_cooking_start()
-					then
-						target.cooking_start();
-					end;
-					
-					if opIndex = 9
-						and target._check_cooking_stop()
-					then
-						target.cooking_stop();
-					end;
-					
-					if opIndex = 10
-						and target._check_door_opened()
-					then
-						target.door_opened();
-					end;
-					
-					if opIndex = 11
-						and target._check_door_closed()
-					then
-						target.door_closed();
-					end;
-					
-					if opIndex = 12
-						and target._check_item_placed()
-					then
-						target.item_placed();
-					end;
-					
-					if opIndex = 13
-						and target._check_item_removed()
-					then
-						target.item_removed();
-					end;
-					
 				end;
 			end;
 	end
+	
+	queryOpSequence(i : Integer, max : Integer) : Sequence(Integer)
+		= if i = 1 then Sequence{1..max} else Sequence{i..max}->union(Sequence{1..(i-1)}) endif
 	
 end
 
