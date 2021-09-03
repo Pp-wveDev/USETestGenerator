@@ -39,7 +39,7 @@ abstract class TestClassGenerator {
 	{	
 		// Create test class
 		var _test = usexFactory.createUseClass();
-		_test.name = '_test';
+		_test.name = '_Test';
 		
 		// Test method
 		var _testOperation = usexFactory.createMethod();

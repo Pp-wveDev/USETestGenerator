@@ -43,7 +43,7 @@ public abstract class TestClassGenerator {
   
   public UseClass generateTestClass() {
     UseClass _test = this.usexFactory.createUseClass();
-    _test.setName("_test");
+    _test.setName("_Test");
     Method _testOperation = this.usexFactory.createMethod();
     _testOperation.setName("test");
     PrimitiveType integerType = this.usexFactory.createPrimitiveType();
